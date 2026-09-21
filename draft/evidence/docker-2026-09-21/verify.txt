@@ -1,0 +1,56 @@
+rm -f fzy test/fzytest src/*.o deps/*/*.o
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o src/fzy.o src/fzy.c
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o src/match.o src/match.c
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o src/tty.o src/tty.c
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o src/choices.o src/choices.c
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o src/options.o src/options.c
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o src/tty_interface.o src/tty_interface.c
+cc -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla  -o fzy src/fzy.o src/match.o src/tty.o src/choices.o src/options.o src/tty_interface.o -lpthread
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o deps/theft/theft.o deps/theft/theft.c
+deps/theft/theft.c: In function 'report_on_failure':
+deps/theft/theft.c:483:49: warning: format '%llx' expects argument of type 'long long unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+  483 |     fprintf(t->out, "    Trial %u, Seed 0x%016llx\n", ti->trial,
+      |                                           ~~~~~~^
+      |                                                 |
+      |                                                 long long unsigned int
+      |                                           %016lx
+  484 |         (uint64_t)ti->seed);
+      |         ~~~~~~~~~~~~~~~~~~                       
+      |         |
+      |         long unsigned int
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o deps/theft/theft_bloom.o deps/theft/theft_bloom.c
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o deps/theft/theft_mt.o deps/theft/theft_mt.c
+cc -DVERSION=\"1.0\" -D_GNU_SOURCE -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla -c -o deps/theft/theft_hash.o deps/theft/theft_hash.c
+cc -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla  -Isrc -o test/fzytest test/fzytest.c test/test_properties.c test/test_choices.c test/test_match.c src/match.o src/choices.o src/options.o deps/theft/theft.o deps/theft/theft_bloom.o deps/theft/theft_mt.o deps/theft/theft_hash.o -lpthread
+test/test_choices.c: In function 'test_choices_large_input':
+test/test_choices.c:142:17: warning: ignoring return value of 'asprintf' declared with attribute 'warn_unused_result' [-Wunused-result]
+  142 |                 asprintf(&strings[i], "%i", i);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./test/fzytest
+
+* Suite match_suite:
+.......................
+23 tests - 23 passed, 0 failed, 0 skipped (83 ticks, 0.000 sec)
+
+* Suite choices_suite:
+......
+6 tests - 6 passed, 0 failed, 0 skipped (34816 ticks, 0.035 sec)
+
+* Suite properties_suite:
+..
+2 tests - 2 passed, 0 failed, 0 skipped (533221 ticks, 0.533 sec)
+
+Total: 31 tests (568238 ticks, 0.568 sec), 99 assertions
+Pass: 31, fail: 0, skip: 0.
+Usage: fzy [OPTION]...
+ -l, --lines=LINES        Specify how many lines of results to show (default 10)
+ -p, --prompt=PROMPT      Input prompt (default '> ')
+ -q, --query=QUERY        Use QUERY as the initial search string
+ -e, --show-matches=QUERY Output the sorted matches of QUERY
+ -t, --tty=TTY            Specify file to use as TTY device (default /dev/tty)
+ -s, --show-scores        Show the scores of each match
+ -0, --read-null          Read input delimited by ASCII NUL characters
+ -j, --workers NUM        Use NUM workers for searching. (default is # of CPUs)
+ -i, --show-info          Show selection info line
+ -h, --help     Display this help and exit
+ -v, --version  Output version information and exit

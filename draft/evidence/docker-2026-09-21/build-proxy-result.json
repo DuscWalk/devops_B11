@@ -1,0 +1,18 @@
+{
+  "command": [
+    "docker",
+    "build",
+    "--progress=plain",
+    "--platform",
+    "linux/amd64",
+    "-t",
+    "b11/fzy:28195b3-baseline",
+    "-f",
+    "draft/Dockerfile",
+    "draft"
+  ],
+  "process_proxy": "Windows existing proxy 127.0.0.1:7897; only applied to this build process",
+  "started_at": "2026-09-21T08:16:48.771098+00:00",
+  "finished_at": "2026-09-21T08:21:53.187677+00:00",
+  "exit_code": 0
+}

@@ -1,0 +1,4 @@
+PASS: DRAFT request and missing-verify negative example
+PASS: accepted, success and complete failure Job samples
+PASS: 5 artifact files, checksums, source identity and example labels
+This checks local proposal data only; no image build or cross-group acceptance.

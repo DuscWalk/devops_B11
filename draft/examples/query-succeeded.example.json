@@ -32,7 +32,7 @@
         "media_type": "text/plain",
         "producer_job_id": "job-draft-example",
         "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
-        "sha256": "9cb60dcc31ffe7b20a50fbaacf0d6f89ad2fbc1773422b0916e5794e4236fa7d"
+        "sha256": "d2d0a06aa7d2753f0d818259971a4498b61392c5e0baf465acf3fb18e7961c49"
       },
       {
         "artifact_id": "draft-example-image_ref.json",

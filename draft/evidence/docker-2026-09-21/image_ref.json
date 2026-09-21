@@ -1,0 +1,24 @@
+{
+  "example_only": false,
+  "availability": "LOCAL_DOCKER_ENGINE_ONLY",
+  "image": "b11/fzy:28195b3-baseline",
+  "image_id": "sha256:a9fe27db5596bd8ffe73541c5ba4c808020c1c58c28dab74017c884a5a8863b6",
+  "repo_digests": [],
+  "created": "2026-09-21T08:21:51.650522261Z",
+  "size_bytes": 405652521,
+  "platform": "linux/amd64",
+  "repository": {
+    "url": "https://github.com/jhawthorn/fzy",
+    "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+  },
+  "project_root": "/workspace/fzy",
+  "configuration_id_proposal": "fzy-default-gcc13-make4.3",
+  "build_environment_hash": null,
+  "distribution": {
+    "registry_published": false,
+    "archive_exported": false,
+    "cross_group_read_verified": false
+  },
+  "clean_build_command": "make clean && make",
+  "verify_command": "make check && ./fzy --help"
+}

@@ -30,16 +30,26 @@ make check && ./fzy --help
 
 本项目是构建环境准备样本，尚未证明其中含有可修复的 MD。MDFixer 固定报告由对应负责人另行准备。
 
-## Docker 候选的下一步
+## Docker 基线验证
 
 `draft/Dockerfile` 是手工候选，用于后续对照 DRAFT 的生成结果。基础镜像 tag、APT 包未固定到 digest/版本，因此尚非完全可复现环境。
 
-Docker Linux 引擎可用后，在仓库根目录执行：
+在仓库根目录执行：
 
 ```bash
 docker build --platform linux/amd64 -t b11/fzy:28195b3-baseline -f draft/Dockerfile draft
-docker run --rm b11/fzy:28195b3-baseline sh -lc 'make clean && make && make check && ./fzy --help'
+docker run --rm --network none b11/fzy:28195b3-baseline sh -lc 'make clean && make && make check && ./fzy --help'
 docker image inspect b11/fzy:28195b3-baseline
 ```
 
-这些 Docker 命令本次未执行。成功后记录镜像 ID、工具版本、真实日志，再决定使用注册表推送还是 `docker save`/`docker load` 交付。不得把演示文件中的 tag 当作已发布镜像。
+2026-09-21 已完成镜像构建及独立容器验证，均退出 0；独立容器禁用网络，核对固定源码 SHA 后重新构建，31 个测试通过、99 个断言，帮助命令退出 0。镜像为 `b11/fzy:28195b3-baseline`，ID、大小、工具链与完整包清单见 `evidence/docker-2026-09-21/`。上游编译警告原样保留，仍未运行 Ruby acceptance 目标。
+
+该镜像只在当前 Docker daemon 中存在，未发布注册表、未导出归档、未由 A11 获取。后续与 A11 确认注册表或 `docker save`/`docker load` 交付方式。`fixtures/draft-handoff` 中的 contract-example tag 仍是人工演示，不是这个真实镜像。
+
+### Docker Hub 网络问题的处理
+
+2026-09-21 启动 Docker Desktop 后，第一次构建在获取 `auth.docker.io` 匿名令牌时连接超时，尚未进入编译。Windows 已启用 `127.0.0.1:7897` 代理，经该代理访问认证服务返回 HTTP 200。
+
+重试时只在启动 Docker build 的子进程环境中设置 `HTTP_PROXY`、`HTTPS_PROXY` 为 `http://127.0.0.1:7897`，Ubuntu 镜像拉取恢复。没有更改系统代理或 Docker 全局配置。此端口属于本机现有配置，其他机器应使用自己的有效代理；不要把宿主机的 `127.0.0.1` 直接写入 Dockerfile。
+
+首次失败日志与重试结果保存在 `evidence/docker-2026-09-21/`。

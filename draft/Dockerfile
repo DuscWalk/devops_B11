@@ -1,5 +1,5 @@
 # Manually prepared baseline candidate, not an executed DRAFT output.
-# Not built yet; base digest and package versions require later pinning.
+# Manually validated; base digest and package versions require later pinning.
 FROM ubuntu:24.04
 RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential git ca-certificates \

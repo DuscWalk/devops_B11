@@ -1,0 +1,19 @@
+{
+  "command": [
+    "docker",
+    "build",
+    "--progress=plain",
+    "--platform",
+    "linux/amd64",
+    "-t",
+    "b11/fzy:28195b3-baseline",
+    "-f",
+    "draft/Dockerfile",
+    "draft"
+  ],
+  "reason": "Recheck final Dockerfile after comment-only status update",
+  "started_at": "2026-09-21T08:25:11.490108+00:00",
+  "finished_at": "2026-09-21T08:25:14.649739+00:00",
+  "exit_code": 0,
+  "dockerfile_sha256": "d2d0a06aa7d2753f0d818259971a4498b61392c5e0baf465acf3fb18e7961c49"
+}

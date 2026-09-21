@@ -1,0 +1,10 @@
+{
+  "context": "desktop-linux",
+  "server_version": "28.3.2",
+  "server_os": "linux",
+  "server_arch": "amd64",
+  "dockerfile_sha256": "9cb60dcc31ffe7b20a50fbaacf0d6f89ad2fbc1773422b0916e5794e4236fa7d",
+  "initial_failure": "Docker Hub anonymous token connection timeout before compilation",
+  "retry_change": "HTTP_PROXY and HTTPS_PROXY set only for build subprocess to existing Windows proxy http://127.0.0.1:7897",
+  "global_configuration_changed": false
+}
