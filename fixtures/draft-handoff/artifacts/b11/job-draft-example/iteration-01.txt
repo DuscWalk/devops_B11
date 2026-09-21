@@ -1,0 +1,2 @@
+EXAMPLE ONLY - not an execution log.
+iteration=1 build_exit_code=0 verify_exit_code=0 decision=ACCEPT

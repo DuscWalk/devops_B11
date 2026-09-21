@@ -1,0 +1,12 @@
+{
+  "example_only": true,
+  "producer_job_id": "job-draft-example",
+  "repository": {
+    "url": "https://github.com/jhawthorn/fzy",
+    "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+  },
+  "command": "make check && ./fzy --help",
+  "exit_code": 0,
+  "passed": true,
+  "note": "Synthetic successful container verification; real WSL evidence is stored separately."
+}

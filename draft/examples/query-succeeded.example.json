@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.1.0",
+  "job_id": "job-draft-example",
+  "trace_id": "trace-b11-draft-example",
+  "job_type": "DRAFT",
+  "status": "SUCCEEDED",
+  "execution": {
+    "timeout_seconds": 1800,
+    "idempotency_key": "b11|fzy|28195b3|draft-contract-example"
+  },
+  "input": {
+    "repository": {
+      "url": "https://github.com/jhawthorn/fzy",
+      "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+    },
+    "build": {
+      "command": "make clean && make",
+      "context_files": [
+        "README.md"
+      ]
+    },
+    "verify_command": "make check && ./fzy --help",
+    "max_iterations": 5,
+    "timeout_seconds": 1800
+  },
+  "output": {
+    "artifacts": [
+      {
+        "artifact_id": "draft-example-Dockerfile",
+        "type": "DOCKERFILE",
+        "uri": "artifact://b11/job-draft-example/Dockerfile",
+        "media_type": "text/plain",
+        "producer_job_id": "job-draft-example",
+        "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+        "sha256": "9cb60dcc31ffe7b20a50fbaacf0d6f89ad2fbc1773422b0916e5794e4236fa7d"
+      },
+      {
+        "artifact_id": "draft-example-image_ref.json",
+        "type": "IMAGE",
+        "uri": "artifact://b11/job-draft-example/image_ref.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-draft-example",
+        "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+        "sha256": "a8165916cf7b7ffe9daf7bd50e27ee8f1fdf0bd1a41fa1453de6b61abc10d11e"
+      },
+      {
+        "artifact_id": "draft-example-iterations.json",
+        "type": "LOG",
+        "uri": "artifact://b11/job-draft-example/iterations.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-draft-example",
+        "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+        "sha256": "d9191a71e96bc997861ec4c5deb95d8483868dd2e531674d9e14e33df8ce6d5f"
+      },
+      {
+        "artifact_id": "draft-example-iteration-01.txt",
+        "type": "LOG",
+        "uri": "artifact://b11/job-draft-example/iteration-01.txt",
+        "media_type": "text/plain",
+        "producer_job_id": "job-draft-example",
+        "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+        "sha256": "ab5206b63fb328df2b9359825ffda50f491de70a4d011bf7e468d9195063c3f3"
+      },
+      {
+        "artifact_id": "draft-example-verify.json",
+        "type": "TEST_RESULT",
+        "uri": "artifact://b11/job-draft-example/verify.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-draft-example",
+        "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+        "sha256": "7e02c5d971f18c501576aa3728d2eba65c2772ad2cd5149e82ba9213092e0782"
+      }
+    ],
+    "summary": {
+      "example_only": true,
+      "iterations": 1,
+      "build_succeeded": true,
+      "verify_passed": true,
+      "verify_command": "make check && ./fzy --help"
+    }
+  },
+  "error": null
+}

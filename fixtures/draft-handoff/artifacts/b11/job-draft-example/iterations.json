@@ -1,0 +1,19 @@
+{
+  "example_only": true,
+  "producer_job_id": "job-draft-example",
+  "iterations": [
+    {
+      "iteration": 1,
+      "build_command": "make clean && make",
+      "build_exit_code": 0,
+      "verify_command": "make check && ./fzy --help",
+      "verify_exit_code": 0,
+      "changes": [
+        "Illustration: select Ubuntu 24.04 and install build-essential, git, ca-certificates"
+      ],
+      "decision": "ACCEPT",
+      "reason": "Illustrative candidate builds and verifies; no real automated iteration was executed.",
+      "log_uri": "artifact://b11/job-draft-example/iteration-01.txt"
+    }
+  ]
+}
