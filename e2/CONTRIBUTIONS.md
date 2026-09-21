@@ -26,6 +26,6 @@
 
 - A11 原材料属于 A11，来源提交 `96f35cc175d12f51f3f7f0915ba35a98d303fcb3`，不登记为 B11 原创。
 - B11 仓库：https://git.nju.edu.cn/devops_b11/devops-project-b11 。本轮基于 `5cacba9451863ebf7c794df9374276f88eff1fb4`，分支 `docs/e2-contract-alignment`。
-- 本轮本地提交 SHA：保存准备提交后回填。
+- 本轮准备提交：`4f88d13a126608854a5ba7ac062d169af4780e75`（`feat(e2): prepare B11 contract review and offline validation`），包含本次材料、代码和验证证据。本条记录在后续文档提交中回填，避免引用尚未产生的 SHA。
 - 提交身份使用 `duscwalk <241276007@smail.nju.edu.cn>`，本轮任务负责人对应胡博。没有改写他人的历史提交。
 - 远端推送、MR、成员审阅和配对沟通尚未发生；不编造相关链接或确认记录。
