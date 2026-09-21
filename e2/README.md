@@ -2,11 +2,11 @@
 
 负责人：孙静怡（DRAFT）、王硕（MDFixer）、胡博（接口与联调）。配对组：A11（BuildChecker、EChecker）。
 
-**当前状态：胡博的本地准备已完成，技术方案待成员/A11 确认。** 下一步看 [PAIRING.md](PAIRING.md)，内含共享方式、两段待发消息和三轮练习记录表。E2 先定义契约和样例，尚不要求部署 API。
+**当前状态：已收到孙静怡的 DRAFT 回复，样例校验及 5 个文件读取通过；等待 A11 对齐及王硕回复。** 详见 [DRAFT 回复审阅](feedback/draft-2026-09-21.md)。 下一步看 [PAIRING.md](PAIRING.md)，内含共享方式、两段待发消息和三轮练习记录表。E2 先定义契约和样例，尚不要求部署 API。
 
 ## 当前检查结论
 
-A11 来源校验 **42/42 通过**。补充按任务类型检查 input 后，原件为 **7/8**：增量查询回显漏了必填 configuration_id。只补该字段的待确认提议通过 **8/8** 输入检查、**17/17** 回归检查及真实文本读取。这里的通过仅表示本地准备可复算；正式契约确认、实际镜像/报告/补丁、跨组互读仍待完成。
+A11 来源校验 **42/42 通过**。补充按任务类型检查 input 后，原件为 **7/8**：增量查询回显漏了必填 configuration_id。只补该字段的待确认提议通过 **8/8** 输入检查、**17/17** 回归检查及真实文本读取。这里的通过仅表示本地准备可复算；正式契约确认、镜像实际交付、固定 MD 报告/补丁与 A11 侧互读仍待完成。
 
 ## 文件索引
 
@@ -17,6 +17,7 @@ A11 来源校验 **42/42 通过**。补充按任务类型检查 input 后，原�
 | [reference/a11/contract-examples.json](reference/a11/contract-examples.json) | 四类请求/响应、错误、findings 与产物元数据原样例 |
 | [reference/a11/openapi.yaml](reference/a11/openapi.yaml) | 原始端点说明，仍待对齐失败视图等问题 |
 | [proposals/README.md](proposals/README.md) | 待 A11 确认的单字段样例修正 |
+| [feedback/draft-2026-09-21.md](feedback/draft-2026-09-21.md) | 孙静怡回复、独立复核和新增待确认事项 |
 | [CONTRACT_REVIEW.md](CONTRACT_REVIEW.md) | Q01—Q07：已发现问题、建议、需谁确认 |
 | [artifact-access.md](artifact-access.md) | URI 读取提议与可执行演示 |
 | [PAIRING.md](PAIRING.md) | 下一步沟通文字、三轮议程与空白决定表 |

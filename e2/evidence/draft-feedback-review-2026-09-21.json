@@ -1,0 +1,123 @@
+{
+  "kind": "B11_DRAFT_FEEDBACK_REVIEW",
+  "reviewed_on": "2026-09-21",
+  "branch": "feat/draft",
+  "commit": "d7bca1e7a6143e39f29164c9b43fde7824b0def5",
+  "reviewed_by": "胡博（Codex 辅助）",
+  "member_attribution": "用户明确说明远程新分支为孙静怡的回复；Git 作者为 hotori。",
+  "python": "3.10.12",
+  "jsonschema": "4.25.1",
+  "execution_scope": "在临时 detached worktree 复跑 DRAFT 样例校验，用胡博分支的 e2.artifact_access.read_artifact 读取 5 个文件；原工作区和孙静怡分支未修改。临时 worktree 已移除。",
+  "validator": {
+    "command": ".venv/bin/python <temporary-worktree>/draft/validate_examples.py",
+    "exit_code": 0,
+    "stdout": [
+      "PASS: DRAFT request and missing-verify negative example",
+      "PASS: accepted, success and complete failure Job samples",
+      "PASS: 5 artifact files, checksums, source identity and example labels",
+      "This checks local proposal data only; no image build or cross-group acceptance."
+    ]
+  },
+  "artifact_reader": "e2/artifact_access.py at e8bf6eee0acf00f86ba028ecf3c19399811992cd",
+  "artifact_reads": [
+    {
+      "uri": "artifact://b11/job-draft-example/Dockerfile",
+      "bytes_read": 645,
+      "sha256": "d2d0a06aa7d2753f0d818259971a4498b61392c5e0baf465acf3fb18e7961c49",
+      "checksum_verified": true
+    },
+    {
+      "uri": "artifact://b11/job-draft-example/image_ref.json",
+      "bytes_read": 721,
+      "sha256": "a8165916cf7b7ffe9daf7bd50e27ee8f1fdf0bd1a41fa1453de6b61abc10d11e",
+      "checksum_verified": true
+    },
+    {
+      "uri": "artifact://b11/job-draft-example/iterations.json",
+      "bytes_read": 606,
+      "sha256": "d9191a71e96bc997861ec4c5deb95d8483868dd2e531674d9e14e33df8ce6d5f",
+      "checksum_verified": true
+    },
+    {
+      "uri": "artifact://b11/job-draft-example/iteration-01.txt",
+      "bytes_read": 102,
+      "sha256": "ab5206b63fb328df2b9359825ffda50f491de70a4d011bf7e468d9195063c3f3",
+      "checksum_verified": true
+    },
+    {
+      "uri": "artifact://b11/job-draft-example/verify.json",
+      "bytes_read": 373,
+      "sha256": "7e02c5d971f18c501576aa3728d2eba65c2772ad2cd5149e82ba9213092e0782",
+      "checksum_verified": true
+    }
+  ],
+  "docker_evidence_checksums": {
+    "build-final-result.json": {
+      "sha256": "dffb0f3cb50ce73a8cfd04718f1cf0ed40a4b195a86244a7173c94691c5262c3",
+      "matches": true
+    },
+    "build-final.txt": {
+      "sha256": "9985b5725c3b1e2aff2697dec5aad8eda3e0baeb6bc867f30a70c4b1a99f2257",
+      "matches": true
+    },
+    "build-proxy-result.json": {
+      "sha256": "4c19e437612e8d24a971a99e75db431b72dfe3bc6ba60118cc451fc78656a737",
+      "matches": true
+    },
+    "build-proxy.txt": {
+      "sha256": "94823c09c1cb5e2937708942f09faada11e5c310d83258d6c3ff587656358ab3",
+      "matches": true
+    },
+    "build-result.json": {
+      "sha256": "3fb88b57165f74abe5b8c06a390ce4041095296f21c2f0b34d80881394c5fae7",
+      "matches": true
+    },
+    "build.txt": {
+      "sha256": "9c10225b28a6f74bc5c3d865aa7126f6ae733c995a39d2e78b03a680ba094b04",
+      "matches": true
+    },
+    "contract-validation.txt": {
+      "sha256": "d0ced4217742c20aa7c5c47571b78fe39e7d29fbf88477fb54eb895f7c05d545",
+      "matches": true
+    },
+    "environment.json": {
+      "sha256": "dcef9c1242aca4e7f62c2f32dbc484525409ab1f5b7224f96f739df7b60001b6",
+      "matches": true
+    },
+    "image_ref.json": {
+      "sha256": "5bdc69a634a37e82de73ac7a2e7ca8e6cffeffa7c39f84fee79d56df629f2815",
+      "matches": true
+    },
+    "packages.txt": {
+      "sha256": "508627a61d4cf55d73851959de47fadeddb568728ef887e05094ff626ca9b9e8",
+      "matches": true
+    },
+    "toolchain.txt": {
+      "sha256": "6b3d45423e9e0b78fc38b38d9cb2c1ab9b282650ce2ec97f6c3ee20095987196",
+      "matches": true
+    },
+    "verify-result.json": {
+      "sha256": "5c5aa7e2f7133ac113504e72678dd8e419daa34d5c67197c138926e5a19954ca",
+      "matches": true
+    },
+    "verify.txt": {
+      "sha256": "0765f9815663aee8043eda362f59a0316c89ed30f50a4d52de1efc55dc146e5e",
+      "matches": true
+    }
+  },
+  "build_claim_scope": "本次核对已提交的日志和摘要，没有重跑 Docker build/run，也没有取得镜像或完成 A11 互读。",
+  "recorded_docker_result": {
+    "tests": 31,
+    "assertions": 99,
+    "failures": 0,
+    "image_id": "sha256:a9fe27db5596bd8ffe73541c5ba4c808020c1c58c28dab74017c884a5a8863b6",
+    "availability": "LOCAL_DOCKER_ENGINE_ONLY"
+  },
+  "source_path_check": {
+    "repository": "https://github.com/jhawthorn/fzy",
+    "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+    "method": "分别请求固定提交的 raw.githubusercontent.com/…/Makefile 和 …/src/Makefile",
+    "root_Makefile_http_status": 200,
+    "src_Makefile_http_status": 404
+  }
+}

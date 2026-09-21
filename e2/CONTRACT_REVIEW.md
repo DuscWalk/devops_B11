@@ -1,12 +1,12 @@
 # B11 公共契约审阅
 
-审阅人/任务负责人：胡博（Codex 辅助准备）；日期：2026-09-21。基线为 [A11 来源快照](reference/README.md)。以下建议均待相关成员与 A11 确认；本文件没有记录已发生的协商。
+审阅人/任务负责人：胡博（Codex 辅助准备）；日期：2026-09-21。基线为 [A11 来源快照](reference/README.md)。已收到孙静怡 feat/draft 的回复，见 [审阅记录](feedback/draft-2026-09-21.md)；公共技术方案仍待 A11 确认，未记录尚未发生的双方协商。
 
 ## 审阅结论
 
 原始校验器在 Python 3.10.12、jsonschema 4.25.1 下为 **42/42 通过**。补充按任务类型选择输入 Schema 后，原样例为 **7/8 通过**，增量查询回显缺少 `configuration_id`。因此“原校验通过”尚不能作为接受全部接口的依据。
 
-只补该字段的 [建议样例](proposals/README.md) 已通过 8/8 输入检查。原始快照与原始失败证据均保留。产物引用目前只有元数据样例，尚无真实镜像、依赖图、MD 报告或补丁供跨组读取。
+只补该字段的 [建议样例](proposals/README.md) 已通过 8/8 输入检查。原始快照与原始失败证据均保留。A11 快照的产物引用仍只有元数据样例。孙静怡另提供 5 份可读 DRAFT 文件样例和真实本地镜像执行记录；尚未完成向 A11 交付镜像，依赖图、固定 MD 报告与补丁也待交接。
 
 ## Q01 公共模型、端点和样例遗漏
 
@@ -34,9 +34,9 @@
 
 需要确认：孙静怡、A11，胡博汇总。
 
-请孙静怡检查 `requests.DRAFT` 和 `responses.query_draft`，明确固定项目/完整 commit、工作目录、构建命令、验证命令、迭代及超时限制。明确哪些参数必填、哪些使用默认值。
+孙静怡已回复：沿用 DRAFT 端点与必填字段，固定 fzy `28195b3a709995354b6c33cec9bb7c9f81532eb6`，工作目录为仓库根，构建用 `make clean && make`，验证用 `make check && ./fzy --help`；5 次迭代/1800 秒作为建议默认值。具体回复与验证见 [反馈审阅](feedback/draft-2026-09-21.md)。
 
-当前 IMAGE 产物只引用 `image_ref.json`，包内没有该文件或其内容 Schema；下游却需要 `input.image` 字符串。需给出文件内容样例、镜像获取方法、标识（tag 或 digest）以及如何转换为下游输入。每轮日志、修改理由和最终验证结果也需要可读的文件样例或字段约定。
+新分支已有 IMAGE 文件、每轮日志/理由、TEST_RESULT 和真实摘要，胡博现有读取器可读取全部 5 个演示文件。格式仍为提议。实际镜像只在孙静怡本机 Docker daemon；需 A11 确认 registry 或 docker save/load 交付，并规范最终 IMAGE 文件。真实执行证据里的 configuration_id_proposal / repo_digests 与契约示例字段不同，不应直接充当最终交接 JSON。
 
 构建配置与环境标识如何从 DRAFT 交给检测服务，见 Q07。当前示例中的成功数值没有被本组当作真实构建证据。
 
@@ -50,7 +50,7 @@ A11 查询响应的 findings 同时含 MISSING 与 REDUNDANT，Backlog 又建议
 
 供讨论的建议：保留检测混合报告，由消费方只选当前版本仍有效的 MISSING；忽略 REDUNDANT，增量结果中 `origin=RESOLVED` 的发现也不送去修复。报告 commit 与源码不符则拒绝。需王硕确认可实现，并与 A11 明确过滤发生在哪一侧。
 
-包里的 fzy 路径、行号和发现属于契约样例；本轮没有核验其在真实源码上的可复现性。王硕负责后续固定 MD 样本和来源标注，不能把当前样例直接登记为真实检测结果。
+包里的 fzy 路径、行号和发现属于契约样例。孙静怡发现实际 Makefile 位于根目录；胡博本次对固定提交获取原文件复核：Makefile 可读，src/Makefile 不存在。因此原 REPAIR.makefile_uri 及 findings.location.file 不能直接作为真实输入，需王硕和 A11 重新核对路径、行号与证据。王硕负责后续固定 MD 样本和来源标注，不能把当前样例直接登记为真实检测结果。
 
 ## Q05 创建响应、运行状态和失败响应
 
@@ -74,6 +74,6 @@ A11 查询响应的 findings 同时含 MISSING 与 REDUNDANT，Backlog 又建议
 
 需要确认：孙静怡、胡博、A11。
 
-沿用完整源码 SHA 和 configuration_id，增量基线提交/配置应与请求对应。build_environment_hash 目前有字段和语义，尚未约定算法及基线侧的比较依据。建议 E2 明确由谁提供、怎样交接；具体算法可以作为有负责人的 E3 待办，正式运行前完成。
+孙静怡提供 Ubuntu24.04/GCC13.3/Make4.3 实测候选，配置提议为 fzy-default-gcc13-make4.3；A11 原样例为 Ubuntu22.04/GCC10，须确认是否接受新环境。沿用完整源码 SHA 和 configuration_id，增量基线提交/配置应与请求对应。build_environment_hash 目前有字段和语义，尚未约定算法及基线侧的比较依据。建议 E2 明确由谁提供、怎样交接；具体算法可以作为有负责人的 E3 待办，正式运行前完成。
 
 输入 Schema 多处 `additionalProperties: false`，新增可选字段也可能被旧消费者拒绝。建议字段变动同步 Schema、样例、校验器和变更记录，不在双方确认前宣布兼容或发布新共享版本。

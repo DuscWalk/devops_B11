@@ -19,7 +19,8 @@
 | 胡博（Codex 辅助） | 审阅公共模型与交接问题，发现增量查询遗漏 configuration_id，准备单字段修正 | CONTRACT_REVIEW.md、proposals/、ADR.md | 提议待成员/A11 确认 |
 | 胡博（Codex 辅助） | 建立分类型输入检查、文件读取演示和 17 个回归检查，记录原件失败和提议通过 | validate.py、artifact_access.py、tests/、evidence/ | 本地验证完成；非端到端工具运行 |
 | 胡博（Codex 辅助） | 登记分工，准备三轮练习与沟通草稿 | Backlog.md、PAIRING.md、STATUS.md、AI_USAGE.md | 待胡博人工审阅并发起沟通 |
-| 孙静怡 | 待本人追加实际完成内容 | 待本人提交 | 不由本次准备代记完成 |
+| 孙静怡（成员对应关系由胡博说明） | DRAFT Q03/Q07 回复、请求/响应/5 个交接文件、固定 fzy 项目与手工 Docker 构建证据 | feat/draft 的 `65704cb66c1b84709569e6d5eca044838dff9722`、`d7bca1e7a6143e39f29164c9b43fde7824b0def5`；[审阅](feedback/draft-2026-09-21.md) | 已收到；接口待 A11 确认，镜像尚未交付 |
+| 胡博（Codex 辅助） | 复跑孙静怡样例，用已有读取器核对 5 文件，校验 13 份证据摘要，更新接口待办 | [审阅证据](evidence/draft-feedback-review-2026-09-21.json) | 本地复核完成；未重跑 Docker 或合并对方分支 |
 | 王硕 | 待本人追加实际完成内容 | 待本人提交 | 不由本次准备代记完成 |
 
 ## 来源与提交
@@ -28,4 +29,4 @@
 - B11 仓库：https://git.nju.edu.cn/devops_b11/devops-project-b11 。本轮基于 `5cacba9451863ebf7c794df9374276f88eff1fb4`，分支 `docs/e2-contract-alignment`。
 - 本轮准备提交：`4f88d13a126608854a5ba7ac062d169af4780e75`（`feat(e2): prepare B11 contract review and offline validation`），包含本次材料、代码和验证证据。本条记录在后续文档提交中回填，避免引用尚未产生的 SHA。
 - 提交身份使用 `duscwalk <241276007@smail.nju.edu.cn>`，本轮任务负责人对应胡博。没有改写他人的历史提交。
-- 远端推送、MR、成员审阅和配对沟通尚未发生；不编造相关链接或确认记录。
+- 2026-09-21 fetch 已确认准备分支 `e8bf6eee0acf00f86ba028ecf3c19399811992cd` 和孙静怡 `feat/draft` 在远端。孙静怡回复收到；A11 确认、王硕回复及三轮配对执行仍待记录。本轮审阅更新尚未推送，没有代发消息或创建 MR。

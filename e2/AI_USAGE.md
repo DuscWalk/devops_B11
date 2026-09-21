@@ -15,3 +15,10 @@
 - 验证：原 A11 42/42；原件分类型输入 7/8（退出 1）；待确认提议 8/8、17 个回归检查与 251 字节文件读取通过（退出 0）。详见 STATUS.md 与 evidence/。
 - 关联文件：reference/、proposals/、validate.py、artifact_access.py、tests/、CONTRACT_REVIEW.md、PAIRING.md 及过程文档。
 - 来源归属：A11 原样例、Schema 和脚本按原样保留，不登记为 B11 原创。待收到反馈后再追加人工采纳/修改理由、共享版本与真实提交/MR 链接。
+
+## 2026-09-21：查看孙静怡远程回复
+
+- 用户说明远程新分支是孙静怡的回复，要求查看；Codex 以 duscwalk fetch 后固定审阅 feat/draft 的 d7bca1e。
+- 在临时 worktree 复跑其样例校验，用既有读取器验证 5 文件，核对 13 份 Docker 证据摘要；没有重跑 Docker，没有将人工样例登记为真实自动任务。
+- 孙静怡已提出 GCC13 环境、验证命令、镜像格式与交付建议；公共约定仍待 A11 确认。发现真实 Makefile 路径与 A11 示例不符后，追加王硕/A11 待核对项。
+- 更新反馈审阅、任务状态、贡献及待发文字，保留来源提交链接。未修改/合并孙静怡分支，未推送或发送消息。实际验证见 evidence/draft-feedback-review-2026-09-21.json。
