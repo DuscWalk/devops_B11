@@ -1,0 +1,6 @@
+# 统一换行符：仓库内一律使用 LF，检出时按平台自动处理。
+# 原因：组员可能在 Linux 上运行 validate.py，避免 CRLF 混入造成 diff 噪音与脚本解析问题。
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary

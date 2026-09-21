@@ -1,0 +1,4 @@
+B11 E2 artifact access demonstration.
+This is a manually authored file for checking URI resolution and SHA-256.
+The job identifier is a fixture label, not a real service execution.
+No DRAFT build, dependency analysis, or MDFixer repair was performed.

@@ -1,0 +1,50 @@
+{
+  "scope": "Diagnostic probes against unchanged A11 reference 96f35cc; not agreed contract changes.",
+  "create_envelope_accepts_missing_incremental_baseline": true,
+  "b11_selected_input_check_rejects_missing_baseline": true,
+  "accepted_202_schema_allows_RUNNING": true,
+  "two_field_202_is_valid": false,
+  "two_field_202_errors": [
+    "'job_type' is a required property"
+  ],
+  "failure_examples_as_unified_Job": [
+    {
+      "job_type": "FULL_CHECK",
+      "status": "FAILED",
+      "valid": false,
+      "errors": [
+        "'schema_version' is a required property",
+        "'trace_id' is a required property",
+        "'execution' is a required property",
+        "'input' is a required property",
+        "'output' is a required property"
+      ]
+    },
+    {
+      "job_type": "INCREMENTAL_CHECK",
+      "status": "TIMED_OUT",
+      "valid": false,
+      "errors": [
+        "'schema_version' is a required property",
+        "'trace_id' is a required property",
+        "'execution' is a required property",
+        "'input' is a required property",
+        "'output' is a required property"
+      ]
+    },
+    {
+      "job_type": "INCREMENTAL_CHECK",
+      "status": "FAILED",
+      "valid": false,
+      "errors": [
+        "'schema_version' is a required property",
+        "'trace_id' is a required property",
+        "'execution' is a required property",
+        "'input' is a required property",
+        "'output' is a required property"
+      ]
+    }
+  ],
+  "artifact_payload_files_in_reference": [],
+  "note": "The archive contains JSON response examples and artifact URIs but none of their referenced payload files."
+}

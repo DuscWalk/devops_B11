@@ -1,0 +1,26 @@
+{
+  "origin_url": "https://git.nju.edu.cn/devops-group11/devops-group11",
+  "origin_commit": "96f35cc175d12f51f3f7f0915ba35a98d303fcb3",
+  "origin_directory": "e2",
+  "archive_name": "E2_A11_接口契约.zip",
+  "archive_sha256": "1fcc0ce7262c90876d7426235688bcbc0729e3826704e982a5daf1b6cf2ab86f",
+  "schema_version": "1.1.0",
+  "verified_on": "2026-09-21",
+  "verification": "All 13 archive files match the corresponding Git blobs in origin_directory at origin_commit.",
+  "status": "REFERENCE_ONLY_AWAITING_A11_B11_AGREEMENT",
+  "files": {
+    ".gitattributes": "654b452ab1c5ec98436ec2fa64109a397f53ef7fe83c710395bd71aacaa56b79",
+    "ADR.md": "7d2223ac3f47b9bb2262d842440630ba38d6f8d7c9c9fe7f2d07db51c3786ded",
+    "AI_USAGE.md": "efa81af8f19cf1437153d92e565559f785105ad6e6d6a8265a21dfb103634e59",
+    "Backlog.md": "ee45b8534f7ed26c41717ca009b87da3a69f97b6a48c292600773d9c6b47ea4c",
+    "CHANGELOG.md": "4d0f88f8f5812a47046966b185808bc0d332b2186937a4b1f7b17e95a79b8235",
+    "CONTRIBUTIONS.md": "8f15ee254659726996d22e209250c416053ab17f7897f0ca1d728d831e03e647",
+    "README.md": "9e40b67d9ada558a36a92d0c4320f2c6d46684f76c6108b93e367a488b3fe264",
+    "STATUS.md": "054a4b1d5492bb55d77b7abd79d46acb781d67992a4107073dfaadab3b647d62",
+    "contract-examples.json": "a91fe31e27f9113e6f2ccfa1b911e7429d910c26bb66182221103a03b7ab14bb",
+    "openapi.yaml": "e76aa95a522a37d5c992885285e8f75de7836b209b98c05bc0a6e8faa2b7d9cc",
+    "task.schema.json": "7b747351f6ec70ba7534456d0c45d10a4c1ac41ba9d69c0552f2e346978dad3c",
+    "validate.py": "7d0fdf7fc1e5cde76e8532988f62a34e2c53469436b5dc338d65e215019200dc",
+    "说明.md": "7444849834a4e2e30b928b765166caf49d514ffc2f119d050db565ef72b3dfbf"
+  }
+}

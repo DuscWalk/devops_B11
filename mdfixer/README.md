@@ -1,5 +1,7 @@
 # MDFixer
 
+负责人：王硕。E2 输入输出仍待本人及 A11 确认，审阅项见 [CONTRACT_REVIEW.md](../e2/CONTRACT_REVIEW.md) 的 Q04/Q05。
+
 负责修复缺失依赖（MISSING）。实现尚未开始。
 
 输入：对应版本的源码、MD 报告、Makefile、环境及构建/验证命令。

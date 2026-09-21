@@ -1,0 +1,158 @@
+openapi: 3.1.0
+info:
+  title: A11-B11 E2 Job API
+  version: 1.1.0
+  description: |
+    E2 阶段接口说明。四类耗时任务一律异步：创建端点返回 202 与服务端生成的 job_id，
+    消费者用 GET /v1/jobs/{job_id} 查询状态与产物引用。
+    注意：E2 只要求约定接口，不要求部署服务。
+servers:
+  - url: https://pair-a11-b11.local/v1
+    description: 约定用地址（E2 未部署，E3 起可替换为实际地址）
+
+paths:
+  /dockerfile-jobs:
+    post:
+      summary: 创建 DRAFT 任务（生成可构建环境）
+      operationId: createDraftJob
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./task.schema.json#/$defs/CreateJobRequest"
+      responses:
+        "202":
+          description: 已受理，返回服务端生成的 job_id
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/DraftResponse"
+        "400":
+          description: 请求不符合契约（code=VALIDATION_4001）
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/SystemError"
+
+  /full-check-jobs:
+    post:
+      summary: 创建 FULL_CHECK 任务（全量依赖检测）
+      operationId: createFullCheckJob
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./task.schema.json#/$defs/CreateJobRequest"
+      responses:
+        "202":
+          description: 已受理
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/DraftResponse"
+        "400":
+          description: 请求不符合契约
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/SystemError"
+
+  /incremental-check-jobs:
+    post:
+      summary: 创建 INCREMENTAL_CHECK 任务（跨提交增量检测）
+      description: |
+        必须提供 baseline（历史依赖图）与 build_environment_hash。
+        缺少 baseline 一律拒绝：没有基线图无法计算「新增/消除」，
+        静默降级为全量检测会掩盖正确性问题。
+      operationId: createIncrementalCheckJob
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./task.schema.json#/$defs/CreateJobRequest"
+      responses:
+        "202":
+          description: 已受理
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/DraftResponse"
+        "400":
+          description: 缺少 baseline / 环境哈希缺失 / 基线提交或配置与本次不一致
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/SystemError"
+
+  /repair-jobs:
+    post:
+      summary: 创建 REPAIR 任务（修复缺失依赖）
+      description: 仅消费 MISSING 类型发现；REDUNDANT 在 E2 阶段不被自动修复。
+      operationId: createRepairJob
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./task.schema.json#/$defs/CreateJobRequest"
+      responses:
+        "202":
+          description: 已受理
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/DraftResponse"
+        "400":
+          description: 请求不符合契约
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/SystemError"
+
+  /jobs/{job_id}:
+    get:
+      summary: 查询任务状态与产物引用
+      operationId: getJob
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: 创建任务时由服务端生成的编号
+      responses:
+        "200":
+          description: |
+            返回 Job 状态、结果与产物引用。
+            检出 MD/RD 时 status 为 SUCCEEDED（分析正常完成），发现写入 output.findings；
+            只有工具自身无法完成分析时才是 FAILED/TIMED_OUT 并携带 error。
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/Job"
+        "404":
+          description: job_id 不存在
+
+  /artifacts/{group}/{job_id}/{name}:
+    get:
+      summary: 下载产物（E3 备用；E2 阶段用共享目录映射）
+      description: |
+        URI 形式 artifact://<group>/<job_id>/<name> 与共享目录映射保持一致，
+        从共享目录切换到本端点不需要修改任何契约字段。
+      operationId: downloadArtifact
+      parameters:
+        - { name: group,  in: path, required: true, schema: { type: string } }
+        - { name: job_id, in: path, required: true, schema: { type: string } }
+        - { name: name,   in: path, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: 文件字节流，Content-Type 取该产物的 media_type
+        "404":
+          description: 产物不存在
+          content:
+            application/json:
+              schema:
+                $ref: "./task.schema.json#/$defs/SystemError"

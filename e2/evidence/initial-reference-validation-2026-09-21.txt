@@ -1,0 +1,142 @@
+Validation time: 2026-09-21T09:11:26.681664+08:00
+Command: .venv/bin/python e2/validate.py
+Python: 3.10.12
+jsonschema: 4.25.1
+Scope: local contract and file-access checks; no cross-group execution.
+
+PASS: 13 A11 reference files match the recorded SHA-256 values.
+
+[1] Original A11 validation (including Draft 2020-12 checks)
+E2 契约校验（A11 组）
+  契约：task.schema.json（1.1.0）    样例：contract-examples.json
+  必填规则来源：task.schema.json 的 $defs（本脚本不重复定义）
+==============================================================================
+
+【第一部分】契约检查（零依赖，随包可复算）
+  [PASS] 请求 · DRAFT
+  [PASS] 请求 · FULL_CHECK
+  [PASS] 请求 · INCREMENTAL_CHECK
+  [PASS] 请求 · REPAIR
+  [PASS] 响应 · accepted_202
+  [PASS] 响应 · query_full_check
+  [PASS] 响应 · query_incremental_check
+  [PASS] 响应 · query_draft
+  [PASS] 响应 · query_repair
+  [PASS] 系统错误 · 1 · ENV_3002
+  [PASS] 系统错误 · 2 · EXEC_4002
+  [PASS] 系统错误 · 3 · ANALYSIS_5001
+  [PASS] 非法样例 · unknown_job_type  （["job_type 非法：'ABC'（合法值：['DRAFT', 'FULL_CHECK', 'INCREMENTAL_CHECK', 'REPAIR']）"]）
+  [PASS] 非法样例 · missing_baseline  （['input.baseline 缺失（job_type=INCREMENTAL_CHECK 必填，规则来自 task.schema.json）']）
+  [PASS] 非法样例 · missing_build_environment_hash  （['input.build_environment_hash 缺失（job_type=INCREMENTAL_CHECK 必填，规则来自 task.schema.json）']）
+  [PASS] 非法样例 · baseline_configuration_mismatch  （['baseline.configuration_id (cc-MODE1) 与 input.configuration_id (cc-MODE0) 不一致：依赖图与构建配置强绑定，配置不同则结果不可比']）
+  [PASS] 非法样例 · unsupported_schema_version  （["schema_version 必须为 '1.1.0'，实际 '2.0.0'"]）
+  [PASS] 非法样例 · delta_in_full_check  （['output.delta 仅对 INCREMENTAL_CHECK 有意义，本响应 job_type=FULL_CHECK']）
+  —— 小计：18/18 项全部通过
+
+【第二部分】负向对照 · 篡改完整合法样例且只改一处，期望被拒绝（零依赖）
+  [PASS]  1. job_type 改为未定义值 ABC  （枚举外取值必须拒绝（课堂检查 02））
+  [PASS]  2. 删除 baseline  （缺基线无法计算变化（课堂检查 03））
+  [PASS]  3. 删除 build_environment_hash  （无法证明基线与本次同环境）
+  [PASS]  4. 删除 configuration_id  （无对照物时该规则会静默失效）
+  [PASS]  5. baseline.commit 与 base_commit 不一致  （历史图必须可追溯到 base commit）
+  [PASS]  6. baseline.configuration_id 与本次不一致  （依赖图与构建配置强绑定）
+  [PASS]  7. repository.commit 用 7 位短 SHA  （拒绝短 SHA）
+  [PASS]  8. 请求中携带 job_id  （job_id 必须由服务端生成）
+  [PASS]  9. 图引用不是 artifact://  （大产物必须走引用）
+  [PASS] 10. 图引用只有两段（缺 name）  （URI 必须三段式（ADR-002））
+  [PASS] 11. delta 出现在全量检测响应中  （全量检测没有基线概念）
+  [PASS] 12. delta 项缺 declared 标志  （无法区分合法变化与缺失依赖）
+  [PASS] 13. error 与 findings 共存  （检查 04：两种结果不得混在一条响应里）
+  [PASS] 14. 产物 uri 不是 artifact://  （产物必须走引用）
+  [PASS] 15. status=SUCCEEDED 却携带 error  （终态语义矛盾）
+  —— 小计：15/15 项全部通过
+
+【第三部分】jsonschema 标准 Schema 交叉校验（可选）
+  [PASS] 请求 DRAFT
+  [PASS] 请求 FULL_CHECK
+  [PASS] 请求 INCREMENTAL_CHECK
+  [PASS] 请求 REPAIR
+  [PASS] 响应 accepted_202
+  [PASS] 响应 query_full_check
+  [PASS] 响应 query_incremental_check
+  [PASS] 响应 query_draft
+  [PASS] 响应 query_repair
+  —— 小计：9/9 项全部通过
+
+==============================================================================
+检查 04：『检出缺失依赖』≠『工具执行失败』
+  · status=SUCCEEDED + output.findings → 分析正常完成，检出 MD/RD（允许 findings 为空）
+  · status=FAILED/TIMED_OUT + error.code → 工具没跑完（ENV_3002 / EXEC_4002 / ANALYSIS_5001）
+  · 二者不得同时出现，校验器对混合响应报错（见第二部分用例 13）。
+
+检查 05：findings 与 delta 必须正交
+  · findings 记录『错误状态』（MISSING/REDUNDANT + origin 沿袭/新增/已消除）
+  · delta   记录『依赖边变化』（baseline_commit + added/removed + declared）
+  · declared=true 的变化是【合法变化】，只在 delta 出现 —— 这是 delta 的独立价值
+  · delta 出现在非 INCREMENTAL_CHECK 响应中即报错（见第二部分用例 11）
+  · 注意：delta 是否已退化为『复述 findings』属语义问题，结构校验无法自动判定，由 ADR-006 约束
+
+检查 06：基线一致性（跨字段，JSON Schema 无法表达，由本脚本兜住）
+  · baseline.commit 必须等于 base_commit
+  · baseline.configuration_id 必须等于 input.configuration_id
+
+==============================================================================
+合计：42/42 项通过，全部通过
+  · 零依赖部分：18 + 15 = 33 项；jsonschema 可选部分：9 项
+
+[2] Select the input definition for each request and query
+PASS: request DRAFT
+PASS: request FULL_CHECK
+PASS: request INCREMENTAL_CHECK
+PASS: request REPAIR
+PASS: response query_full_check
+FAIL: 'configuration_id' is a required property
+
+Failed validating 'required' in schema:
+    {'type': 'object',
+     'additionalProperties': False,
+     'required': ['repository',
+                  'base_commit',
+                  'baseline',
+                  'build_environment_hash',
+                  'image',
+                  'configuration_id',
+                  'clean_build_command',
+                  'project_root'],
+     'description': '增量检测输入。待检提交由 repository.commit 给出（不另设 commit 字段，避免与 '
+                    'repository.commit 重复且可能不一致）。',
+     'properties': {'repository': {'$ref': '#/$defs/Repository'},
+                    'base_commit': {'$ref': '#/$defs/CommitSha',
+                                    'description': '基线提交（C0）。'},
+                    'baseline': {'$ref': '#/$defs/BaselineInfo'},
+                    'build_environment_hash': {'type': 'string',
+                                               'minLength': 1,
+                                               'description': '构建环境哈希，用于校验基线数据与本次检测是否在同一环境下产生。跨环境比对会误报。'},
+                    'image': {'type': 'string', 'minLength': 1},
+                    'configuration_id': {'type': 'string',
+                                         'minLength': 1,
+                                         'description': '本次检测所用的构建配置标识。必填：必须与 '
+                                                        'baseline.configuration_id '
+                                                        '相同，否则拒绝。缺少它就无法证明基线图与本次检测处于同一构建配置（见 '
+                                                        'ADR-007）。'},
+                    'clean_build_command': {'type': 'string',
+                                            'minLength': 1},
+                    'project_root': {'type': 'string', 'minLength': 1},
+                    'timeout_seconds': {'type': 'integer',
+                                        'minimum': 1,
+                                        'description': '任务超时（秒）。可选；缺省时由服务端默认值决定，实际生效值见响应 '
+                                                       'execution.timeout_seconds。'}}}
+
+On instance:
+    {'repository': {'url': 'https://github.com/jhawthorn/fzy',
+                    'commit': 'f0618935f2520000559bcfd8e72dbb9f316f3451'},
+     'base_commit': '28195b3a709995354b6c33cec9bb7c9f81532eb6',
+     'image': 'a11/fzy-build:ubuntu2204-gcc10-make4.3',
+     'clean_build_command': 'make clean && make',
+     'project_root': '/workspace/fzy',
+     'build_environment_hash': 'sha256:4f8a1c09b7d3e256a1f0c7b94d82e56a3c0f7b1d94a2e856d3c0b7e19a4d3f70',
+     'baseline': {'actual_graph_uri': 'artifact://a11/job-full01/actual.json',
+                  'commit': '28195b3a709995354b6c33cec9bb7c9f81532eb6',
+                  'configuration_id': 'cc-MODE0'}}
+
+Exit code: 1

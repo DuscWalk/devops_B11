@@ -2,7 +2,7 @@
 
 ## 分工
 
-DRAFT 与 MDFixer 各指定负责人；一名成员兼任 A11 接口联系人。具体姓名由组员在 `e2/CONTRIBUTIONS.md` 中填写。
+DRAFT 负责人孙静怡，MDFixer 负责人王硕，接口与联调负责人胡博。分工与实际贡献见 `e2/CONTRIBUTIONS.md`；技术提议须由相关成员与 A11 确认。
 
 ## 开发流程
 
