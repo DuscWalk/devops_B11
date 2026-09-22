@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+undefined#!/usr/bin/env python3
 """MDFixer — 修复缺失依赖（MISSING）。
 
 对应 A11-B11 E2 契约中的 REPAIR 任务类型。
