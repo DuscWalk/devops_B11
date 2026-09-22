@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1.0",
+  "job_type": "REPAIR",
+  "status": "SUCCEEDED",
+  "output": {
+    "patch_uri": "artifact://b11/job-repair-1700000000/fix.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "artifacts": [
+      {
+        "artifact_id": "job-repair-1700000000-patch",
+        "type": "PATCH",
+        "uri": "artifact://b11/job-repair-1700000000/fix.patch",
+        "media_type": "text/x-diff",
+        "producer_job_id": "job-repair-1700000000",
+        "commit": "0123456789abcdef0123456789abcdef01234567",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "artifact_id": "job-repair-1700000000-style",
+        "type": "STYLE_REPORT",
+        "uri": "artifact://b11/job-repair-1700000000/declaration_style.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-repair-1700000000",
+        "commit": "0123456789abcdef0123456789abcdef01234567"
+      },
+      {
+        "artifact_id": "job-repair-1700000000-test",
+        "type": "TEST_RESULT",
+        "uri": "artifact://b11/job-repair-1700000000/test_result.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-repair-1700000000",
+        "commit": "0123456789abcdef0123456789abcdef01234567"
+      }
+    ],
+    "summary": {
+      "candidates_total": 2,
+      "candidates_accepted": 2,
+      "candidates_rejected": 0,
+      "missing_fixed": 2,
+      "recheck_missing_remaining": 0
+    }
+  },
+  "error": null
+}
