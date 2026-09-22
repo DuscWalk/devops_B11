@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.1.0",
+  "job_type": "MD_REPORT",
+  "status": "SUCCEEDED",
+  "output": {
+    "findings": [
+      {
+        "type": "MISSING",
+        "target": "app",
+        "dependency": "utils.o",
+        "commit": "0123456789abcdef0123456789abcdef01234567",
+        "detector": "make-dep-analyzer",
+        "location": {
+          "file": "Makefile",
+          "line": 10
+        },
+        "evidence": {
+          "source": "include\\"utils.h\\"",
+          "build_error": "undefined reference to \`util_func\`"
+        },
+        "suggested_fix": "add utils.o to app prerequisites"
+      },
+      {
+        "type": "MISSING",
+        "target": "app",
+        "dependency": "config.o",
+        "commit": "0123456789abcdef0123456789abcdef01234567",
+        "detector": "make-dep-analyzer",
+        "location": {
+          "file": "Makefile",
+          "line": 10
+        },
+        "evidence": {
+          "source": "include\\"config.h\\"",
+          "build_error": "undefined reference to \`load_config\`"
+        },
+        "suggested_fix": "add config.o to app prerequisites"
+      },
+      {
+        "type": "REDUNDANT",
+        "target": "app",
+        "dependency": "legacy.o",
+        "commit": "0123456789abcdef0123456789abcdef01234567",
+        "detector": "make-dep-analyzer",
+        "location": {
+          "file": "Makefile",
+          "line": 10
+        },
+        "evidence": {
+          "source": "no include of legacy.h"
+        },
+        "suggested_fix": "remove legacy.o from app prerequisites"
+      }
+    ]
+  }
+}
