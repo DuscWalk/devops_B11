@@ -96,4 +96,24 @@ def generate_patch_for_missing(makefile_content, rules, missing):
     patched = "
 ".join(lines)
     desc = f"add missing dependency {dep} to {missing.target}"
-    re
+    return patched, desc
+
+
+def make_unified_diff(original, patched, filename):
+    orig_lines = original.splitlines(keepends=True)
+    patched_lines = patched.splitlines(keepends=True)
+    diff = difflib.unified_diff(
+        orig_lines,
+        patched_lines,
+        fromfile=f"a/{filename}",
+        tofile=f"b/{filename}",
+        lineterm="",
+    )
+    return "".join(diff)
+
+
+def run_command(cmd, cwd=None, timeout=1200):
+    try:
+        proc = subprocess.run(
+            cmd, shell=True, cwd=cwd,
+ 
