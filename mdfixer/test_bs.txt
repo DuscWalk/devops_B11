@@ -1,1 +1,1 @@
-test  backslash
+re.match(r"^[A-Za-z_]w*s*[:?+]?=", line)
