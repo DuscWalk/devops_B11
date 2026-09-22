@@ -139,4 +139,5 @@ def generate_patch_for_missing(makefile_content, rules, missing):
     return patched, f"为 {missing.target} 补充缺失依赖 {missing.dependency}"
 def make_unified_diff(original, patched, filename):
     import difflib
-    diff = difflib.unified_diff(original.splitlines(keepends=True), patched
+    diff = difflib.unified_diff(original.splitlines(keepends=True), patched.splitlines(keepends=True), fromfile=f"a/{filename}", tofile=f"b/{filename}", lineterm="")
+    retur
