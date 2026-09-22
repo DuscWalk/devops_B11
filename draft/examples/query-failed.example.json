@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.1.0",
+  "job_id": "job-draft-example",
+  "trace_id": "trace-b11-draft-example",
+  "job_type": "DRAFT",
+  "status": "FAILED",
+  "execution": {
+    "timeout_seconds": 1800,
+    "idempotency_key": "b11|fzy|28195b3|draft-contract-example"
+  },
+  "input": {
+    "repository": {
+      "url": "https://github.com/jhawthorn/fzy",
+      "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+    },
+    "build": {
+      "command": "make clean && make",
+      "context_files": [
+        "README.md"
+      ]
+    },
+    "verify_command": "make check && ./fzy --help",
+    "max_iterations": 5,
+    "timeout_seconds": 1800
+  },
+  "output": {},
+  "error": {
+    "code": "ENV_3002",
+    "message": "EXAMPLE ONLY: container image build failed after configured attempts."
+  }
+}

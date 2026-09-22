@@ -1,0 +1,19 @@
+{
+  "kind": "MANUAL_DOCKER_BASELINE",
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "b11/fzy:28195b3-baseline",
+    "sh",
+    "-lc",
+    "test \"$(git rev-parse HEAD)\" = \"28195b3a709995354b6c33cec9bb7c9f81532eb6\" && make clean && make && make check && ./fzy --help"
+  ],
+  "started_at": "2026-09-21T08:23:36.101408+00:00",
+  "finished_at": "2026-09-21T08:23:39.160876+00:00",
+  "exit_code": 0,
+  "network": "none",
+  "draft_automated_iterations_executed": 0
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PROPOSAL_NOT_AGREED",
+  "reference_branch": "docs/e2-contract-alignment",
+  "reference_commit": "e8bf6eee0acf00f86ba028ecf3c19399811992cd",
+  "schema_path": "e2/reference/a11/task.schema.json",
+  "schema_sha256": "7b747351f6ec70ba7534456d0c45d10a4c1ac41ba9d69c0552f2e346978dad3c",
+  "a11_commit": "96f35cc175d12f51f3f7f0915ba35a98d303fcb3"
+}

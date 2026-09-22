@@ -1,0 +1,15 @@
+{
+  "build-final-result.json": "dffb0f3cb50ce73a8cfd04718f1cf0ed40a4b195a86244a7173c94691c5262c3",
+  "build-final.txt": "9985b5725c3b1e2aff2697dec5aad8eda3e0baeb6bc867f30a70c4b1a99f2257",
+  "build-proxy-result.json": "4c19e437612e8d24a971a99e75db431b72dfe3bc6ba60118cc451fc78656a737",
+  "build-proxy.txt": "94823c09c1cb5e2937708942f09faada11e5c310d83258d6c3ff587656358ab3",
+  "build-result.json": "3fb88b57165f74abe5b8c06a390ce4041095296f21c2f0b34d80881394c5fae7",
+  "build.txt": "9c10225b28a6f74bc5c3d865aa7126f6ae733c995a39d2e78b03a680ba094b04",
+  "contract-validation.txt": "d0ced4217742c20aa7c5c47571b78fe39e7d29fbf88477fb54eb895f7c05d545",
+  "environment.json": "dcef9c1242aca4e7f62c2f32dbc484525409ab1f5b7224f96f739df7b60001b6",
+  "image_ref.json": "5bdc69a634a37e82de73ac7a2e7ca8e6cffeffa7c39f84fee79d56df629f2815",
+  "packages.txt": "508627a61d4cf55d73851959de47fadeddb568728ef887e05094ff626ca9b9e8",
+  "toolchain.txt": "6b3d45423e9e0b78fc38b38d9cb2c1ab9b282650ce2ec97f6c3ee20095987196",
+  "verify-result.json": "5c5aa7e2f7133ac113504e72678dd8e419daa34d5c67197c138926e5a19954ca",
+  "verify.txt": "0765f9815663aee8043eda362f59a0316c89ed30f50a4d52de1efc55dc146e5e"
+}

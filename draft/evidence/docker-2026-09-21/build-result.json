@@ -1,0 +1,17 @@
+{
+  "command": [
+    "docker",
+    "build",
+    "--progress=plain",
+    "--platform",
+    "linux/amd64",
+    "-t",
+    "b11/fzy:28195b3-baseline",
+    "-f",
+    "draft/Dockerfile",
+    "draft"
+  ],
+  "started_at": "2026-09-21T08:15:05.919296+00:00",
+  "finished_at": "2026-09-21T08:15:32.993688+00:00",
+  "exit_code": 1
+}

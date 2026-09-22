@@ -1,0 +1,36 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 DONE 0.0s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 684B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 2.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/ubuntu:24.04@sha256:008173c23f95b170204355c12626cb5a965d779a7e1283b09e9cffbb1bf33ca3
+#4 DONE 0.0s
+
+#5 [2/5] RUN apt-get update     && apt-get install -y --no-install-recommends build-essential git ca-certificates     && rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [3/5] RUN git clone https://github.com/jhawthorn/fzy.git /workspace/fzy     && cd /workspace/fzy     && git checkout --detach 28195b3a709995354b6c33cec9bb7c9f81532eb6     && test "$(git rev-parse HEAD)" = "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+#6 CACHED
+
+#7 [4/5] WORKDIR /workspace/fzy
+#7 CACHED
+
+#8 [5/5] RUN make clean && make && make check && ./fzy --help
+#8 CACHED
+
+#9 exporting to image
+#9 exporting layers done
+#9 writing image sha256:a9fe27db5596bd8ffe73541c5ba4c808020c1c58c28dab74017c884a5a8863b6 done
+#9 naming to docker.io/b11/fzy:28195b3-baseline done
+#9 DONE 0.0s
