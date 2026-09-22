@@ -1,23 +1,15 @@
-tched_lines,
-        fromfile=f"a/{filename}",
-        tofile=f"b/{filename}",
-        lineterm="",
-    )
-    return "".join(diff)
+
+        )
+        return proc.returncode, proc.stdout, proc.stderr
+    except subprocess.TimeoutExpired:
+        return -1, "", "TIMEOUT"
+    except Exception as e:
+        return -1, "", str(e)
 
 
-@dataclass
-class CandidateResult:
-    accepted: bool
-    reason: str = ""
-    patch: str = ""
-    description: str = ""
-    build_exit_code: int = -1
-    verify_exit_code: int = -1
-
-
-def run_command(cmd, cwd=None, timeout=1200):
+def verify_candidate(patch, makefile_path, build_cmd, verify_cmd, workdir):
+    original = makefile_path.read_text(encoding="utf-8")
     try:
-        proc = subprocess.run(
-            cmd, shell=True, cwd=cwd,
-            capture_output=True, text=True, timeout=timeout,
+        makefile_path.write_text(patch, encoding="utf-8")
+        build_rc, build_out, build_err = run_command(build_cmd, cwd=str(workdir))
+        if build_rc 
