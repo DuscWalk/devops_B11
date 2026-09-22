@@ -341,4 +341,8 @@ class CandidateResult:
 def run_command(cmd: str, cwd: str | None = None, timeout: int = 1200) -> tuple[int, str, str]:
     """运行命令，返回 (exit_code, stdout, stderr)。"""
     try:
- 
+        proc = subprocess.run(
+            cmd,
+            shell=True,
+            cwd=cwd,
+        
