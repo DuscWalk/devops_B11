@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.1.0",
+  "job_type": "REPAIR",
+  "input": {
+    "repository": {
+      "url": "https://git.nju.edu.cn/devops_b11/devops-project-b11",
+      "commit": "0123456789abcdef0123456789abcdef01234567"
+    },
+    "md_report_uri": "artifact://a11/job-md-001/md_report.json",
+    "makefile_uri": "repo://0123456789abcdef0123456789abcdef01234567/Makefile",
+    "image": "registry.nju.edu.cn/devops/builder:latest",
+    "build": {
+      "command": "make all"
+    },
+    "verify_command": "make test",
+    "max_iterations": 1,
+    "timeout_seconds": 1200
+  }
+}
