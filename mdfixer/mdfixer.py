@@ -306,4 +306,24 @@ def generate_patch_for_missing(
 def make_unified_diff(original: str, patched: str, filename: str) -> str:
     """生成统一 diff 格式的补丁。"""
     orig_lines = original.splitlines(keepends=True)
- 
+    patched_lines = patched.splitlines(keepends=True)
+
+    diff = difflib.unified_diff(
+        orig_lines,
+        patched_lines,
+        fromfile=f"a/{filename}",
+        tofile=f"b/{filename}",
+        lineterm="",
+    )
+    return "".join(diff)
+
+
+# ---------------------------------------------------------------------------
+# 候选验证（build + verify）
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class CandidateResult:
+    accepted: bool
+    reason: str 
