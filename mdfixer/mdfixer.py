@@ -210,4 +210,64 @@ def parse_makefile(content: str) -> list[MakefileRule]:
                 continue
             target_part = line[:colon_idx].strip()
             prereq_part = line[colon_idx + 1:].strip()
-         
+            # 处理续行
+            while prereq_part.endswith("\"):
+                prereq_part = prereq_part[:-1].rstrip()
+                i += 1
+                if i < len(lines):
+                    prereq_part += " " + lines[i].strip()
+            prerequisites = prereq_part.split() if prereq_part else []
+            recipe: list[str] = []
+            rule_line = i + 1  # 1-based
+            i += 1
+            # 收集 recipe（以 tab 开头的行）
+            while i < len(lines) and (lines[i].startswith("	") or lines[i].strip() == ""):
+                if lines[i].startswith("	"):
+                    recipe.append(lines[i])
+                i += 1
+            rules.append(MakefileRule(
+                target=target_part,
+                prerequisites=prerequisites,
+                recipe=recipe,
+                line_no=rule_line,
+            ))
+        else:
+            i += 1
+    return rules
+
+def detect_declaration_style(content: str, rules: list[MakefileRule]) -> dict:
+    """推断 Makefile 的声明风格，用于生成与现有风格一致的补丁。"""
+    style = {
+        "uses_tab_recipe": any(r.recipe for r in rules),
+        "prereq_separator": " ",  # 默认空格分隔
+        "has_continuation": "\" in content,
+        "variable_patterns": re.findall(r"$(([A-Za-z_][A-Za-z0-9_]*))", content),
+    }
+    return style
+
+
+# ---------------------------------------------------------------------------
+# 补丁生成
+# ---------------------------------------------------------------------------
+
+
+def find_rule_for_target(rules: list[MakefileRule], target: str) -> MakefileRule | None:
+    """找到目标对应的规则。支持多目标规则（空格分隔的 target 列表）。"""
+    for rule in rules:
+        targets = rule.target.split()
+        if target in targets:
+            return rule
+    return None
+
+
+def generate_patch_for_missing(
+    makefile_content: str,
+    rules: list[MakefileRule],
+    missing: Finding,
+) -> tuple[str, str] | None:
+    """为单个 MISSING 发现生成补丁内容和说明。
+
+    返回 (patched_content, description) 或 None（无法生成）。
+    """
+    rule = find_rule_for_target(rules, missing.target)
+    if
