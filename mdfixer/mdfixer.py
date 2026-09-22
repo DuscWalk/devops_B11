@@ -18,312 +18,257 @@
 from __future__ import annotations
 
 import argparse
-import difflib
 import hashlib
 import json
-import os
-import re
-import subprocess
 import sys
-from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
-SCHEMA_VERSION = "1.1.0"
-ARTIFACT_ROOT = os.environ.get("ARTIFACT_ROOT", "")
+from mdfixer_core import (
+    SCHEMA_VERSION,
+    BuildSpec,
+    CandidateResult,
+    Finding,
+    MakefileRule,
+    RepairInput,
+    RepairResult,
+    Repository,
+    detect_declaration_style,
+    filter_missing,
+    generate_patch_for_missing,
+    load_md_report,
+    make_unified_diff,
+    parse_makefile,
+    parse_makefile_uri,
+    verify_candidate,
+)
 
 
 # ---------------------------------------------------------------------------
-# 数据模型（与 task.schema.json 的 RepairInput / Output 对齐）
+# 主流程
 # ---------------------------------------------------------------------------
 
 
-@dataclass
-class Repository:
-    url: str
-    commit: str
+def sha256_hex(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
 
 
-@dataclass
-class BuildSpec:
-    command: str
+def build_summary(total: int, accepted: int, fixed: int) -> dict:
+    """构造 REPAIR 结果的 summary 字段。"""
+    return {
+        "candidates_total": total,
+        "candidates_accepted": accepted,
+        "candidates_rejected": total - accepted,
+        "missing_fixed": fixed,
+        "recheck_missing_remaining": total - fixed,
+    }
 
 
-@dataclass
-class RepairInput:
-    repository: Repository
-    md_report_uri: str
-    makefile_uri: str
-    image: str
-    build: BuildSpec
-    verify_command: str
-    max_iterations: int = 1
-    timeout_seconds: int = 1200
+def run_repair(rep_input: RepairInput, out_dir: Path) -> RepairResult:
+    """执行 REPAIR 任务，返回 RepairResult。"""
+    result = RepairResult()
 
+    # 1. 读取 MD 报告并提取 MISSING
+    try:
+        findings = load_md_report(rep_input.md_report_uri)
+    except Exception as e:
+        result.error = {
+            "code": "ANALYSIS_5001",
+            "message": "读取 MD 报告失败",
+            "detail": str(e),
+        }
+        return result
 
-@dataclass
-class Finding:
-    type: str  # "MISSING" | "REDUNDANT"
-    target: str
-    dependency: str
-    commit: str
-    detector: str
-    location: dict
-    evidence: dict
-    suggested_fix: str = ""
+    missing_findings = filter_missing(findings)
+    if not missing_findings:
+        result.summary = build_summary(total=0, accepted=0, fixed=0)
+        return result
 
+    # 2. 解析 Makefile
+    makefile_info = parse_makefile_uri(rep_input.makefile_uri)
+    if makefile_info is None:
+        result.error = {
+            "code": "VALIDATION_4001",
+            "message": "makefile_uri 格式不正确",
+            "detail": f"期望 repo://<sha>/<path>，实际: {rep_input.makefile_uri}",
+        }
+        return result
 
-@dataclass
-class RepairResult:
-    patch_uri: str = ""
-    patch_sha256: str = ""
-    artifacts: list[dict] = field(default_factory=list)
-    summary: dict = field(default_factory=dict)
-    error: dict | None = None
+    # 定位 Makefile：优先从仓库检出，否则按 makefile_uri 的 path 在工作目录查找
+    makefile_path = out_dir / "workspace" / makefile_info[1]
+    if not makefile_path.exists():
+        # E2 降级：直接用 uri 的路径
+        makefile_path = Path(makefile_info[1])
+    if not makefile_path.exists():
+        result.error = {
+            "code": "ENV_3002",
+            "message": "找不到 Makefile",
+            "detail": f"makefile_uri={rep_input.makefile_uri}",
+        }
+        return result
+
+    original_content = makefile_path.read_text(encoding="utf-8")
+    rules = parse_makefile(original_content)
+    style = detect_declaration_style(original_content, rules)
+
+    # 3. 生成候选补丁并逐一验证
+    candidates: list[CandidateResult] = []
+    current_patched = original_content
+    fixed_count = 0
+
+    for finding in missing_findings:
+        gen = generate_patch_for_missing(current_patched, rules, finding)
+        if gen is None:
+            candidates.append(CandidateResult(
+                accepted=False,
+                reason=f"无法为 target={finding.target} 生成补丁（目标不在 Makefile 中或已声明）",
+            ))
+            continue
+
+        patched_content, desc = gen
+        diff = make_unified_diff(original_content, patched_content, makefile_info[1])
+
+        cand = verify_candidate(
+            patch=patched_content,
+            makefile_path=makefile_path,
+            build_cmd=rep_input.build.command,
+            verify_cmd=rep_input.verify_command,
+            workdir=makefile_path.parent,
+        )
+        cand.patch = diff
+        cand.description = desc
+        if cand.accepted:
+            current_patched = patched_content
+            fixed_count += 1
+        candidates.append(cand)
+
+    accepted = [c for c in candidates if c.accepted]
+    rejected = [c for c in candidates if not c.accepted]
+
+    # 4. 写出产物
+    out_dir.mkdir(parents=True, exist_ok=True)
+    job_id = f"job-repair-{int(datetime.now().timestamp())}"
+
+    # PATCH 产物
+    final_patch = make_unified_diff(original_content, current_patched, makefile_info[1])
+    patch_bytes = final_patch.encode("utf-8")
+    patch_sha = sha256_hex(patch_bytes)
+    patch_path = out_dir / "fix.patch"
+    patch_path.write_bytes(patch_bytes)
+
+    patch_uri = f"artifact://b11/{job_id}/fix.patch"
+    result.patch_uri = patch_uri
+    result.patch_sha256 = patch_sha
+
+    # STYLE_REPORT 产物
+    style_report = {
+        "declaration_style": style,
+        "targets_found": [r.target for r in rules],
+        "missing_fixed": fixed_count,
+        "missing_total": len(missing_findings),
+        "rejected_reasons": [{"target": c.description, "reason": c.reason} for c in rejected],
+    }
+    style_path = out_dir / "declaration_style.json"
+    style_path.write_text(json.dumps(style_report, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # TEST_RESULT 产物
+    test_result = {
+        "candidates_total": len(candidates),
+        "candidates_accepted": len(accepted),
+        "candidates_rejected": len(rejected),
+        "accepted_details": [
+            {"description": c.description, "build_exit_code": c.build_exit_code, "verify_exit_code": c.verify_exit_code}
+            for c in accepted
+        ],
+        "rejected_details": [
+            {"description": c.description, "reason": c.reason}
+            for c in rejected
+        ],
+    }
+    test_path = out_dir / "test_result.json"
+    test_path.write_text(json.dumps(test_result, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    result.artifacts = [
+        {
+            "artifact_id": f"{job_id}-patch",
+            "type": "PATCH",
+            "uri": patch_uri,
+            "media_type": "text/x-diff",
+            "producer_job_id": job_id,
+            "commit": rep_input.repository.commit,
+            "sha256": patch_sha,
+        },
+        {
+            "artifact_id": f"{job_id}-style",
+            "type": "STYLE_REPORT",
+            "uri": f"artifact://b11/{job_id}/declaration_style.json",
+            "media_type": "application/json",
+            "producer_job_id": job_id,
+            "commit": rep_input.repository.commit,
+        },
+        {
+            "artifact_id": f"{job_id}-test",
+            "type": "TEST_RESULT",
+            "uri": f"artifact://b11/{job_id}/test_result.json",
+            "media_type": "application/json",
+            "producer_job_id": job_id,
+            "commit": rep_input.repository.commit,
+        },
+    ]
+    result.summary = build_summary(
+        total=len(candidates),
+        accepted=len(accepted),
+        fixed=fixed_count,
+    )
+    return result
 
 
 # ---------------------------------------------------------------------------
-# 产物 URI 解析（E2 方案 A：共享目录映射）
+# CLI 入口
 # ---------------------------------------------------------------------------
 
 
-def parse_artifact_uri(uri: str) -> tuple[str, str, str] | None:
-    """解析 artifact://<group>/<job_id>/<name>，返回 (group, job_id, name)。"""
-    m = re.match(r"^artifact://([A-Za-z0-9._-]+)/([A-Za-z0-9._-]+)/([A-Za-z0-9._/-]+)$", uri)
-    if not m:
-        return None
-    return m.group(1), m.group(2), m.group(3)
-
-
-def resolve_artifact_path(uri: str) -> Path | None:
-    """把 artifact:// URI 映射到本地共享目录 $ARTIFACT_ROOT/<group>/<job_id>/<name>。"""
-    parsed = parse_artifact_uri(uri)
-    if parsed is None:
-        return None
-    group, job_id, name = parsed
-    if not ARTIFACT_ROOT:
-        return None
-    return Path(ARTIFACT_ROOT) / group / job_id / name
-
-
-def parse_makefile_uri(uri: str) -> tuple[str, str] | None:
-    """解析 repo://<sha>/<path>，返回 (sha, path)。"""
-    m = re.match(r"^repo://([0-9a-f]{40})/(.+)$", uri)
-    if not m:
-        return None
-    return m.group(1), m.group(2)
-
-
-# ---------------------------------------------------------------------------
-# MD 报告读取与 MISSING 提取
-# ---------------------------------------------------------------------------
-
-
-def load_md_report(md_report_uri: str) -> list[Finding]:
-    """读取 MD 报告（ERROR_REPORT），返回 findings 列表。
-
-    报告可能是完整 Job 响应（含 output.findings），也可能是裸 findings 数组。
-    """
-    path = resolve_artifact_path(md_report_uri)
-    if path is None or not path.exists():
-        # E2 阶段允许直接传本地文件路径作为降级
-        p = Path(md_report_uri)
-        if p.exists():
-            path = p
-        else:
-            raise FileNotFoundError(f"无法解析 md_report_uri: {md_report_uri}")
-
+def load_request(path: str) -> RepairInput:
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
-
-    findings_raw = data
-    if isinstance(data, dict):
-        # 可能是 Job 响应或裸 ERROR_REPORT
-        if "output" in data and isinstance(data["output"], dict):
-            findings_raw = data["output"].get("findings", [])
-        elif "findings" in data:
-            findings_raw = data["findings"]
-        else:
-            findings_raw = []
-
-    findings: list[Finding] = []
-    for item in findings_raw:
-        findings.append(Finding(
-            type=item.get("type", ""),
-            target=item.get("target", ""),
-            dependency=item.get("dependency", ""),
-            commit=item.get("commit", ""),
-            detector=item.get("detector", ""),
-            location=item.get("location", {}),
-            evidence=item.get("evidence", {}),
-            suggested_fix=item.get("suggested_fix", ""),
-        ))
-    return findings
-
-
-def filter_missing(findings: list[Finding]) -> list[Finding]:
-    """只保留 MISSING 类型发现；REDUNDANT 不进入修复流程（ADR-004）。"""
-    return [f for f in findings if f.type == "MISSING"]
-
-
-# ---------------------------------------------------------------------------
-# Makefile 解析与声明风格推断
-# ---------------------------------------------------------------------------
-
-
-@dataclass
-class MakefileRule:
-    target: str
-    prerequisites: list[str]
-    recipe: list[str]
-    line_no: int  # 1-based
-
-
-def parse_makefile(content: str) -> list[MakefileRule]:
-    """解析 Makefile，提取所有规则（target: prerequisites）。
-
-    支持续行符（行尾反斜杠）和制表符开头的 recipe 行。
-    """
-    rules: list[MakefileRule] = []
-    lines = content.split("\n")
-
-    i = 0
-    while i < len(lines):
-        line = lines[i]
-        # 跳过空行和注释
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
-            i += 1
-            continue
-        # 跳过变量赋值（包含 = 或 := 或 ?= 或 += 且不含冒号规则）
-        if re.match(r"^[A-Za-z_][A-Za-z0-9_]*\s*[:?+]?=", line) and ":" not in line.split("=", 1)[0]:
-            i += 1
-            continue
-        # 规则行：包含冒号且不是 recipe（不以 tab 开头）
-        if not line.startswith("\t") and ":" in line:
-            colon_idx = line.index(":")
-            # 避免匹配 := 赋值
-            if colon_idx + 1 < len(line) and line[colon_idx + 1] == "=":
-                i += 1
-                continue
-            target_part = line[:colon_idx].strip()
-            prereq_part = line[colon_idx + 1:].strip()
-            # 处理续行
-            while prereq_part.endswith("\\"):
-                prereq_part = prereq_part[:-1].rstrip()
-                i += 1
-                if i < len(lines):
-                    prereq_part += " " + lines[i].strip()
-            prerequisites = prereq_part.split() if prereq_part else []
-            recipe: list[str] = []
-            rule_line = i + 1  # 1-based
-            i += 1
-            # 收集 recipe（以 tab 开头的行）
-            while i < len(lines) and (lines[i].startswith("\t") or lines[i].strip() == ""):
-                if lines[i].startswith("\t"):
-                    recipe.append(lines[i])
-                i += 1
-            rules.append(MakefileRule(
-                target=target_part,
-                prerequisites=prerequisites,
-                recipe=recipe,
-                line_no=rule_line,
-            ))
-        else:
-            i += 1
-    return rules
-
-
-def detect_declaration_style(content: str, rules: list[MakefileRule]) -> dict:
-    """推断 Makefile 的声明风格，用于生成与现有风格一致的补丁。"""
-    style = {
-        "uses_tab_recipe": any(r.recipe for r in rules),
-        "prereq_separator": " ",  # 默认空格分隔
-        "has_continuation": "\\\\" in content,
-        "variable_patterns": re.findall(r"\$\(([A-Za-z_][A-Za-z0-9_]*)\)", content),
-    }
-    return style
-
-
-# ---------------------------------------------------------------------------
-# 补丁生成
-# ---------------------------------------------------------------------------
-
-
-def find_rule_for_target(rules: list[MakefileRule], target: str) -> MakefileRule | None:
-    """找到目标对应的规则。支持多目标规则（空格分隔的 target 列表）。"""
-    for rule in rules:
-        targets = rule.target.split()
-        if target in targets:
-            return rule
-    return None
-
-
-def generate_patch_for_missing(
-    makefile_content: str,
-    rules: list[MakefileRule],
-    missing: Finding,
-) -> tuple[str, str] | None:
-    """为单个 MISSING 发现生成补丁内容和说明。
-
-    返回 (patched_content, description) 或 None（无法生成）。
-    """
-    rule = find_rule_for_target(rules, missing.target)
-    if rule is None:
-        # 目标不存在于 Makefile，无法直接修复
-        return None
-
-    dep = missing.dependency
-    if dep in rule.prerequisites:
-        # 已声明，无需修复
-        return None
-
-    lines = makefile_content.split("\n")
-    rule_idx = rule.line_no - 1  # 0-based
-
-    # 找到规则行（可能跨多行续行）
-    line = lines[rule_idx]
-    colon_idx = line.index(":")
-    target_part = line[:colon_idx]
-    prereq_part = line[colon_idx + 1:]
-
-    # 生成新的依赖行
-    new_prereq = prereq_part.rstrip()
-    if new_prereq and not new_prereq.endswith("\\"):
-        new_prereq = new_prereq + " " + dep
-    elif new_prereq.endswith("\\"):
-        new_prereq = new_prereq + "\n\t" + dep + " \\"
-    else:
-        new_prereq = " " + dep
-
-    lines[rule_idx] = target_part + ":" + new_prereq
-    patched = "\n".join(lines)
-
-    desc = f"为 {missing.target} 补充缺失依赖 {missing.dependency}"
-    return patched, desc
-
-
-def make_unified_diff(original: str, patched: str, filename: str) -> str:
-    """生成统一 diff 格式的补丁。"""
-    orig_lines = original.splitlines(keepends=True)
-    patched_lines = patched.splitlines(keepends=True)
-
-    diff = difflib.unified_diff(
-        orig_lines,
-        patched_lines,
-        fromfile=f"a/{filename}",
-        tofile=f"b/{filename}",
-        lineterm="",
+    inp = data["input"]
+    return RepairInput(
+        repository=Repository(url=inp["repository"]["url"], commit=inp["repository"]["commit"]),
+        md_report_uri=inp["md_report_uri"],
+        makefile_uri=inp["makefile_uri"],
+        image=inp["image"],
+        build=BuildSpec(command=inp["build"]["command"]),
+        verify_command=inp["verify_command"],
+        max_iterations=inp.get("max_iterations", 1),
+        timeout_seconds=inp.get("timeout_seconds", 1200),
     )
-    return "".join(diff)
 
 
-# ---------------------------------------------------------------------------
-# 候选验证（build + verify）
-# ---------------------------------------------------------------------------
+def main() -> int:
+    parser = argparse.ArgumentParser(description="MDFixer — 修复缺失依赖（MISSING）")
+    parser.add_argument("--request", required=True, help="REPAIR 请求 JSON 文件路径")
+    parser.add_argument("--out-dir", default="out", help="输出目录")
+    args = parser.parse_args()
+
+    rep_input = load_request(args.request)
+    out_dir = Path(args.out_dir)
+    result = run_repair(rep_input, out_dir)
+
+    output = {
+        "schema_version": SCHEMA_VERSION,
+        "job_type": "REPAIR",
+        "status": "SUCCEEDED" if result.error is None else "FAILED",
+        "output": {
+            "patch_uri": result.patch_uri,
+            "patch_sha256": result.patch_sha256,
+            "artifacts": result.artifacts,
+            "summary": result.summary,
+        },
+        "error": result.error,
+    }
+    print(json.dumps(output, ensure_ascii=False, indent=2))
+    return 0 if result.error is None else 1
 
 
-@dataclass
-class CandidateResult:
-    accepted: bool
-    reason: str 
+if __name__ == "__main__":
+    sys.exit(main())
