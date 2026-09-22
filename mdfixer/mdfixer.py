@@ -180,3 +180,34 @@ class MakefileRule:
     line_no: int  # 1-based
 
 
+def parse_makefile(content: str) -> list[MakefileRule]:
+    """解析 Makefile，提取所有规则（target: prerequisites）。
+
+    支持续行符（行尾反斜杠）和制表符开头的 recipe 行。
+    """
+    rules: list[MakefileRule] = []
+    lines = content.split("
+")
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        # 跳过空行和注释
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            i += 1
+            continue
+        # 跳过变量赋值（包含 = 或 := 或 ?= 或 += 且不含冒号规则）
+        if re.match(r"^[A-Za-z_][A-Za-z0-9_]*s*[:?+]?=", line) and ":" not in line.split("=", 1)[0]:
+            i += 1
+            continue
+        # 规则行：包含冒号且不是 recipe（不以 tab 开头）
+        if not line.startswith("	") and ":" in line:
+            colon_idx = line.index(":")
+            # 避免匹配 := 赋值
+            if colon_idx + 1 < len(line) and line[colon_idx + 1] == "=":
+                i += 1
+                continue
+            target_part = line[:colon_idx].strip()
+            prereq_part = line[colon_idx + 1:].strip()
+         
