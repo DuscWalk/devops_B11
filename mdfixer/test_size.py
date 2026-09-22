@@ -140,4 +140,13 @@ def generate_patch_for_missing(makefile_content, rules, missing):
 def make_unified_diff(original, patched, filename):
     import difflib
     diff = difflib.unified_diff(original.splitlines(keepends=True), patched.splitlines(keepends=True), fromfile=f"a/{filename}", tofile=f"b/{filename}", lineterm="")
-    retur
+    return "".join(diff)
+@dataclass
+class CandidateResult:
+    accepted: bool
+    reason: str = ""
+    patch: str = ""
+    description: str = ""
+    build_exit_code: int = -1
+    verify_exit_code: int = -1
+def
