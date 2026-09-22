@@ -112,3 +112,43 @@ def parse_makefile(content):
     return rules
 def detect_declaration_style(content, rules):
     return {"uses_tab_recipe": any(r.recipe for r in rules), "prereq_separator": " ", "has_continuation": "\\" in content, "variable_patterns": re.findall(r"$(([A-Za-z_][A-Za-z0-9_]*))", content)}
+def find_rule_for_target(rules, target):
+    for rule in rules:
+        if target in rule.target.split(): return rule
+    return None
+def generate_patch_for_missing(makefile_content, rules, missing):
+    rule = find_rule_for_target(rules, missing.target)
+    if rule is None: return None
+    dep = missing.dependency
+    if dep in rule.prerequisites: return None
+    lines = makefile_content.split("
+")
+    rule_idx = rule.line_no - 1
+    line = lines[rule_idx]
+    colon_idx = line.index(":")
+    target_part = line[:colon_idx]
+    prereq_part = line[colon_idx+1:]
+    new_prereq = prereq_part.rstrip()
+    if new_prereq and not new_prereq.endswith("\"): new_prereq = new_prereq + " " + dep
+    elif new_prereq.endswith("\"): new_prereq = new_prereq + "
+	" + dep + " \"
+    else: new_prereq = " " + dep
+    lines[rule_idx] = target_part + ":" + new_prereq
+    patched = "
+".join(lines)
+    return patched, f"为 {missing.target} 补充缺失依赖 {missing.dependency}"
+def make_unified_diff(original, patched, filename):
+    import difflib
+    diff = difflib.unified_diff(original.splitlines(keepends=True), patched.splitlines(keepends=True), fromfile=f"a/{filename}", tofile=f"b/{filename}", lineterm="")
+    return "".join(diff)
+@dataclass
+class CandidateResult:
+    accepted: bool
+    reason: str = ""
+    patch: str = ""
+    description: str = ""
+    build_exit_code: int = -1
+    verify_exit_code: int = -1
+def run_command(cmd, cwd=None, timeout=1200):
+    try:
+        proc = subprocess.run(cmd, shell=True, c
