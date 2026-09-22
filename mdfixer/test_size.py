@@ -149,4 +149,6 @@ class CandidateResult:
     description: str = ""
     build_exit_code: int = -1
     verify_exit_code: int = -1
-def
+def run_command(cmd, cwd=None, timeout=1200):
+    try:
+        proc = subprocess.run(cmd, shell=True, c
