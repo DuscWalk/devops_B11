@@ -3,3 +3,5 @@
 *.jpg binary
 *.pdf binary
 *.pptx binary
+
+*.bundle binary

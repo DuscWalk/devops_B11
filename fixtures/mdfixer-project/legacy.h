@@ -1,0 +1,1 @@
+/* Deliberately declared but unused in this teaching sample. */

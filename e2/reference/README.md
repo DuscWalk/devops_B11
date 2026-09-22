@@ -19,3 +19,7 @@
 原始 Schema 是 `$defs` 定义集合。标准校验时应选定 `CreateJobRequest` / `Job`，再按 `job_type` 校验对应输入定义；直接把整个文件当作根约束无法覆盖这些规则。B11 的 [validate.py](../validate.py) 做了分类型输入检查，发现一处遗漏，见 [审阅记录](../CONTRACT_REVIEW.md)。
 
 后续修改应先记录双方决定及 A11 新提交，再导入新快照并更新摘要。本次建议样例放在 [proposals/](../proposals/README.md)，不覆盖原件。
+
+## 2026-09-22 提交说明
+
+本目录仍为历史原件，包含当时的待确认/待填状态。正式提交使用 e2 根目录的 Schema、样例与文档。最新 A11 8b0c3b9 的四份核心协议文件仍与本快照一致，见 [upstream-2026-09-22.json](upstream-2026-09-22.json)。A11 确认来源为胡博本次明确说明，见 [AGREEMENT](../AGREEMENT.md)，不声称原件已经回填。

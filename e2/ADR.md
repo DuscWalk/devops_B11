@@ -1,43 +1,31 @@
-# B11 E2 决策记录
+# B11 E2 架构决策
 
-日期：2026-09-21。负责人：胡博。除本地材料组织方式外，以下是待讨论提议，相关组员/A11 尚未确认。来源方 ADR 保留在 reference/a11/，本文件记录 B11 的准备工作。
+2026-09-22 提交版；确认依据见 AGREEMENT。A11 的原始九条 ADR 在 reference/a11/ 保留为历史来源。
 
-## B11-ADR-001 保留可追溯的参考快照
+## ADR-001 异步 Job 与结果语义
 
-- 状态：本地准备已执行。
-- Context：A11 已提供完整材料，需要分清来源、B11 审阅和双方最终契约。
-- Decision：原始 13 文件保存在 reference/a11/；另存来源提交与 SHA-256。建议修改放 proposals/，B11 过程文档放 e2/。
-- Alternatives：直接复制覆盖为 B11 正式交付，会混淆作者及确认状态。
-- Consequences：需要维护来源摘要；可以重现原始结果，也能看到本组新增的审阅与修改。没有由此接受 A11 的全部设计。
+Context：四服务执行耗时不同，需要统一受理和查询。Decision：沿用四种 job_type、六态，POST 202 返回 job_id/job_type/QUEUED，GET 返回完整 Job。SUCCEEDED 可以报告 MD/RD；FAILED/TIMED_OUT 返回空 output 和 error。Alternatives：同步等待实现简单但耦合客户端超时。Consequences：E3 实现任务存储；E2 用正式 Schema 与样例验证。
 
-## B11-ADR-002 沿用异步 Job 与公共词汇
+## ADR-002 产物按 URI 和目录映射交接
 
-- 状态：提议，待 Q01、Q05、Q06。
-- Context：四服务都是耗时任务，需要统一受理、查询、状态与错误的含义。
-- Decision（建议）：创建返回 202，GET 查询 Job；job_id 由服务端生成，trace_id 关联流程，沿用六态。发现 MD/RD 放 findings；执行异常放 error。幂等与失败视图补充明确规则。
-- Alternatives：同步等待实现简单，但客户端等待时间长且难以查询过程。
-- Consequences：后续实现需要任务存储；E2 先交契约和样例。202 及失败视图的不一致必须在正式接受前解决。
+Context：图、日志、补丁不适合塞进每次响应。Decision：artifact URI 映射 ARTIFACT_ROOT，小文件用目录/ZIP 交换，元数据包含类型/生产者/媒体类型，有摘要必须校验。镜像后续通过 docker save/load 等方式取得，tag 不表示远端可用。Alternatives：HTTP 服务或共享机器；本阶段增加部署成本。Consequences：本地验证文件读取，实际 A11 读取和镜像交付另留执行证据。
 
-## B11-ADR-003 产物 URI 与本机路径分离
+## ADR-003 报告只消费有效 MD
 
-- 状态：本地演示完成，跨组决定待 Q02。
-- Context：大文件不适合放入任务响应，配对组仍须能读取实际字节。
-- Decision（建议）：沿用三段 artifact URI 和本地根目录映射；E2 先交换小样本目录，后续按需实现 HTTP 访问。关键文件带摘要，摘要不匹配拒绝使用。
-- Alternatives：统一共享机器或直接 HTTP 下载，均需双方确认环境与访问方式。
-- Consequences：URI 可跨机器不变；文件仍需实际传输。当前读取器仅为本地演示，不代表已打通另一组环境。
+Context：混合报告还包含 RD，增量发现可能已消除。Decision：MDFixer 只取 MISSING 且非 RESOLVED，源码/报告/Makefile commit 匹配，位置对应同一文件；RD 保留不删除。Alternatives：A11 单独导出 MD 报告。Consequences：消费方明确筛选；人工报告标 MANUAL，不借用真实检测器名称。
 
-## B11-ADR-004 只修当前版本的有效 MISSING
+## ADR-004 接口修订与来源保留
 
-- 状态：提议，待 Q04，王硕与 A11 确认。
-- Context：检测报告可能混合 MD/RD，增量报告还可能包含已经消除的发现。
-- Decision（建议）：确认报告外壳、来源 commit、位置和证据；修复只消费当前有效 MISSING，不自动修 REDUNDANT，不重新修 RESOLVED。过滤责任由双方确定。
-- Alternatives：A11 单独生成只含待修 MD 的产物；或 MDFixer 从完整报告筛选。
-- Consequences：需要覆盖空报告、版本不符和非修复类型；不会把正常检测发现当作工具失败。
+Context：原校验遗漏内部输入和失败视图；直接覆盖会丢失证据。Decision：A11 快照保持字节不变，正式 Schema 放 e2 根目录，补缺字段及已有语义约束。协议保持 1.1.0，提交修订 b11-e2-r1；不宣称收紧校验对宽松旧样例兼容。Alternatives：原样接受无法抓出实际缺陷。Consequences：校验、样例、OpenAPI、变更和来源记录同步，消费者以提交版为准。
 
-## B11-ADR-005 按任务类型执行输入检查
+## ADR-005 本地 MDFixer 的可信验证
 
-- 状态：本地校验已执行；建议回馈 A11（Q01）。
-- Context：A11 Schema 定义了各服务输入，但请求/Job 的 input 为普通 object，原交叉校验没有选择内部定义；查询样例漏掉 configuration_id 未被发现。
-- Decision：B11 校验入口先检查公共对象，再按 job_type 选用已有输入定义；原件严格检查保留失败，显式 --proposed 才使用待确认修正。
-- Alternatives：只跑原 42 项，会遗漏本次发现；直接改原文件会破坏审阅证据。
-- Consequences：使用 jsonschema 4.25.1；默认原件审阅退出 1 是当前真实结果，建议样例检查退出 0 也不表示协商完成。跨字段规则继续由 A11 校验器覆盖。
+Context：成员原型存在上传转义错误、无源码示例和未执行重检计数。Decision：修复原型，显式 --local，固定工作区 HEAD，临时应用候选后恢复原 Makefile；输出补丁供独立应用。构建/测试命令限时，重检未运行则 NOT_RUN。Alternatives：把一切实现为容器服务超出 E2；仅检查 JSON 无法验证补丁。Consequences：包含可运行教学源码 bundle；支持简单显式规则，复杂规则拒绝，不声称完整论文复现。
+
+## ADR-006 幂等与重试
+
+Context：创建重发可能重复执行。Decision：服务按 job_type + idempotency_key 定位逻辑请求，同键同输入复用原任务，同键异输入返回 HTTP 409 / CONTRACT_4002；新执行新键新 job_id，同一流程可复用 trace_id。Alternatives：仅定义拼接字符串不足以明确行为。Consequences：E2 记录协议；CLI 单次执行不实现持久化幂等，E3 加服务存储。
+
+## ADR-007 配置与环境
+
+Context：基线只能在可比配置下使用。Decision：接受 fzy 的 Ubuntu24.04/GCC13/Make4.3 基线，configuration_id 固定记录；incremental baseline 的 commit/config 与请求匹配。环境哈希具体规范在 E3 与 A11 落实，DRAFT 给出工具版本等材料，不把源码 C0/C1 变化简单混入同环境判定。Consequences：E2 表达字段和拒绝条件；未完成真实增量运行不填造假的实际哈希。

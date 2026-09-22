@@ -1,32 +1,20 @@
-# B11 贡献记录
+# B11 成员贡献与版本
 
-## 分工
+| 成员 | 职责与实际贡献 | 可核对提交 |
+| --- | --- | --- |
+| 孙静怡 | DRAFT Q03/Q07 回复；固定 fzy 提交；请求/202/成功失败样例；5 文件；WSL 与手工 Docker 构建/31 测试日志 | `65704cb66c1b84709569e6d5eca044838dff9722`、`d7bca1e7a6143e39f29164c9b43fde7824b0def5`；Git 作者 hotori，成员对应关系由胡博确认 |
+| 王硕 | MDFixer 核心、解析/补丁/验证/编排模块、CLI、MD/REPAIR 样例与校验器初版 | feat/mdfixer 最新 `97fb9798a9ba30751db8305cd2d7411a2b5f6c36`；历史作者 王 硕 <241250110@smail.nju.edu.cn>，原始提交全部保留 |
+| 胡博 | 公共契约来源核对、Schema/校验/读取器、A11 对接、DRAFT 复核、整合修复 MDFixer、可运行人工样本、文档/验证/提交包 | `4f88d13a126608854a5ba7ac062d169af4780e75`、`95ea87c35b4126c134b1403a168a4f18ba9d402e` 及本次整合提交；作者 duscwalk <241276007@smail.nju.edu.cn> |
 
-以下分工来自胡博于 2026-09-21 提供的信息。
+## 集成过程
 
-| 成员 | 职责 |
-| --- | --- |
-| 孙静怡 | DRAFT 输入输出确认、DRAFT 项目准备 |
-| 王硕 | MDFixer 输入输出确认、固定 MD 报告准备 |
-| 胡博 | 公共契约确认、产物读取约定、三轮配对练习组织、契约校验 |
-| 全体 | 各自的验证、提交与贡献记录 |
+- DRAFT 合并提交 `7bb2242`，MDFixer 合并提交 `41ae268`，均保留成员历史。仅 README 发生内容冲突，保留模块成果并补负责人和统一入口。
+- 王硕分支有上传拆分/测试临时文件的历史，最终树不存在那些临时文件；没有压缩或重写成员历史。
+- 本次新增修复由胡博负责、Codex 辅助：换行转义、URI/版本匹配、完整 Job、候选恢复、有效 diff、命令超时、重检如实报告，具体见 CONTRACT_REVIEW。
+- A11 原 Schema/样例/脚本归 A11，来源 `96f35cc175d12f51f3f7f0915ba35a98d303fcb3`；9 月 22 日复核其 `8b0c3b9142cb379547e429e310c1b3b0bb9ccd34` 核心协议文件未变。本组不将来源内容计作原创。
 
-## 本轮实际准备
+## 版本与证据
 
-| 负责人 | 实际工作 | 证据 | 状态 |
-| --- | --- | --- | --- |
-| 胡博（Codex 辅助） | 核对 A11 来源提交，保留 13 文件原始快照和逐文件摘要 | reference/README.md、a11-source.json | 已完成本地核对 |
-| 胡博（Codex 辅助） | 审阅公共模型与交接问题，发现增量查询遗漏 configuration_id，准备单字段修正 | CONTRACT_REVIEW.md、proposals/、ADR.md | 提议待成员/A11 确认 |
-| 胡博（Codex 辅助） | 建立分类型输入检查、文件读取演示和 17 个回归检查，记录原件失败和提议通过 | validate.py、artifact_access.py、tests/、evidence/ | 本地验证完成；非端到端工具运行 |
-| 胡博（Codex 辅助） | 登记分工，准备三轮练习与沟通草稿 | Backlog.md、PAIRING.md、STATUS.md、AI_USAGE.md | 待胡博人工审阅并发起沟通 |
-| 孙静怡（成员对应关系由胡博说明） | DRAFT Q03/Q07 回复、请求/响应/5 个交接文件、固定 fzy 项目与手工 Docker 构建证据 | feat/draft 的 `65704cb66c1b84709569e6d5eca044838dff9722`、`d7bca1e7a6143e39f29164c9b43fde7824b0def5`；[审阅](feedback/draft-2026-09-21.md) | 已收到；接口待 A11 确认，镜像尚未交付 |
-| 胡博（Codex 辅助） | 复跑孙静怡样例，用已有读取器核对 5 文件，校验 13 份证据摘要，更新接口待办 | [审阅证据](evidence/draft-feedback-review-2026-09-21.json) | 本地复核完成；未重跑 Docker 或合并对方分支 |
-| 王硕 | 待本人追加实际完成内容 | 待本人提交 | 不由本次准备代记完成 |
+最终提交通过 `git rev-parse HEAD` 核对，发布标记和 LMS 入口见 SUBMISSION。仓库提交记录本身是作者/时间/说明证据；本轮采用本地合并并推送，没有创建或虚构 Issue/MR 链接。
 
-## 来源与提交
-
-- A11 原材料属于 A11，来源提交 `96f35cc175d12f51f3f7f0915ba35a98d303fcb3`，不登记为 B11 原创。
-- B11 仓库：https://git.nju.edu.cn/devops_b11/devops-project-b11 。本轮基于 `5cacba9451863ebf7c794df9374276f88eff1fb4`，分支 `docs/e2-contract-alignment`。
-- 本轮准备提交：`4f88d13a126608854a5ba7ac062d169af4780e75`（`feat(e2): prepare B11 contract review and offline validation`），包含本次材料、代码和验证证据。本条记录在后续文档提交中回填，避免引用尚未产生的 SHA。
-- 提交身份使用 `duscwalk <241276007@smail.nju.edu.cn>`，本轮任务负责人对应胡博。没有改写他人的历史提交。
-- 2026-09-21 fetch 已确认准备分支 `e8bf6eee0acf00f86ba028ecf3c19399811992cd` 和孙静怡 `feat/draft` 在远端。孙静怡回复收到；A11 确认、王硕回复及三轮配对执行仍待记录。本轮审阅更新尚未推送，没有代发消息或创建 MR。
+验证见 STATUS 与 evidence。孙静怡 Docker 构建日志是其环境执行记录，胡博复核摘要；本次 MDFixer 演示是胡博本机真实运行。所有技术成果可追溯到具体文件和提交，人工确认来源单独记录在 AGREEMENT。

@@ -1,7 +1,9 @@
-# 固定样本
+# E2 小型样本与 E3 准备
 
-当前已有 [e2-handoff/](e2-handoff/README.md)：B11 的小型文本产物、元数据和真实摘要，用于本机演示 URI 读取。它不是固定 MD 报告，也没有证明跨组联调成功。
+| 目录 | 用途与来源 |
+| --- | --- |
+| [e2-handoff/](e2-handoff/README.md) | 胡博最初编写的文本读取演示，251 字节与真实摘要 |
+| [draft-handoff/](draft-handoff/README.md) | 孙静怡 DRAFT 的 5 个人工接口文件，不含镜像本体 |
+| [mdfixer-project/](mdfixer-project/README.md) | 胡博整合时补充的真实可构建人工 MD 小项目，独立 Git commit/bundle、混合报告 |
 
-E3 的 DRAFT 项目由孙静怡准备；MDFixer 固定报告由王硕准备。每个实际样本应记录项目仓库、完整 commit、构建配置、报告来源、位置与证据、复现方法。人工构造的报告应标注人工来源；契约中的成功值与真实执行结果分开记录。
-
-大型项目克隆放根目录 `workspaces/`，运行产物放根目录 `artifacts/`，不纳入 Git。这里的 `e2-handoff/artifacts/` 是可提交的小型演示文件目录。
+DRAFT 的真实执行证据在 draft/evidence；MDFixer 在 e2/evidence/mdfixer-2026-09-22。大型源码工作区和运行产物仍放根 workspaces/、artifacts/ 并忽略提交；本目录只含可审阅的小样本。禁止将人工发现登记为真实检测器输出。

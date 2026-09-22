@@ -1,43 +1,72 @@
 {
   "schema_version": "1.1.0",
+  "job_id": "job-repair-89d188b2239241f2ac13c8ff7ea422ed",
+  "trace_id": "trace-b11-md-fixture",
   "job_type": "REPAIR",
   "status": "SUCCEEDED",
+  "execution": {
+    "submitted_at": "2026-09-22T15:12:01.074142+00:00",
+    "started_at": "2026-09-22T15:12:01.074142+00:00",
+    "finished_at": "2026-09-22T15:12:01.410250+00:00",
+    "timeout_seconds": 30,
+    "idempotency_key": "b11|manual-md|a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69"
+  },
+  "input": {
+    "repository": {
+      "url": "https://git.nju.edu.cn/devops_b11/devops-project-b11",
+      "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69"
+    },
+    "md_report_uri": "artifact://b11/job-md-fixture/md_report.json",
+    "makefile_uri": "repo://a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69/Makefile",
+    "image": "local-prototype:host",
+    "build": {
+      "command": "make clean && make"
+    },
+    "verify_command": "make test",
+    "max_iterations": 1,
+    "timeout_seconds": 30
+  },
   "output": {
-    "patch_uri": "artifact://b11/job-repair-1700000000/fix.patch",
-    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "patch_uri": "artifact://b11/job-repair-89d188b2239241f2ac13c8ff7ea422ed/fix.patch",
+    "patch_sha256": "de30069969d619564d02853e9d7cead830e4a58e0d4af68931349278b3204c7f",
     "artifacts": [
       {
-        "artifact_id": "job-repair-1700000000-patch",
+        "artifact_id": "job-repair-89d188b2239241f2ac13c8ff7ea422ed-patch",
         "type": "PATCH",
-        "uri": "artifact://b11/job-repair-1700000000/fix.patch",
+        "uri": "artifact://b11/job-repair-89d188b2239241f2ac13c8ff7ea422ed/fix.patch",
         "media_type": "text/x-diff",
-        "producer_job_id": "job-repair-1700000000",
-        "commit": "0123456789abcdef0123456789abcdef01234567",
-        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        "producer_job_id": "job-repair-89d188b2239241f2ac13c8ff7ea422ed",
+        "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+        "sha256": "de30069969d619564d02853e9d7cead830e4a58e0d4af68931349278b3204c7f"
       },
       {
-        "artifact_id": "job-repair-1700000000-style",
+        "artifact_id": "job-repair-89d188b2239241f2ac13c8ff7ea422ed-style_report",
         "type": "STYLE_REPORT",
-        "uri": "artifact://b11/job-repair-1700000000/declaration_style.json",
+        "uri": "artifact://b11/job-repair-89d188b2239241f2ac13c8ff7ea422ed/declaration_style.json",
         "media_type": "application/json",
-        "producer_job_id": "job-repair-1700000000",
-        "commit": "0123456789abcdef0123456789abcdef01234567"
+        "producer_job_id": "job-repair-89d188b2239241f2ac13c8ff7ea422ed",
+        "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+        "sha256": "68c62a9582f49aa3e8701ef525d4d00e8802c529e5128f5f35ee6e464f5f280a"
       },
       {
-        "artifact_id": "job-repair-1700000000-test",
+        "artifact_id": "job-repair-89d188b2239241f2ac13c8ff7ea422ed-test_result",
         "type": "TEST_RESULT",
-        "uri": "artifact://b11/job-repair-1700000000/test_result.json",
+        "uri": "artifact://b11/job-repair-89d188b2239241f2ac13c8ff7ea422ed/test_result.json",
         "media_type": "application/json",
-        "producer_job_id": "job-repair-1700000000",
-        "commit": "0123456789abcdef0123456789abcdef01234567"
+        "producer_job_id": "job-repair-89d188b2239241f2ac13c8ff7ea422ed",
+        "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+        "sha256": "48936e6b6a23af0b4454ddd772c0edf3443fc30ce0eb717a4fe98839b5cb84e1"
       }
     ],
     "summary": {
-      "candidates_total": 2,
-      "candidates_accepted": 2,
+      "candidates_total": 1,
+      "candidates_accepted": 1,
       "candidates_rejected": 0,
-      "missing_fixed": 2,
-      "recheck_missing_remaining": 0
+      "missing_fixed": 1,
+      "recheck_performed": false,
+      "recheck_status": "NOT_RUN",
+      "execution_mode": "LOCAL_PROTOTYPE",
+      "image_used": false
     }
   },
   "error": null

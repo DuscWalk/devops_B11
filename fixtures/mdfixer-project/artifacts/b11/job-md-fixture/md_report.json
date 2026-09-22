@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.1.0",
+  "repository": {
+    "url": "https://git.nju.edu.cn/devops_b11/devops-project-b11",
+    "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69"
+  },
+  "configuration_id": "manual-c-default",
+  "source": "MANUAL teaching fixture; actual_read follows explicit C include, not measured dynamic tracing",
+  "findings": [
+    {
+      "type": "MISSING",
+      "target": "app.o",
+      "dependency": "config.h",
+      "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+      "detector": "MANUAL",
+      "location": {
+        "file": "Makefile",
+        "line": 9
+      },
+      "evidence": {
+        "actual_read": true,
+        "declared": false
+      },
+      "suggested_fix": "app.o: app.c config.h legacy.h"
+    },
+    {
+      "type": "REDUNDANT",
+      "target": "app.o",
+      "dependency": "legacy.h",
+      "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+      "detector": "MANUAL",
+      "location": {
+        "file": "Makefile",
+        "line": 9
+      },
+      "evidence": {
+        "actual_read": false,
+        "declared": true
+      },
+      "suggested_fix": "仅报告，不自动删除"
+    }
+  ]
+}

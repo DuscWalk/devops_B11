@@ -1,56 +1,31 @@
 from __future__ import annotations
-
 import os
-
+import signal
+import subprocess
 from mdfixer_core import CandidateResult
 
 
 def run_command(cmd, cwd=None, timeout=1200):
+    proc=subprocess.Popen(cmd,shell=True,cwd=cwd,stdout=subprocess.PIPE,
+                          stderr=subprocess.STDOUT,text=True,start_new_session=True)
     try:
-        if cwd:
-            old_cwd = os.getcwd()
-            os.chdir(cwd)
-            try:
-                pipe = os.popen(cmd + " 2>&1")
-                output = pipe.read()
-                rc = pipe.close()
-            finally:
-                os.chdir(old_cwd)
-        else:
-            pipe = os.popen(cmd + " 2>&1")
-            output = pipe.read()
-            rc = pipe.close()
-        return rc if rc else 0, output, ""
-    except Exception as e:
-        return -1, "", str(e)
+        output,_=proc.communicate(timeout=timeout)
+        return proc.returncode,output,''
+    except subprocess.TimeoutExpired:
+        os.killpg(proc.pid,signal.SIGKILL)
+        output,_=proc.communicate()
+        return 124,output,'command timeout'
 
 
-def verify_candidate(patch, makefile_path, build_cmd, verify_cmd, workdir):
-    original = makefile_path.read_text(encoding="utf-8")
+def verify_candidate(patch, makefile_path, build_cmd, verify_cmd, workdir, timeout=1200):
+    original=makefile_path.read_bytes()
     try:
-        makefile_path.write_text(patch, encoding="utf-8")
-        build_rc, build_out, build_err = run_command(build_cmd, cwd=str(workdir))
-        if build_rc != 0:
-            return CandidateResult(
-                accepted=False,
-                reason="build failed (exit=" + str(build_rc) + "): " + build_out[:200],
-                patch=patch,
-                build_exit_code=build_rc,
-            )
-        verify_rc, verify_out, verify_err = run_command(verify_cmd, cwd=str(workdir))
-        if verify_rc != 0:
-            return CandidateResult(
-                accepted=False,
-                reason="verify failed (exit=" + str(verify_rc) + "): " + verify_out[:200],
-                patch=patch,
-                build_exit_code=build_rc,
-                verify_exit_code=verify_rc,
-            )
-        return CandidateResult(
-            accepted=True,
-            patch=patch,
-            build_exit_code=build_rc,
-            verify_exit_code=verify_rc,
-        )
+        makefile_path.write_text(patch,encoding='utf-8')
+        brc,bout,berr=run_command(build_cmd,cwd=workdir,timeout=timeout)
+        if brc:
+            return CandidateResult(False,reason=f'build failed (exit={brc}): {berr or bout[-500:]}',build_exit_code=brc,build_output=bout)
+        vrc,vout,verr=run_command(verify_cmd,cwd=workdir,timeout=timeout)
+        return CandidateResult(vrc==0,reason='' if vrc==0 else f'verify failed (exit={vrc}): {verr or vout[-500:]}',
+                               build_exit_code=brc,verify_exit_code=vrc,build_output=bout,verify_output=vout)
     finally:
-        makefile_path.write_text(original, encoding="utf-8")
+        makefile_path.write_bytes(original)

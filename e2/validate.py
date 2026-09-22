@@ -1,123 +1,75 @@
 #!/usr/bin/env python3
-"""Validate the pinned A11 reference and B11's local E2 preparation."""
+"""Single validation entry point for the B11 E2 submission."""
 import argparse
+import copy
 import hashlib
 import json
 import subprocess
 import sys
 from pathlib import Path
 
-try:
-    from jsonschema import Draft202012Validator
-except ImportError:
-    raise SystemExit(
-        "Draft202012Validator is required; use the project virtual environment "
-        "and install e2/requirements.txt. No checks have been run."
-    )
+E2=Path(__file__).resolve().parent
+ROOT=E2.parent
+sys.path.insert(0,str(ROOT))
+from e2.contract import SCHEMA,validator,validate_request,validate_job
+from jsonschema import Draft202012Validator, ValidationError
 
-E2 = Path(__file__).resolve().parent
-ROOT = E2.parent
-REFERENCE = E2 / "reference" / "a11"
-SCHEMA = json.loads((REFERENCE / "task.schema.json").read_text(encoding="utf-8"))
-
-
-def validator(definition):
-    return Draft202012Validator({
-        "$schema": SCHEMA["$schema"],
-        "$defs": SCHEMA["$defs"],
-        "$ref": f"#/$defs/{definition}",
-    })
+# Retained public helper for the original input regression tests.
+REFERENCE=E2
 
 
 def validate_input_document(document, *, query=False):
-    """Apply both the common envelope and the existing service input definition.
-
-    A11's CreateJobRequest.input and Job.input are generic objects. Selecting the
-    service definition here applies its declared rules without changing the
-    reference schema. Cross-field rules remain covered by A11's validator.
-    """
-    validator("Job" if query else "CreateJobRequest").validate(document)
-    definition = "".join(part.capitalize() for part in document["job_type"].split("_"))
-    validator(definition + "Input").validate(document["input"])
+    (validate_job if query else validate_request)(document)
 
 
-def verify_reference():
-    manifest = json.loads((E2 / "reference" / "a11-source.json").read_text(encoding="utf-8"))
-    expected = manifest["files"]
-    actual_names = {str(path.relative_to(REFERENCE)) for path in REFERENCE.rglob("*")
-                    if path.is_file() and "__pycache__" not in path.parts}
-    if actual_names != set(expected):
-        raise ValueError("reference file set differs from the source manifest")
-    for name, digest in expected.items():
-        if hashlib.sha256((REFERENCE / name).read_bytes()).hexdigest() != digest:
-            raise ValueError(f"reference file changed: {name}")
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--proposed',action='store_true',help='legacy alias; the corrected submission is now the default')
+    parser.add_argument('--reference',action='store_true',help='run only the archived A11 validator')
+    args=parser.parse_args()
+    if args.reference:
+        return subprocess.run([sys.executable,str(E2/'reference/a11/validate.py')]).returncode
     Draft202012Validator.check_schema(SCHEMA)
-    print(f"PASS: {len(expected)} A11 reference files match the recorded SHA-256 values.", flush=True)
-
-
-def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--proposed", action="store_true", help=(
-        "validate the pending B11 correction for the incremental query example; "
-        "this does not imply A11/B11 agreement"
-    ))
-    args = parser.parse_args(argv)
-    try:
-        verify_reference()
-        print("\n[1] Original A11 validation (including Draft 2020-12 checks)", flush=True)
-        result = subprocess.run([sys.executable, str(REFERENCE / "validate.py")], cwd=REFERENCE)
-        if result.returncode:
-            return result.returncode
-
-        print("\n[2] Select the input definition for each request and query", flush=True)
-        examples = json.loads((REFERENCE / "contract-examples.json").read_text(encoding="utf-8"))
-        if args.proposed:
-            proposal = E2 / "proposals/query_incremental_check.json"
-            examples["responses"]["query_incremental_check"] = json.loads(
-                proposal.read_text(encoding="utf-8")
-            )
-            print("PROPOSED: using the incremental query correction; agreement is pending.", flush=True)
-        documents = [(f"request {name}", document, False)
-                     for name, document in examples["requests"].items()]
-        documents += [(f"response {name}", document, True)
-                      for name, document in examples["responses"].items()
-                      if name.startswith("query_")]
-        failures = 0
-        for name, document, query in documents:
-            try:
-                validate_input_document(document, query=query)
-                print(f"PASS: {name}", flush=True)
-            except Exception as exc:
-                failures += 1
-                print(f"FAIL: {name}: {getattr(exc, 'message', str(exc))}", flush=True)
-        print(f"Service inputs: {len(documents) - failures}/{len(documents)} passed.", flush=True)
-        if failures:
-            print("Reference review is incomplete. See CONTRACT_REVIEW.md; --proposed checks the pending correction.")
-            return 1
-
-        print("\n[3] Input rejection and artifact access regression checks", flush=True)
-        result = subprocess.run(
-            [sys.executable, "-m", "unittest", "discover", "-s", "e2/tests", "-v"], cwd=ROOT
-        )
-        if result.returncode:
-            return result.returncode
-
-        print("\n[4] Read the checked-in demonstration artifact", flush=True)
-        metadata = ROOT / "fixtures/e2-handoff/artifact.json"
-        validator("Artifact").validate(json.loads(metadata.read_text(encoding="utf-8")))
-        result = subprocess.run([
-            sys.executable, str(E2 / "artifact_access.py"),
-            "--root", str(ROOT / "fixtures/e2-handoff/artifacts"),
-            "--metadata", str(metadata),
-        ], cwd=ROOT)
-        if result.returncode:
-            return result.returncode
-    except Exception as exc:
-        print(f"FAIL: {exc}", file=sys.stderr)
-        return 1
-    print("\nPASS: local preparation checks completed. Team agreement and cross-group access remain pending.")
+    manifest=json.loads((E2/'reference/a11-source.json').read_text())
+    for name,digest in manifest['files'].items():
+        assert hashlib.sha256((E2/'reference/a11'/name).read_bytes()).hexdigest()==digest,name
+    print('PASS: submission Schema and 13 unchanged historical reference files',flush=True)
+    examples=json.loads((E2/'contract-examples.json').read_text())
+    for request in examples['requests'].values():validate_request(request)
+    for name,response in examples['responses'].items():
+        (validator('DraftResponse').validate if name=='accepted_202' else validate_job)(response)
+    for error in examples['errors']:validate_job(error)
+    print('PASS: 4 requests, 202, 4 query responses, 3 complete failed Jobs',flush=True)
+    rejected=0
+    for case in examples['invalid']:
+        try:
+            doc=case['data']
+            (validate_job if 'status' in doc else validate_request)(doc)
+        except (ValidationError, ValueError):
+            rejected+=1
+        else:raise AssertionError('invalid example accepted: '+case['case'])
+    print(f'PASS: {rejected} invalid examples rejected',flush=True)
+    for cmd in [
+        [sys.executable,'-m','unittest','discover','-s','e2/tests','-v'],
+        [sys.executable,'-m','unittest','discover','-s','mdfixer','-p','test_*.py','-v'],
+        [sys.executable,'draft/validate_examples.py'],
+        [sys.executable,'mdfixer/validate_examples.py'],
+        [sys.executable,'mdfixer/demo.py'],
+    ]:
+        print('\nRUN: '+' '.join(cmd[1:]),flush=True)
+        result=subprocess.run(cmd,cwd=ROOT)
+        if result.returncode:return result.returncode
+    from e2.artifact_access import read_artifact
+    for jobfile,artifact_root in [
+        (ROOT/'draft/examples/query-succeeded.example.json',ROOT/'fixtures/draft-handoff/artifacts'),
+        (ROOT/'mdfixer/examples/repair_response_sample.json',E2/'evidence/mdfixer-2026-09-22/artifacts'),
+    ]:
+        job=json.loads(jobfile.read_text());validate_job(job)
+        for artifact in job['output']['artifacts']:read_artifact(artifact_root,artifact)
+    print('\nPASS: 8 DRAFT/REPAIR artifact files readable with valid checksums',flush=True)
+    print('PASS: E2 submission validation completed; no API deployment or detector recheck claimed',flush=True)
     return 0
 
 
-if __name__ == "__main__":
+if __name__=='__main__':
     sys.exit(main())

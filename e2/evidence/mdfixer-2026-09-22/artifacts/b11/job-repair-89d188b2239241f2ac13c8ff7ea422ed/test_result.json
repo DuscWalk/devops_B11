@@ -1,0 +1,20 @@
+{
+  "candidates": [
+    {
+      "accepted": true,
+      "reason": "",
+      "patch": "--- a/Makefile\n+++ b/Makefile\n@@ -6,7 +6,7 @@\n app: app.o\n \t$(CC) -o $@ $^\n \n-app.o: app.c legacy.h\n+app.o: config.h app.c legacy.h\n \t$(CC) $(CFLAGS) -c -o $@ app.c\n \n test: app\n",
+      "description": "add missing dependency config.h to app.o",
+      "build_exit_code": 0,
+      "verify_exit_code": 0,
+      "build_output": "rm -f app app.o\ncc -Wall -Wextra -O0 -c -o app.o app.c\ncc -o app app.o\n",
+      "verify_output": ""
+    }
+  ],
+  "recheck": {
+    "status": "NOT_RUN",
+    "reason": "BuildChecker/EChecker integration belongs to E3"
+  },
+  "command_timeout_seconds": 30,
+  "max_iterations_note": "one candidate per finding; iterative search not implemented"
+}

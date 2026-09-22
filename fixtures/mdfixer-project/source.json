@@ -1,0 +1,14 @@
+{
+  "kind": "MANUAL_TEACHING_FIXTURE",
+  "repository_url": "https://git.nju.edu.cn/devops_b11/devops-project-b11",
+  "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+  "note": "commit belongs to the included standalone project.bundle, not the B11 main branch; deliberately constructed missing prerequisite, not a BuildChecker finding.",
+  "source_files": {
+    "Makefile": "cff87f978fc9039f6b2ad73ba8dc2d8924553c9784368845b63c7b19248a33c5",
+    "app.c": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197",
+    "config.h": "b26369e647fb784e8d539541d1f5a281610c63341f0685c9d9072ec4c81b4ad9",
+    "legacy.h": "2f8866e626f18fab63883edf3a291a48fa490ab06a39aea05421de22a51549e9",
+    ".gitignore": "88868b21b144e6c0715e74a73e21f244c226241f72d6da048a3d61a90af28982"
+  },
+  "bundle_sha256": "8e867569f174f5e23c547334d1e9d0a9e455b75a38f34f9ac10ce8c9150a6246"
+}

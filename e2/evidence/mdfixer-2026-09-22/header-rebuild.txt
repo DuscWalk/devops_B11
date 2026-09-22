@@ -1,0 +1,4 @@
+cc -Wall -Wextra -O0 -c -o app.o app.c
+cc -o app app.o
+make: Warning: File 'config.h' has modification time 2 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.

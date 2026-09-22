@@ -1,41 +1,34 @@
-# E2 产物读取提议与本地演示
+# E2 产物访问约定
 
-状态：**本地演示已验证；传输方式与跨组互读待确认（Q02）**。
+确认依据见 AGREEMENT。URI 格式为 `artifact://<group>/<job_id>/<name>`；消费方映射为 `$ARTIFACT_ROOT/<group>/<job_id>/<name>`。E2 通过目录或归档交换，接收方根目录可以不同；相同目录名不意味着文件已同步。
 
-## 映射
+## 三种实际样本
 
-沿用 A11 的目录映射提议：
+| 内容 | 根目录 / 元数据 |
+| --- | --- |
+| 初始文本演示 | fixtures/e2-handoff/artifacts；同目录上一级 artifact.json |
+| DRAFT 的 5 个文件 | fixtures/draft-handoff/artifacts；draft/examples/query-succeeded.example.json 的 output.artifacts |
+| MDFixer 的 3 个实际产物 | e2/evidence/mdfixer-2026-09-22/artifacts；同目录上一级 response.json 的 output.artifacts |
 
-```text
-artifact://b11/job-e2-read-demo/handoff.txt
-→ <ARTIFACT_ROOT>/b11/job-e2-read-demo/handoff.txt
-```
-
-本地演示的根目录为 `fixtures/e2-handoff/artifacts/`。URI 不含本机绝对路径，接收方在自己的环境选择根目录。根目录里必须实际存在文件；读取器不提供网络下载、同步或服务部署。
-
-## 可执行演示
-
-从仓库根目录运行（读取器仅依赖 Python 3.10+ 标准库）：
+从仓库根目录：
 
 ```bash
-python3 e2/artifact_access.py \
-  --root fixtures/e2-handoff/artifacts \
-  --metadata fixtures/e2-handoff/artifact.json
+python3 e2/artifact_access.py --root fixtures/e2-handoff/artifacts --metadata fixtures/e2-handoff/artifact.json
+.venv/bin/python e2/validate.py
 ```
 
-读取器核对元数据中的基本必填字段，解析实际文件，读取字节并计算 SHA-256。如果元数据带摘要，则必须一致。输出应包含 `bytes_read: 251`、`checksum_verified: true`，摘要为：
+第一条读取初始 251 字节文件；统一校验直接用相同读取器消费 DRAFT 5 份和 REPAIR 3 份元数据并校验全部摘要。MDFixer 输出目录本身是 ARTIFACT_ROOT，内部按 b11/job_id/ 存储。
 
-```text
-2ebb93c99d19cd77da35f5f48f002427e4213af98750de4be0dd567bd790a431
-```
+## 元数据和失败
 
-单个演示元数据已通过 A11 的 Artifact 定义检查。文件不存在、摘要错误、缺少 media_type、越出根目录等情况会使读取器非零退出；这些是本地命令行为，尚未映射成双方 HTTP 错误码。
+artifact_id、type、uri、media_type、producer_job_id 必填；commit/configuration_id 用于追溯。本次所有交接文件都提供真实 sha256；共享 Schema 仍允许日志等未带摘要，若存在则必须匹配。关键补丁/图建议带摘要。读取器拒绝缺文件、摘要不匹配、缺媒体类型、路径越界；不会静默把 artifact URI 当任意本地路径。
 
-## 交换后需要真实记录的步骤
+产物在实验期间保留；清理需双方协调。文件类型取 media_type。HTTP 下载端点在 OpenAPI 中仅作后续接口说明，E2 没有部署。
 
-1. 胡博与 A11 确认传输方式、实际位置、摘要规则和保留期限。
-2. 将本演示目录交给 A11；由对方在自己的环境运行命令，记录实际输出。
-3. A11 交回一个有完整元数据和文件内容的小样本，B11 按相同规则读取。
-4. 在 PAIRING.md 记录双方执行者、日期、来源版本、文件摘要和结果。
+## 镜像与报告
 
-本轮只完成本机读取。演示中的 LOG 类型和 job-e2-read-demo 是测试标签；没有发生 DRAFT、BuildChecker、EChecker 或 MDFixer 执行。
+IMAGE 产物是镜像引用 JSON，不是镜像本体；DRAFT 的示例标记 example_only/NOT_BUILT。真实基线另在 draft/evidence，状态 LOCAL_DOCKER_ENGINE_ONLY。后续 docker save/load 需要单独传 tar、摘要和镜像 ID，实际接收后才能标可用。
+
+人工 MDFixer ERROR_REPORT 位于 fixtures/mdfixer-project/artifacts。声明 MANUAL、固定独立源码提交与 Makefile 位置；不冒充 A11 实际检测报告。
+
+本组已执行读取，不代表 A11 端已读取。A11 真实接收/执行证据在 E3 补录，当前接口确认与真实运行的区别见 STATUS。

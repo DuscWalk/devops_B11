@@ -27,17 +27,10 @@ def main():
     parser.add_argument("--schema", type=Path, help="Exact reference Schema file")
     args = parser.parse_args()
     source = read_json(EXAMPLES / "source.json")
-    if args.schema:
-        raw = args.schema.read_bytes()
-    else:
-        raw = subprocess.check_output(
-            ["git", "show", source["reference_commit"] + ":" + source["schema_path"]],
-            cwd=ROOT,
-        )
-    # A checked-out Windows copy may have CRLF; source hash is for Git LF bytes.
+    raw = (args.schema or ROOT / "e2/task.schema.json").read_bytes()
     raw = raw.replace(b"\r\n", b"\n")
     require(hashlib.sha256(raw).hexdigest() == source["schema_sha256"],
-            "Reference Schema changed; review and update provenance explicitly")
+            "Reference Schema changed; update provenance explicitly")
     schema = json.loads(raw)
     Draft202012Validator.check_schema(schema)
 
@@ -48,7 +41,8 @@ def main():
     validator("CreateJobRequest").validate(request)
     validator("DraftInput").validate(request["input"])
     invalid = read_json(EXAMPLES / "request-missing-verify.invalid.json")
-    validator("CreateJobRequest").validate(invalid)
+    require(list(validator("CreateJobRequest").iter_errors(invalid)),
+            "Complete request must reject missing verify_command")
     require(list(validator("DraftInput").iter_errors(invalid["input"])),
             "Missing verify_command was not rejected")
     print("PASS: DRAFT request and missing-verify negative example")

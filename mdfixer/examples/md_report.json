@@ -1,56 +1,43 @@
 {
   "schema_version": "1.1.0",
-  "job_type": "MD_REPORT",
-  "status": "SUCCEEDED",
-  "output": {
-    "findings": [
-      {
-        "type": "MISSING",
-        "target": "app",
-        "dependency": "utils.o",
-        "commit": "0123456789abcdef0123456789abcdef01234567",
-        "detector": "make-dep-analyzer",
-        "location": {
-          "file": "Makefile",
-          "line": 10
-        },
-        "evidence": {
-          "source": "include\\"utils.h\\"",
-          "build_error": "undefined reference to \`util_func\`"
-        },
-        "suggested_fix": "add utils.o to app prerequisites"
+  "repository": {
+    "url": "https://git.nju.edu.cn/devops_b11/devops-project-b11",
+    "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69"
+  },
+  "configuration_id": "manual-c-default",
+  "source": "MANUAL teaching fixture; actual_read follows explicit C include, not measured dynamic tracing",
+  "findings": [
+    {
+      "type": "MISSING",
+      "target": "app.o",
+      "dependency": "config.h",
+      "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+      "detector": "MANUAL",
+      "location": {
+        "file": "Makefile",
+        "line": 9
       },
-      {
-        "type": "MISSING",
-        "target": "app",
-        "dependency": "config.o",
-        "commit": "0123456789abcdef0123456789abcdef01234567",
-        "detector": "make-dep-analyzer",
-        "location": {
-          "file": "Makefile",
-          "line": 10
-        },
-        "evidence": {
-          "source": "include\\"config.h\\"",
-          "build_error": "undefined reference to \`load_config\`"
-        },
-        "suggested_fix": "add config.o to app prerequisites"
+      "evidence": {
+        "actual_read": true,
+        "declared": false
       },
-      {
-        "type": "REDUNDANT",
-        "target": "app",
-        "dependency": "legacy.o",
-        "commit": "0123456789abcdef0123456789abcdef01234567",
-        "detector": "make-dep-analyzer",
-        "location": {
-          "file": "Makefile",
-          "line": 10
-        },
-        "evidence": {
-          "source": "no include of legacy.h"
-        },
-        "suggested_fix": "remove legacy.o from app prerequisites"
-      }
-    ]
-  }
+      "suggested_fix": "app.o: app.c config.h legacy.h"
+    },
+    {
+      "type": "REDUNDANT",
+      "target": "app.o",
+      "dependency": "legacy.h",
+      "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+      "detector": "MANUAL",
+      "location": {
+        "file": "Makefile",
+        "line": 9
+      },
+      "evidence": {
+        "actual_read": false,
+        "declared": true
+      },
+      "suggested_fix": "仅报告，不自动删除"
+    }
+  ]
 }

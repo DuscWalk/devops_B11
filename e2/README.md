@@ -1,42 +1,41 @@
-# B11 E2 接口准备材料
+# B11 E2 提交材料
 
-负责人：孙静怡（DRAFT）、王硕（MDFixer）、胡博（接口与联调）。配对组：A11（BuildChecker、EChecker）。
-
-**当前状态：已收到孙静怡的 DRAFT 回复，样例校验及 5 个文件读取通过；等待 A11 对齐及王硕回复。** 详见 [DRAFT 回复审阅](feedback/draft-2026-09-21.md)。 下一步看 [PAIRING.md](PAIRING.md)，内含共享方式、两段待发消息和三轮练习记录表。E2 先定义契约和样例，尚不要求部署 API。
-
-## 当前检查结论
-
-A11 来源校验 **42/42 通过**。补充按任务类型检查 input 后，原件为 **7/8**：增量查询回显漏了必填 configuration_id。只补该字段的待确认提议通过 **8/8** 输入检查、**17/17** 回归检查及真实文本读取。这里的通过仅表示本地准备可复算；正式契约确认、镜像实际交付、固定 MD 报告/补丁与 A11 侧互读仍待完成。
-
-## 文件索引
-
-| 文件 | 用途 |
+| 项目 | 内容 |
 | --- | --- |
-| [reference/README.md](reference/README.md)、[来源清单](reference/a11-source.json) | A11 来源 URL、完整提交、版本、ZIP 和逐文件摘要 |
-| [reference/a11/task.schema.json](reference/a11/task.schema.json) | 原始 Job 与四类输入定义（参考快照） |
-| [reference/a11/contract-examples.json](reference/a11/contract-examples.json) | 四类请求/响应、错误、findings 与产物元数据原样例 |
-| [reference/a11/openapi.yaml](reference/a11/openapi.yaml) | 原始端点说明，仍待对齐失败视图等问题 |
-| [proposals/README.md](proposals/README.md) | 待 A11 确认的单字段样例修正 |
-| [feedback/draft-2026-09-21.md](feedback/draft-2026-09-21.md) | 孙静怡回复、独立复核和新增待确认事项 |
-| [CONTRACT_REVIEW.md](CONTRACT_REVIEW.md) | Q01—Q07：已发现问题、建议、需谁确认 |
-| [artifact-access.md](artifact-access.md) | URI 读取提议与可执行演示 |
-| [PAIRING.md](PAIRING.md) | 下一步沟通文字、三轮议程与空白决定表 |
-| [ADR.md](ADR.md)、[Backlog.md](Backlog.md) | 本地决定/跨组提议和有负责人的任务 |
-| [STATUS.md](STATUS.md)、[evidence/](evidence/) | 实际命令、通过/失败结果及边界 |
-| [AI_USAGE.md](AI_USAGE.md)、[CONTRIBUTIONS.md](CONTRIBUTIONS.md)、[CHANGELOG.md](CHANGELOG.md) | AI 辅助、来源归属、贡献与版本记录 |
+| 小组 / 配对组 | B11 / A11 |
+| 成员 | 孙静怡：DRAFT；王硕：MDFixer；胡博：接口与联调 |
+| 仓库 | https://git.nju.edu.cn/devops_b11/devops-project-b11 |
+| 协议 / 提交修订 | schema_version 1.1.0 / b11-e2-r1 |
+| 确认 | 2026-09-22 胡博明确确认 A11 已认可，见 AGREEMENT.md |
+| 验证入口 | 仓库根目录 `.venv/bin/python e2/validate.py` |
 
-A11 自己的过程记录也包含在快照中，是来源证据；B11 状态以本目录文件为准。
+## 交付索引
 
-## 运行
+| 课程要求 | 文件 |
+| --- | --- |
+| 统一任务模型 | [task.schema.json](task.schema.json)、[contract.py](contract.py)（跨字段检查） |
+| 四类请求、202、查询、错误与发现样例 | [contract-examples.json](contract-examples.json) |
+| 四个创建接口与查询 | [openapi.yaml](openapi.yaml)（E2 约定，未部署） |
+| DRAFT 交接 | [请求与响应](../draft/examples/)、[产物文件](../fixtures/draft-handoff/README.md) |
+| MDFixer 交接 | [请求/响应/人工报告](../mdfixer/examples/)、[源码与来源](../fixtures/mdfixer-project/README.md)、[真实本地结果](evidence/mdfixer-2026-09-22/result.json) |
+| 产物读取 | [artifact-access.md](artifact-access.md)、[artifact_access.py](artifact_access.py) |
+| 配对确认与三轮内容 | [AGREEMENT.md](AGREEMENT.md)、[PAIRING.md](PAIRING.md) |
+| 设计与任务 | [ADR.md](ADR.md)、[Backlog.md](Backlog.md)、[CONTRACT_REVIEW.md](CONTRACT_REVIEW.md) |
+| AI / 个人贡献 / 变更 | [AI_USAGE.md](AI_USAGE.md)、[CONTRIBUTIONS.md](CONTRIBUTIONS.md)、[CHANGELOG.md](CHANGELOG.md) |
+| 实际完成与失败记录 | [STATUS.md](STATUS.md)、[evidence/](evidence/) |
+| LMS 与提交版本 | [SUBMISSION.md](SUBMISSION.md) |
 
-以下命令均在仓库根目录执行。当前 WSL 已准备好 `.venv`，可以直接运行验证。新机器需要 Python 3.10+：
+## 运行与预期
+
+当前 WSL 已有虚拟环境。新机器从仓库根目录执行：
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r e2/requirements.txt
+.venv/bin/python e2/validate.py
 ```
 
-若当前 Debian/Ubuntu 环境缺 ensurepip 且已有系统 pip，可使用本次实际采用的隔离安装方式（以下路径适用于 Python 3.10）：
+Linux/WSL 还需要 Git、Make、C 编译器。若系统没有 ensurepip 但有系统 pip（本机 Python 3.10 实际使用的方式）：
 
 ```bash
 python3 -m venv --without-pip .venv
@@ -44,24 +43,12 @@ python3 -m pip install --target .venv/lib/python3.10/site-packages pip==25.2
 .venv/bin/python -m pip install -r e2/requirements.txt
 ```
 
-严格审阅未修改的 A11 原件：
+预期整体退出 0：4 类请求、202、4 个查询、3 个完整失败 Job、6 个非法样例；20 个公共契约/读取回归、6 个 MDFixer 回归；DRAFT/MDFixer 专有样例；8 个产物文件的真实摘要；一次本地补丁构建验证。非法 ABC job_type 和缺 baseline 必须拒绝。详细结果见 STATUS。
 
-```bash
-.venv/bin/python e2/validate.py
-```
+`--proposed` 保留为旧命令别名，默认已使用正式提交版；`--reference` 仅运行旧 A11 42 项校验，不能替代正式入口。ZIP 解压后也可验证，DRAFT 不再依赖归档之外的 Git 对象，MDFixer 源码提交包含在 project.bundle。
 
-当前会明确报告增量查询缺字段并退出 **1**。这条命令保留原件问题，供与 A11 讨论。
+## 来源与执行边界
 
-显式验证 B11 的待确认提议及本地读取准备：
+A11 原始 96f35cc 快照在 [reference/](reference/README.md) 原样保留。最新 8b0c3b9 的四份契约核心文件与旧快照一致，见来源核对记录。正式提交版在 e2 根目录修复已发现的字段和校验遗漏，没有改写 A11 仓库。
 
-```bash
-.venv/bin/python e2/validate.py --proposed
-```
-
-当前退出 **0**，运行来源完整性、原 A11 校验、分类型输入、17 个回归检查和演示文件读取。不会联系外部服务或运行论文工具。
-
-单独查看文件读取：
-
-```bash
-python3 e2/artifact_access.py --root fixtures/e2-handoff/artifacts --metadata fixtures/e2-handoff/artifact.json
-```
+`contract-examples.json` 是教学报文，不能当作真实检测结果；DRAFT 成功样例标记 example_only。MDFixer 示例响应来自本次人工小项目的实际本地运行，报告明确 MANUAL，未调用 A11 检测器。各历史审阅/失败证据仍保留当时状态，以 STATUS 和 AGREEMENT 为当前结论。
