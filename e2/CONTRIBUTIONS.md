@@ -15,6 +15,6 @@
 
 ## 版本与证据
 
-最终提交通过 `git rev-parse HEAD` 核对，发布标记和 LMS 入口见 SUBMISSION。仓库提交记录本身是作者/时间/说明证据；本轮采用本地合并并推送，没有创建或虚构 Issue/MR 链接。
+本次正式整合修复提交为 `578280a`（`feat(e2): finalize confirmed B11 submission and repair validation`）；最终提交通过 `git rev-parse HEAD` 核对，发布标记和 LMS 入口见 SUBMISSION。仓库提交记录本身是作者/时间/说明证据；本轮采用本地合并并推送，没有创建或虚构 Issue/MR 链接。
 
 验证见 STATUS 与 evidence。孙静怡 Docker 构建日志是其环境执行记录，胡博复核摘要；本次 MDFixer 演示是胡博本机真实运行。所有技术成果可追溯到具体文件和提交，人工确认来源单独记录在 AGREEMENT。

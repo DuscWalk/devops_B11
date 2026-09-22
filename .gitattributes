@@ -5,3 +5,5 @@
 *.pptx binary
 
 *.bundle binary
+# Unified diff context lines contain intentional leading spaces and tabs.
+*.patch -text -whitespace
