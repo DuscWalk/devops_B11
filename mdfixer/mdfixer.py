@@ -232,3 +232,78 @@ def parse_makefile(content: str) -> list[MakefileRule]:
         else:
             i += 1
     return rules
+
+
+def detect_declaration_style(content: str, rules: list[MakefileRule]) -> dict:
+    """推断 Makefile 的声明风格，用于生成与现有风格一致的补丁。"""
+    style = {
+        "uses_tab_recipe": any(r.recipe for r in rules),
+        "prereq_separator": " ",  # 默认空格分隔
+        "has_continuation": "\\\\" in content,
+        "variable_patterns": re.findall(r"\$\(([A-Za-z_][A-Za-z0-9_]*)\)", content),
+    }
+    return style
+
+
+# ---------------------------------------------------------------------------
+# 补丁生成
+# ---------------------------------------------------------------------------
+
+
+def find_rule_for_target(rules: list[MakefileRule], target: str) -> MakefileRule | None:
+    """找到目标对应的规则。支持多目标规则（空格分隔的 target 列表）。"""
+    for rule in rules:
+        targets = rule.target.split()
+        if target in targets:
+            return rule
+    return None
+
+
+def generate_patch_for_missing(
+    makefile_content: str,
+    rules: list[MakefileRule],
+    missing: Finding,
+) -> tuple[str, str] | None:
+    """为单个 MISSING 发现生成补丁内容和说明。
+
+    返回 (patched_content, description) 或 None（无法生成）。
+    """
+    rule = find_rule_for_target(rules, missing.target)
+    if rule is None:
+        # 目标不存在于 Makefile，无法直接修复
+        return None
+
+    dep = missing.dependency
+    if dep in rule.prerequisites:
+        # 已声明，无需修复
+        return None
+
+    lines = makefile_content.split("\n")
+    rule_idx = rule.line_no - 1  # 0-based
+
+    # 找到规则行（可能跨多行续行）
+    line = lines[rule_idx]
+    colon_idx = line.index(":")
+    target_part = line[:colon_idx]
+    prereq_part = line[colon_idx + 1:]
+
+    # 生成新的依赖行
+    new_prereq = prereq_part.rstrip()
+    if new_prereq and not new_prereq.endswith("\\"):
+        new_prereq = new_prereq + " " + dep
+    elif new_prereq.endswith("\\"):
+        new_prereq = new_prereq + "\n\t" + dep + " \\"
+    else:
+        new_prereq = " " + dep
+
+    lines[rule_idx] = target_part + ":" + new_prereq
+    patched = "\n".join(lines)
+
+    desc = f"为 {missing.target} 补充缺失依赖 {missing.dependency}"
+    return patched, desc
+
+
+def make_unified_diff(original: str, patched: str, filename: str) -> str:
+    """生成统一 diff 格式的补丁。"""
+    orig_lines = original.splitlines(keepends=True)
+ 
