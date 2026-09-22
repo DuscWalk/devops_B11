@@ -221,4 +221,26 @@ def make_unified_diff(original, patched, filename):
     patched_lines = patched.splitlines(keepends=True)
     diff = difflib.unified_diff(
         orig_lines,
-        pa
+        patched_lines,
+        fromfile=f"a/{filename}",
+        tofile=f"b/{filename}",
+        lineterm="",
+    )
+    return "".join(diff)
+
+
+@dataclass
+class CandidateResult:
+    accepted: bool
+    reason: str = ""
+    patch: str = ""
+    description: str = ""
+    build_exit_code: int = -1
+    verify_exit_code: int = -1
+
+
+def run_command(cmd, cwd=None, timeout=1200):
+    try:
+        proc = subprocess.run(
+            cmd, shell=True, cwd=cwd,
+            capture_output=True, text=True, timeout=timeout,
