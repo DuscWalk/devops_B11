@@ -151,4 +151,4 @@ class CandidateResult:
     verify_exit_code: int = -1
 def run_command(cmd, cwd=None, timeout=1200):
     try:
-        proc = subprocess.run(cmd, shell=True, c
+        proc = subprocess.run(cmd, shell=True, cwd=cwd, capture_output=True, text=True, timeout=ti
