@@ -330,4 +330,15 @@ def make_unified_diff(original: str, patched: str, filename: str) -> str:
 
 @dataclass
 class CandidateResult:
-  
+    accepted: bool
+    reason: str = ""
+    patch: str = ""
+    description: str = ""
+    build_exit_code: int = -1
+    verify_exit_code: int = -1
+
+
+def run_command(cmd: str, cwd: str | None = None, timeout: int = 1200) -> tuple[int, str, str]:
+    """运行命令，返回 (exit_code, stdout, stderr)。"""
+    try:
+ 
