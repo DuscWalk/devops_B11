@@ -6,7 +6,12 @@
 
 ```
 mdfixer/
-├── mdfixer.py                 # 核心实现：REPAIR 任务逻辑
+├── mdfixer.py                 # CLI 入口：解析参数、调用 run_repair、输出响应
+├── mdfixer_core.py            # 数据模型 + URI 解析 + MD 报告加载
+├── mdfixer_engine.py          # Makefile 解析 + 声明风格检测
+├── mdfixer_patch.py           # 补丁生成 + 统一 diff
+├── mdfixer_verify.py          # 命令执行 + 候选验证
+├── mdfixer_runner.py          # run_repair 主流程编排
 ├── validate_examples.py       # 契约校验脚本（零依赖）
 ├── README.md                  # 本文件
 └── examples/
@@ -15,7 +20,6 @@ mdfixer/
     ├── md_report.json              # MD 报告样例（含 MISSING / REDUNDANT）
     └── Makefile                    # 演示用 Makefile（app 目标缺失依赖）
 ```
-
 ## 功能说明
 
 对应 B11 组 `e2/Backlog.md` 中 MDFixer 任务：
