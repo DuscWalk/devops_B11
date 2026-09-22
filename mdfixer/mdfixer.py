@@ -270,4 +270,43 @@ def generate_patch_for_missing(
     返回 (patched_content, description) 或 None（无法生成）。
     """
     rule = find_rule_for_target(rules, missing.target)
-    if
+    if rule is None:
+        # 目标不存在于 Makefile，无法直接修复
+        return None
+
+    dep = missing.dependency
+    if dep in rule.prerequisites:
+        # 已声明，无需修复
+        return None
+
+    lines = makefile_content.split("
+")
+    rule_idx = rule.line_no - 1  # 0-based
+
+    # 找到规则行（可能跨多行续行）
+    line = lines[rule_idx]
+    colon_idx = line.index(":")
+    target_part = line[:colon_idx]
+    prereq_part = line[colon_idx + 1:]
+
+    # 生成新的依赖行
+    new_prereq = prereq_part.rstrip()
+    if new_prereq and not new_prereq.endswith("\"):
+        new_prereq = new_prereq + " " + dep
+    elif new_prereq.endswith("\"):
+        new_prereq = new_prereq + "
+	" + dep + " \"
+    else:
+        new_prereq = " " + dep
+
+    lines[rule_idx] = target_part + ":" + new_prereq
+    patched = "
+".join(lines)
+
+    desc = f"为 {missing.target} 补充缺失依赖 {missing.dependency}"
+    return patched, desc
+
+
+def make_unified_diff(original: str, patched: str, filename: str) -> str:
+    """生成统一 diff 格式的补丁。"""
+    orig_lines = original.splitlines(ke
