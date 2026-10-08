@@ -11,9 +11,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "e3/scripts"))
 from common import EvidenceRun, file_sha256, fingerprint
+from verify_docker import is_expected_toolchain_failure
 
 
 class EvidenceRegressionTests(unittest.TestCase):
+    def test_missing_make_127_is_expected_but_infrastructure_failure_is_not(self):
+        self.assertTrue(is_expected_toolchain_failure(127, "/bin/sh: 1: make: not found"))
+        self.assertTrue(is_expected_toolchain_failure(1, "make: command not found"))
+        for code, text in ((0, "make: not found"), (124, "make: not found"),
+                           (127, "No such file or directory: docker"), (1, "registry connection timeout")):
+            self.assertFalse(is_expected_toolchain_failure(code, text))
+
     def test_identity_order_stable_and_configuration_change_visible(self):
         self.assertEqual(fingerprint({"compiler": "gcc", "cflags": ["-O0"]}),
                          fingerprint({"cflags": ["-O0"], "compiler": "gcc"}))

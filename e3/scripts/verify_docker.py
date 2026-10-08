@@ -13,6 +13,11 @@ from common import ROOT, EvidenceRun, file_sha256, fingerprint, write_json
 IMAGE_FORMAT = '{"id":{{json .Id}},"repo_digests":{{json .RepoDigests}},"os":{{json .Os}},"architecture":{{json .Architecture}}}'
 
 
+def is_expected_toolchain_failure(code, text):
+    # docker's legacy builder propagates the shell's 127 for a missing make.
+    return code not in (0, 124) and ("make: not found" in text or "make: command not found" in text)
+
+
 def docker_suite(run):
     run.run("docker-server", ["docker", "version", "--format", "{{json .Server}}"], timeout=30)
     fixture = ROOT / "e3/fixtures/draft/tiny-greeting"
@@ -31,7 +36,7 @@ def docker_suite(run):
     _, context = run.run("docker-context", ["docker", "context", "show"], timeout=30)
     code, text = run.run("draft-broken-build", ["docker", "build", *build_options, "--no-cache",
                             "-t", broken, "-f", "Dockerfile.broken", "."], project, timeout=300, allowed=None)
-    expected_failure = code not in (0, 124, 127) and ("make: not found" in text or "make: command not found" in text)
+    expected_failure = is_expected_toolchain_failure(code, text)
     write_json(run.directory / "broken-result.json", {
         "exit_code": code, "expected_toolchain_failure_observed": expected_failure,
         "classification": "EXPECTED_MISSING_TOOLCHAIN" if expected_failure else "UNEXPECTED_FAILURE_OR_SUCCESS",
