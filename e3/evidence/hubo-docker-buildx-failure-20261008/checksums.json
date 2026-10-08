@@ -1,0 +1,10 @@
+{
+  "broken-result.json": "4ed3f18f2eae0b539a164fc44f081f2e80343667fb2ec29fcdf8c8ded3791390",
+  "commands.json": "6d48481b89db32dd880cee9afd10b8a93fed85f1e07d4d5ebcf7fd9c574ce298",
+  "logs/001-docker-server.txt": "f3a2633f652601b93b011eadcdd55d62d4ae65e22090f50a7e7722a02207b3b0",
+  "logs/002-docker-context.txt": "01666ec060466c14b9fa06c613fbac449163f2a2017558fe16526209ab78c6b0",
+  "logs/003-draft-broken-build.txt": "9b8d91d8da295c2a9fc3d97b8691b566b9bf8c50e68d045603992f5ca8e286b5",
+  "observations.json": "411ecc2f577f5d14880b939515770f2fbbf4b3a397101c213aa1af351ca77e13",
+  "source.json": "bf60455bd28cf6d2812a21050a375432c55a94e5eba4e4343c87c2c661b333f0",
+  "summary.json": "a61da343b7309d7491ac3e50d737e9db265e0632dd74f419a556c503f7b0e699"
+}

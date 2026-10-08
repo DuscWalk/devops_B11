@@ -1,0 +1,23 @@
+{
+  "broken-result.json": "ecf00de286bcae206309552292e174a2c479b784d54966ffb4b72fa22c03eb5e",
+  "builder.json": "18a67b6fe4c7d359f14d7072ce171a038808bd1f101929f601e6c47fea1bce40",
+  "commands.json": "41906c120635738e0ce1b745b326b676c0b2af8a656acacf2e4a3de072b8c173",
+  "environment.json": "f84fb2d706fd32cbb135001ae1097985b28bcb62abd92c1803383375aafc8afa",
+  "image-reference.json": "b6c10c583b0077ef13a10bbb17901403b2c43ef81865b1ced509bd002f1591a8",
+  "logs/001-docker-server.txt": "f3a2633f652601b93b011eadcdd55d62d4ae65e22090f50a7e7722a02207b3b0",
+  "logs/002-docker-buildx-probe.txt": "e95c9c481ad1108b62436f0c72f4dc191f7a4df50012b51c76577af098068123",
+  "logs/003-docker-context.txt": "01666ec060466c14b9fa06c613fbac449163f2a2017558fe16526209ab78c6b0",
+  "logs/004-draft-broken-build.txt": "02dfb164a14794e41b58de066dffa0ff7e8ebac33eda2627feba7afbf1551c2f",
+  "logs/005-docker-base-identity.txt": "f73a9ca7584fe3fce0704d91420a9afa7d45d3b9cefd75e9b8ebc554a53cfcdc",
+  "logs/006-draft-reference-build.txt": "550edb657e9f21203c4d2c47d664c2875bebd7dd0ff9b8b04181ee67b1e56568",
+  "logs/007-docker-reference-identity.txt": "accfca296f2a48a0cdfbcd55cf04272012423288f2dd273d47fb9fec8a8faea2",
+  "logs/008-draft-reference-function.txt": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+  "logs/009-draft-container-offline-rebuild.txt": "222c09ac4f5db0019f0a6cd74ec9ad9b115985989989cd4037cfa4c3270f78e5",
+  "logs/010-container-compiler.txt": "78fc11ae2c3ff7c235eb18ed90989d18f6cc864fb27027f839368cd0888deebc",
+  "logs/011-container-make.txt": "cb84250d994234272d0a465014ce2931be76e9e0cb114b9bffa078c3c211e8eb",
+  "logs/012-container-packages.txt": "b37814e07389cac4fba864d0308a00af58a7a9e34ea19b50bcb0f1823df31915",
+  "observations.json": "c4752a5b6d019d58d03299bc17ed2eee15b5f6891f0475fa4ce0360e51fe3d62",
+  "packages.txt": "b37814e07389cac4fba864d0308a00af58a7a9e34ea19b50bcb0f1823df31915",
+  "source.json": "7d427919041069872c79fdacd3296ea66c640229fb3c476a9a13dc01acfacc5b",
+  "summary.json": "f47eb0e6b6bbb4176c8d41726f708cdd95d3852eb4475f8f2dd1faf824384efc"
+}

@@ -1,0 +1,6 @@
+{
+  "exit_code": 127,
+  "expected_toolchain_failure_observed": true,
+  "classification": "EXPECTED_MISSING_TOOLCHAIN",
+  "note": "A registry/network/timeout failure is not the expected missing-make result."
+}

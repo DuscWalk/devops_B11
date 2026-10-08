@@ -1,0 +1,66 @@
+{
+  "verified_at_utc": "2026-10-08T10:18:27.389865+00:00",
+  "archive_files_verified": 271,
+  "archives": [
+    {
+      "directory": "hubo-clean-checkout-20261008",
+      "files_verified": 116
+    },
+    {
+      "directory": "hubo-docker-20261008",
+      "files_verified": 21
+    },
+    {
+      "directory": "hubo-docker-buildx-failure-20261008",
+      "files_verified": 8
+    },
+    {
+      "directory": "hubo-docker-classifier-failure-20261008",
+      "files_verified": 10
+    },
+    {
+      "directory": "hubo-local-20261008",
+      "files_verified": 116
+    }
+  ],
+  "input_source_checks": [
+    {
+      "directory": "hubo-local-20261008",
+      "repository_commit": "c854eaae3c7b1a849341a84ce4f2bc919d9e6027",
+      "input_files_match_recorded_commit": true,
+      "working_tree_status": ""
+    },
+    {
+      "directory": "hubo-docker-20261008",
+      "repository_commit": "fe6a4215a4c63a7652161ca93c9630a57af03015",
+      "input_files_match_recorded_commit": true,
+      "working_tree_status": "?? e3/evidence/hubo-local-20261008/\n"
+    },
+    {
+      "directory": "hubo-clean-checkout-20261008",
+      "repository_commit": "fe6a4215a4c63a7652161ca93c9630a57af03015",
+      "input_files_match_recorded_commit": true,
+      "working_tree_status": ""
+    }
+  ],
+  "slide_originals_match": true,
+  "local_links_checked": true,
+  "new_files_owned_by_duscwalk": true,
+  "environment_fingerprint_checks": [
+    {
+      "directory": "hubo-clean-checkout-20261008",
+      "build_environment_hash": "84256892c8fe602b10ec6e1b2f5658afebcee71407234db5f12208314fa9920f",
+      "canonical_hash_verified": true
+    },
+    {
+      "directory": "hubo-docker-20261008",
+      "build_environment_hash": "5540f25c4ec174022fc4c741a2cdf08b204247b329529032f5a1fc5e58f66ddf",
+      "canonical_hash_verified": true
+    },
+    {
+      "directory": "hubo-local-20261008",
+      "build_environment_hash": "84256892c8fe602b10ec6e1b2f5658afebcee71407234db5f12208314fa9920f",
+      "canonical_hash_verified": true
+    }
+  ]
+}

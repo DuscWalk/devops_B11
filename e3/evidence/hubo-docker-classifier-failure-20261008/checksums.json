@@ -1,0 +1,12 @@
+{
+  "broken-result.json": "4879bc7e07b7d527e182fbec36e06ce7830b45a81feddf7e2ac72c146083754e",
+  "builder.json": "18a67b6fe4c7d359f14d7072ce171a038808bd1f101929f601e6c47fea1bce40",
+  "commands.json": "0e1e980f14cadda1d2e072367d1950ebf8de2c17edcd41c4146f6e9c95097914",
+  "logs/001-docker-server.txt": "f3a2633f652601b93b011eadcdd55d62d4ae65e22090f50a7e7722a02207b3b0",
+  "logs/002-docker-buildx-probe.txt": "e95c9c481ad1108b62436f0c72f4dc191f7a4df50012b51c76577af098068123",
+  "logs/003-docker-context.txt": "01666ec060466c14b9fa06c613fbac449163f2a2017558fe16526209ab78c6b0",
+  "logs/004-draft-broken-build.txt": "af9934b0beb73352b905b44a6bae883af8f8e2e8e7332d8931aa9762b02da7e5",
+  "observations.json": "89a28592ae626aa47fe26ddeee00b3dfa034df0f3c12c493ef5fdb57566c921e",
+  "source.json": "0f09cff4d9509043b65205860e0669579c4c191f2ee732dd404df5d126250a70",
+  "summary.json": "1e9d7b7d2ab6dd6613e498fdccdc0d878b38a0959f9b69fc20c731340a911cab"
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "label": "docker-server",
+    "argv": [
+      "docker",
+      "version",
+      "--format",
+      "{{json .Server}}"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11",
+    "started_at_utc": "2026-10-08T10:10:58.206117+00:00",
+    "seconds": 0.1854,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/001-docker-server.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "docker-context",
+    "argv": [
+      "docker",
+      "context",
+      "show"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11",
+    "started_at_utc": "2026-10-08T10:10:58.392411+00:00",
+    "seconds": 0.2474,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/002-docker-context.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-broken-build",
+    "argv": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "--no-cache",
+      "-t",
+      "b11/e3-tiny-broken:37b00d91afa8",
+      "-f",
+      "Dockerfile.broken",
+      "."
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-docker-first/work/tiny-greeting",
+    "started_at_utc": "2026-10-08T10:10:58.640119+00:00",
+    "seconds": 0.2105,
+    "exit_code": 125,
+    "timed_out": false,
+    "log": "logs/003-draft-broken-build.txt",
+    "expected_exit_codes": null
+  }
+]

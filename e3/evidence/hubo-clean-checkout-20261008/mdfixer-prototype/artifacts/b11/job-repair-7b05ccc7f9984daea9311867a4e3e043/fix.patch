@@ -1,0 +1,11 @@
+--- a/Makefile
++++ b/Makefile
+@@ -6,7 +6,7 @@
+ app: app.o
+ 	$(CC) -o $@ $^
+ 
+-app.o: app.c legacy.h
++app.o: config.h app.c legacy.h
+ 	$(CC) $(CFLAGS) -c -o $@ app.c
+ 
+ test: app

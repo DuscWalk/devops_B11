@@ -1,0 +1,15 @@
+{
+  "suite": "b11-e3-draft-docker-reference",
+  "result": "PASS",
+  "started_at_utc": "2026-10-08T10:14:26.065443+00:00",
+  "ended_at_utc": "2026-10-08T10:15:11.863386+00:00",
+  "checks_passed": 3,
+  "checks_total": 3,
+  "commands_recorded": 12,
+  "error": null,
+  "cross_group_read_verified": false,
+  "a11_detector_recheck": "NOT_RUN",
+  "reference_dockerfile_is_manual": true,
+  "automatic_draft_service": false,
+  "environment_hash_status": "PROPOSED_B11_ONLY"
+}
