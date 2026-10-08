@@ -26,3 +26,6 @@ Thumbs.db
 /artifacts/
 /workspaces/
 *.log
+
+# E3 disposable runs; selected text evidence is explicitly exported
+/e3/work/

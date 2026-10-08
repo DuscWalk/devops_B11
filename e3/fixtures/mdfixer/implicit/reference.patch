@@ -1,0 +1,14 @@
+diff --git a/Makefile b/Makefile
+--- a/Makefile
++++ b/Makefile
+@@ -7,7 +7,9 @@
+ 	$(CC) main.o -o app
+ 
+ %.o: %.c
+-	$(CC) $(CFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
++
++-include main.d
+ 
+ clean:
+ 	rm -f app main.o main.d

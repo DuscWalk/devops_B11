@@ -1,0 +1,11 @@
+diff --git a/Makefile b/Makefile
+--- a/Makefile
++++ b/Makefile
+@@ -1,6 +1,6 @@
+ CC ?= cc
+ CFLAGS = -O0 -Wall -Wextra
+-HEADERS = unused.h
++HEADERS = unused.h config.h
+ 
+ all: app
+ 
