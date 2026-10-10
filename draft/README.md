@@ -1,37 +1,25 @@
-# DRAFT 阶段准备
+# DRAFT · B11 E2 / E3 基线
 
-范围：E2 输入输出审阅与 E3 样本准备。DRAFT 自动生成/迭代服务尚未实现，未部署 API。
+负责人孙静怡。接口方案由胡博于 2026-09-22 明确确认 A11 已认可，见 [AGREEMENT](../e2/AGREEMENT.md)。
 
-## 已完成的本地工作
+已交付：固定 fzy 版本、构建/验证命令、DRAFT 请求/202/完整成功失败响应、5 个可读文件，WSL 和手工 Docker 基线日志。自动生成/迭代服务尚未实现。
 
-- 选定 fzy 的完整提交，核对根目录 Makefile 与构建命令。
-- 在 WSL Ubuntu 24.04、GCC 13.3.0、Make 4.3 中完成构建、31 个上游测试及帮助命令验证。
-- 准备请求、成功/失败响应和可读取的演示产物，并补充 Q03/Q07 建议。
-- 手工 Dockerfile 已构建为本地镜像，独立容器断网重建与 31 个测试通过；镜像尚未发布或交付 A11。
-
-## 文件入口
-
-| 文件 | 用途 |
+| 入口 | 内容 |
 | --- | --- |
-| [PROJECT.md](PROJECT.md) | 项目、版本、复现命令与 Docker 候选验证步骤 |
-| [CONTRACT_REVIEW.md](CONTRACT_REVIEW.md) | 给接口负责人胡博的 Q03/Q07 审阅建议，待 A11 确认 |
-| [examples/](examples/) | DRAFT 请求、202、成功/失败查询响应与来源信息 |
-| [Dockerfile](Dockerfile) | 手工编写、已在本机验证的基线环境 |
-| [交接样例](../fixtures/draft-handoff/README.md) | image_ref、迭代记录、验证结果和日志文件 |
-| [真实执行结果](evidence/baseline-2026-09-21/result.json) | 本次 WSL 执行环境、命令、时间、退出码 |
-| [真实镜像信息](evidence/docker-2026-09-21/image_ref.json) | 本地镜像 ID、大小、源码版本与交付状态；同目录保存 Docker 构建/验证日志 |
-| [WORK_RECORD.md](WORK_RECORD.md) | 本分支进度、AI 辅助记录、未完成项 |
+| [PROJECT.md](PROJECT.md) | 完整源码 SHA、命令、根目录 Makefile、Docker 复现 |
+| [CONTRACT_REVIEW.md](CONTRACT_REVIEW.md) | 9 月 21 日回复历史，后续确认以公共 AGREEMENT 为准 |
+| [examples/](examples/) | 请求、缺验证命令反例、202 和查询 |
+| [Dockerfile](Dockerfile) | 手工基线，基础 tag/APT 未锁版本 |
+| [fixtures/draft-handoff](../fixtures/draft-handoff/README.md) | 人工接口产物，example_only，与真实执行证据区分 |
+| [evidence/docker-2026-09-21](evidence/docker-2026-09-21/) | 本地镜像 ID、工具版本、构建和断网运行日志 |
+| [WORK_RECORD.md](WORK_RECORD.md) | 原作者过程与 AI 记录，附当前状态 |
 
-## 样例检查
-
-在仓库根目录执行，需 Python 3.10+ 与 `jsonschema>=4.10,<5`：
+在仓库根目录运行：
 
 ```bash
-python3 draft/validate_examples.py
+.venv/bin/python draft/validate_examples.py
 ```
 
-校验器通过 Git 读取固定契约来源提交，不合并或修改组员分支。如本机没有来源对象，先 `git fetch origin`；也可使用 `--schema /path/to/task.schema.json` 指定来源文件，摘要必须与当前参考版本一致。
+校验使用本仓库 e2/task.schema.json 及记录的摘要，ZIP 无需额外 Git 对象。胡博整合时保持内容样例不变，仅切换正式 Schema 和补强反例校验。
 
-本次 WSL 使用已有 jsonschema 4.10.3；上游项目的构建不依赖该 Python 包。
-
-所有 `job-draft-example` 产物均为人工构造的接口样例。成功响应不代表已运行 DRAFT 或已产出镜像。真实执行证据仅在 `evidence/` 中。
+基线为 fzy `28195b3a709995354b6c33cec9bb7c9f81532eb6`，Ubuntu24.04/GCC13.3/Make4.3；make clean && make；make check && ./fzy --help。来源日志记录 31 测试、99 断言通过，Ruby acceptance 未运行。镜像仅在孙静怡的 Docker daemon，尚未交付 A11。人工成功样例不代表自动 DRAFT 执行。

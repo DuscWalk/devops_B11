@@ -1,0 +1,783 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://git.nju.edu.cn/devops-group11/devops-group11/-/blob/main/task.schema.json",
+  "title": "A11-B11 E2 Job Contract",
+  "description": "E2 统一任务模型。一份 Job 表达四类耗时任务（DRAFT / FULL_CHECK / INCREMENTAL_CHECK / REPAIR）。耗时任务一律异步：创建端点返回 202 + job_id，消费者用 GET /v1/jobs/{job_id} 查询。字段名凡课程 PPT 已给出者一律沿用。本文件为 $defs 集合，使用方式见 validate.py。",
+  "$defs": {
+    "JobType": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "FULL_CHECK",
+        "INCREMENTAL_CHECK",
+        "REPAIR"
+      ],
+      "description": "任务类型。非枚举值一律拒绝。"
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "QUEUED",
+        "RUNNING",
+        "SUCCEEDED",
+        "FAILED",
+        "TIMED_OUT",
+        "CANCELLED"
+      ],
+      "description": "任务状态。检出 MD/RD 属于 SUCCEEDED（分析正常完成），不是失败。终态一旦写入不可回退，重试须提交新任务。"
+    },
+    "CommitSha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$",
+      "description": "完整 40 位提交 SHA。拒绝短 SHA、分支名与 tag，保证基线可追溯。"
+    },
+    "ArtifactUri": {
+      "type": "string",
+      "pattern": "^artifact://[A-Za-z0-9._-]+/[A-Za-z0-9._-]+/[A-Za-z0-9._/-]+$",
+      "description": "产物地址，必须三段式：artifact://<group>/<job_id>/<name>。<group> 让配对组一眼看出该找谁要文件；缺段、含空格或非 artifact:// 一律拒绝（ADR-002）。"
+    },
+    "Repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "commit"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "pattern": "^(https://|git@)"
+        },
+        "commit": {
+          "$ref": "#/$defs/CommitSha"
+        }
+      }
+    },
+    "BaselineInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actual_graph_uri",
+        "commit",
+        "configuration_id"
+      ],
+      "description": "增量检测的历史图输入。缺此对象一律拒绝（课堂验收检查 03）。commit 必须等于 base_commit，configuration_id 必须与本次一致，否则拒绝。",
+      "properties": {
+        "actual_graph_uri": {
+          "$ref": "#/$defs/ArtifactUri"
+        },
+        "commit": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "configuration_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "Location": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string",
+          "description": "构建脚本路径，如 src/Makefile"
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "process_id": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "动态追踪到的构建进程号"
+        }
+      }
+    },
+    "Evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "MISSING = actual_read:true 且 declared:false；REDUNDANT = actual_read:false 且 declared:true。",
+      "properties": {
+        "actual_read": {
+          "type": "boolean",
+          "description": "构建过程中是否真的读取了该依赖"
+        },
+        "declared": {
+          "type": "boolean",
+          "description": "构建脚本中是否声明了该依赖"
+        }
+      }
+    },
+    "Finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "target",
+        "dependency",
+        "commit",
+        "detector",
+        "location",
+        "evidence"
+      ],
+      "description": "一条检测发现（错误视角）。回答『哪里错了』。",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "MISSING",
+            "REDUNDANT"
+          ]
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dependency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commit": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "detector": {
+          "type": "string",
+          "description": "产生该发现的检测器，如 BUILDCHECKER / ECHECKER。人工样张须标明人工来源（如 INSTRUCTOR_ORACLE / MANUAL）。"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "NEW",
+            "CARRIED_OVER",
+            "RESOLVED"
+          ],
+          "description": "仅 INCREMENTAL_CHECK 使用：相对基线的新增 / 沿袭 / 已消除。"
+        },
+        "location": {
+          "$ref": "#/$defs/Location"
+        },
+        "evidence": {
+          "$ref": "#/$defs/Evidence"
+        },
+        "suggested_fix": {
+          "type": "string",
+          "description": "建议的修复内容，供人工与 MDFixer 参考。规则：① type=MISSING 时可给出建议补上的依赖声明；② type=REDUNDANT 时【不得给出删除指令】—— 冗余声明可能是跨配置的有意声明，误删会破坏其他配置的构建正确性（ADR-004），此时应留空，或仅写明『仅提示、需人工确认』。"
+        }
+      }
+    },
+    "DependencyEdge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target",
+        "dependency",
+        "declared"
+      ],
+      "description": "依赖图的一条边及其变化归属。",
+      "properties": {
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dependency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "declared": {
+          "type": "boolean",
+          "description": "该依赖是否已在构建脚本声明。declared=false 的变化会同时出现在 findings（origin=NEW）；declared=true 的变化是【合法变化】，只出现在 delta —— 这是 delta 相对 findings 的独立价值所在。"
+        },
+        "commit": {
+          "$ref": "#/$defs/CommitSha"
+        }
+      }
+    },
+    "Delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline_commit",
+        "added",
+        "removed"
+      ],
+      "description": "实际依赖图相对基线（baseline_commit）的【边级结构变化】（结构视角）。回答『这次改动了哪些依赖关系』。与 findings 正交：findings 只记录错误，delta 记录全部变化（含合法变化）；两者允许且应当不同。禁止把 findings 的条目原样复制到 delta（那会使 delta 退化为冗余，见 ADR-006）。",
+      "properties": {
+        "baseline_commit": {
+          "$ref": "#/$defs/CommitSha",
+          "description": "本 delta 相对哪条基线算出，防止张冠李戴。"
+        },
+        "added": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DependencyEdge"
+          }
+        },
+        "removed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DependencyEdge"
+          }
+        }
+      }
+    },
+    "Artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "type",
+        "uri",
+        "media_type",
+        "producer_job_id"
+      ],
+      "description": "产物元数据。大文件不进响应体，只传引用。",
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "ACTUAL_GRAPH",
+            "DECLARED_GRAPH",
+            "ERROR_REPORT",
+            "TRACE_EVIDENCE",
+            "PATCH",
+            "STYLE_REPORT",
+            "DOCKERFILE",
+            "IMAGE",
+            "TEST_RESULT",
+            "LOG"
+          ],
+          "description": "ERROR_REPORT 沿用课程 PPT Slide 9 的原始词汇（写入 ERROR_REPORT 的 findings）。"
+        },
+        "uri": {
+          "$ref": "#/$defs/ArtifactUri"
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "producer_job_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commit": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "configuration_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "ArtifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "type",
+        "uri"
+      ],
+      "description": "响应中使用的产物引用。",
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "uri": {
+          "$ref": "#/$defs/ArtifactUri"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "producer_job_id": {
+          "type": "string"
+        },
+        "commit": {
+          "$ref": "#/$defs/CommitSha"
+        },
+        "configuration_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        }
+      }
+    },
+    "SystemError": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message"
+      ],
+      "description": "系统执行错误。只表示『工具没跑完』，与 findings 严格分离，二者不得在同一响应中共存。",
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "VALIDATION_4001",
+            "CONTRACT_4002",
+            "ENV_3002",
+            "EXEC_4002",
+            "ANALYSIS_5001",
+            "INTERNAL_5000"
+          ],
+          "description": "分层：VALIDATION_4001 请求方报文不合契约；CONTRACT_4002 任一方产出的报文不合已协商契约（含生产方响应违约，如在全量检测响应里塞 delta）；ENV_* 环境/镜像层；EXEC_* 执行/调度层；ANALYSIS_* 分析逻辑层；INTERNAL_5000 服务端未分类崩溃。注意 ENV_/EXEC_/ANALYSIS_ 三类是『任务失败』：HTTP 仍为 200，失败体现在 status 与 error。"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detail": {
+          "type": "string"
+        }
+      }
+    },
+    "Execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "submitted_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "finished_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "idempotency_key": {
+          "type": "string"
+        }
+      }
+    },
+    "Summary": {
+      "type": "object",
+      "description": "按 job_type 分工汇总：检测类用 missing/redundant/new/resolved 与 delta_* 计数；DRAFT 用 iterations/build_succeeded/verify_passed；REPAIR 用 candidates_*。允许各类型扩展自己的计数项。",
+      "properties": {
+        "missing_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "redundant_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "new_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resolved_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "delta_added_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "delta_removed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "iterations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "build_succeeded": {
+          "type": "boolean"
+        },
+        "verify_passed": {
+          "type": "boolean"
+        },
+        "verify_command": {
+          "type": "string"
+        },
+        "final_image_size_mb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "candidates_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "candidates_accepted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "candidates_rejected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_fixed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recheck_missing_remaining": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "Output": {
+      "type": "object",
+      "description": "任务产物。仅在 status = SUCCEEDED 时存在。findings 允许为空数组（本次未发现问题同样是成功）。",
+      "properties": {
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Finding"
+          }
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ArtifactRef"
+          }
+        },
+        "delta": {
+          "$ref": "#/$defs/Delta"
+        },
+        "current_graph_uri": {
+          "$ref": "#/$defs/ArtifactUri",
+          "description": "仅 INCREMENTAL_CHECK：本次检测后更新过的实际依赖图，供下一次提交（C1 → C2）继续作为基线使用。"
+        },
+        "patch_uri": {
+          "$ref": "#/$defs/ArtifactUri"
+        },
+        "patch_sha256": {
+          "type": "string"
+        },
+        "summary": {
+          "$ref": "#/$defs/Summary"
+        }
+      }
+    },
+    "Job": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "job_id",
+        "trace_id",
+        "job_type",
+        "status",
+        "execution",
+        "input",
+        "output",
+        "error"
+      ],
+      "description": "统一的 Job 视图。查询响应用此结构；input 回显原请求，便于追溯本次结果对应哪份输入。",
+      "properties": {
+        "schema_version": {
+          "type": "string"
+        },
+        "job_id": {
+          "type": "string",
+          "description": "服务端生成，客户端不得指定。"
+        },
+        "trace_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "job_type": {
+          "$ref": "#/$defs/JobType"
+        },
+        "status": {
+          "$ref": "#/$defs/Status"
+        },
+        "execution": {
+          "$ref": "#/$defs/Execution"
+        },
+        "input": {
+          "type": "object"
+        },
+        "output": {
+          "$ref": "#/$defs/Output"
+        },
+        "error": {
+          "$ref": "#/$defs/SystemError"
+        }
+      }
+    },
+    "CreateJobRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "trace_id",
+        "job_type",
+        "idempotency_key",
+        "input"
+      ],
+      "description": "创建任务请求。不接受客户端指定 job_id；用 idempotency_key 表达『同一逻辑请求』。",
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "const": "1.1.0"
+        },
+        "trace_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "job_type": {
+          "$ref": "#/$defs/JobType"
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input": {
+          "type": "object"
+        }
+      }
+    },
+    "DraftInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "build",
+        "verify_command"
+      ],
+      "properties": {
+        "repository": {
+          "$ref": "#/$defs/Repository"
+        },
+        "build": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command"
+          ],
+          "properties": {
+            "command": {
+              "type": "string",
+              "minLength": 1
+            },
+            "context_files": {
+              "type": "array",
+              "maxItems": 2,
+              "items": {
+                "type": "string"
+              },
+              "description": "最多两个构建说明文档（如 README / INSTALL）。"
+            }
+          }
+        },
+        "verify_command": {
+          "type": "string",
+          "minLength": 1,
+          "description": "构建成功判据，必须显式给出，避免把『镜像建成』误当『环境可用』。"
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "FullCheckInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "image",
+        "configuration_id",
+        "clean_build_command",
+        "project_root"
+      ],
+      "properties": {
+        "repository": {
+          "$ref": "#/$defs/Repository"
+        },
+        "image": {
+          "type": "string",
+          "minLength": 1,
+          "description": "可运行镜像，通常由 DRAFT 任务产出。"
+        },
+        "configuration_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "构建配置标识。基线属于固定提交与固定构建配置。"
+        },
+        "clean_build_command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project_root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "任务超时（秒）。可选；缺省时由服务端默认值决定，实际生效值见响应 execution.timeout_seconds。"
+        }
+      }
+    },
+    "IncrementalCheckInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "base_commit",
+        "baseline",
+        "build_environment_hash",
+        "image",
+        "configuration_id",
+        "clean_build_command",
+        "project_root"
+      ],
+      "description": "增量检测输入。待检提交由 repository.commit 给出（不另设 commit 字段，避免与 repository.commit 重复且可能不一致）。",
+      "properties": {
+        "repository": {
+          "$ref": "#/$defs/Repository"
+        },
+        "base_commit": {
+          "$ref": "#/$defs/CommitSha",
+          "description": "基线提交（C0）。"
+        },
+        "baseline": {
+          "$ref": "#/$defs/BaselineInfo"
+        },
+        "build_environment_hash": {
+          "type": "string",
+          "minLength": 1,
+          "description": "构建环境哈希，用于校验基线数据与本次检测是否在同一环境下产生。跨环境比对会误报。"
+        },
+        "image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "configuration_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "本次检测所用的构建配置标识。必填：必须与 baseline.configuration_id 相同，否则拒绝。缺少它就无法证明基线图与本次检测处于同一构建配置（见 ADR-007）。"
+        },
+        "clean_build_command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project_root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "任务超时（秒）。可选；缺省时由服务端默认值决定，实际生效值见响应 execution.timeout_seconds。"
+        }
+      }
+    },
+    "RepairInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "md_report_uri",
+        "makefile_uri",
+        "image",
+        "build",
+        "verify_command"
+      ],
+      "properties": {
+        "repository": {
+          "$ref": "#/$defs/Repository"
+        },
+        "md_report_uri": {
+          "$ref": "#/$defs/ArtifactUri",
+          "description": "仅消费 MISSING 类型发现；REDUNDANT 不进入修复流程。"
+        },
+        "makefile_uri": {
+          "type": "string",
+          "minLength": 1,
+          "description": "待修复的构建脚本位置（如 repo://<sha>/src/Makefile）。修复发生在声明侧，必须显式给出目标文件。"
+        },
+        "image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command"
+          ],
+          "properties": {
+            "command": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "verify_command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "任务超时（秒）。可选；缺省时由服务端默认值决定，实际生效值见响应 execution.timeout_seconds。"
+        }
+      }
+    },
+    "DraftResponse": {
+      "type": "object",
+      "required": [
+        "job_id",
+        "job_type",
+        "status"
+      ],
+      "description": "创建受理响应仅需 job_id + status=QUEUED（HTTP 202）。查询响应使用 Job 结构：input 回显、output 携带产物、error 为 null 或错误对象。",
+      "properties": {
+        "job_id": {
+          "type": "string"
+        },
+        "trace_id": {
+          "type": "string"
+        },
+        "job_type": {
+          "$ref": "#/$defs/JobType"
+        },
+        "status": {
+          "$ref": "#/$defs/Status"
+        },
+        "execution": {
+          "$ref": "#/$defs/Execution"
+        },
+        "output": {
+          "$ref": "#/$defs/Output"
+        },
+        "error": {
+          "$ref": "#/$defs/SystemError"
+        }
+      }
+    }
+  }
+}

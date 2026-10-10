@@ -1,0 +1,3 @@
+rm -f app app.o
+cc -Wall -Wextra -O0 -c -o app.o app.c
+cc -o app app.o

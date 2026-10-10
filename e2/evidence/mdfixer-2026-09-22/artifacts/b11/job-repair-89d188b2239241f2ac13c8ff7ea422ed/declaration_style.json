@@ -1,0 +1,24 @@
+{
+  "declaration_style": {
+    "uses_tab_recipe": true,
+    "prereq_separator": " ",
+    "has_continuation": false,
+    "variable_patterns": [
+      "CC",
+      "CC",
+      "CFLAGS"
+    ],
+    "supported_scope": "simple explicit rules; no variable expansion or pattern repair"
+  },
+  "scope": "simple explicit Makefile rules",
+  "summary": {
+    "candidates_total": 1,
+    "candidates_accepted": 1,
+    "candidates_rejected": 0,
+    "missing_fixed": 1,
+    "recheck_performed": false,
+    "recheck_status": "NOT_RUN",
+    "execution_mode": "LOCAL_PROTOTYPE",
+    "image_used": false
+  }
+}

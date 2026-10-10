@@ -1,0 +1,691 @@
+{
+  "_meta": {
+    "group": "A11",
+    "pair_group": "B11",
+    "schema_version": "1.1.0",
+    "note": "A 组 E2 契约样例（合并版）。所有请求、响应、错误、发现、产物与非法输入集中在本文件，便于配对组一次性读取。字段名凡 PPT 已给出者一律沿用。示例使用真实项目 fzy：C0=28195b3a… 为基线提交，C1=f0618935… 为待检提交（取自论文 EChecker 的单点用例）。"
+  },
+  "requests": {
+    "DRAFT": {
+      "schema_version": "1.1.0",
+      "trace_id": "trace-b11-e2-0001",
+      "job_type": "DRAFT",
+      "idempotency_key": "b11|fzy|28195b3a709995354b6c33cec9bb7c9f81532eb6",
+      "input": {
+        "repository": {
+          "url": "https://github.com/jhawthorn/fzy",
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+        },
+        "build": {
+          "command": "make",
+          "context_files": [
+            "README.md"
+          ]
+        },
+        "verify_command": "make && ./fzy --help",
+        "max_iterations": 5,
+        "timeout_seconds": 1800
+      }
+    },
+    "FULL_CHECK": {
+      "schema_version": "1.1.0",
+      "trace_id": "trace-a11-e2-0001",
+      "job_type": "FULL_CHECK",
+      "idempotency_key": "a11|fzy|28195b3a709995354b6c33cec9bb7c9f81532eb6|cc-MODE0",
+      "input": {
+        "repository": {
+          "url": "https://github.com/jhawthorn/fzy",
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+        },
+        "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+        "configuration_id": "cc-MODE0",
+        "clean_build_command": "make clean && make",
+        "project_root": "/workspace/fzy"
+      }
+    },
+    "INCREMENTAL_CHECK": {
+      "schema_version": "1.1.0",
+      "trace_id": "trace-a11-e2-0002",
+      "job_type": "INCREMENTAL_CHECK",
+      "idempotency_key": "a11|fzy|f0618935f2520000559bcfd8e72dbb9f316f3451|base=28195b3a709995354b6c33cec9bb7c9f81532eb6|cc-MODE0",
+      "input": {
+        "repository": {
+          "url": "https://github.com/jhawthorn/fzy",
+          "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+        },
+        "base_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+        "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+        "configuration_id": "cc-MODE0",
+        "clean_build_command": "make clean && make",
+        "project_root": "/workspace/fzy",
+        "build_environment_hash": "sha256:4f8a1c09b7d3e256a1f0c7b94d82e56a3c0f7b1d94a2e856d3c0b7e19a4d3f70",
+        "baseline": {
+          "actual_graph_uri": "artifact://a11/job-full01/actual.json",
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+          "configuration_id": "cc-MODE0"
+        }
+      }
+    },
+    "REPAIR": {
+      "schema_version": "1.1.0",
+      "trace_id": "trace-a11-e2-0005",
+      "job_type": "REPAIR",
+      "idempotency_key": "b11|fzy|28195b3a709995354b6c33cec9bb7c9f81532eb6|repair-from-job-full01",
+      "input": {
+        "repository": {
+          "url": "https://github.com/jhawthorn/fzy",
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+        },
+        "md_report_uri": "artifact://a11/job-full01/error_report.json",
+        "makefile_uri": "repo://28195b3a709995354b6c33cec9bb7c9f81532eb6/src/Makefile",
+        "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+        "build": {
+          "command": "make clean && make"
+        },
+        "verify_command": "make && ./fzy --help"
+      }
+    }
+  },
+  "responses": {
+    "accepted_202": {
+      "job_id": "job-inc01",
+      "trace_id": "trace-a11-e2-0002",
+      "job_type": "INCREMENTAL_CHECK",
+      "status": "QUEUED",
+      "execution": {
+        "submitted_at": "2026-09-19T18:00:00+08:00"
+      }
+    },
+    "query_full_check": {
+      "schema_version": "1.1.0",
+      "job_id": "job-full01",
+      "trace_id": "trace-a11-e2-0001",
+      "job_type": "FULL_CHECK",
+      "status": "SUCCEEDED",
+      "execution": {
+        "submitted_at": "2026-09-19T17:30:00+08:00",
+        "started_at": "2026-09-19T17:30:04+08:00",
+        "finished_at": "2026-09-19T17:31:47+08:00",
+        "timeout_seconds": 1800,
+        "idempotency_key": "a11|fzy|28195b3a709995354b6c33cec9bb7c9f81532eb6|cc-MODE0"
+      },
+      "input": {
+        "repository": {
+          "url": "https://github.com/jhawthorn/fzy",
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+        },
+        "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+        "configuration_id": "cc-MODE0",
+        "clean_build_command": "make clean && make",
+        "project_root": "/workspace/fzy"
+      },
+      "output": {
+        "findings": [
+          {
+            "type": "MISSING",
+            "target": "src/fzy.o",
+            "dependency": "src/match.h",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "detector": "BUILDCHECKER",
+            "location": {
+              "file": "src/Makefile",
+              "line": 12,
+              "process_id": 1052
+            },
+            "evidence": {
+              "actual_read": true,
+              "declared": false
+            },
+            "suggested_fix": "src/fzy.o: src/fzy.c src/match.h"
+          },
+          {
+            "type": "MISSING",
+            "target": "src/fzy.o",
+            "dependency": "src/tty.h",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "detector": "BUILDCHECKER",
+            "location": {
+              "file": "src/Makefile",
+              "line": 12,
+              "process_id": 1052
+            },
+            "evidence": {
+              "actual_read": true,
+              "declared": false
+            },
+            "suggested_fix": "src/fzy.o: src/fzy.c src/tty.h"
+          },
+          {
+            "type": "REDUNDANT",
+            "target": "src/fzy.o",
+            "dependency": "src/obsolete.h",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "detector": "BUILDCHECKER",
+            "location": {
+              "file": "src/Makefile",
+              "line": 12
+            },
+            "evidence": {
+              "actual_read": false,
+              "declared": true
+            },
+            "suggested_fix": "仅提示：本构建配置下未观察到对该文件的读取。E2 阶段不自动修复冗余声明，是否移除请人工确认 —— 它可能在其他构建配置下被需要（见 ADR-004）。"
+          }
+        ],
+        "artifacts": [
+          {
+            "artifact_id": "graph-full01-actual",
+            "type": "ACTUAL_GRAPH",
+            "uri": "artifact://a11/job-full01/actual.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-full01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "configuration_id": "cc-MODE0",
+            "sha256": "9f2c41d0b7a5e83c1d6f904a2eb7c5183d0a6f4b9c2e17a8d5b3f0c691e4a27d"
+          },
+          {
+            "artifact_id": "graph-full01-declared",
+            "type": "DECLARED_GRAPH",
+            "uri": "artifact://a11/job-full01/declared.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-full01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "configuration_id": "cc-MODE0"
+          },
+          {
+            "artifact_id": "report-full01",
+            "type": "ERROR_REPORT",
+            "uri": "artifact://a11/job-full01/error_report.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-full01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "configuration_id": "cc-MODE0",
+            "sha256": "b41d8c2a7f039e56c8d1a4b7e20f9c3a5d6e8b1f4a70c293d5e1b8f6c04a7d39"
+          },
+          {
+            "artifact_id": "trace-full01",
+            "type": "TRACE_EVIDENCE",
+            "uri": "artifact://a11/job-full01/trace.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-full01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "configuration_id": "cc-MODE0"
+          }
+        ],
+        "summary": {
+          "missing_count": 2,
+          "redundant_count": 1
+        }
+      },
+      "error": null
+    },
+    "query_incremental_check": {
+      "schema_version": "1.1.0",
+      "job_id": "job-inc01",
+      "trace_id": "trace-a11-e2-0002",
+      "job_type": "INCREMENTAL_CHECK",
+      "status": "SUCCEEDED",
+      "execution": {
+        "submitted_at": "2026-09-19T18:00:00+08:00",
+        "started_at": "2026-09-19T18:00:02+08:00",
+        "finished_at": "2026-09-19T18:00:29+08:00",
+        "timeout_seconds": 600,
+        "idempotency_key": "a11|fzy|f0618935f2520000559bcfd8e72dbb9f316f3451|base=28195b3a709995354b6c33cec9bb7c9f81532eb6|cc-MODE0"
+      },
+      "input": {
+        "repository": {
+          "url": "https://github.com/jhawthorn/fzy",
+          "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+        },
+        "base_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+        "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+        "clean_build_command": "make clean && make",
+        "project_root": "/workspace/fzy",
+        "build_environment_hash": "sha256:4f8a1c09b7d3e256a1f0c7b94d82e56a3c0f7b1d94a2e856d3c0b7e19a4d3f70",
+        "baseline": {
+          "actual_graph_uri": "artifact://a11/job-full01/actual.json",
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+          "configuration_id": "cc-MODE0"
+        }
+      },
+      "output": {
+        "findings": [
+          {
+            "type": "MISSING",
+            "target": "src/fzy.o",
+            "dependency": "src/match.h",
+            "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+            "detector": "ECHECKER",
+            "origin": "CARRIED_OVER",
+            "location": {
+              "file": "src/Makefile",
+              "line": 12,
+              "process_id": 1187
+            },
+            "evidence": {
+              "actual_read": true,
+              "declared": false
+            },
+            "suggested_fix": "src/fzy.o: src/fzy.c src/match.h"
+          },
+          {
+            "type": "MISSING",
+            "target": "src/fzy.o",
+            "dependency": "src/tty.h",
+            "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+            "detector": "ECHECKER",
+            "origin": "CARRIED_OVER",
+            "location": {
+              "file": "src/Makefile",
+              "line": 12,
+              "process_id": 1187
+            },
+            "evidence": {
+              "actual_read": true,
+              "declared": false
+            },
+            "suggested_fix": "src/fzy.o: src/fzy.c src/tty.h"
+          },
+          {
+            "type": "MISSING",
+            "target": "src/choices.o",
+            "dependency": "src/options.h",
+            "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+            "detector": "ECHECKER",
+            "origin": "NEW",
+            "location": {
+              "file": "src/Makefile",
+              "line": 14,
+              "process_id": 1189
+            },
+            "evidence": {
+              "actual_read": true,
+              "declared": false
+            },
+            "suggested_fix": "src/choices.o: src/choices.c src/options.h"
+          }
+        ],
+        "delta": {
+          "baseline_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+          "added": [
+            {
+              "target": "src/choices.o",
+              "dependency": "src/options.h",
+              "declared": false,
+              "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+            },
+            {
+              "target": "src/match.o",
+              "dependency": "src/match.h",
+              "declared": true,
+              "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+            }
+          ],
+          "removed": [
+            {
+              "target": "src/tty.o",
+              "dependency": "src/legacy_tty.h",
+              "declared": true,
+              "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+            }
+          ]
+        },
+        "current_graph_uri": "artifact://a11/job-inc01/actual.json",
+        "artifacts": [
+          {
+            "artifact_id": "graph-inc01-actual",
+            "type": "ACTUAL_GRAPH",
+            "uri": "artifact://a11/job-inc01/actual.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-inc01",
+            "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+            "configuration_id": "cc-MODE0",
+            "sha256": "7d3e9a1c04b8f526d1a7c3e90b4f8a216d5e0c7b39a4f816d2c5b0e7a93d4f61"
+          },
+          {
+            "artifact_id": "report-inc01",
+            "type": "ERROR_REPORT",
+            "uri": "artifact://a11/job-inc01/error_report.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-inc01",
+            "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+            "configuration_id": "cc-MODE0"
+          }
+        ],
+        "summary": {
+          "missing_count": 3,
+          "redundant_count": 0,
+          "new_count": 1,
+          "resolved_count": 0,
+          "delta_added_count": 2,
+          "delta_removed_count": 1
+        }
+      },
+      "error": null
+    },
+    "query_draft": {
+      "schema_version": "1.1.0",
+      "job_id": "job-draft01",
+      "trace_id": "trace-b11-e2-0001",
+      "job_type": "DRAFT",
+      "status": "SUCCEEDED",
+      "execution": {
+        "submitted_at": "2026-09-19T16:00:00+08:00",
+        "started_at": "2026-09-19T16:00:05+08:00",
+        "finished_at": "2026-09-19T16:04:52+08:00",
+        "timeout_seconds": 1800,
+        "idempotency_key": "b11|fzy|28195b3a709995354b6c33cec9bb7c9f81532eb6"
+      },
+      "input": {
+        "repository": {
+          "url": "https://github.com/jhawthorn/fzy",
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+        },
+        "build": {
+          "command": "make",
+          "context_files": [
+            "README.md"
+          ]
+        },
+        "verify_command": "make && ./fzy --help",
+        "max_iterations": 5,
+        "timeout_seconds": 1800
+      },
+      "output": {
+        "artifacts": [
+          {
+            "artifact_id": "draft01-dockerfile",
+            "type": "DOCKERFILE",
+            "uri": "artifact://b11/job-draft01/Dockerfile",
+            "media_type": "text/plain",
+            "producer_job_id": "job-draft01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "sha256": "5a1c7e93b40d826f1a3c5e7089b4d2f6a0c1e38b7d94a2f5c60b1e3d8a7f4209"
+          },
+          {
+            "artifact_id": "draft01-image",
+            "type": "IMAGE",
+            "uri": "artifact://b11/job-draft01/image_ref.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-draft01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+          },
+          {
+            "artifact_id": "draft01-verify",
+            "type": "TEST_RESULT",
+            "uri": "artifact://b11/job-draft01/verify.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-draft01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+          }
+        ],
+        "summary": {
+          "iterations": 3,
+          "build_succeeded": true,
+          "verify_command": "make && ./fzy --help",
+          "verify_passed": true,
+          "final_image_size_mb": 312
+        }
+      },
+      "error": null
+    },
+    "query_repair": {
+      "schema_version": "1.1.0",
+      "job_id": "job-repair01",
+      "trace_id": "trace-a11-e2-0005",
+      "job_type": "REPAIR",
+      "status": "SUCCEEDED",
+      "execution": {
+        "submitted_at": "2026-09-19T18:20:00+08:00",
+        "started_at": "2026-09-19T18:20:04+08:00",
+        "finished_at": "2026-09-19T18:26:33+08:00",
+        "timeout_seconds": 1200,
+        "idempotency_key": "b11|fzy|28195b3a709995354b6c33cec9bb7c9f81532eb6|repair-from-job-full01"
+      },
+      "input": {
+        "repository": {
+          "url": "https://github.com/jhawthorn/fzy",
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+        },
+        "md_report_uri": "artifact://a11/job-full01/error_report.json",
+        "makefile_uri": "repo://28195b3a709995354b6c33cec9bb7c9f81532eb6/src/Makefile",
+        "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+        "build": {
+          "command": "make clean && make"
+        },
+        "verify_command": "make && ./fzy --help"
+      },
+      "output": {
+        "artifacts": [
+          {
+            "artifact_id": "repair01-patch",
+            "type": "PATCH",
+            "uri": "artifact://b11/job-repair01/fix.patch",
+            "media_type": "text/x-diff",
+            "producer_job_id": "job-repair01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "sha256": "e4f8b1c39d7a2506b9c3e1f07a4d8b265c0e7a1d93b4f856d2c0b7e19a3d4f70"
+          },
+          {
+            "artifact_id": "repair01-style",
+            "type": "STYLE_REPORT",
+            "uri": "artifact://b11/job-repair01/declaration_style.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-repair01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+          },
+          {
+            "artifact_id": "repair01-test",
+            "type": "TEST_RESULT",
+            "uri": "artifact://b11/job-repair01/test_result.json",
+            "media_type": "application/json",
+            "producer_job_id": "job-repair01",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+          }
+        ],
+        "summary": {
+          "candidates_total": 3,
+          "candidates_accepted": 1,
+          "candidates_rejected": 2,
+          "missing_fixed": 3,
+          "recheck_missing_remaining": 0
+        }
+      },
+      "error": null
+    }
+  },
+  "errors": [
+    {
+      "job_id": "job-full02",
+      "job_type": "FULL_CHECK",
+      "status": "FAILED",
+      "error": {
+        "code": "ENV_3002",
+        "message": "镜像构建失败，分析未开始",
+        "detail": "docker build 在 apt-get update 阶段退出（exit code 100）。请确认 image=a11/fzy-build:ubuntu2204-gcc10-make4.3 可拉取。"
+      }
+    },
+    {
+      "job_id": "job-inc02",
+      "job_type": "INCREMENTAL_CHECK",
+      "status": "TIMED_OUT",
+      "error": {
+        "code": "EXEC_4002",
+        "message": "任务超时（600s），未能完成增量检测",
+        "detail": "建议提高 timeout_seconds，或先由 FULL_CHECK 在 C0 建立基线图以缩小分析范围。"
+      }
+    },
+    {
+      "job_id": "job-inc03",
+      "job_type": "INCREMENTAL_CHECK",
+      "status": "FAILED",
+      "error": {
+        "code": "ANALYSIS_5001",
+        "message": "增量分析器异常终止，未产出可信结果",
+        "detail": "解析artifact://a11/job-full01/actual.json 时缺少 nodes 键。请确认 baseline.actual_graph_uri 指向 ACTUAL_GRAPH 产物而非 DECLARED_GRAPH。"
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "case": "unknown_job_type",
+      "expect_http": 400,
+      "expect_code": "VALIDATION_4001",
+      "reason": "job_type 决定 input 结构与路由，未知类型无法确定校验规则，必须 fail fast（课堂验收检查 02）",
+      "data": {
+        "schema_version": "1.1.0",
+        "trace_id": "trace-invalid-001",
+        "job_type": "ABC",
+        "idempotency_key": "invalid-001",
+        "input": {
+          "repository": {
+            "url": "https://github.com/jhawthorn/fzy",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+          },
+          "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+          "configuration_id": "cc-MODE0",
+          "clean_build_command": "make clean && make",
+          "project_root": "/workspace/fzy"
+        }
+      },
+      "_isolation": "【最小差异构造】取完整合法请求，只改动一处 —— 这样『被拒绝』才能被单独归因于该改动。 此处仅把 job_type 改为枚举外的 ABC，input 与合法 FULL_CHECK 请求逐字段相同。"
+    },
+    {
+      "case": "missing_baseline",
+      "expect_http": 400,
+      "expect_code": "VALIDATION_4001",
+      "reason": "没有基线图就无法计算『新增/消除』，静默降级为全量检测会掩盖正确性问题（课堂验收检查 03）",
+      "data": {
+        "schema_version": "1.1.0",
+        "trace_id": "trace-invalid-002",
+        "job_type": "INCREMENTAL_CHECK",
+        "idempotency_key": "invalid-002",
+        "input": {
+          "repository": {
+            "url": "https://github.com/jhawthorn/fzy",
+            "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+          },
+          "base_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+          "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+          "configuration_id": "cc-MODE0",
+          "clean_build_command": "make clean && make",
+          "project_root": "/workspace/fzy",
+          "build_environment_hash": "sha256:4f8a1c09b7d3e256a1f0c7b94d82e56a3c0f7b1d94a2e856d3c0b7e19a4d3f70"
+        }
+      },
+      "_isolation": "【最小差异构造】取完整合法请求，只改动一处 —— 这样『被拒绝』才能被单独归因于该改动。 此处仅在合法 INCREMENTAL_CHECK 请求中删除 baseline 一个字段（课堂验收检查 03 的原题）。"
+    },
+    {
+      "case": "missing_build_environment_hash",
+      "expect_http": 400,
+      "expect_code": "VALIDATION_4001",
+      "reason": "缺少环境哈希则无法证明基线与本次检测在同一构建环境下产生，跨环境比对会误报",
+      "data": {
+        "schema_version": "1.1.0",
+        "trace_id": "trace-invalid-003",
+        "job_type": "INCREMENTAL_CHECK",
+        "idempotency_key": "invalid-003",
+        "input": {
+          "repository": {
+            "url": "https://github.com/jhawthorn/fzy",
+            "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+          },
+          "base_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+          "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+          "configuration_id": "cc-MODE0",
+          "clean_build_command": "make clean && make",
+          "project_root": "/workspace/fzy",
+          "baseline": {
+            "actual_graph_uri": "artifact://a11/job-full01/actual.json",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "configuration_id": "cc-MODE0"
+          }
+        }
+      },
+      "_isolation": "【最小差异构造】取完整合法请求，只改动一处 —— 这样『被拒绝』才能被单独归因于该改动。 此处仅删除 build_environment_hash 一个字段。"
+    },
+    {
+      "case": "baseline_configuration_mismatch",
+      "expect_http": 400,
+      "expect_code": "VALIDATION_4001",
+      "reason": "依赖图与构建配置强绑定；配置不同则结果不可比，且这种错误『看不出来』，属静默错误",
+      "data": {
+        "schema_version": "1.1.0",
+        "trace_id": "trace-invalid-004",
+        "job_type": "INCREMENTAL_CHECK",
+        "idempotency_key": "invalid-004",
+        "input": {
+          "repository": {
+            "url": "https://github.com/jhawthorn/fzy",
+            "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+          },
+          "base_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+          "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+          "configuration_id": "cc-MODE0",
+          "clean_build_command": "make clean && make",
+          "project_root": "/workspace/fzy",
+          "build_environment_hash": "sha256:4f8a1c09b7d3e256a1f0c7b94d82e56a3c0f7b1d94a2e856d3c0b7e19a4d3f70",
+          "baseline": {
+            "actual_graph_uri": "artifact://a11/job-full01/actual.json",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "configuration_id": "cc-MODE1"
+          }
+        }
+      },
+      "_isolation": "【最小差异构造】取完整合法请求，只改动一处 —— 这样『被拒绝』才能被单独归因于该改动。 此处仅把 baseline.configuration_id 改为与本次不同。"
+    },
+    {
+      "case": "unsupported_schema_version",
+      "expect_http": 400,
+      "expect_code": "VALIDATION_4001",
+      "reason": "破坏性变更提升主版本；消费者遇到不认识的主版本必须拒绝，按旧规则解析新报文会产生静默错误",
+      "data": {
+        "schema_version": "2.0.0",
+        "trace_id": "trace-invalid-005",
+        "job_type": "FULL_CHECK",
+        "idempotency_key": "invalid-005",
+        "input": {
+          "repository": {
+            "url": "https://github.com/jhawthorn/fzy",
+            "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+          },
+          "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+          "configuration_id": "cc-MODE0",
+          "clean_build_command": "make clean && make",
+          "project_root": "/workspace/fzy"
+        }
+      },
+      "_isolation": "【最小差异构造】取完整合法请求，只改动一处 —— 这样『被拒绝』才能被单独归因于该改动。 此处仅把 schema_version 改为 2.0.0。"
+    },
+    {
+      "case": "delta_in_full_check",
+      "expect_http": 400,
+      "expect_code": "CONTRACT_4002",
+      "reason": "delta 表达『相对基线的变化』，全量检测没有基线概念；出现 delta 说明生产者混淆了两种任务语义",
+      "data": {
+        "job_id": "job-full03",
+        "job_type": "FULL_CHECK",
+        "status": "SUCCEEDED",
+        "output": {
+          "findings": [],
+          "summary": {
+            "missing_count": 0,
+            "redundant_count": 0
+          },
+          "delta": {
+            "baseline_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+            "added": [],
+            "removed": []
+          }
+        }
+      },
+      "_isolation": "本反例是【响应文档违约】，不是 HTTP 交互场景：生产者在 FULL_CHECK 响应中塞入 delta。原先用 INTERNAL_5000 + 500 表达，语义反了 —— 那不是服务端崩溃，而是产出的报文违反已协商契约，属协议层违反。"
+    }
+  ],
+  "_field_notes": {
+    "delta_declared": "delta.added/removed 每一项的 declared 字段表示该依赖是否已在 Makefile 声明。declared=false 的变化会同时出现在 findings（origin=NEW）；declared=true 的变化是【合法变化】，只会出现在 delta —— 这正是 delta 相对 findings 的独立价值（见 ADR-006）。",
+    "why_error_report": "产物类型使用 ERROR_REPORT 而非 FINDING_REPORT：PPT Slide 9 原文为『写入 ERROR_REPORT 的 findings』，沿用课程给定词汇可避免与助教对照检查时产生歧义。",
+    "why_validation_code": "PPT 只给出 ENV_3002 / EXEC_4002 / ANALYSIS_5001 三个系统错误码；请求不合契约属于另一层问题，本组补充 VALIDATION_4001（课堂验收检查 02/03 需要有明确的拒绝表达）。",
+    "rd_policy": "REDUNDANT（RD）在 E2 阶段仅报告、不自动修复：冗余依赖可能是跨配置的有意声明，自动删除会破坏其他配置的构建正确性（见 ADR-004）。"
+  }
+}

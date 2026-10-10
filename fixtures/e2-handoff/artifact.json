@@ -1,0 +1,8 @@
+{
+  "artifact_id": "b11-e2-read-demo-001",
+  "type": "LOG",
+  "uri": "artifact://b11/job-e2-read-demo/handoff.txt",
+  "media_type": "text/plain",
+  "producer_job_id": "job-e2-read-demo",
+  "sha256": "2ebb93c99d19cd77da35f5f48f002427e4213af98750de4be0dd567bd790a431"
+}

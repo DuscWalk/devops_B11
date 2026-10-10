@@ -1,30 +1,30 @@
-# DevOps B11
+# DevOps B11 · E2 需求与接口契约
 
-B11 小组协作仓库，负责 DRAFT（生成可构建环境）和 MDFixer（修复缺失依赖）。配对组为 A11，负责 BuildChecker 和 EChecker。
+B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与联调。配对组 A11 负责 BuildChecker、EChecker。
 
-## 当前状态
+**E2 提交入口：[e2/README.md](e2/README.md)。LMS 填写说明：[e2/SUBMISSION.md](e2/SUBMISSION.md)。**
 
-已初始化目录和协作约定。工具尚未实现，E2 契约尚未由双方确认。目录中的任务清单不代表功能已经完成。
+2026-09-22，胡博明确确认 A11 已认可前序接口方案；确认来源和范围见 [AGREEMENT.md](e2/AGREEMENT.md)。三人分支保留提交历史并合入交付版本。正式 Schema、四类请求/响应、错误样例、产物、设计记录、贡献与验证结果已集中归档。
 
-## 目录
+## 快速验证
 
-- `e2/`：B 组 E2 材料、任务和协商记录。
-- `draft/`：DRAFT 实现与使用说明。
-- `mdfixer/`：MDFixer 实现与使用说明。
-- `fixtures/`：固定 MD 报告、项目版本及样本来源。
-- `CONTRIBUTING.md`：分支、提交和 Merge Request 约定。
+需要 Linux/WSL、Python 3.10+、Git、Make 和 C 编译器。仓库根目录运行：
 
-## 开始协作
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r e2/requirements.txt
+.venv/bin/python e2/validate.py
+```
 
-1. 克隆本仓库，阅读 `e2/Backlog.md`，认领任务并记录负责人。
-2. 从最新 `main` 创建任务分支，如 `feat/draft-environment` 或 `feat/mdfixer-input`。
-3. 完成工作并验证，在 GitLab 提交 Merge Request，由另一位组员审阅。
-4. 合并后更新任务状态和个人贡献记录。
+当前 WSL 已配置 `.venv`。无 ensurepip 的环境按 [E2 环境说明](e2/README.md) 安装。统一校验会验证四类契约、反例、26 个回归检查，读取 DRAFT/MDFixer 产物，并在临时目录复现一次本地修复；不需要 Docker 或外部 API。
 
-## 与 A11 的接口
+## 材料与实现
 
-A 组参考仓库：https://git.nju.edu.cn/devops-group11/devops-group11
+| 目录 | 内容 |
+| --- | --- |
+| [e2/](e2/README.md) | 正式契约、OpenAPI、ADR、Backlog、确认、贡献、AI 使用、状态和证据 |
+| [draft/](draft/README.md) | DRAFT 输入输出、5 个交接文件、固定 fzy 版本、手工 Docker 基线及执行日志 |
+| [mdfixer/](mdfixer/README.md) | MDFixer 本地原型、固定人工 MD 报告、补丁及验证演示 |
+| [fixtures/](fixtures/README.md) | 小型可交换文件、包含完整提交的源码 bundle 和来源说明 |
 
-初始参考版本：`96f35cc`，接口材料位于其 `e2/` 目录。该版本仅是参考来源，不代表 B 组已接受全部约定。双方确认字段、产物读取方式和版本后，再将认可的契约及来源版本纳入本仓库。
-
-E2 先完成契约和样例，不要求部署 API。E3 准备 DRAFT 项目和固定 MD 报告。
+E2 不要求部署 API。DRAFT 自动生成迭代、真正镜像交付、A11 检测器重检和四服务端到端联调属于后续工作，具体限制见 [STATUS.md](e2/STATUS.md)。

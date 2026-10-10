@@ -2,7 +2,7 @@
 
 ## 分工
 
-DRAFT 与 MDFixer 各指定负责人；一名成员兼任 A11 接口联系人。具体姓名由组员在 `e2/CONTRIBUTIONS.md` 中填写。
+DRAFT 负责人孙静怡，MDFixer 负责人王硕，接口与联调负责人胡博。分工与实际贡献见 `e2/CONTRIBUTIONS.md`；技术提议须由相关成员与 A11 确认。
 
 ## 开发流程
 
@@ -19,3 +19,7 @@ DRAFT 与 MDFixer 各指定负责人；一名成员兼任 A11 接口联系人。
 ## 验证与贡献
 
 每项任务记录可复现的验证命令或人工检查步骤。只记录实际运行结果；示例中的成功值不算运行证据。成员按真实贡献记录提交 SHA 或 Merge Request 链接。
+
+## E2 提交基线
+
+当前交付版本见 e2/SUBMISSION.md；后续从最新 main 创建功能分支。原始来源/证据不得直接改写为当前结果，接口变更同步 Schema、样例、校验与 CHANGELOG。提交前运行 `.venv/bin/python e2/validate.py`，保留真实失败/限制。

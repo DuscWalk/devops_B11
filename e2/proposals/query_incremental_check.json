@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.1.0",
+  "job_id": "job-inc01",
+  "trace_id": "trace-a11-e2-0002",
+  "job_type": "INCREMENTAL_CHECK",
+  "status": "SUCCEEDED",
+  "execution": {
+    "submitted_at": "2026-09-19T18:00:00+08:00",
+    "started_at": "2026-09-19T18:00:02+08:00",
+    "finished_at": "2026-09-19T18:00:29+08:00",
+    "timeout_seconds": 600,
+    "idempotency_key": "a11|fzy|f0618935f2520000559bcfd8e72dbb9f316f3451|base=28195b3a709995354b6c33cec9bb7c9f81532eb6|cc-MODE0"
+  },
+  "input": {
+    "repository": {
+      "url": "https://github.com/jhawthorn/fzy",
+      "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+    },
+    "base_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+    "image": "a11/fzy-build:ubuntu2204-gcc10-make4.3",
+    "clean_build_command": "make clean && make",
+    "project_root": "/workspace/fzy",
+    "build_environment_hash": "sha256:4f8a1c09b7d3e256a1f0c7b94d82e56a3c0f7b1d94a2e856d3c0b7e19a4d3f70",
+    "baseline": {
+      "actual_graph_uri": "artifact://a11/job-full01/actual.json",
+      "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+      "configuration_id": "cc-MODE0"
+    },
+    "configuration_id": "cc-MODE0"
+  },
+  "output": {
+    "findings": [
+      {
+        "type": "MISSING",
+        "target": "src/fzy.o",
+        "dependency": "src/match.h",
+        "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+        "detector": "ECHECKER",
+        "origin": "CARRIED_OVER",
+        "location": {
+          "file": "src/Makefile",
+          "line": 12,
+          "process_id": 1187
+        },
+        "evidence": {
+          "actual_read": true,
+          "declared": false
+        },
+        "suggested_fix": "src/fzy.o: src/fzy.c src/match.h"
+      },
+      {
+        "type": "MISSING",
+        "target": "src/fzy.o",
+        "dependency": "src/tty.h",
+        "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+        "detector": "ECHECKER",
+        "origin": "CARRIED_OVER",
+        "location": {
+          "file": "src/Makefile",
+          "line": 12,
+          "process_id": 1187
+        },
+        "evidence": {
+          "actual_read": true,
+          "declared": false
+        },
+        "suggested_fix": "src/fzy.o: src/fzy.c src/tty.h"
+      },
+      {
+        "type": "MISSING",
+        "target": "src/choices.o",
+        "dependency": "src/options.h",
+        "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+        "detector": "ECHECKER",
+        "origin": "NEW",
+        "location": {
+          "file": "src/Makefile",
+          "line": 14,
+          "process_id": 1189
+        },
+        "evidence": {
+          "actual_read": true,
+          "declared": false
+        },
+        "suggested_fix": "src/choices.o: src/choices.c src/options.h"
+      }
+    ],
+    "delta": {
+      "baseline_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+      "added": [
+        {
+          "target": "src/choices.o",
+          "dependency": "src/options.h",
+          "declared": false,
+          "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+        },
+        {
+          "target": "src/match.o",
+          "dependency": "src/match.h",
+          "declared": true,
+          "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451"
+        }
+      ],
+      "removed": [
+        {
+          "target": "src/tty.o",
+          "dependency": "src/legacy_tty.h",
+          "declared": true,
+          "commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+        }
+      ]
+    },
+    "current_graph_uri": "artifact://a11/job-inc01/actual.json",
+    "artifacts": [
+      {
+        "artifact_id": "graph-inc01-actual",
+        "type": "ACTUAL_GRAPH",
+        "uri": "artifact://a11/job-inc01/actual.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-inc01",
+        "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+        "configuration_id": "cc-MODE0",
+        "sha256": "7d3e9a1c04b8f526d1a7c3e90b4f8a216d5e0c7b39a4f816d2c5b0e7a93d4f61"
+      },
+      {
+        "artifact_id": "report-inc01",
+        "type": "ERROR_REPORT",
+        "uri": "artifact://a11/job-inc01/error_report.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-inc01",
+        "commit": "f0618935f2520000559bcfd8e72dbb9f316f3451",
+        "configuration_id": "cc-MODE0"
+      }
+    ],
+    "summary": {
+      "missing_count": 3,
+      "redundant_count": 0,
+      "new_count": 1,
+      "resolved_count": 0,
+      "delta_added_count": 2,
+      "delta_removed_count": 1
+    }
+  },
+  "error": null
+}

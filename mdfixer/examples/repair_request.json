@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.1.0",
+  "trace_id": "trace-b11-md-fixture",
+  "job_type": "REPAIR",
+  "idempotency_key": "b11|manual-md|a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+  "input": {
+    "repository": {
+      "url": "https://git.nju.edu.cn/devops_b11/devops-project-b11",
+      "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69"
+    },
+    "md_report_uri": "artifact://b11/job-md-fixture/md_report.json",
+    "makefile_uri": "repo://a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69/Makefile",
+    "image": "local-prototype:host",
+    "build": {
+      "command": "make clean && make"
+    },
+    "verify_command": "make test",
+    "max_iterations": 1,
+    "timeout_seconds": 30
+  }
+}

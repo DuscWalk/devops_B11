@@ -1,0 +1,22 @@
+{
+  "upstream_commit": "8b0c3b9142cb379547e429e310c1b3b0bb9ccd34",
+  "checked_on": "2026-09-22",
+  "contract_files": {
+    "task.schema.json": {
+      "sha256": "7b747351f6ec70ba7534456d0c45d10a4c1ac41ba9d69c0552f2e346978dad3c",
+      "unchanged_from_96f35cc": true
+    },
+    "contract-examples.json": {
+      "sha256": "a91fe31e27f9113e6f2ccfa1b911e7429d910c26bb66182221103a03b7ab14bb",
+      "unchanged_from_96f35cc": true
+    },
+    "validate.py": {
+      "sha256": "7d0fdf7fc1e5cde76e8532988f62a34e2c53469436b5dc338d65e215019200dc",
+      "unchanged_from_96f35cc": true
+    },
+    "openapi.yaml": {
+      "sha256": "e76aa95a522a37d5c992885285e8f75de7836b209b98c05bc0a6e8faa2b7d9cc",
+      "unchanged_from_96f35cc": true
+    }
+  }
+}
