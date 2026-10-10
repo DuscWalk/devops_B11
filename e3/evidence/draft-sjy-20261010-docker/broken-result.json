@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "expected_toolchain_failure_observed": false,
+  "classification": "UNEXPECTED_FAILURE_OR_SUCCESS",
+  "note": "A registry/network/timeout failure is not the expected missing-make result."
+}

@@ -1,0 +1,1 @@
+PASS: MDFixer local repair, 3 artifacts, git apply, build/test and header-change rebuild; detector recheck NOT_RUN

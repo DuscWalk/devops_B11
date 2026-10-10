@@ -1,0 +1,14 @@
+{
+  "suite": "b11-e3-draft-fzy",
+  "result": "PASS",
+  "started_at_utc": "2026-10-10T15:36:20.227515+00:00",
+  "ended_at_utc": "2026-10-10T15:37:22.714880+00:00",
+  "checks_passed": 5,
+  "checks_total": 5,
+  "commands_recorded": 11,
+  "error": null,
+  "cross_group_read_verified": false,
+  "a11_detector_recheck": "NOT_RUN",
+  "reference_dockerfile_is_manual": true,
+  "automatic_draft_service": false
+}

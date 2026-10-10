@@ -1,0 +1,35 @@
+{
+  "agreement_status": "PROPOSED_B11_ONLY",
+  "configuration_id": "b11-e3-tiny-container-v1",
+  "identity": {
+    "spec": "b11-build-environment-proposal-v1",
+    "execution_mode": "DOCKER",
+    "image_id": "sha256:f072980d2fe6cd2df7ca06435416fdaad32a2c5b448203cb7baac7d6d8f63e45",
+    "os": "linux",
+    "architecture": "amd64",
+    "compiler_version": "cc (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    "make_version": "GNU Make 4.4.1\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.",
+    "package_inventory_sha256": "c41021bcefbf4431a58ec26fd2d497a6889746699ccb9ce44c84d7be2a004b1a",
+    "cflags": [
+      "-O0",
+      "-Wall",
+      "-Wextra"
+    ],
+    "working_directory": "/work"
+  },
+  "build_environment_hash": "e1b4ac3e38028cedf74ae671144471fc6506df144211534fc75b9e8eaa8e1ab0",
+  "base_image": {
+    "id": "sha256:ce3ff9524414289fc922d9d5dc1de87abc77a39ff2ff5007435839f2af1d7569",
+    "repo_digests": [
+      "python@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f"
+    ],
+    "os": "linux",
+    "architecture": "amd64"
+  },
+  "docker_context": "desktop-linux",
+  "resource_limits": {
+    "cpus": 2,
+    "memory": "1g",
+    "network": "none"
+  }
+}

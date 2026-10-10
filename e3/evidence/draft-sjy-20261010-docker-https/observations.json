@@ -1,0 +1,23 @@
+[
+  {
+    "name": "draft-broken-missing-toolchain",
+    "passed": true,
+    "observed": {
+      "exit_code": 1
+    }
+  },
+  {
+    "name": "draft-container-function",
+    "passed": true,
+    "observed": {
+      "stdout": "hello E3\n"
+    }
+  },
+  {
+    "name": "draft-container-offline-rebuild-function",
+    "passed": true,
+    "observed": {
+      "stdout": "rm -f hello\ncc -O0 -Wall -Wextra main.c -o hello\nhello E3\n"
+    }
+  }
+]

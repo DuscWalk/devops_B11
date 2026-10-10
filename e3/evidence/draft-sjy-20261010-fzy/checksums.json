@@ -1,0 +1,18 @@
+{
+  "base-image.json": "fb30d7d60c0b4116500bee0192a7ef6e1aee09b8fb17a221a9e00172dbfaa39b",
+  "broken-result.json": "f8fea1d0897d16021a404647c83aa1ed5ebc576cd85455b40d0bb04a07460816",
+  "commands.json": "4cebc3703c32f3356fd7cf0100b136ed7b33faf3a8fe1af3fde98584f66492ad",
+  "Dockerfile.broken": "37c3c23e6570a8a27dfae52426d9e78da405ac386eaaee1b5d85c4a8d91225cf",
+  "Dockerfile.reference": "35fdb1c8344963b04943317963862841ed8ddebeece488064f5713cfd5d0eee5",
+  "fzy-source.json": "62f437c56fd7ff24787cabb8b88ecb9b608025463b8c23dcac63411a30a52f53",
+  "logs/001-source-commit.txt": "758036b91946d755b53247ec1780385a574600cc33648112982bac55bbf4d76d",
+  "logs/002-source-archive.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/003-source-extract.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/004-base-image.txt": "bee97d1cd6501c3a449b687fc01934b8bc2fda52d911da5ab90a221191d5e26e",
+  "logs/005-broken-build.txt": "e024c29feb23104fc86784ec95dafa9d89902b6d46feb700a66eb5696c4c3717",
+  "logs/006-reference-build.txt": "f0ae79dfa8f472ccc3220881faf8be572316e3347b0261a1f9e21b90d2060f0c",
+  "observations.json": "b1251aa93ff1f05f2245cf0fe395821e7d188741d449768e21575adcf56a4abf",
+  "reference.diff": "eb239cd40fe4d4619cec6a37243bde5769131c264003f6646d8aec1e074429e2",
+  "source.json": "76b3f27819d1ca4f612ee013ba25388c8740e046d39f9b651c9b20ddf13483b6",
+  "summary.json": "7fb50c5cea75aff895f5a3c61eb4854128cb92dde26fd2b27a6dc332cd79bb59"
+}

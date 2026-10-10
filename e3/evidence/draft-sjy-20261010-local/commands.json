@@ -1,0 +1,1287 @@
+[
+  {
+    "label": "e3-evidence-regressions",
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "e3/tests",
+      "-v"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11",
+    "started_at_utc": "2026-10-10T15:27:29.039816+00:00",
+    "seconds": 5.9453,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/001-e3-evidence-regressions.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "e2-validation",
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/e/Term3.1/devops/project/devops-b11/e2/validate.py"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11",
+    "started_at_utc": "2026-10-10T15:27:34.991105+00:00",
+    "seconds": 3.6477,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/002-e2-validation.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-local-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/tiny-greeting",
+    "started_at_utc": "2026-10-10T15:27:38.860242+00:00",
+    "seconds": 0.0123,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/003-draft-local-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-local-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/tiny-greeting",
+    "started_at_utc": "2026-10-10T15:27:38.905609+00:00",
+    "seconds": 0.3124,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/004-draft-local-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-local-verify",
+    "argv": [
+      "./hello"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/tiny-greeting",
+    "started_at_utc": "2026-10-10T15:27:39.273764+00:00",
+    "seconds": 0.0114,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/005-draft-local-verify.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-git-init",
+    "argv": [
+      "git",
+      "init",
+      "-q"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:39.616581+00:00",
+    "seconds": 0.2195,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/006-target-git-init.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-before-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:39.854851+00:00",
+    "seconds": 0.0138,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/007-target-before-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-before-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:39.889702+00:00",
+    "seconds": 0.3319,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/008-target-before-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-initial-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:40.258424+00:00",
+    "seconds": 0.0092,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/009-target-initial-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:41.440054+00:00",
+    "seconds": 0.0193,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/010-target-unfixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:41.480443+00:00",
+    "seconds": 0.01,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/011-target-unfixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:41.527410+00:00",
+    "seconds": 0.0189,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/012-target-unfixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:41.570838+00:00",
+    "seconds": 0.3809,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/013-target-unfixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:41.984352+00:00",
+    "seconds": 0.0106,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/014-target-unfixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-patch-check",
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "reference.patch"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:42.019777+00:00",
+    "seconds": 0.0379,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/015-target-patch-check.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-patch-apply",
+    "argv": [
+      "git",
+      "apply",
+      "reference.patch"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:42.082357+00:00",
+    "seconds": 0.0557,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/016-target-patch-apply.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:45.429739+00:00",
+    "seconds": 0.02,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/017-target-fixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:45.470875+00:00",
+    "seconds": 0.3224,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/018-target-fixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:42.568354+00:00",
+    "seconds": 0.0102,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/019-target-fixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:43.799256+00:00",
+    "seconds": 0.2341,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/020-target-fixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:44.066482+00:00",
+    "seconds": 0.0095,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/021-target-fixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-restored-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:44.550285+00:00",
+    "seconds": 0.0154,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/022-target-restored-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-restored-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:44.584652+00:00",
+    "seconds": 0.2785,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/023-target-restored-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-restored-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/target",
+    "started_at_utc": "2026-10-10T15:27:44.883081+00:00",
+    "seconds": 0.0091,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/024-target-restored-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-git-init",
+    "argv": [
+      "git",
+      "init",
+      "-q"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:45.274280+00:00",
+    "seconds": 0.2181,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/025-macro-git-init.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-before-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:45.509546+00:00",
+    "seconds": 0.0158,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/026-macro-before-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-before-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:45.568444+00:00",
+    "seconds": 0.3195,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/027-macro-before-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-initial-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:45.905534+00:00",
+    "seconds": 0.0102,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/028-macro-initial-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.096841+00:00",
+    "seconds": 0.0103,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/029-macro-unfixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.141995+00:00",
+    "seconds": 0.0069,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/030-macro-unfixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.179650+00:00",
+    "seconds": 0.0227,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/031-macro-unfixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.232497+00:00",
+    "seconds": 0.212,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/032-macro-unfixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.477766+00:00",
+    "seconds": 0.0135,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/033-macro-unfixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-patch-check",
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "reference.patch"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.517245+00:00",
+    "seconds": 0.0314,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/034-macro-patch-check.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-patch-apply",
+    "argv": [
+      "git",
+      "apply",
+      "reference.patch"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.566301+00:00",
+    "seconds": 0.0288,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/035-macro-patch-apply.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.645462+00:00",
+    "seconds": 0.0207,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/036-macro-fixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:47.695553+00:00",
+    "seconds": 0.3069,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/037-macro-fixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:48.040188+00:00",
+    "seconds": 0.0078,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/038-macro-fixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:49.243801+00:00",
+    "seconds": 0.3002,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/039-macro-fixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:49.568658+00:00",
+    "seconds": 0.0167,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/040-macro-fixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-restored-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:50.077927+00:00",
+    "seconds": 0.017,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/041-macro-restored-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-restored-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:50.114996+00:00",
+    "seconds": 0.2955,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/042-macro-restored-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-restored-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/macro",
+    "started_at_utc": "2026-10-10T15:27:50.433193+00:00",
+    "seconds": 0.0137,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/043-macro-restored-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-git-init",
+    "argv": [
+      "git",
+      "init",
+      "-q"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:50.757299+00:00",
+    "seconds": 0.1907,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/044-hybrid-git-init.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-before-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:50.967937+00:00",
+    "seconds": 0.0183,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/045-hybrid-before-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-before-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:51.021109+00:00",
+    "seconds": 0.3087,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/046-hybrid-before-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-initial-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:51.351889+00:00",
+    "seconds": 0.0108,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/047-hybrid-initial-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:52.538756+00:00",
+    "seconds": 0.0186,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/048-hybrid-unfixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:52.580075+00:00",
+    "seconds": 0.0113,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/049-hybrid-unfixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:52.618314+00:00",
+    "seconds": 0.0196,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/050-hybrid-unfixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:52.660187+00:00",
+    "seconds": 0.299,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/051-hybrid-unfixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:52.978951+00:00",
+    "seconds": 0.0127,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/052-hybrid-unfixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-patch-check",
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "reference.patch"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:53.028453+00:00",
+    "seconds": 0.0411,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/053-hybrid-patch-check.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-patch-apply",
+    "argv": [
+      "git",
+      "apply",
+      "reference.patch"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:53.093851+00:00",
+    "seconds": 0.0445,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/054-hybrid-patch-apply.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:53.180240+00:00",
+    "seconds": 0.0182,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/055-hybrid-fixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:53.223707+00:00",
+    "seconds": 0.3172,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/056-hybrid-fixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:53.565951+00:00",
+    "seconds": 0.0108,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/057-hybrid-fixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:54.752203+00:00",
+    "seconds": 0.2953,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/058-hybrid-fixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:55.060105+00:00",
+    "seconds": 0.01,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/059-hybrid-fixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-restored-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:55.471313+00:00",
+    "seconds": 0.0157,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/060-hybrid-restored-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-restored-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:55.500682+00:00",
+    "seconds": 0.2919,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/061-hybrid-restored-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-restored-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/hybrid",
+    "started_at_utc": "2026-10-10T15:27:55.810554+00:00",
+    "seconds": 0.0092,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/062-hybrid-restored-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-git-init",
+    "argv": [
+      "git",
+      "init",
+      "-q"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:56.125048+00:00",
+    "seconds": 0.1457,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/063-implicit-git-init.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-before-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:56.284501+00:00",
+    "seconds": 0.0316,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/064-implicit-before-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-before-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:56.337153+00:00",
+    "seconds": 0.2568,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/065-implicit-before-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-initial-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:56.624466+00:00",
+    "seconds": 0.008,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/066-implicit-initial-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:57.797987+00:00",
+    "seconds": 0.0133,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/067-implicit-unfixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:57.833663+00:00",
+    "seconds": 0.0233,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/068-implicit-unfixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:57.887441+00:00",
+    "seconds": 0.0158,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/069-implicit-unfixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:57.926044+00:00",
+    "seconds": 0.3638,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/070-implicit-unfixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:58.319222+00:00",
+    "seconds": 0.0091,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/071-implicit-unfixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-patch-check",
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "reference.patch"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:58.365417+00:00",
+    "seconds": 0.0291,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/072-implicit-patch-check.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-patch-apply",
+    "argv": [
+      "git",
+      "apply",
+      "reference.patch"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:58.412562+00:00",
+    "seconds": 0.0264,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/073-implicit-patch-apply.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:58.478809+00:00",
+    "seconds": 0.0151,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/074-implicit-fixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:58.515429+00:00",
+    "seconds": 0.267,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/075-implicit-fixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:58.812460+00:00",
+    "seconds": 0.0065,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/076-implicit-fixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:27:59.963180+00:00",
+    "seconds": 0.3427,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/077-implicit-fixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:28:00.332791+00:00",
+    "seconds": 0.0068,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/078-implicit-fixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-restored-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:28:00.779930+00:00",
+    "seconds": 0.0195,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/079-implicit-restored-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-restored-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:28:00.817972+00:00",
+    "seconds": 0.2494,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/080-implicit-restored-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-restored-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/work/implicit",
+    "started_at_utc": "2026-10-10T15:28:01.087498+00:00",
+    "seconds": 0.0081,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/081-implicit-restored-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "mdfixer-real-local-prototype",
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/e/Term3.1/devops/project/devops-b11/mdfixer/demo.py",
+      "--evidence-dir",
+      "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/20261010T152724Z-1fd634bc/mdfixer-prototype"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11",
+    "started_at_utc": "2026-10-10T15:28:01.114305+00:00",
+    "seconds": 1.8947,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/082-mdfixer-real-local-prototype.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  }
+]

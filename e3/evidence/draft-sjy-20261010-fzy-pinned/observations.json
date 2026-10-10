@@ -1,0 +1,30 @@
+[
+  {
+    "name": "fixed-source-commit",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "base-digest-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "missing-toolchain-failure",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "upstream-tests",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "functional-output",
+    "passed": true,
+    "observed": {
+      "expected": "alpha\n",
+      "stdout": "alpha\n"
+    }
+  }
+]

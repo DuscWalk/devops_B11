@@ -1,0 +1,499 @@
+[
+  {
+    "name": "cc-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "make-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "git-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "gnu-make",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "E2-slides-integrity",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "E3-slides-integrity",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "draft-executable-created",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "draft-local-function",
+    "passed": true,
+    "observed": {
+      "stdout": "hello E3\n"
+    }
+  },
+  {
+    "name": "target-oracle-source",
+    "passed": true,
+    "observed": {
+      "provenance": "B11_REFERENCE_ORACLE"
+    }
+  },
+  {
+    "name": "target-initial-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "target-header-2-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791646494104340600,
+      "object_mtime_ns": 1791646492777143700
+    }
+  },
+  {
+    "name": "target-unfixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "target-unfixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "target-reference-bytes",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "target-fixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "target-header-3-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791646496193014900,
+      "object_mtime_ns": 1791646494888853900
+    }
+  },
+  {
+    "name": "target-fixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "target-recompiled",
+    "passed": true,
+    "observed": {
+      "build_output": "make: Warning: File 'Makefile' has modification time 0.52 s in the future\n/usr/bin/cc -O0 -Wall -Wextra -c main.c -o main.o\n/usr/bin/cc main.o -o app\nmake: warning:  Clock skew detected.  Your build may be incomplete.\n"
+    }
+  },
+  {
+    "name": "target-redundant-declaration-preserved",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "target-invalid-candidate-rejected",
+    "passed": true,
+    "observed": {
+      "accepted": false,
+      "build_exit_code": 2
+    }
+  },
+  {
+    "name": "target-original-restored",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "target-restored-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "macro-oracle-source",
+    "passed": true,
+    "observed": {
+      "provenance": "B11_REFERENCE_ORACLE"
+    }
+  },
+  {
+    "name": "macro-initial-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "macro-header-2-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791646499275465600,
+      "object_mtime_ns": 1791646497938707300
+    }
+  },
+  {
+    "name": "macro-unfixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "macro-unfixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "macro-reference-bytes",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "macro-fixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "macro-header-3-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791646501455299500,
+      "object_mtime_ns": 1791646500078398700
+    }
+  },
+  {
+    "name": "macro-fixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "macro-recompiled",
+    "passed": true,
+    "observed": {
+      "build_output": "make: Warning: File 'Makefile' has modification time 0.12 s in the future\n/usr/bin/cc -O0 -Wall -Wextra -c main.c -o main.o\n/usr/bin/cc main.o -o app\nmake: warning:  Clock skew detected.  Your build may be incomplete.\n"
+    }
+  },
+  {
+    "name": "macro-redundant-declaration-preserved",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "macro-invalid-candidate-rejected",
+    "passed": true,
+    "observed": {
+      "accepted": false,
+      "build_exit_code": 2
+    }
+  },
+  {
+    "name": "macro-original-restored",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "macro-restored-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "hybrid-oracle-source",
+    "passed": true,
+    "observed": {
+      "provenance": "B11_REFERENCE_ORACLE"
+    }
+  },
+  {
+    "name": "hybrid-initial-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "hybrid-header-2-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791646504594410500,
+      "object_mtime_ns": 1791646503239292100
+    }
+  },
+  {
+    "name": "hybrid-unfixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "hybrid-unfixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "hybrid-reference-bytes",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "hybrid-fixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "hybrid-header-3-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791646506886970200,
+      "object_mtime_ns": 1791646505470690000
+    }
+  },
+  {
+    "name": "hybrid-fixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "hybrid-recompiled",
+    "passed": true,
+    "observed": {
+      "build_output": "make: Warning: File 'app' has modification time 0.16 s in the future\n/usr/bin/cc -O0 -Wall -Wextra -c main.c -o main.o\n/usr/bin/cc main.o -o app\nmake: warning:  Clock skew detected.  Your build may be incomplete.\n"
+    }
+  },
+  {
+    "name": "hybrid-redundant-declaration-preserved",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "hybrid-invalid-candidate-rejected",
+    "passed": true,
+    "observed": {
+      "accepted": false,
+      "build_exit_code": 2
+    }
+  },
+  {
+    "name": "hybrid-original-restored",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "hybrid-restored-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "implicit-oracle-source",
+    "passed": true,
+    "observed": {
+      "provenance": "B11_REFERENCE_ORACLE"
+    }
+  },
+  {
+    "name": "implicit-initial-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "implicit-header-2-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791646510046415400,
+      "object_mtime_ns": 1791646508693596500
+    }
+  },
+  {
+    "name": "implicit-unfixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "implicit-unfixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "implicit-reference-bytes",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "implicit-fixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "implicit-header-3-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791646512206279100,
+      "object_mtime_ns": 1791646510824939600
+    }
+  },
+  {
+    "name": "implicit-fixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "implicit-recompiled",
+    "passed": true,
+    "observed": {
+      "build_output": "make: Warning: File 'config.h' has modification time 0.85 s in the future\n/usr/bin/cc -O0 -Wall -Wextra -MMD -MP -c main.c -o main.o\n/usr/bin/cc main.o -o app\nmake: warning:  Clock skew detected.  Your build may be incomplete.\n"
+    }
+  },
+  {
+    "name": "implicit-generated-dependency",
+    "passed": true,
+    "observed": {
+      "depfile": "main.o: main.c config.h\nconfig.h:\n"
+    }
+  },
+  {
+    "name": "implicit-invalid-candidate-rejected",
+    "passed": true,
+    "observed": {
+      "accepted": false,
+      "build_exit_code": 2
+    }
+  },
+  {
+    "name": "implicit-original-restored",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "implicit-restored-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "prototype-repair-and-honest-scope",
+    "passed": true,
+    "observed": {
+      "report": {
+        "result": "PASS",
+        "source_commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+        "accepted_candidates": 1,
+        "artifact_reads": 3,
+        "patch_apply_check": true,
+        "build_and_test_exit_code": 0,
+        "header_change_rebuild_verified": true,
+        "redundant_declaration_preserved": true,
+        "detector_recheck": "NOT_RUN",
+        "execution_mode": "LOCAL_PROTOTYPE",
+        "image_used": false
+      }
+    }
+  },
+  {
+    "name": "fresh-artifacts-read-from-separate-root",
+    "passed": true,
+    "observed": {
+      "receipts": [
+        {
+          "uri": "artifact://b11/job-repair-caffca736f624fbeac7b7e2861644db7/fix.patch",
+          "bytes": 178,
+          "sha256": "de30069969d619564d02853e9d7cead830e4a58e0d4af68931349278b3204c7f"
+        },
+        {
+          "uri": "artifact://b11/job-repair-caffca736f624fbeac7b7e2861644db7/declaration_style.json",
+          "bytes": 589,
+          "sha256": "68c62a9582f49aa3e8701ef525d4d00e8802c529e5128f5f35ee6e464f5f280a"
+        },
+        {
+          "uri": "artifact://b11/job-repair-caffca736f624fbeac7b7e2861644db7/test_result.json",
+          "bytes": 788,
+          "sha256": "a68859078906e1ab5897131e0b59ba2d0fd6036bb4962a67b14f7ad8c828f696"
+        }
+      ]
+    }
+  },
+  {
+    "name": "corrupted-artifact-rejected",
+    "passed": true,
+    "observed": {
+      "error": "artifact sha256 mismatch"
+    }
+  }
+]

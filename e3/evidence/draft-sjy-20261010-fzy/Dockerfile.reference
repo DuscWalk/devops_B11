@@ -1,0 +1,8 @@
+FROM ubuntu:24.04
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential git ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /workspace/fzy
+COPY source/ ./
+RUN make clean && make && test -x fzy && make check && ./fzy --help
+CMD ["./fzy", "--help"]

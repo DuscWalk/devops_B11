@@ -1,0 +1,100 @@
+{
+  "review_date": "2026-10-10",
+  "operator": "Codex executing user-authorized DRAFT tasks; not a separate human review",
+  "archives": [
+    {
+      "directory": "draft-sjy-20261010-docker",
+      "result": "FAIL",
+      "checks_passed": 0,
+      "checks_total": 1,
+      "files_verified": 10,
+      "source_commit": "1e61e6baa2db152b47841362547b14ed16694968",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": false
+    },
+    {
+      "directory": "draft-sjy-20261010-docker-final",
+      "result": "FAIL",
+      "checks_passed": 1,
+      "checks_total": 1,
+      "files_verified": 12,
+      "source_commit": "fb97e9cdbc81c999b72b3a8bde1756469dcded49",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": true
+    },
+    {
+      "directory": "draft-sjy-20261010-docker-https",
+      "result": "PASS",
+      "checks_passed": 3,
+      "checks_total": 3,
+      "files_verified": 21,
+      "source_commit": "a5d93f9bc2936e151b1135ff97026b74a56a019f",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": true
+    },
+    {
+      "directory": "draft-sjy-20261010-docker-proxy",
+      "result": "FAIL",
+      "checks_passed": 1,
+      "checks_total": 1,
+      "files_verified": 11,
+      "source_commit": "1e61e6baa2db152b47841362547b14ed16694968",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": true
+    },
+    {
+      "directory": "draft-sjy-20261010-docker-retry",
+      "result": "FAIL",
+      "checks_passed": 1,
+      "checks_total": 1,
+      "files_verified": 12,
+      "source_commit": "fb97e9cdbc81c999b72b3a8bde1756469dcded49",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": true
+    },
+    {
+      "directory": "draft-sjy-20261010-fzy",
+      "result": "FAIL",
+      "checks_passed": 2,
+      "checks_total": 2,
+      "files_verified": 16,
+      "source_commit": "fb97e9cdbc81c999b72b3a8bde1756469dcded49",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": true
+    },
+    {
+      "directory": "draft-sjy-20261010-fzy-pinned",
+      "result": "PASS",
+      "checks_passed": 5,
+      "checks_total": 5,
+      "files_verified": 23,
+      "source_commit": "a5d93f9bc2936e151b1135ff97026b74a56a019f",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": true
+    },
+    {
+      "directory": "draft-sjy-20261010-local",
+      "result": "PASS",
+      "checks_passed": 67,
+      "checks_total": 67,
+      "files_verified": 116,
+      "source_commit": "1e61e6baa2db152b47841362547b14ed16694968",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": false
+    },
+    {
+      "directory": "draft-sjy-20261010-local-final",
+      "result": "PASS",
+      "checks_passed": 67,
+      "checks_total": 67,
+      "files_verified": 116,
+      "source_commit": "7acb52338ce046d3f122b45f202695d46b757d22",
+      "input_files_not_matching_commit": [],
+      "working_tree_status_recorded": true
+    }
+  ],
+  "files_verified": 337,
+  "a11_received": false,
+  "wangshuo_human_review": "NOT_RUN",
+  "hubo_acceptance": "PENDING"
+}
