@@ -1,0 +1,14 @@
+{
+  "example_only": false,
+  "image": "b11/e3-tiny-reference:f82c11c26cff",
+  "id": "sha256:f072980d2fe6cd2df7ca06435416fdaad32a2c5b448203cb7baac7d6d8f63e45",
+  "repo_digests": [],
+  "os": "linux",
+  "architecture": "amd64",
+  "availability": "LOCAL_DOCKER_ENGINE_ONLY",
+  "registry_published": false,
+  "archive_exported": false,
+  "a11_received": false,
+  "dockerfile_sha256": "87a91333e9ca0bd9f18a84653f279061515d95d0c72ed6c42046c25df86adf52",
+  "note": "Only the generated image tag belongs to this run. Base tags and package repositories are not pinned; use the resolved image ID for this observation."
+}

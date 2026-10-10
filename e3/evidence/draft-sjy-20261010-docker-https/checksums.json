@@ -1,0 +1,23 @@
+{
+  "broken-result.json": "e6d858681474e918935457d34353c4f92642e95afbccc116f7f95c2fb57ebc9a",
+  "builder.json": "91f0e7f4309eff597a6d36388efcc346037be4052a7b01882f93ce0e035410ca",
+  "commands.json": "40901c74b10aed24c26f782aafcffa58b25cb9c5cbad1cf00f6128a755840fd4",
+  "environment.json": "d8c8928887eb637e57665e8bcde185222b74d689852671d921e614a9cb5f30f7",
+  "image-reference.json": "003ff300a7bd72be5846c3cc08ea8ba10e41a71a7f736c75e9f844599704dedc",
+  "logs/001-docker-server.txt": "714cb79db9990331cea10d5f2fa29a40ce1984a016eb94c020f438b8b0a7799a",
+  "logs/002-docker-buildx-probe.txt": "f72c5a926874a174f7d0c7c30aab4355c0561d5c7e29dbb515c8446b3572a4a0",
+  "logs/003-docker-context.txt": "08d34a7d0d6173276b86f3da17a6b4db7df625f5654ec8574e85220649bfc49d",
+  "logs/004-draft-broken-build.txt": "ed2da839efefa2e3d49f5884c4e667346c55c5d4d16e9de569f91ae3cd79c41d",
+  "logs/005-docker-base-identity.txt": "8855782b7b4c489346c7717d499429db80e5a94a654373aa10e2b41327ada9c6",
+  "logs/006-draft-reference-build.txt": "cd95e9e29fdd603ffd536bff5bf7d25a5c92c0768f2900b1e7ab6c90e2d3fe76",
+  "logs/007-docker-reference-identity.txt": "f2ed2e11b194c3394d5ba520a08c22edc3c45aa6b947ab6a4b00b1334630e4bb",
+  "logs/008-draft-reference-function.txt": "5e8b4d37e840cd8286665b13049a7166ec2d906d60bea4675dbb8908acfa04fe",
+  "logs/009-draft-container-offline-rebuild.txt": "a6299fb521ff41c066a2f8fac215a624c01e9cc3f016ba73490f4941101fb57d",
+  "logs/010-container-compiler.txt": "d02a0b372a2fb097f599a71cc1417fdc4f090af0e2a9becc7cd8d794d0804765",
+  "logs/011-container-make.txt": "2388b20a89ff2228a4a112c6b34e78241b66e69c117c9ee0f1d09ee565dc4d1b",
+  "logs/012-container-packages.txt": "c41021bcefbf4431a58ec26fd2d497a6889746699ccb9ce44c84d7be2a004b1a",
+  "observations.json": "d919ac18f53bef168390adf190ce84b360ba582e14d0033f8e965b316de491a2",
+  "packages.txt": "c41021bcefbf4431a58ec26fd2d497a6889746699ccb9ce44c84d7be2a004b1a",
+  "source.json": "5bbe25fe14fe14d1ae253d2b8f2c93f0faad3aff2c2cc4233bbe352ff7466eb7",
+  "summary.json": "a965f3fcb3365cab33dcc7fa43eda11522749b36cc3204c65f31ed592b1983b1"
+}

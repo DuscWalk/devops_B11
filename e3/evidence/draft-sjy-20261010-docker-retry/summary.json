@@ -1,0 +1,15 @@
+{
+  "suite": "b11-e3-draft-docker-reference",
+  "result": "FAIL",
+  "started_at_utc": "2026-10-10T15:32:36.894261+00:00",
+  "ended_at_utc": "2026-10-10T15:35:07.733097+00:00",
+  "checks_passed": 1,
+  "checks_total": 1,
+  "commands_recorded": 6,
+  "error": "RuntimeError: draft-reference-build: unexpected exit 1; see E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\docker-20261010T153236Z-03c64e6f\\logs\\006-draft-reference-build.txt",
+  "cross_group_read_verified": false,
+  "a11_detector_recheck": "NOT_RUN",
+  "reference_dockerfile_is_manual": true,
+  "automatic_draft_service": false,
+  "environment_hash_status": "PROPOSED_B11_ONLY"
+}

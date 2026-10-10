@@ -1,0 +1,9 @@
+{
+  "accepted": false,
+  "build_exit_code": 2,
+  "reason": "build failed (exit=2): make: Warning: File 'Makefile' has modification time 2.6 s in the future\nrm -f app main.o main.d\nmake: warning:  Clock skew detected.  Your build may be incomplete.\nmake: Warning: File 'Makefile' has modification time 2.6 s in the future\n/usr/bin/cc -O0 -Wall -Wextra -c main.c -o main.o\n/usr/bin/cc main.o -o app\nE3_INVALID_CANDIDATE\nmake: *** [Makefile:22: reject-me] Error 1\n",
+  "build_command": "make clean && make",
+  "verify_command": "./app",
+  "source_restored_sha256": "8894119d9ff84c3dca02bf0624ee712a2b173c534ae047ff75a1d68d652a0af2",
+  "candidate_sha256": "511b728d3f1835ad2e35ae7e59738b2e09bdf81376086b15b064ea876b5cf03c"
+}

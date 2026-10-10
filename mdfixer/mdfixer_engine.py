@@ -1,59 +1,110 @@
 from __future__ import annotations
 
 import re
-from mdfixer_core import MakefileRule
+
+from mdfixer_core import MakefileRule, VariableDef
+
+
+VAR_RE = re.compile(r"^([A-Za-z_]\w*)\s*([:?+]?=)\s*(.*)$")
+VAR_REF_RE = re.compile(r"\$\(([A-Za-z_]\w*)\)")
 
 
 def parse_makefile(content):
-    """Index simple explicit rules; keep the first physical line of continuations.
-
-    This local prototype does not evaluate make variables, includes or patterns.
-    Unsupported rules are left for manual repair.
-    """
     rules = []
-    lines = content.splitlines()
+    variables = []
+    lines = content.split("\n")
     i = 0
     while i < len(lines):
         line = lines[i]
-        if not line.strip() or line.lstrip().startswith('#') or line.startswith('\t'):
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
             i += 1
             continue
-        if re.match(r'^\s*[A-Za-z_]\w*\s*[:?+]?=', line) or ':' not in line:
+        vm = VAR_RE.match(line)
+        if vm and ":" not in line.split("=", 1)[0]:
+            name = vm.group(1)
+            operator = vm.group(2)
+            value = vm.group(3)
+            while value.endswith("\\"):
+                value = value[:-1].rstrip()
+                i += 1
+                if i < len(lines):
+                    value += " " + lines[i].strip()
+            variables.append(VariableDef(
+                name=name,
+                value=value.strip(),
+                operator=operator,
+                line_no=i + 1,
+            ))
             i += 1
             continue
-        start = i
-        logical = line
-        while logical.rstrip().endswith('\\'):
-            logical = logical.rstrip()[:-1] + ' '
+        if not line.startswith("\t") and ":" in line:
+            colon_idx = line.index(":")
+            if colon_idx + 1 < len(line) and line[colon_idx + 1] == "=":
+                i += 1
+                continue
+            target_part = line[:colon_idx].strip()
+            prereq_part = line[colon_idx + 1:].strip()
+            while prereq_part.endswith("\\"):
+                prereq_part = prereq_part[:-1].rstrip()
+                i += 1
+                if i < len(lines):
+                    prereq_part += " " + lines[i].strip()
+            prerequisites = prereq_part.split() if prereq_part else []
+            recipe = []
+            rule_line = i + 1
             i += 1
-            if i >= len(lines):
-                break
-            logical += lines[i].strip()
-        target, prereq = logical.split(':',1)
-        if any(c in target for c in '$%=') or prereq.startswith(':') or ';' in prereq or ':' in prereq:
+            while i < len(lines) and (lines[i].startswith("\t") or lines[i].strip() == ""):
+                if lines[i].startswith("\t"):
+                    recipe.append(lines[i])
+                i += 1
+            rules.append(MakefileRule(
+                target=target_part,
+                prerequisites=prerequisites,
+                recipe=recipe,
+                line_no=rule_line,
+            ))
+        else:
             i += 1
-            continue
-        prereq = prereq.split('#',1)[0].split('|',1)[0]
-        i += 1
-        recipe = []
-        while i < len(lines) and (lines[i].startswith('\t') or not lines[i].strip()):
-            if lines[i].startswith('\t'):
-                recipe.append(lines[i])
-            i += 1
-        rules.append(MakefileRule(target.strip(),prereq.split(),recipe,start+1))
-    return rules
+    return rules, variables
 
 
 def detect_declaration_style(content, rules):
-    return {
-        "uses_tab_recipe":any(r.recipe for r in rules),
-        "prereq_separator":" ",
-        "has_continuation":'\\\n' in content,
-        "variable_patterns":re.findall(r'\$\(([A-Za-z_]\w*)\)',content),
-        "supported_scope":"simple explicit rules; no variable expansion or pattern repair",
+    style = {
+        "uses_tab_recipe": any(r.recipe for r in rules),
+        "prereq_separator": " ",
+        "has_continuation": "\\" in content,
+        "variable_patterns": re.findall(r"\$\(([A-Za-z_]\w*)\)", content),
     }
+    return style
+
+
+def detect_rule_style(rule, variables):
+    """返回规则的声明风格: target / macro / hybrid / implicit / unknown"""
+    target = rule.target
+    if "%" in target:
+        return "implicit"
+    prereqs = rule.prerequisites
+    if not prereqs:
+        return "target"
+    var_refs = [p for p in prereqs if p.startswith("$(")]
+    direct_files = [p for p in prereqs if not p.startswith("$(")]
+    if var_refs and not direct_files:
+        return "macro"
+    if var_refs and direct_files:
+        return "hybrid"
+    return "target"
 
 
 def find_rule_for_target(rules, target):
-    matches=[r for r in rules if target in r.target.split()]
-    return matches[0] if len(matches)==1 else None
+    for rule in rules:
+        if target in rule.target.split():
+            return rule
+    return None
+
+
+def find_variable(variables, name):
+    for v in variables:
+        if v.name == name:
+            return v
+    return None

@@ -1,0 +1,11 @@
+{
+  "provenance": "B11_REFERENCE_ORACLE",
+  "prepared_by": "胡博 / Codex",
+  "based_on": "E3 PPTX file pages 29-32; recreated Tiny Greeting sample",
+  "build_command": "make",
+  "verify_command": "./hello",
+  "expected_stdout": "hello E3\n",
+  "expected_exit_code": 0,
+  "broken_build_expected_error": "make: not found",
+  "note": "Network/registry failure is not the expected toolchain failure; base tag is not immutable, record resolved digest on each run."
+}

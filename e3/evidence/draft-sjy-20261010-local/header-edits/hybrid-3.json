@@ -1,0 +1,6 @@
+{
+  "file": "config.h",
+  "new_content": "#define VALUE 3\n",
+  "sha256": "aa1feff6d1c86f6da1b3dfc77ee731a0482cb7926cea8a67a85ce2fbb3ad32a6",
+  "operation": "controlled fixture edit"
+}

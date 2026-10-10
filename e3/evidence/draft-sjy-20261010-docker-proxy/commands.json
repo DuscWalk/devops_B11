@@ -1,0 +1,93 @@
+[
+  {
+    "label": "docker-server",
+    "argv": [
+      "docker",
+      "version",
+      "--format",
+      "{{json .Server}}"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:29:28.472490+00:00",
+    "seconds": 0.079,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/001-docker-server.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "docker-buildx-probe",
+    "argv": [
+      "docker",
+      "buildx",
+      "version"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:29:28.559146+00:00",
+    "seconds": 0.187,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/002-docker-buildx-probe.txt",
+    "expected_exit_codes": null
+  },
+  {
+    "label": "docker-context",
+    "argv": [
+      "docker",
+      "context",
+      "show"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:29:28.746096+00:00",
+    "seconds": 0.063,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/003-docker-context.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-broken-build",
+    "argv": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "--no-cache",
+      "-t",
+      "b11/e3-tiny-broken:45a40ff44c29",
+      "-f",
+      "Dockerfile.broken",
+      "."
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\docker-20261010T152928Z-3d4faa36\\work\\tiny-greeting",
+    "started_at_utc": "2026-10-10T15:29:28.804858+00:00",
+    "seconds": 7.546,
+    "exit_code": 1,
+    "timed_out": false,
+    "log": "logs/004-draft-broken-build.txt",
+    "expected_exit_codes": null
+  },
+  {
+    "label": "docker-base-identity",
+    "argv": [
+      "docker",
+      "image",
+      "inspect",
+      "python:3.13-slim",
+      "--format",
+      "{\"id\":{{json .Id}},\"repo_digests\":{{json .RepoDigests}},\"os\":{{json .Os}},\"architecture\":{{json .Architecture}}}"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:29:36.356685+00:00",
+    "seconds": 0.079,
+    "exit_code": 1,
+    "timed_out": false,
+    "log": "logs/005-docker-base-identity.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  }
+]

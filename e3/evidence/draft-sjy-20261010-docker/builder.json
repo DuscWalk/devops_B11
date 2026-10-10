@@ -1,0 +1,5 @@
+{
+  "builder": "buildkit",
+  "buildx_probe_exit_code": 0,
+  "global_configuration_changed": false
+}

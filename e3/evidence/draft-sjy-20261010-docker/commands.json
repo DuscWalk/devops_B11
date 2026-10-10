@@ -1,0 +1,73 @@
+[
+  {
+    "label": "docker-server",
+    "argv": [
+      "docker",
+      "version",
+      "--format",
+      "{{json .Server}}"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11",
+    "started_at_utc": "2026-10-10T15:27:54.595917+00:00",
+    "seconds": 0.0397,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/001-docker-server.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "docker-buildx-probe",
+    "argv": [
+      "docker",
+      "buildx",
+      "version"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11",
+    "started_at_utc": "2026-10-10T15:27:54.846028+00:00",
+    "seconds": 0.0576,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/002-docker-buildx-probe.txt",
+    "expected_exit_codes": null
+  },
+  {
+    "label": "docker-context",
+    "argv": [
+      "docker",
+      "context",
+      "show"
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11",
+    "started_at_utc": "2026-10-10T15:27:54.919212+00:00",
+    "seconds": 0.0151,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/003-docker-context.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-broken-build",
+    "argv": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "--no-cache",
+      "-t",
+      "b11/e3-tiny-broken:4b4f0779e542",
+      "-f",
+      "Dockerfile.broken",
+      "."
+    ],
+    "cwd": "/mnt/e/Term3.1/devops/project/devops-b11/e3/work/docker-20261010T152751Z-7fdd8507/work/tiny-greeting",
+    "started_at_utc": "2026-10-10T15:27:54.945536+00:00",
+    "seconds": 34.9536,
+    "exit_code": 1,
+    "timed_out": false,
+    "log": "logs/004-draft-broken-build.txt",
+    "expected_exit_codes": null
+  }
+]

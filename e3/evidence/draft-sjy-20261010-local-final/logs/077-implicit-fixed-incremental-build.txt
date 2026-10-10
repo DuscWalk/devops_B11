@@ -1,0 +1,4 @@
+make: Warning: File 'config.h' has modification time 0.85 s in the future
+/usr/bin/cc -O0 -Wall -Wextra -MMD -MP -c main.c -o main.o
+/usr/bin/cc main.o -o app
+make: warning:  Clock skew detected.  Your build may be incomplete.

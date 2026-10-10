@@ -1,0 +1,19 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+            environment-variable.
+
+Sending build context to Docker daemon  6.144kB
+
+Step 1/5 : FROM python:3.13-slim
+ ---> bf44cdfcb76c
+Step 2/5 : WORKDIR /work
+ ---> Running in b6966cea4954
+ ---> Removed intermediate container b6966cea4954
+ ---> 53a970a7934a
+Step 3/5 : COPY main.c Makefile ./
+ ---> 643c12465dd8
+Step 4/5 : RUN make
+ ---> Running in b7a7d0e3905e
+[91m/bin/sh: 1: make: not found
+[0m ---> Removed intermediate container b7a7d0e3905e
+The command '/bin/sh -c make' returned a non-zero code: 127

@@ -1,0 +1,8 @@
+make: Warning: File 'main.d' has modification time 0.51 s in the future
+rm -f app main.o main.d
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 0.86 s in the future
+/usr/bin/cc -O0 -Wall -Wextra -MMD -MP -c main.c -o main.o
+/usr/bin/cc main.o -o app
+E3_INVALID_CANDIDATE
+make: *** [Makefile:23: reject-me] Error 1

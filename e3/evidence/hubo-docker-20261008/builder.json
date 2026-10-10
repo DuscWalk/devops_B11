@@ -1,0 +1,5 @@
+{
+  "builder": "legacy",
+  "buildx_probe_exit_code": 1,
+  "global_configuration_changed": false
+}

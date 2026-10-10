@@ -1,0 +1,13 @@
+{
+  "image": "b11/e3-fzy-reference:b9c6ded64ac2",
+  "id": "sha256:a06c846e6e9465a979682f95ae48af6b1a5d7893c82831f5b8dc398275f2ae22",
+  "repo_digests": [],
+  "os": "linux",
+  "architecture": "amd64",
+  "source_commit": "28195b3a709995354b6c33cec9bb7c9f81532eb6",
+  "example_only": false,
+  "availability": "LOCAL_DOCKER_ENGINE_ONLY",
+  "automatic_draft_service": false,
+  "registry_published": false,
+  "a11_received": false
+}

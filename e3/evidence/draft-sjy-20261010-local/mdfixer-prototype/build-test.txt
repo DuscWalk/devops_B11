@@ -1,0 +1,9 @@
+rm -f app app.o
+/usr/bin/cc -Wall -Wextra -O0 -c -o app.o app.c
+/usr/bin/cc -o app app.o
+/usr/bin/cc -Wall -Wextra -O0 -c -o app.o app.c
+/usr/bin/cc -o app app.o
+make: Warning: File 'config.h' has modification time 2.4 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'config.h' has modification time 2.2 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.

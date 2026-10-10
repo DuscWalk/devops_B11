@@ -1,0 +1,304 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.reference
+#1 transferring dockerfile: 342B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/ubuntu:24.04
+#4 CACHED
+
+#5 [internal] load build context
+#5 transferring context: 2.33kB done
+#5 DONE 0.0s
+
+#6 [2/5] RUN apt-get update     && apt-get install -y --no-install-recommends build-essential git ca-certificates     && rm -rf /var/lib/apt/lists/*
+#6 1.842 Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+#6 2.049 Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+#6 3.089 Get:3 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [61.4 kB]
+#6 3.540 Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+#6 5.057 Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+#6 5.499 Get:6 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1546 kB]
+#6 7.569 Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+#6 7.993 Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1381 kB]
+#6 9.496 Get:9 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+#6 10.54 Get:10 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2069 kB]
+#6 11.80 Get:11 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+#6 19.50 Get:12 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+#6 25.09 Get:13 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2177 kB]
+#6 31.06 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1702 kB]
+#6 35.91 Get:15 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [2166 kB]
+#6 37.97 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [67.4 kB]
+#6 38.63 Get:17 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [671 B]
+#6 40.17 Get:18 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.0 kB]
+#6 41.25 Get:19 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [36.0 kB]
+#6 41.26 Fetched 33.5 MB in 43s (772 kB/s)
+#6 41.26 Reading package lists...
+#6 42.08 Reading package lists...
+#6 42.87 Building dependency tree...
+#6 43.07 Reading state information...
+#6 43.32 The following additional packages will be installed:
+#6 43.32   binutils binutils-common binutils-x86-64-linux-gnu bzip2 cpp cpp-13
+#6 43.32   cpp-13-x86-64-linux-gnu cpp-x86-64-linux-gnu dpkg-dev g++ g++-13
+#6 43.32   g++-13-x86-64-linux-gnu g++-x86-64-linux-gnu gcc gcc-13 gcc-13-base
+#6 43.32   gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu git-man libasan8 libatomic1
+#6 43.32   libbinutils libbrotli1 libc-dev-bin libc6-dev libcc1-0 libcrypt-dev
+#6 43.32   libctf-nobfd0 libctf0 libcurl3t64-gnutls libdpkg-perl liberror-perl
+#6 43.32   libexpat1 libgcc-13-dev libgdbm-compat4t64 libgdbm6t64 libgomp1 libgprofng0
+#6 43.32   libgssapi-krb5-2 libhwasan0 libisl23 libitm1 libjansson4 libk5crypto3
+#6 43.32   libkeyutils1 libkrb5-3 libkrb5support0 libldap2 liblsan0 libmpc3 libmpfr6
+#6 43.32   libnghttp2-14 libperl5.38t64 libpsl5t64 libquadmath0 librtmp1 libsasl2-2
+#6 43.32   libsasl2-modules-db libsframe1 libssh-4 libssl3t64 libstdc++-13-dev libtsan2
+#6 43.32   libubsan1 linux-libc-dev lto-disabled-list make openssl patch perl
+#6 43.32   perl-modules-5.38 rpcsvc-proto xz-utils
+#6 43.32 Suggested packages:
+#6 43.32   binutils-doc gprofng-gui bzip2-doc cpp-doc gcc-13-locales cpp-13-doc
+#6 43.32   debian-keyring g++-multilib g++-13-multilib gcc-13-doc gcc-multilib
+#6 43.32   manpages-dev autoconf automake libtool flex bison gdb gcc-doc
+#6 43.32   gcc-13-multilib gdb-x86-64-linux-gnu gettext-base git-daemon-run
+#6 43.32   | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs
+#6 43.32   git-mediawiki git-svn glibc-doc gnupg | sq | sqop | pgpainless-cli
+#6 43.32   | sequoia-chameleon-gnupg bzr gdbm-l10n krb5-doc krb5-user libstdc++-13-doc
+#6 43.32   make-doc ed diffutils-doc perl-doc libterm-readline-gnu-perl
+#6 43.32   | libterm-readline-perl-perl libtap-harness-archive-perl
+#6 43.32 Recommended packages:
+#6 43.32   fakeroot gnupg | sq | sqop | pgpainless-cli | sequoia-chameleon-gnupg
+#6 43.32   libalgorithm-merge-perl less ssh-client manpages manpages-dev libc-devtools
+#6 43.32   libfile-fcntllock-perl liblocale-gettext-perl krb5-locales libldap-common
+#6 43.32   publicsuffix libsasl2-modules netbase
+#6 43.43 The following NEW packages will be installed:
+#6 43.43   binutils binutils-common binutils-x86-64-linux-gnu build-essential bzip2
+#6 43.43   ca-certificates cpp cpp-13 cpp-13-x86-64-linux-gnu cpp-x86-64-linux-gnu
+#6 43.43   dpkg-dev g++ g++-13 g++-13-x86-64-linux-gnu g++-x86-64-linux-gnu gcc gcc-13
+#6 43.43   gcc-13-base gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu git git-man
+#6 43.43   libasan8 libatomic1 libbinutils libbrotli1 libc-dev-bin libc6-dev libcc1-0
+#6 43.43   libcrypt-dev libctf-nobfd0 libctf0 libcurl3t64-gnutls libdpkg-perl
+#6 43.43   liberror-perl libexpat1 libgcc-13-dev libgdbm-compat4t64 libgdbm6t64
+#6 43.43   libgomp1 libgprofng0 libgssapi-krb5-2 libhwasan0 libisl23 libitm1
+#6 43.43   libjansson4 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap2
+#6 43.43   liblsan0 libmpc3 libmpfr6 libnghttp2-14 libperl5.38t64 libpsl5t64
+#6 43.43   libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db libsframe1 libssh-4
+#6 43.43   libstdc++-13-dev libtsan2 libubsan1 linux-libc-dev lto-disabled-list make
+#6 43.43   openssl patch perl perl-modules-5.38 rpcsvc-proto xz-utils
+#6 43.43 The following packages will be upgraded:
+#6 43.43   libssl3t64
+#6 45.42 1 upgraded, 75 newly installed, 0 to remove and 2 not upgraded.
+#6 45.42 Need to get 89.5 MB of archives.
+#6 45.42 After this operation, 335 MB of additional disk space will be used.
+#6 45.42 Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 perl-modules-5.38 all 5.38.2-3.2ubuntu0.6 [3110 kB]
+#6 48.34 Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libgdbm6t64 amd64 1.23-5.1build1 [34.4 kB]
+#6 48.96 Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 libgdbm-compat4t64 amd64 1.23-5.1build1 [6710 B]
+#6 64.56 Get:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libperl5.38t64 amd64 5.38.2-3.2ubuntu0.6 [4864 kB]
+#6 66.43 Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 perl amd64 5.38.2-3.2ubuntu0.6 [231 kB]
+#6 70.56 Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssl3t64 amd64 3.0.13-0ubuntu3.16 [1945 kB]
+#6 75.97 Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openssl amd64 3.0.13-0ubuntu3.16 [1004 kB]
+#6 78.03 Get:8 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 ca-certificates all 20260601~24.04.1 [139 kB]
+#6 80.95 Get:9 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libexpat1 amd64 2.6.1-2ubuntu0.6 [98.9 kB]
+#6 82.25 Get:10 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libkrb5support0 amd64 1.20.1-6ubuntu2.10 [34.9 kB]
+#6 85.28 Get:11 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libk5crypto3 amd64 1.20.1-6ubuntu2.10 [81.9 kB]
+#6 85.88 Get:12 http://archive.ubuntu.com/ubuntu noble/main amd64 libkeyutils1 amd64 1.6.3-3build1 [9490 B]
+#6 92.36 Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libkrb5-3 amd64 1.20.1-6ubuntu2.10 [348 kB]
+#6 93.92 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgssapi-krb5-2 amd64 1.20.1-6ubuntu2.10 [143 kB]
+#6 94.79 Get:15 http://archive.ubuntu.com/ubuntu noble/main amd64 libjansson4 amd64 2.14-2build2 [32.8 kB]
+#6 96.16 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libnghttp2-14 amd64 1.59.0-1ubuntu0.4 [74.6 kB]
+#6 97.13 Get:17 http://archive.ubuntu.com/ubuntu noble/main amd64 libpsl5t64 amd64 0.21.2-1.1build1 [57.1 kB]
+#6 98.55 Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 xz-utils amd64 5.6.1+really5.4.5-1ubuntu0.3 [267 kB]
+#6 101.8 Get:19 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 binutils-common amd64 2.42-4ubuntu2.10 [240 kB]
+#6 102.5 Get:20 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsframe1 amd64 2.42-4ubuntu2.10 [15.7 kB]
+#6 102.6 Get:21 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libbinutils amd64 2.42-4ubuntu2.10 [577 kB]
+#6 103.7 Get:22 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libctf-nobfd0 amd64 2.42-4ubuntu2.10 [98.0 kB]
+#6 105.8 Get:23 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libctf0 amd64 2.42-4ubuntu2.10 [94.5 kB]
+#6 108.6 Get:24 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgprofng0 amd64 2.42-4ubuntu2.10 [849 kB]
+#6 113.3 Get:25 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.42-4ubuntu2.10 [2463 kB]
+#6 114.2 Get:26 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 binutils amd64 2.42-4ubuntu2.10 [18.2 kB]
+#6 115.0 Get:27 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libc-dev-bin amd64 2.39-0ubuntu8.9 [20.4 kB]
+#6 118.4 Get:28 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 linux-libc-dev amd64 6.8.0-146.146 [1540 kB]
+#6 120.0 Get:29 http://archive.ubuntu.com/ubuntu noble/main amd64 libcrypt-dev amd64 1:4.4.36-4build1 [112 kB]
+#6 121.3 Get:30 http://archive.ubuntu.com/ubuntu noble/main amd64 rpcsvc-proto amd64 1.4.2-0ubuntu7 [67.4 kB]
+#6 126.4 Get:31 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libc6-dev amd64 2.39-0ubuntu8.9 [2126 kB]
+#6 128.1 Get:32 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13-base amd64 13.3.0-6ubuntu2~24.04.1 [51.6 kB]
+#6 138.1 Get:33 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libisl23 amd64 0.26-3build1.1 [680 kB]
+#6 140.7 Get:34 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpfr6 amd64 4.2.1-1build1.1 [353 kB]
+#6 142.0 Get:35 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpc3 amd64 1.3.1-1build1.1 [54.6 kB]
+#6 147.4 Ign:36 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 cpp-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1
+#6 152.8 Ign:37 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 cpp-13 amd64 13.3.0-6ubuntu2~24.04.1
+#6 152.8 Err:36 http://security.ubuntu.com/ubuntu noble-updates/main amd64 cpp-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1
+#6 152.8   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 158.2 Err:38 http://archive.ubuntu.com/ubuntu noble/main amd64 cpp-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1
+#6 158.2   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 158.2 Err:37 http://security.ubuntu.com/ubuntu noble-updates/main amd64 cpp-13 amd64 13.3.0-6ubuntu2~24.04.1
+#6 158.2   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 161.4 Err:39 http://archive.ubuntu.com/ubuntu noble/main amd64 cpp amd64 4:13.2.0-7ubuntu1
+#6 161.4   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 163.7 Get:40 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcc1-0 amd64 14.2.0-4ubuntu2~24.04.1 [48.0 kB]
+#6 165.2 Get:41 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgomp1 amd64 14.2.0-4ubuntu2~24.04.1 [148 kB]
+#6 170.3 Ign:42 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libitm1 amd64 14.2.0-4ubuntu2~24.04.1
+#6 175.3 Err:42 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libitm1 amd64 14.2.0-4ubuntu2~24.04.1
+#6 175.3   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 175.3 Ign:43 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libatomic1 amd64 14.2.0-4ubuntu2~24.04.1
+#6 180.4 Err:43 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libatomic1 amd64 14.2.0-4ubuntu2~24.04.1
+#6 180.4   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 180.4 Ign:44 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libasan8 amd64 14.2.0-4ubuntu2~24.04.1
+#6 183.5 Get:45 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 liblsan0 amd64 14.2.0-4ubuntu2~24.04.1 [1322 kB]
+#6 185.5 Err:44 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libasan8 amd64 14.2.0-4ubuntu2~24.04.1
+#6 185.5   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 187.8 Ign:46 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libtsan2 amd64 14.2.0-4ubuntu2~24.04.1
+#6 193.2 Err:46 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libtsan2 amd64 14.2.0-4ubuntu2~24.04.1
+#6 193.2   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 193.2 Ign:47 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libubsan1 amd64 14.2.0-4ubuntu2~24.04.1
+#6 198.6 Err:47 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libubsan1 amd64 14.2.0-4ubuntu2~24.04.1
+#6 198.6   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 198.6 Ign:48 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libhwasan0 amd64 14.2.0-4ubuntu2~24.04.1
+#6 204.0 Ign:49 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libquadmath0 amd64 14.2.0-4ubuntu2~24.04.1
+#6 204.0 Err:48 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libhwasan0 amd64 14.2.0-4ubuntu2~24.04.1
+#6 204.0   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 209.4 Err:49 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libquadmath0 amd64 14.2.0-4ubuntu2~24.04.1
+#6 209.4   502  Bad Gateway [IP: 91.189.92.23 80]
+#6 209.4 Ign:50 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgcc-13-dev amd64 13.3.0-6ubuntu2~24.04.1
+#6 212.1 Get:50 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libgcc-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [2681 kB]
+#6 213.5 Get:51 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [21.1 MB]
+#6 216.1 Get:52 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13 amd64 13.3.0-6ubuntu2~24.04.1 [494 kB]
+#6 217.3 Get:53 http://archive.ubuntu.com/ubuntu noble/main amd64 gcc-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [1212 B]
+#6 215.3 Get:54 http://archive.ubuntu.com/ubuntu noble/main amd64 gcc amd64 4:13.2.0-7ubuntu1 [5018 B]
+#6 218.0 Get:55 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libstdc++-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [2420 kB]
+#6 221.5 Get:56 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 g++-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [12.2 MB]
+#6 222.8 Get:57 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 g++-13 amd64 13.3.0-6ubuntu2~24.04.1 [16.0 kB]
+#6 223.4 Get:58 http://archive.ubuntu.com/ubuntu noble/main amd64 g++-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [964 B]
+#6 224.1 Get:59 http://archive.ubuntu.com/ubuntu noble/main amd64 g++ amd64 4:13.2.0-7ubuntu1 [1100 B]
+#6 225.7 Get:60 http://archive.ubuntu.com/ubuntu noble/main amd64 make amd64 4.3-4.1build2 [180 kB]
+#6 227.6 Get:61 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libdpkg-perl all 1.22.6ubuntu6.6 [268 kB]
+#6 228.6 Get:62 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 bzip2 amd64 1.0.8-5.1ubuntu0.1 [34.6 kB]
+#6 230.1 Get:63 http://archive.ubuntu.com/ubuntu noble/main amd64 patch amd64 2.7.6-7build3 [104 kB]
+#6 230.8 Get:64 http://archive.ubuntu.com/ubuntu noble/main amd64 lto-disabled-list all 47 [12.4 kB]
+#6 233.2 Get:65 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dpkg-dev all 1.22.6ubuntu6.6 [1074 kB]
+#6 233.9 Get:66 http://archive.ubuntu.com/ubuntu noble/main amd64 build-essential amd64 12.10ubuntu1 [4928 B]
+#6 235.8 Get:67 http://archive.ubuntu.com/ubuntu noble/main amd64 libbrotli1 amd64 1.1.0-2build2 [331 kB]
+#6 236.8 Get:68 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-5ubuntu3.1 [20.4 kB]
+#6 238.1 Get:69 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-5ubuntu3.1 [53.2 kB]
+#6 239.8 Get:70 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libldap2 amd64 2.6.10+dfsg-0ubuntu0.24.04.1 [198 kB]
+#6 241.1 Get:71 http://archive.ubuntu.com/ubuntu noble/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2build7 [56.3 kB]
+#6 242.9 Get:72 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh-4 amd64 0.10.6-2ubuntu0.5 [191 kB]
+#6 245.4 Get:73 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl3t64-gnutls amd64 8.5.0-2ubuntu10.15 [336 kB]
+#6 246.4 Get:74 http://archive.ubuntu.com/ubuntu noble/main amd64 liberror-perl all 0.17029-2 [25.6 kB]
+#6 248.7 Get:75 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git-man all 1:2.43.0-1ubuntu7.3 [1100 kB]
+#6 251.4 Get:76 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.43.0-1ubuntu7.3 [3680 kB]
+#6 251.5 Fetched 69.9 MB in 3min 38s (321 kB/s)
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-13/cpp-13-x86-64-linux-gnu_13.3.0-6ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-13/cpp-13_13.3.0-6ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/cpp-x86-64-linux-gnu_13.2.0-7ubuntu1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/cpp_13.2.0-7ubuntu1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libitm1_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libatomic1_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libasan8_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libtsan2_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libubsan1_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libhwasan0_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libquadmath0_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+#6 251.5 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+#6 ERROR: process "/bin/sh -c apt-get update     && apt-get install -y --no-install-recommends build-essential git ca-certificates     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [2/5] RUN apt-get update     && apt-get install -y --no-install-recommends build-essential git ca-certificates     && rm -rf /var/lib/apt/lists/*:
+251.5 E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/cpp-x86-64-linux-gnu_13.2.0-7ubuntu1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/cpp_13.2.0-7ubuntu1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libitm1_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libatomic1_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libasan8_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libtsan2_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libubsan1_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libhwasan0_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/g/gcc-14/libquadmath0_14.2.0-4ubuntu2%7e24.04.1_amd64.deb  502  Bad Gateway [IP: 91.189.92.23 80]
+251.5 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+------
+Dockerfile.reference:2
+--------------------
+   1 |     FROM ubuntu:24.04
+   2 | >>> RUN apt-get update \
+   3 | >>>     && apt-get install -y --no-install-recommends build-essential git ca-certificates \
+   4 | >>>     && rm -rf /var/lib/apt/lists/*
+   5 |     WORKDIR /workspace/fzy
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c apt-get update     && apt-get install -y --no-install-recommends build-essential git ca-certificates     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+52408 v0.25.0-desktop.1 C:\Program Files\Docker\cli-plugins\docker-buildx.exe buildx build --progress=plain -t b11/e3-fzy-reference:7c7882bad5a3 -f Dockerfile.reference .
+github.com/docker/buildx/commands.runBuildWithOptions
+	github.com/docker/buildx/commands/build.go:437
+github.com/docker/buildx/commands.runBuild
+	github.com/docker/buildx/commands/build.go:352
+github.com/docker/buildx/commands.buildCmd.func1
+	github.com/docker/buildx/commands/build.go:492
+github.com/docker/cli/cli-plugins/plugin.RunPlugin.func1.1.2
+	github.com/docker/cli@v28.2.2+incompatible/cli-plugins/plugin/plugin.go:65
+github.com/spf13/cobra.(*Command).execute
+	github.com/spf13/cobra@v1.9.1/command.go:1015
+github.com/spf13/cobra.(*Command).ExecuteC
+	github.com/spf13/cobra@v1.9.1/command.go:1148
+github.com/spf13/cobra.(*Command).Execute
+	github.com/spf13/cobra@v1.9.1/command.go:1071
+github.com/docker/cli/cli-plugins/plugin.RunPlugin
+	github.com/docker/cli@v28.2.2+incompatible/cli-plugins/plugin/plugin.go:80
+main.runPlugin
+	github.com/docker/buildx/cmd/buildx/main.go:64
+main.run
+	github.com/docker/buildx/cmd/buildx/main.go:78
+main.main
+	github.com/docker/buildx/cmd/buildx/main.go:88
+runtime.main
+	runtime/proc.go:283
+runtime.goexit
+	runtime/asm_amd64.s:1700
+
+121  /usr/local/bin/dockerd --config-file /run/config/docker/daemon.json --containerd /run/containerd/containerd.sock --pidfile /run/desktop/docker.pid --swarm-default-advertise-addr=192.168.65.3 --host-gateway-ip 192.168.65.254
+github.com/moby/buildkit/executor/runcexecutor.exitError
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/executor/runcexecutor/executor.go:391
+github.com/moby/buildkit/executor/runcexecutor.(*runcExecutor).Run
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/executor/runcexecutor/executor.go:339
+github.com/moby/buildkit/solver/llbsolver/ops.(*ExecOp).Exec
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/llbsolver/ops/exec.go:492
+github.com/moby/buildkit/solver.(*sharedOp).Exec.func2
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/jobs.go:1120
+github.com/moby/buildkit/util/flightcontrol.(*call[...]).run
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/util/flightcontrol/flightcontrol.go:122
+sync.(*Once).doSlow
+	/usr/local/go/src/sync/once.go:78
+sync.(*Once).Do
+	/usr/local/go/src/sync/once.go:69
+runtime.goexit
+	/usr/local/go/src/runtime/asm_amd64.s:1700
+
+52408 v0.25.0-desktop.1 C:\Program Files\Docker\cli-plugins\docker-buildx.exe buildx build --progress=plain -t b11/e3-fzy-reference:7c7882bad5a3 -f Dockerfile.reference .
+google.golang.org/grpc.(*ClientConn).Invoke
+	google.golang.org/grpc@v1.72.2/call.go:35
+github.com/moby/buildkit/api/services/control.(*controlClient).Solve
+	github.com/moby/buildkit@v0.23.0/api/services/control/control_grpc.pb.go:88
+github.com/moby/buildkit/client.(*Client).solve.func2
+	github.com/moby/buildkit@v0.23.0/client/solve.go:268
+golang.org/x/sync/errgroup.(*Group).add.func1
+	golang.org/x/sync@v0.14.0/errgroup/errgroup.go:130
+runtime.goexit
+	runtime/asm_amd64.s:1700
+
+121  /usr/local/bin/dockerd --config-file /run/config/docker/daemon.json --containerd /run/containerd/containerd.sock --pidfile /run/desktop/docker.pid --swarm-default-advertise-addr=192.168.65.3 --host-gateway-ip 192.168.65.254
+github.com/moby/buildkit/solver.(*edge).execOp
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/edge.go:963
+github.com/moby/buildkit/solver/internal/pipe.NewWithFunction[...].func2
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/internal/pipe/pipe.go:78
+runtime.goexit
+	/usr/local/go/src/runtime/asm_amd64.s:1700
+
+52408 v0.25.0-desktop.1 C:\Program Files\Docker\cli-plugins\docker-buildx.exe buildx build --progress=plain -t b11/e3-fzy-reference:7c7882bad5a3 -f Dockerfile.reference .
+github.com/moby/buildkit/client.(*Client).solve.func2
+	github.com/moby/buildkit@v0.23.0/client/solve.go:285
+golang.org/x/sync/errgroup.(*Group).add.func1
+	golang.org/x/sync@v0.14.0/errgroup/errgroup.go:130
+
+121  /usr/local/bin/dockerd --config-file /run/config/docker/daemon.json --containerd /run/containerd/containerd.sock --pidfile /run/desktop/docker.pid --swarm-default-advertise-addr=192.168.65.3 --host-gateway-ip 192.168.65.254
+github.com/moby/buildkit/solver/llbsolver/ops.(*ExecOp).Exec
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/llbsolver/ops/exec.go:513
+github.com/moby/buildkit/solver.(*sharedOp).Exec.func2
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/jobs.go:1120
+

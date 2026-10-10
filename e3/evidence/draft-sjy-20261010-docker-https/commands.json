@@ -1,0 +1,268 @@
+[
+  {
+    "label": "docker-server",
+    "argv": [
+      "docker",
+      "version",
+      "--format",
+      "{{json .Server}}"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:10.102004+00:00",
+    "seconds": 0.063,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/001-docker-server.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "docker-buildx-probe",
+    "argv": [
+      "docker",
+      "buildx",
+      "version"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:10.177104+00:00",
+    "seconds": 0.14,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/002-docker-buildx-probe.txt",
+    "expected_exit_codes": null
+  },
+  {
+    "label": "docker-context",
+    "argv": [
+      "docker",
+      "context",
+      "show"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:10.323468+00:00",
+    "seconds": 0.063,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/003-docker-context.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-broken-build",
+    "argv": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "--no-cache",
+      "-t",
+      "b11/e3-tiny-broken:f82c11c26cff",
+      "-f",
+      "Dockerfile.broken",
+      "."
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\docker-20261010T153610Z-cbde87fa\\work\\tiny-greeting",
+    "started_at_utc": "2026-10-10T15:36:10.380014+00:00",
+    "seconds": 0.75,
+    "exit_code": 1,
+    "timed_out": false,
+    "log": "logs/004-draft-broken-build.txt",
+    "expected_exit_codes": null
+  },
+  {
+    "label": "docker-base-identity",
+    "argv": [
+      "docker",
+      "image",
+      "inspect",
+      "python:3.13-slim",
+      "--format",
+      "{\"id\":{{json .Id}},\"repo_digests\":{{json .RepoDigests}},\"os\":{{json .Os}},\"architecture\":{{json .Architecture}}}"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:11.144978+00:00",
+    "seconds": 0.063,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/005-docker-base-identity.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-reference-build",
+    "argv": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "--no-cache",
+      "-t",
+      "b11/e3-tiny-reference:f82c11c26cff",
+      "-f",
+      "Dockerfile.reference",
+      "."
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\docker-20261010T153610Z-cbde87fa\\work\\tiny-greeting",
+    "started_at_utc": "2026-10-10T15:36:11.207391+00:00",
+    "seconds": 12.469,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/006-draft-reference-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "docker-reference-identity",
+    "argv": [
+      "docker",
+      "image",
+      "inspect",
+      "b11/e3-tiny-reference:f82c11c26cff",
+      "--format",
+      "{\"id\":{{json .Id}},\"repo_digests\":{{json .RepoDigests}},\"os\":{{json .Os}},\"architecture\":{{json .Architecture}}}"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:23.688537+00:00",
+    "seconds": 0.062,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/007-docker-reference-identity.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-reference-function",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "b11/e3-tiny-reference:f82c11c26cff",
+      "./hello"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:23.749439+00:00",
+    "seconds": 0.344,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/008-draft-reference-function.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-container-offline-rebuild",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "b11/e3-tiny-reference:f82c11c26cff",
+      "sh",
+      "-c",
+      "make clean && make && test -x hello && ./hello"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:24.082652+00:00",
+    "seconds": 0.297,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/009-draft-container-offline-rebuild.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "container-compiler",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "b11/e3-tiny-reference:f82c11c26cff",
+      "cc",
+      "--version"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:24.391198+00:00",
+    "seconds": 0.25,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/010-container-compiler.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "container-make",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "b11/e3-tiny-reference:f82c11c26cff",
+      "make",
+      "--version"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:24.640765+00:00",
+    "seconds": 0.25,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/011-container-make.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "container-packages",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "b11/e3-tiny-reference:f82c11c26cff",
+      "dpkg-query",
+      "-W",
+      "-f",
+      "${Package}=${Version}\n"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:24.879024+00:00",
+    "seconds": 0.25,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/012-container-packages.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  }
+]

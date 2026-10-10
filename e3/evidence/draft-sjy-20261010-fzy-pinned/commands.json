@@ -1,0 +1,253 @@
+[
+  {
+    "label": "source-commit",
+    "argv": [
+      "git",
+      "-C",
+      "E:\\Term3.1\\devops\\project\\devops-b11\\workspaces\\draft-fzy",
+      "rev-parse",
+      "28195b3a709995354b6c33cec9bb7c9f81532eb6^{commit}"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:20.334068+00:00",
+    "seconds": 0.031,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/001-source-commit.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "source-archive",
+    "argv": [
+      "git",
+      "-C",
+      "E:\\Term3.1\\devops\\project\\devops-b11\\workspaces\\draft-fzy",
+      "archive",
+      "--format=tar",
+      "--output",
+      "E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\fzy-d3f34529251c461d8b59453341cba05f\\work\\source.tar",
+      "28195b3a709995354b6c33cec9bb7c9f81532eb6"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:20.375593+00:00",
+    "seconds": 0.047,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/002-source-archive.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "source-extract",
+    "argv": [
+      "tar",
+      "-xf",
+      "E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\fzy-d3f34529251c461d8b59453341cba05f\\work\\source.tar",
+      "-C",
+      "E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\fzy-d3f34529251c461d8b59453341cba05f\\work\\context\\source"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:20.416426+00:00",
+    "seconds": 0.047,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/003-source-extract.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "base-image",
+    "argv": [
+      "docker",
+      "image",
+      "inspect",
+      "ubuntu:24.04",
+      "--format",
+      "{\"id\":{{json .Id}},\"repo_digests\":{{json .RepoDigests}},\"os\":{{json .Os}},\"architecture\":{{json .Architecture}}}"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:36:20.592846+00:00",
+    "seconds": 0.078,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/004-base-image.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "broken-build",
+    "argv": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "--build-arg",
+      "BASE_IMAGE=ubuntu@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55",
+      "-f",
+      "Dockerfile.broken",
+      "."
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\fzy-d3f34529251c461d8b59453341cba05f\\work\\context",
+    "started_at_utc": "2026-10-10T15:36:20.669987+00:00",
+    "seconds": 0.922,
+    "exit_code": 1,
+    "timed_out": false,
+    "log": "logs/005-broken-build.txt",
+    "expected_exit_codes": null
+  },
+  {
+    "label": "reference-build",
+    "argv": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "--build-arg",
+      "BASE_IMAGE=ubuntu@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55",
+      "-t",
+      "b11/e3-fzy-reference:b9c6ded64ac2",
+      "-f",
+      "Dockerfile.reference",
+      "."
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\fzy-d3f34529251c461d8b59453341cba05f\\work\\context",
+    "started_at_utc": "2026-10-10T15:36:21.586011+00:00",
+    "seconds": 57.89,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/006-reference-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "reference-image",
+    "argv": [
+      "docker",
+      "image",
+      "inspect",
+      "b11/e3-fzy-reference:b9c6ded64ac2",
+      "--format",
+      "{\"id\":{{json .Id}},\"repo_digests\":{{json .RepoDigests}},\"os\":{{json .Os}},\"architecture\":{{json .Architecture}}}"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:37:19.481523+00:00",
+    "seconds": 0.063,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/007-reference-image.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "offline-build-and-tests",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "sha256:a06c846e6e9465a979682f95ae48af6b1a5d7893c82831f5b8dc398275f2ae22",
+      "sh",
+      "-lc",
+      "make clean && make && test -x fzy && make check && ./fzy --help"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:37:19.541744+00:00",
+    "seconds": 2.344,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/008-offline-build-and-tests.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "functional-filter",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "sha256:a06c846e6e9465a979682f95ae48af6b1a5d7893c82831f5b8dc398275f2ae22",
+      "sh",
+      "-lc",
+      "printf 'alpha\\nbeta\\n' | ./fzy -e alp"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:37:21.889427+00:00",
+    "seconds": 0.281,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/009-functional-filter.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "toolchain",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "sha256:a06c846e6e9465a979682f95ae48af6b1a5d7893c82831f5b8dc398275f2ae22",
+      "sh",
+      "-lc",
+      "gcc --version && make --version && cat /etc/os-release"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:37:22.161085+00:00",
+    "seconds": 0.281,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/010-toolchain.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "packages",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "1g",
+      "sha256:a06c846e6e9465a979682f95ae48af6b1a5d7893c82831f5b8dc398275f2ae22",
+      "dpkg-query",
+      "-W"
+    ],
+    "cwd": "E:\\Term3.1\\devops\\project\\devops-b11",
+    "started_at_utc": "2026-10-10T15:37:22.452339+00:00",
+    "seconds": 0.266,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/011-packages.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  }
+]

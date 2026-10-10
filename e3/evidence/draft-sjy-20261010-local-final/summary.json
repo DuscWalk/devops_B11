@@ -1,0 +1,24 @@
+{
+  "suite": "b11-e3-hubo-local-baseline",
+  "result": "PASS",
+  "started_at_utc": "2026-10-10T15:34:34.609324+00:00",
+  "ended_at_utc": "2026-10-10T15:35:14.696833+00:00",
+  "checks_passed": 67,
+  "checks_total": 67,
+  "commands_recorded": 82,
+  "error": null,
+  "cross_group_read_verified": false,
+  "a11_detector_recheck": "NOT_RUN",
+  "reference_styles": [
+    "target",
+    "macro",
+    "hybrid",
+    "implicit"
+  ],
+  "reference_patches_are_manual": true,
+  "prototype_supported_styles": [
+    "simple-explicit-target"
+  ],
+  "docker_validation": "NOT_RUN_BY_THIS_COMMAND",
+  "environment_hash_status": "PROPOSED_B11_ONLY"
+}

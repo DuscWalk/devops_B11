@@ -1,0 +1,36 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+            environment-variable.
+
+Sending build context to Docker daemon  6.144kB
+
+Step 1/5 : FROM python:3.13-slim
+3.13-slim: Pulling from library/python
+ecc510c1e359: Pulling fs layer
+65a67aec859c: Pulling fs layer
+3a5db7051419: Pulling fs layer
+2f5b06adfd91: Pulling fs layer
+a54c0e82b151: Download complete
+5867a5bb8a52: Download complete
+2f5b06adfd91: Download complete
+65a67aec859c: Download complete
+3a5db7051419: Download complete
+ecc510c1e359: Download complete
+ecc510c1e359: Pull complete
+65a67aec859c: Pull complete
+2f5b06adfd91: Pull complete
+3a5db7051419: Pull complete
+Digest: sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c
+Status: Downloaded newer image for python:3.13-slim
+ ---> bf44cdfcb76c
+Step 2/5 : WORKDIR /work
+ ---> Running in ad40c65981cf
+ ---> Removed intermediate container ad40c65981cf
+ ---> 5a362367fe14
+Step 3/5 : COPY main.c Makefile ./
+ ---> 60a7716b5102
+Step 4/5 : RUN make
+ ---> Running in 24e0e0dfc491
+[91m/bin/sh: 1: make: not found
+[0m ---> Removed intermediate container 24e0e0dfc491
+The command '/bin/sh -c make' returned a non-zero code: 127

@@ -1,0 +1,21 @@
+CC ?= cc
+CFLAGS = -O0 -Wall -Wextra
+
+all: app
+
+app: main.o
+	$(CC) main.o -o app
+
+main.o: main.c unused.h config.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f app main.o main.d
+
+.PHONY: all clean
+
+.PHONY: reject-me
+all: reject-me
+reject-me:
+	@echo E3_INVALID_CANDIDATE >&2
+	@false

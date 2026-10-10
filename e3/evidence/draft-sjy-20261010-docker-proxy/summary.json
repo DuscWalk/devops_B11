@@ -1,0 +1,15 @@
+{
+  "suite": "b11-e3-draft-docker-reference",
+  "result": "FAIL",
+  "started_at_utc": "2026-10-10T15:29:28.371467+00:00",
+  "ended_at_utc": "2026-10-10T15:29:36.427879+00:00",
+  "checks_passed": 1,
+  "checks_total": 1,
+  "commands_recorded": 5,
+  "error": "RuntimeError: docker-base-identity: unexpected exit 1; see E:\\Term3.1\\devops\\project\\devops-b11\\e3\\work\\docker-20261010T152928Z-3d4faa36\\logs\\005-docker-base-identity.txt",
+  "cross_group_read_verified": false,
+  "a11_detector_recheck": "NOT_RUN",
+  "reference_dockerfile_is_manual": true,
+  "automatic_draft_service": false,
+  "environment_hash_status": "PROPOSED_B11_ONLY"
+}
