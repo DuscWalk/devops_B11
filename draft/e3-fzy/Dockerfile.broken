@@ -1,0 +1,5 @@
+FROM ubuntu:24.04
+WORKDIR /workspace/fzy
+COPY source/ ./
+RUN make clean && make
+CMD ["./fzy", "--help"]
