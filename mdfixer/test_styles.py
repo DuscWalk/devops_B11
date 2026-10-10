@@ -6,14 +6,60 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from mdfixer_core import Finding
 from mdfixer_engine import parse_makefile
-from mdfixer_patch import generate_patch_for_missing, make_unified_diff(
+from mdfixer_patch import generate_patch_for_missing, make_unified_diff
 
 FIXTURES = {
     "target": (
-        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\nmain.o: main.c unused.h\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n-›HYˆ\XZ[‹›ÈXZ[‹™—‹”Ó–Nˆ[ÛX[—ˆ‹ˆÐÈÏHØ×Ñ“QÔÈHSÌUØ[UÙ^˜W—˜[ˆ\—˜\ˆXZ[‹›×—	
-ÐÊHXZ[‹›È[È\—›XZ[‹›ÎˆXZ[‹˜È[\ÙYšÛÛ™šYËš—	
-ÐÊH	
-Ñ“QÔÊHXÈ	[È	—˜ÛX[Ž—‹G&ÒÖbÖ–âæòÖ–âæEÆåÆâå„ôå“¢ÆÂ6ÆVåÆâ"À¢’À¢&Ö7&ò#¢€¢$42óÒ65Æä4dÄu2ÒÔóÕvÆÂÕvW‡G&ÆäDU0€ôµ…¥¸¹ŒÕ¹ÕÍ•¹¡q¹q¹…±°è…ÁÁq¹q¹…ÁÀèµ…¥¸¹½q¹qÐ¡¤µ…¥¸¹¼€µ¼…ÁÁq¹q¹µ…¥¸¹¼è€¡AL)\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
-        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\nDEPSHXZ[‹˜È[\ÙYšÛÛ™šYËš—˜[ˆ\—˜\ˆXZ[‹›×—	
-ÐÊHXZ[‹›È[È\—›XZ[‹›Îˆ	
-TÂ•ÆåÇBB„42’B„4dÄu2’Ö2CÂÖòDÆåÆæ6ÆVã¥ÆåÇG&ÒÖbÖ–âæòÖ–âæEÆåÆâå„ôå“¢ÆÂ6ÆVåÆâ"À¢’À¢&‡–'&–B#¢€¢$42óÒ65Æä4dÄu2ÒÔóÕvÆÂÕvW‡G&Æä„TDU%2ÒVçW6VBæ…ÆåÆæÆÃ¢ÆåÆæ¢Ö–âæõÆåÇBB„42’Ö–âæòÖòÆåÆæÖ–âæó¢Ö–âæ2B„„TDU%2¥ÆåÇBB„42’B„4dÄu2’Ö2CÂÖòDÆåÆæ6ÆVã¥ÆåÇG&ÒÖbÖ–âæòÖ–âæEÆåÆâå„ôå“¢ÆÂ6ÆVåÆâ"À¢$42óÒ65Æä4dÄu2ÒÔóÕvÆÂÕvW‡G&Æä„TDU%2ÒVçW6VBæ‚6öæf–ræ…ÆåÆæÆÃ¢ÆåÆæ¢Ö–âæõÆåÇBB„42’Ö–âæòÖòÆåÆæÖ–âæó¢Ö–âæ2B„„TDU%2•ÆåÇBB„42’B„4dÄu2’Ö2CÂÖòDÆåÆæ6ÆVã¥ÆâÑÉ´€µ˜…ÁÀµ…¥¸¹¼µ…¥¸¹‘q¹q¸¹A!=9dè…±°±•…¹q¸ˆ°(€€€€¤°(€€€€‰¥µÁ±¥¥Ðˆè€ (€€€€€€€€‰€üôq¹1L€ô€µ<À€µ]…±°€µ]•áÑÉ…q¹q¹…±°è…ÁÁq¹q¹…ÁÀèµ…¥¸¹½q¹qÐ¡¤µ…¥¸¹¼€µ¼…ÁÁq¹q¸”¹¼è€”¹q¹qÐ¡¤€¡1L¤€µŒ€ð€µ¼€‘q¹q¹±•…¸éq¹qÑÉ´€µ˜…ÁÀµ…¥¸¹¼µ…¥¸¹‘q¹q¸¹A!=9dè…±°±•…¹q¸ˆ°(€€€€€€€€‰€üôq¹1L€ô€µ<À€µ]…±°€µ]•áÑÉ…q¹q¹…±°è…ÁÁq¹q¹…ÁÀèµ…¥¸¹½q¹qÐ¡¤µ…¥¸¹¼€µ¼…ÁÁq¹q¸”¹¼è€”¹q¹qÐ¡¤€¡1L¤€µ55€µ5@€µŒ€ð€µ¼€‘q¹q¸µ¥¹±Õ‘”µ…¥¸¹‘q¹q¹±•…¸éq¹qÑÉ´€µ˜…ÁÀµ…¥¸¹¼µ…¥¸¹‘q¹q¸¹A!=9dè…±°±•…¹q¸ˆ°(€€€€¤°)ô(()‘•˜µ…¥¸ ¤è(€€€™¥¹‘¥¹œ€ô¥¹‘¥¹œ (€€€€€€€ÑåÁ”ô‰5%MM%9ˆ°(€€€€€€€Ñ…É•Ðô‰µ…¥¸¹¼ˆ°(€€€€€€€‘•Á•¹‘•¹äô‰½¹™¥œ¹ ˆ°(€€€€€€€½µµ¥Ðôˆˆ°(€€€€€€€‘•Ñ•Ñ½Èôˆˆ°(€€€€€€€±½…Ñ¥½¸õíô°(€€€€€€€•Ù¥‘•¹”õíô°(€€€€¤(€€€…±±}½¬€ôQÉÕ”(€€€™½ÈÍÑå±”°€¡‰•™½É”°•áÁ•Ñ•‘}…™Ñ•È¤¥¸%aQUIL¹¥Ñ•µÌ ¤è(€€€€€€€ÉÕ±•Ì°Ù…É¥…‰±•Ì€ôÁ…ÉÍ•}µ…­•™¥±”¡‰•™½É”¤(€€€€€€€•¸€ô•¹•É…Ñ•}Á…Ñ¡}™½É}µ¥ÍÍ¥¹œ¡‰•™½É”°ÉÕ±•Ì°Ù…É¥…‰±•Ì°™¥¹‘¥¹œ¤(€€€€€€€¥˜•¸¥Ì9½¹”è(€€€€€€€€€€€ÁÉ¥¹Ð¡˜‰m%1tíÍÑå±•ôè¹¼Á…Ñ •¹•É…Ñ•ˆ¤(€€€€€€€€€€€…±±}½¬€ô…±Í”(€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€Á…Ñ¡•°‘•ÍŒ€ô•¸(€€€€€€€¥˜Á…Ñ¡•€ôô•áÁ•Ñ•‘}…™Ñ•Èè(€€€€€€€€€€€ÁÉ¥¹Ð¡˜‰l=,tíÍÑå±•ôèí‘•Íôˆ¤(€€€€€€€•±Í”è(€€€€€€€€€€€ÁÉ¥¹Ð¡˜‰m%1tíÍÑå±•ôèí‘•Íôˆ¤(€€€€€€€€€€€ÁÉ¥¹Ð ˆ´´´•áÁ•Ñ•€´´´ˆ¤(€€€€€€€€€€€ÁÉ¥¹Ð¡•áÁ•Ñ•‘}…™Ñ•È¤(€€€€€€€€€€€ÁÉ¥¹Ð ˆ´´´…ÑÕ…°€´´´ˆ¤(€€€€€€€€€€€ÁÉ¥¹Ð¡Á…Ñ¡•¤(€€€€€€€€€€€…±±}½¬€ô…±Í”(€€€ÁÉ¥¹Ð ¤(€€€ÁÉ¥¹Ð ‰10AMLˆ¥˜…±±}½¬•±Í”€‰M=5%1ˆ¤(€€€É•ÑÕÉ¸€À¥˜…±±}½¬•±Í”€Ä(()¥˜}}¹…µ•}|€ôô€‰}}µ…¥¹}|ˆè(€€€ÍåÌ¹•á¥Ð¡µ…¥¸ ¤¤
+        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\nmain.o: main.c unused.h\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
+        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\nmain.o: main.c unused.h config.h\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
+    ),
+    "macro": (
+        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\nDEPS = main.c unused.h\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\nmain.o: $(DEPS)\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
+        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\nDEPS = main.c unused.h config.h\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\nmain.o: $(DEPS)\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
+    ),
+    "hybrid": (
+        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\nHEADERS = unused.h\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\nmain.o: main.c $(HEADERS)\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
+        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\nHEADERS = unused.h config.h\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\nmain.o: main.c $(HEADERS)\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
+    ),
+    "implicit": (
+        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\n%.o: %.c\n\t$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
+        "CC ?= cc\nCFLAGS = -O0 -Wall -Wextra\n\nall: app\n\napp: main.o\n\t$(CC) main.o -o app\n\n%.o: %.c\n\t$(CC) $(CFLAGS) -MMD -MP -c $< -o $@\n\n-include main.d\n\nclean:\n\trm -f app main.o main.d\n\n.PHONY: all clean\n",
+    ),
+}
+
+
+def main():
+    finding = Finding(
+        type="MISSING",
+        target="main.o",
+        dependency="config.h",
+        commit="",
+        detector="",
+        location={},
+        evidence={},
+    )
+    all_ok = True
+    for style, (before, expected_after) in FIXTURES.items():
+        rules, variables = parse_makefile(before)
+        gen = generate_patch_for_missing(before, rules, variables, finding)
+        if gen is None:
+            print(f"[FAIL] {style}: no patch generated")
+            all_ok = False
+            continue
+        patched, desc = gen
+        if patched == expected_after:
+            print(f"[ OK ] {style}: {desc}")
+        else:
+            print(f"[FAIL] {style}: {desc}")
+            print("--- expected ---")
+            print(expected_after)
+            print("--- actual ---")
+            print(patched)
+            all_ok = False
+    print()
+    print("ALL PASS" if all_ok else "SOME FAILED")
+    return 0 if all_ok else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
