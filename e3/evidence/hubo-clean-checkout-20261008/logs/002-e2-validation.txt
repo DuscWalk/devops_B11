@@ -1,0 +1,58 @@
+PASS: submission Schema and 13 unchanged historical reference files
+PASS: 4 requests, 202, 4 query responses, 3 complete failed Jobs
+PASS: 6 invalid examples rejected
+
+RUN: -m unittest discover -s e2/tests -v
+test_checksum_is_optional_in_current_reference (test_artifact_access.ArtifactAccessTests) ... ok
+test_file_bytes_and_checksum_are_read (test_artifact_access.ArtifactAccessTests) ... ok
+test_invalid_checksum_format_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_local_path_is_not_an_artifact_uri (test_artifact_access.ArtifactAccessTests) ... ok
+test_media_type_is_required (test_artifact_access.ArtifactAccessTests) ... ok
+test_missing_file_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_modified_file_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_path_escape_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_symlink_outside_root_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_202_cannot_be_running (test_contract_inputs.ContractInputTests) ... ok
+test_baseline_configuration_mismatch (test_contract_inputs.ContractInputTests) ... ok
+test_draft_without_verification_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_empty_image_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_failed_job_cannot_carry_findings (test_contract_inputs.ContractInputTests) ... ok
+test_incremental_without_baseline_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_query_input_cannot_bypass_service_constraints (test_contract_inputs.ContractInputTests) ... ok
+test_repair_without_report_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_short_repository_commit_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_unknown_job_type_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_zero_iterations_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.014s
+
+OK
+
+RUN: -m unittest discover -s mdfixer -p test_*.py -v
+test_artifact_uri_and_traversal (test_mdfixer.RepairRegressionTests) ... ok
+test_cumulative_additions_preserve_continuation (test_mdfixer.RepairRegressionTests) ... ok
+test_ignore_redundant_and_resolved (test_mdfixer.RepairRegressionTests) ... ok
+test_rejected_candidate_restores_makefile (test_mdfixer.RepairRegressionTests) ... ok
+test_timeout_enforced (test_mdfixer.RepairRegressionTests) ... ok
+test_variable_rule_is_not_guessed (test_mdfixer.RepairRegressionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.054s
+
+OK
+
+RUN: draft/validate_examples.py
+PASS: DRAFT request and missing-verify negative example
+PASS: accepted, success and complete failure Job samples
+PASS: 5 artifact files, checksums, source identity and example labels
+This checks local proposal data only; no image build or cross-group acceptance.
+
+RUN: mdfixer/validate_examples.py
+PASS: REPAIR request, full Job response and MANUAL MD/RD report
+
+RUN: mdfixer/demo.py
+PASS: MDFixer local repair, 3 artifacts, git apply, build/test and header-change rebuild; detector recheck NOT_RUN
+
+PASS: 8 DRAFT/REPAIR artifact files readable with valid checksums
+PASS: E2 submission validation completed; no API deployment or detector recheck claimed

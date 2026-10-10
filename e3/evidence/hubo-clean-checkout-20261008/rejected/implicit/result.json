@@ -1,0 +1,9 @@
+{
+  "accepted": false,
+  "build_exit_code": 2,
+  "reason": "build failed (exit=2): rm -f app main.o main.d\n/usr/bin/cc -O0 -Wall -Wextra -MMD -MP -c main.c -o main.o\n/usr/bin/cc main.o -o app\nE3_INVALID_CANDIDATE\nmake: *** [Makefile:23: reject-me] Error 1\n",
+  "build_command": "make clean && make",
+  "verify_command": "./app",
+  "source_restored_sha256": "c2350c02775b285047f8a5075e7788f0c58f5a17554ae6a176b44fc19af5b079",
+  "candidate_sha256": "461436fea909f919fa35622301625b7b01dfc7d55b17edb45f00b774393ccb1d"
+}

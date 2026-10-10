@@ -1,0 +1,21 @@
+{
+  "archived_on": "2026-10-08",
+  "files": [
+    {
+      "stage": "E2",
+      "file": "E2_需求与接口契约_20260910.pptx",
+      "sha256": "333c72482782d28dc0dca7f5ab522590b3161cb5e0e14a827cd7cfc44885f902",
+      "slide_count": 27,
+      "original_location": "lab2/E2_需求与接口契约_20260910.pptx",
+      "copied_without_modification": true
+    },
+    {
+      "stage": "E3",
+      "file": "E3_并行测试基线.pptx",
+      "sha256": "dee364f71c39f8c57526dcd4e46a97741d330db6c1e928d615dc208b8b9a930e",
+      "slide_count": 39,
+      "original_location": "lab3/E3_并行测试基线.pptx",
+      "copied_without_modification": true
+    }
+  ]
+}

@@ -23,3 +23,9 @@ DRAFT 负责人孙静怡，MDFixer 负责人王硕，接口与联调负责人胡
 ## E2 提交基线
 
 当前交付版本见 e2/SUBMISSION.md；后续从最新 main 创建功能分支。原始来源/证据不得直接改写为当前结果，接口变更同步 Schema、样例、校验与 CHANGELOG。提交前运行 `.venv/bin/python e2/validate.py`，保留真实失败/限制。
+
+## E3 协作
+
+公共底座分支 `feat/e3-hubo-baseline`；模块负责人从该分支建立自己的 E3 任务分支，见 `e3/HANDOFF.md`。原 `e2/` 为历史快照，不改写其证据。模块材料分别在 draft/、mdfixer/ 追加；每人导出独立证据目录，公共 STATUS/Backlog 由胡博汇总以减少冲突。
+
+提交前运行 `.venv/bin/python e3/scripts/run_baseline.py`；DRAFT 同时记录 `verify_docker.py` 的结果。参考答案必须标 ORACLE 来源，实际日志和人工预期分开；不可把本地读取当 A11 接收、参考 Patch 当工具自动生成。保留原作者历史，不提交 e3/work、镜像、凭据。

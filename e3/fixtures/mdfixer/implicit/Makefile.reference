@@ -1,0 +1,17 @@
+CC ?= cc
+CFLAGS = -O0 -Wall -Wextra
+
+all: app
+
+app: main.o
+	$(CC) main.o -o app
+
+%.o: %.c
+	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+
+-include main.d
+
+clean:
+	rm -f app main.o main.d
+
+.PHONY: all clean

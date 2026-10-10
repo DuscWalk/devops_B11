@@ -29,3 +29,5 @@ Thumbs.db
 
 # Local E3 course slide copy (keep on disk, do not commit)
 /E3_并行测试基线.pptx
+# E3 disposable runs; selected text evidence is explicitly exported
+/e3/work/

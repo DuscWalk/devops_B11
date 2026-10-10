@@ -1,0 +1,26 @@
+{
+  "provenance": "B11_REFERENCE_ORACLE",
+  "prepared_by": "胡博 / Codex",
+  "based_on": "E3 PPTX file pages 33-37; recreated examples, not the distributed instructor experiment package",
+  "style": "hybrid",
+  "scope": "main.o project headers, current configuration only",
+  "findings": [
+    {
+      "type": "MISSING",
+      "target": "main.o",
+      "dependency": "config.h",
+      "basis": "main.c includes config.h but original Makefile has no corresponding prerequisite"
+    }
+  ],
+  "expected": {
+    "initial": 1,
+    "unfixed_header_change": 1,
+    "unfixed_clean": 2,
+    "fixed_clean": 2,
+    "fixed_header_change_without_clean": 3,
+    "invalid_candidate_accepted": false,
+    "restored_build_exit_code": 0
+  },
+  "reference_is_manual": true,
+  "detector_result": false
+}

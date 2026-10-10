@@ -1,0 +1,1287 @@
+[
+  {
+    "label": "e3-evidence-regressions",
+    "argv": [
+      "/home/duscwalk/DevOps/lab2/devops-project-b11/.venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "e3/tests",
+      "-v"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11",
+    "started_at_utc": "2026-10-08T10:13:36.586805+00:00",
+    "seconds": 0.4108,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/001-e3-evidence-regressions.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "e2-validation",
+    "argv": [
+      "/home/duscwalk/DevOps/lab2/devops-project-b11/.venv/bin/python",
+      "/home/duscwalk/DevOps/lab2/devops-project-b11/e2/validate.py"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11",
+    "started_at_utc": "2026-10-08T10:13:36.997794+00:00",
+    "seconds": 1.3495,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/002-e2-validation.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-local-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/tiny-greeting",
+    "started_at_utc": "2026-10-08T10:13:38.348194+00:00",
+    "seconds": 0.0027,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/003-draft-local-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-local-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/tiny-greeting",
+    "started_at_utc": "2026-10-08T10:13:38.351200+00:00",
+    "seconds": 0.316,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/004-draft-local-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "draft-local-verify",
+    "argv": [
+      "./hello"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/tiny-greeting",
+    "started_at_utc": "2026-10-08T10:13:38.667611+00:00",
+    "seconds": 0.0008,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/005-draft-local-verify.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-git-init",
+    "argv": [
+      "git",
+      "init",
+      "-q"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:38.670736+00:00",
+    "seconds": 0.0042,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/006-target-git-init.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-before-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:38.675246+00:00",
+    "seconds": 0.0018,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/007-target-before-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-before-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:38.677343+00:00",
+    "seconds": 0.2119,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/008-target-before-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-initial-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:38.889963+00:00",
+    "seconds": 0.0015,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/009-target-initial-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:39.994392+00:00",
+    "seconds": 0.0019,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/010-target-unfixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:39.996656+00:00",
+    "seconds": 0.0009,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/011-target-unfixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:39.998134+00:00",
+    "seconds": 0.0026,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/012-target-unfixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:40.001149+00:00",
+    "seconds": 0.1572,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/013-target-unfixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-unfixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:40.158771+00:00",
+    "seconds": 0.0007,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/014-target-unfixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-patch-check",
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "reference.patch"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:40.159937+00:00",
+    "seconds": 0.0013,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/015-target-patch-check.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-patch-apply",
+    "argv": [
+      "git",
+      "apply",
+      "reference.patch"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:40.161617+00:00",
+    "seconds": 0.0014,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/016-target-patch-apply.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:40.163548+00:00",
+    "seconds": 0.0027,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/017-target-fixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:40.166628+00:00",
+    "seconds": 0.1215,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/018-target-fixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:40.288506+00:00",
+    "seconds": 0.0007,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/019-target-fixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:41.392308+00:00",
+    "seconds": 0.1611,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/020-target-fixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-fixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:41.553800+00:00",
+    "seconds": 0.0009,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/021-target-fixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-restored-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:41.834104+00:00",
+    "seconds": 0.0018,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/022-target-restored-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-restored-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:41.836298+00:00",
+    "seconds": 0.2387,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/023-target-restored-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "target-restored-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/target",
+    "started_at_utc": "2026-10-08T10:13:42.075394+00:00",
+    "seconds": 0.0009,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/024-target-restored-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-git-init",
+    "argv": [
+      "git",
+      "init",
+      "-q"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:42.079541+00:00",
+    "seconds": 0.005,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/025-macro-git-init.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-before-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:42.085006+00:00",
+    "seconds": 0.0019,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/026-macro-before-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-before-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:42.087431+00:00",
+    "seconds": 0.1731,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/027-macro-before-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-initial-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:42.261042+00:00",
+    "seconds": 0.001,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/028-macro-initial-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.365623+00:00",
+    "seconds": 0.0029,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/029-macro-unfixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.369763+00:00",
+    "seconds": 0.0018,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/030-macro-unfixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.373041+00:00",
+    "seconds": 0.0031,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/031-macro-unfixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.376637+00:00",
+    "seconds": 0.2476,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/032-macro-unfixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-unfixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.624766+00:00",
+    "seconds": 0.0009,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/033-macro-unfixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-patch-check",
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "reference.patch"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.626385+00:00",
+    "seconds": 0.0017,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/034-macro-patch-check.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-patch-apply",
+    "argv": [
+      "git",
+      "apply",
+      "reference.patch"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.628615+00:00",
+    "seconds": 0.0018,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/035-macro-patch-apply.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.631288+00:00",
+    "seconds": 0.0021,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/036-macro-fixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.633896+00:00",
+    "seconds": 0.2073,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/037-macro-fixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:43.841706+00:00",
+    "seconds": 0.0008,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/038-macro-fixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:44.946218+00:00",
+    "seconds": 0.2721,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/039-macro-fixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-fixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:45.219125+00:00",
+    "seconds": 0.0013,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/040-macro-fixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-restored-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:45.458036+00:00",
+    "seconds": 0.0018,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/041-macro-restored-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-restored-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:45.460387+00:00",
+    "seconds": 0.1408,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/042-macro-restored-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "macro-restored-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/macro",
+    "started_at_utc": "2026-10-08T10:13:45.601774+00:00",
+    "seconds": 0.0008,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/043-macro-restored-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-git-init",
+    "argv": [
+      "git",
+      "init",
+      "-q"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:45.606324+00:00",
+    "seconds": 0.0055,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/044-hybrid-git-init.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-before-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:45.612336+00:00",
+    "seconds": 0.0018,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/045-hybrid-before-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-before-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:45.614690+00:00",
+    "seconds": 0.2365,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/046-hybrid-before-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-initial-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:45.851789+00:00",
+    "seconds": 0.0007,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/047-hybrid-initial-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:46.956745+00:00",
+    "seconds": 0.0046,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/048-hybrid-unfixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:46.963073+00:00",
+    "seconds": 0.0013,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/049-hybrid-unfixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:46.965562+00:00",
+    "seconds": 0.0024,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/050-hybrid-unfixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:46.968660+00:00",
+    "seconds": 0.2203,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/051-hybrid-unfixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-unfixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:47.189545+00:00",
+    "seconds": 0.0013,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/052-hybrid-unfixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-patch-check",
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "reference.patch"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:47.191935+00:00",
+    "seconds": 0.0016,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/053-hybrid-patch-check.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-patch-apply",
+    "argv": [
+      "git",
+      "apply",
+      "reference.patch"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:47.194339+00:00",
+    "seconds": 0.0019,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/054-hybrid-patch-apply.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:47.197872+00:00",
+    "seconds": 0.0023,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/055-hybrid-fixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:47.200757+00:00",
+    "seconds": 0.1775,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/056-hybrid-fixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:47.379025+00:00",
+    "seconds": 0.0015,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/057-hybrid-fixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:48.485811+00:00",
+    "seconds": 0.2152,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/058-hybrid-fixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-fixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:48.701723+00:00",
+    "seconds": 0.0007,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/059-hybrid-fixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-restored-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:48.960021+00:00",
+    "seconds": 0.0017,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/060-hybrid-restored-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-restored-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:48.962358+00:00",
+    "seconds": 0.1202,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/061-hybrid-restored-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "hybrid-restored-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/hybrid",
+    "started_at_utc": "2026-10-08T10:13:49.083245+00:00",
+    "seconds": 0.0009,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/062-hybrid-restored-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-git-init",
+    "argv": [
+      "git",
+      "init",
+      "-q"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:49.086558+00:00",
+    "seconds": 0.0064,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/063-implicit-git-init.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-before-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:49.093675+00:00",
+    "seconds": 0.0023,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/064-implicit-before-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-before-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:49.096727+00:00",
+    "seconds": 0.1317,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/065-implicit-before-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-initial-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:49.229131+00:00",
+    "seconds": 0.0007,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/066-implicit-initial-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.335035+00:00",
+    "seconds": 0.0019,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/067-implicit-unfixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.337621+00:00",
+    "seconds": 0.0011,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/068-implicit-unfixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.339681+00:00",
+    "seconds": 0.0024,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/069-implicit-unfixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.342840+00:00",
+    "seconds": 0.2223,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/070-implicit-unfixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-unfixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.565926+00:00",
+    "seconds": 0.0008,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/071-implicit-unfixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-patch-check",
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "reference.patch"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.567615+00:00",
+    "seconds": 0.0014,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/072-implicit-patch-check.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-patch-apply",
+    "argv": [
+      "git",
+      "apply",
+      "reference.patch"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.569725+00:00",
+    "seconds": 0.0015,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/073-implicit-patch-apply.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-clean-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.572293+00:00",
+    "seconds": 0.0021,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/074-implicit-fixed-clean-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-clean-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.575227+00:00",
+    "seconds": 0.2377,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/075-implicit-fixed-clean-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-clean-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:50.813668+00:00",
+    "seconds": 0.0009,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/076-implicit-fixed-clean-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-incremental-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:51.919261+00:00",
+    "seconds": 0.2695,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/077-implicit-fixed-incremental-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-fixed-incremental-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:52.189605+00:00",
+    "seconds": 0.0007,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/078-implicit-fixed-incremental-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-restored-clean",
+    "argv": [
+      "make",
+      "clean"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:52.377236+00:00",
+    "seconds": 0.0019,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/079-implicit-restored-clean.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-restored-build",
+    "argv": [
+      "make"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:52.379931+00:00",
+    "seconds": 0.2067,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/080-implicit-restored-build.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "implicit-restored-app",
+    "argv": [
+      "./app"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/work/implicit",
+    "started_at_utc": "2026-10-08T10:13:52.587528+00:00",
+    "seconds": 0.001,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/081-implicit-restored-app.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "mdfixer-real-local-prototype",
+    "argv": [
+      "/home/duscwalk/DevOps/lab2/devops-project-b11/.venv/bin/python",
+      "/home/duscwalk/DevOps/lab2/devops-project-b11/mdfixer/demo.py",
+      "--evidence-dir",
+      "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/hubo-local-verified/mdfixer-prototype"
+    ],
+    "cwd": "/home/duscwalk/DevOps/lab2/devops-project-b11",
+    "started_at_utc": "2026-10-08T10:13:52.589638+00:00",
+    "seconds": 0.8063,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/082-mdfixer-real-local-prototype.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  }
+]

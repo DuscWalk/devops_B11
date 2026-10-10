@@ -1,0 +1,15 @@
+{
+  "suite": "b11-e3-draft-docker-reference",
+  "result": "FAIL",
+  "started_at_utc": "2026-10-08T10:12:39.751443+00:00",
+  "ended_at_utc": "2026-10-08T10:13:03.651304+00:00",
+  "checks_passed": 0,
+  "checks_total": 1,
+  "commands_recorded": 4,
+  "error": "AssertionError: draft-broken-missing-toolchain: {'exit_code': 127}",
+  "cross_group_read_verified": false,
+  "a11_detector_recheck": "NOT_RUN",
+  "reference_dockerfile_is_manual": true,
+  "automatic_draft_service": false,
+  "environment_hash_status": "PROPOSED_B11_ONLY"
+}

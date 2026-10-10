@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "source_commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+  "accepted_candidates": 1,
+  "artifact_reads": 3,
+  "patch_apply_check": true,
+  "build_and_test_exit_code": 0,
+  "header_change_rebuild_verified": true,
+  "redundant_declaration_preserved": true,
+  "detector_recheck": "NOT_RUN",
+  "execution_mode": "LOCAL_PROTOTYPE",
+  "image_used": false
+}

@@ -1,0 +1,2 @@
+# Preserve raw terminal output and checksum bytes without whitespace normalization.
+* -text -whitespace
