@@ -1,8 +1,30 @@
 # E3 当前状态
 
-更新：2026-10-08。**胡博的公共基线、验收、证据整合和交接工作已完成，可交给组员继续模块工作。** 组员 E3 复跑/审核及 A11 后续确认尚未发生，不将本人自动验证登记为他人确认。
+更新：2026-10-10。**公共基线与 DRAFT 本轮运行材料已完成；MDFixer 成员交接、人工交叉复核和全组最终整合仍待完成。** 按运行日期区分来源，自动执行不代表成员人工审核。
 
-## 已完成与实际验证
+## 三人进度与下一步
+
+| 成员 | 已完成 | 接下来负责 |
+| --- | --- | --- |
+| 孙静怡 / DRAFT | 固定 fzy 故障与参考成功、公共/Docker 复跑、脚本修正和证据归档 | 本人审阅预期与日志，交回分支/SHA；待王硕材料到齐后复核 MDFixer |
+| 王硕 / MDFixer | E2 原型与固定输入已存在，公共入口已验证该原型；尚未收到本人新增 E3 交接材料 | 复核四风格参考、复跑原型、说明支持范围并提交模块记录；交叉复核 DRAFT |
+| 胡博 / 公共与集成 | 10 月 8 日公共基线、环境提案、证据入口及历史验证 | 审阅公共修正，接收两模块及交叉复核，合并后验证并整理最终提交 |
+
+## 10 月 10 日 DRAFT 新增结果
+
+本轮由孙静怡授权 Codex 执行，详见 [模块交接](draft-notes.md)。
+
+| 项目 | 已归档结果 | 证据 |
+| --- | --- | --- |
+| 公共本地入口 | 67/67 检查，82 条命令 | [local-final](evidence/draft-sjy-20261010-local-final/summary.json) |
+| Tiny Greeting Docker | 3/3：缺 make、参考成功及断网验证 | [docker-https](evidence/draft-sjy-20261010-docker-https/summary.json) |
+| 固定 fzy | 5/5；断网 clean 构建、31 测试/99 断言、help 与精确筛选输出 | [fzy-pinned](evidence/draft-sjy-20261010-fzy-pinned/summary.json) |
+| 证据基础设施回归 | Windows/WSL 各 6/6；新增 draft 输入追溯并修正 Windows 超时 | [模块说明](draft-notes.md) |
+| 归档核验 | 9 次运行共 337 文件摘要一致，输入匹配各自源提交，保留失败记录 | [审计](evidence/draft-sjy-audit-20261010.json) |
+
+各层检查数不相加。新镜像 ID、基础 digest、实际环境及失败处理见模块记录；镜像未发布或交付 A11。新结果不覆盖下方历史记录。
+
+## 胡博 10 月 8 日已完成与实际验证（历史记录）
 
 | 项目 | 实际结果 | 证据 |
 | --- | --- | --- |
@@ -20,9 +42,9 @@
 
 数量分层统计，不把相互重叠的回归、行为断言和重复复跑相加为“独立测试数”。
 
-本地实际环境为 Ubuntu 22.04 / WSL Linux x86_64、GCC 11.4、GNU Make 4.3、Python 3.10.12；微型 Docker 参考环境为 Debian/GCC 14.2、GNU Make 4.4.1。它们都不是 E2 fzy 的 GCC13 环境。配置和环境指纹在对应 `environment.json`。
+胡博 10 月 8 日记录的本地环境为 Ubuntu 22.04 / WSL Linux x86_64、GCC 11.4、GNU Make 4.3、Python 3.10.12；微型 Docker 参考环境为 Debian/GCC 14.2、GNU Make 4.4.1。它们都不是 E2 fzy 的 GCC13 环境。配置和环境指纹在对应 `environment.json`。
 
-Docker 镜像 `b11/e3-tiny-reference:746ffdcc9379`，ID `sha256:bc646cd9fd597910d80544dbff05188bcc7ac2e5cab44178d305c28f328e5448`，仅存在于当前 Docker daemon，未发布/导出、未被 A11 接收。
+历史 Docker 镜像 `b11/e3-tiny-reference:746ffdcc9379`，ID `sha256:bc646cd9fd597910d80544dbff05188bcc7ac2e5cab44178d305c28f328e5448`，记录于该次运行的 daemon，本次未核实其当前可用性；未发布/导出、未被 A11 接收。
 
 ## 已解决的真实失败
 
@@ -31,15 +53,16 @@ Docker 镜像 `b11/e3-tiny-reference:746ffdcc9379`，ID `sha256:bc646cd9fd597910
 
 ## Git 与来源
 
-工具和文档初始提交 `c854eaa`；Docker 分类修复 `fe6a421`。干净克隆使用完整 `fe6a4215a4c63a7652161ca93c9630a57af03015`；随后仅追加证据和完成状态。当前交接分支 `feat/e3-hubo-baseline`，最终提交 SHA 从 Git 获取。
+工具和文档初始提交 `c854eaa`；Docker 分类修复 `fe6a421`。干净克隆使用完整 `fe6a4215a4c63a7652161ca93c9630a57af03015`；随后追加证据和完成状态。原交接分支 `feat/e3-hubo-baseline` 的归档提交为 `d994302`，已由 `1e61e6b` 合入 `feat/draft`。DRAFT 新材料归档提交为 `98dae53`；这不表示已合入 main 或形成正式 E3 提交。
 
 Docker 运行的 source.json 记录了未提交的旧本地证据目录；源代码输入摘要仍全部匹配 fe6a421，审计明确保留其原始工作区状态，不把它改写为干净。
 
 ## 未完成与下一步
 
-- 孙静怡：本人复跑 DRAFT 和 fzy，补模块证据；当前 Tiny Greeting 参考成功不代表 fzy 的 E3 新运行。
+- 孙静怡：DR-01/DR-02 运行材料已齐；本人审阅人工预期与日志，交回分支/SHA，并在王硕材料到齐后复核 MDFixer。
 - 王硕：审核固定报告和四风格参考，复跑原型并明确支持范围；参考 Patch 不是自动原型能力。
 - 全体：组员交叉复核和人工答案审阅待真实执行，按 [HANDOFF](HANDOFF.md) 回传分支与结果。
+- 胡博：审阅 Windows 超时、源码快照和 HTTPS 等公共修正；接收两个模块及复核记录，合并后验证，完成 HB-07 最终整合。
 - 胡博/A11：环境哈希提案确认、真实镜像/产物接收、真实检测报告与重检在后续推进；当前 `PROPOSED_B11_ONLY` / `NOT_RUN` 保持明确。
 - 基础镜像 tag 和 APT 包未完全固定，宿主哈希未含完整库清单；记录实际 image ID/digest 和限制，不声称完全可复现部署环境。
 

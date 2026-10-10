@@ -2,6 +2,8 @@
 
 小组 B11；配对 A11。孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共验收、证据整合和配对交接。完整课件和要求见 [docs](../docs/README.md)。E2 契约与历史证据保留在 `e2/`。
 
+2026-10-10：公共基线与 DRAFT 运行材料已完成；MDFixer 模块交接、人工交叉复核和最终整合待完成。三人已完成/未完成内容见 [状态](STATUS.md)、[任务表](Backlog.md)、[贡献](CONTRIBUTIONS.md)，各自下一步见 [交接](HANDOFF.md)。
+
 ## 一键运行
 
 Linux/WSL，Python 3.10+、Git、GNU Make、C 编译器；沿用 E2 的虚拟环境。新机器先安装 `e2/requirements.txt`：
