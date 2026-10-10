@@ -26,3 +26,6 @@ Thumbs.db
 /artifacts/
 /workspaces/
 *.log
+
+# Local E3 course slide copy (keep on disk, do not commit)
+/E3_并行测试基线.pptx
