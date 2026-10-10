@@ -33,7 +33,7 @@ def source_snapshot():
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     status = subprocess.check_output(["git", "status", "--porcelain=v1"], cwd=ROOT, text=True)
     inventory = {}
-    for directory in ("docs", "e3/fixtures", "e3/scripts", "e3/tests", "fixtures", "mdfixer", "e2"):
+    for directory in ("docs", "e3/fixtures", "e3/scripts", "e3/tests", "fixtures", "draft", "mdfixer", "e2"):
         for path in sorted((ROOT / directory).rglob("*")):
             if path.is_file() and not {"__pycache__", "evidence"}.intersection(path.relative_to(ROOT).parts):
                 inventory[path.relative_to(ROOT).as_posix()] = file_sha256(path)
@@ -74,7 +74,15 @@ class EvidenceRun:
                 code = proc.returncode
             except subprocess.TimeoutExpired:
                 timed_out = True
-                os.killpg(proc.pid, signal.SIGKILL)
+                if os.name == "nt":
+                    # Terminate this run's process tree, then collect its captured output.
+                    subprocess.run(["taskkill", "/PID", str(proc.pid), "/T", "/F"],
+                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                   timeout=15, check=False)
+                    if proc.poll() is None:
+                        proc.kill()
+                else:
+                    os.killpg(proc.pid, signal.SIGKILL)
                 output, _ = proc.communicate()
                 code = 124
         except OSError as exc:

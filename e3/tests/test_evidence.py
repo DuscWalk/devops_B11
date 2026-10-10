@@ -10,11 +10,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "e3/scripts"))
-from common import EvidenceRun, file_sha256, fingerprint
+from common import EvidenceRun, file_sha256, fingerprint, source_snapshot
 from verify_docker import is_expected_toolchain_failure
 
 
 class EvidenceRegressionTests(unittest.TestCase):
+    def test_draft_runner_is_in_actual_input_snapshot(self):
+        inventory = source_snapshot()["input_files_sha256"]
+        name = "draft/e3-fzy/run.py"
+        self.assertEqual(inventory[name], file_sha256(ROOT / name))
+
     def test_missing_make_127_is_expected_but_infrastructure_failure_is_not(self):
         self.assertTrue(is_expected_toolchain_failure(127, "/bin/sh: 1: make: not found"))
         self.assertTrue(is_expected_toolchain_failure(1, "make: command not found"))

@@ -22,4 +22,4 @@ docker pull ubuntu:24.04
 python3 draft/e3-fzy/run.py --source workspaces/draft-fzy --export-evidence e3/evidence/draft-sjy-新编号-fzy
 ```
 
-Windows 可用 Python 3.11 调用；代理仅给当前进程设置，不能把 Windows 的 localhost 代理地址直接用于 WSL。基础 tag/APT 版本未完全固定，结果代表记录的实际镜像环境。失败日志也保留，不覆盖旧目录。
+Windows 可用 Python 3.11 调用；代理仅给当前进程设置，不能把 Windows 的 localhost 代理地址直接用于 WSL。脚本将本地基础镜像的 repo digest 作为 BASE_IMAGE 传给两个候选，固定同一次对照的基础镜像；APT 包版本仍未完全固定，结果代表记录的实际镜像环境。失败日志也保留，不覆盖旧目录。

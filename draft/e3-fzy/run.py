@@ -37,13 +37,17 @@ def execute(run, source):
         (inputs / "Dockerfile.reference").read_text().splitlines(True),
         fromfile="Dockerfile.broken", tofile="Dockerfile.reference")), encoding="utf-8")
     _, base = run.run("base-image", ["docker", "image", "inspect", "ubuntu:24.04", "--format", IMAGE_FORMAT])
-    write_json(run.directory / "base-image.json", json.loads(base))
+    base = json.loads(base)
+    run.check("base-digest-available", bool(base["repo_digests"]))
+    pinned = base["repo_digests"][0]
+    write_json(run.directory / "base-image.json", {**base, "build_from": pinned})
+    build_args = ["--build-arg", "BASE_IMAGE=" + pinned]
     tag = "b11/e3-fzy-reference:" + uuid.uuid4().hex[:12]
-    code, log = run.run("broken-build", ["docker", "build", "--progress=plain", "-f", "Dockerfile.broken", "."], context, timeout=900, allowed=None)
+    code, log = run.run("broken-build", ["docker", "build", "--progress=plain", *build_args, "-f", "Dockerfile.broken", "."], context, timeout=900, allowed=None)
     expected = is_expected_toolchain_failure(code, log)
     write_json(run.directory / "broken-result.json", {"exit_code": code, "expected_missing_toolchain": expected})
     run.check("missing-toolchain-failure", expected)
-    run.run("reference-build", ["docker", "build", "--progress=plain", "-t", tag, "-f", "Dockerfile.reference", "."], context, timeout=900)
+    run.run("reference-build", ["docker", "build", "--progress=plain", *build_args, "-t", tag, "-f", "Dockerfile.reference", "."], context, timeout=900)
     _, identity = run.run("reference-image", ["docker", "image", "inspect", tag, "--format", IMAGE_FORMAT])
     image = json.loads(identity)
     # Use immutable ID for subsequent checks, even if another process changes the tag.
