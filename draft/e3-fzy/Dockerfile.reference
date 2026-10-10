@@ -1,6 +1,9 @@
 ARG BASE_IMAGE=ubuntu:24.04
 FROM ${BASE_IMAGE}
 RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates \
+    && sed -i 's|http://|https://|g' /etc/apt/sources.list.d/*.sources \
+    && apt-get update \
     && apt-get install -y --no-install-recommends build-essential git ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /workspace/fzy
