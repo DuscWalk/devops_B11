@@ -24,7 +24,7 @@ def sha256_hex(data: bytes) -> str:
 
 def build_summary(total: int, accepted: int, fixed: int) -> dict:
     return {
-        "candiates_total": total,
+        "candidates_total": total,
         "candidates_accepted": accepted,
         "candidates_rejected": total - accepted,
         "missing_fixed": fixed,
@@ -32,14 +32,14 @@ def build_summary(total: int, accepted: int, fixed: int) -> dict:
     }
 
 
-def run_repair(rep_input: RepairInput, out_dir: Path) -> RepoirResult:
-    result = RepoirResult()
+def run_repair(rep_input: RepairInput, out_dir: Path) -> RepairResult:
+    result = RepairResult()
     try:
         findings = load_md_report(rep_input.md_report_uri)
     except Exception as e:
         result.error = {
             "code": "ANALYSIS_5001",
-            "message": "读取 MD 报呈失败",
+            "message": "读取 MD 报告失败",
             "detail": str(e),
         }
         return result
@@ -51,7 +51,7 @@ def run_repair(rep_input: RepairInput, out_dir: Path) -> RepoirResult:
     if makefile_info is None:
         result.error = {
             "code": "VALIDATION_4001",
-            "message": "makefile_uri 漌���不正确2",
+            "message": "makefile_uri 格式不正确",
             "detail": "期望 repo://<sha>/<path>，实际: " + rep_input.makefile_uri,
         }
         return result
