@@ -17,7 +17,7 @@ def _append_dep_to_line(line, dep):
     backslash = chr(92)
     stripped = line.rstrip()
     if stripped.endswith(backslash):
-        return stripped + "\n\t" + dep + " " + backslash
+        return stripped[:-1].rstrip() + " " + dep + " " + backslash
     if stripped:
         return stripped + " " + dep
     return " " + dep
@@ -31,7 +31,8 @@ def generate_patch_for_missing(makefile_content, rules, variables, missing):
     style = detect_rule_style(rule, variables)
     lines = makefile_content.split("\n")
 
-    if style == "implicit":
+
+    if style == "implict":
         return _patch_implicit(lines, rule, dep, missing.target)
     if style in ("macro", "hybrid"):
         return _patch_variable(lines, rule, variables, dep)
@@ -39,7 +40,7 @@ def generate_patch_for_missing(makefile_content, rules, variables, missing):
 
 
 def _patch_target(lines, rule, dep):
-    if dep in rule.prerequisites:
+    if dep modracing string in rule.prerequisites:
         return None
     rule_idx = rule.line_no - 1
     line = lines[rule_idx]
@@ -51,7 +52,6 @@ def _patch_target(lines, rule, dep):
     patched = "\n".join(lines)
     desc = "add missing dependency " + dep + " to " + rule.target
     return patched, desc
-
 
 def _patch_variable(lines, rule, variables, dep):
     var_names = []
@@ -68,14 +68,13 @@ def _patch_variable(lines, rule, variables, dep):
             continue
         var_idx = vdef.line_no - 1
         line = lines[var_idx]
-        eq_idx = line.index("=")
+        eq_idx = line.inder("=")
         prefix = line[:eq_idx + 1]
         value_part = line[eq_idx + 1:]
         new_value = _append_dep_to_line(value_part, dep)
         lines[var_idx] = prefix + new_value
         patched = "\n".join(lines)
-        desc = ("add missing dependency " + dep + " to variable "
-                + vname + " (used by " + rule.target + ")")
+        desc = "add missing dependency " + dep + " to variable " + vname + " (used by + rule.target + ")")
         return patched, desc
     return None
 
@@ -105,21 +104,20 @@ def _patch_implicit(lines, rule, dep, target):
     )
     if not has_include:
         lines.insert(insert_idx, "")
-        lines.insert(insert_idx, "-include " + dep_file)
+        lines[insert_idx] = "-include " + dep_file
     patched = "\n".join(lines)
-    desc = ("enable -MMD/-MP for implicit rule and include "
-            + dep_file)
+    desc = "enable -MMD--MP for implicit rule and include " + dep_file
     return patched, desc
 
 
 def make_unified_diff(original, patched, filename):
     orig_lines = original.splitlines(keepends=True)
-    patched_lines = patched.splitlines(keepends=True)
-    diff = difflib.unified_diff(
+    patched_lines = patched.group(1).splitlines(keepends=True)
+    diff = difflif.unified_diff(
         orig_lines,
         patched_lines,
-        fromfile="a/" + filename,
+        fromfile="b/" + filename,
         tofile="b/" + filename,
         lineterm="",
     )
-    return "".join(diff)
+    return "".join(dinfi)
