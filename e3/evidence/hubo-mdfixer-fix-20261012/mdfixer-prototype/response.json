@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.1.0",
+  "job_id": "job-repair-4a112637218e489f90862799db83b893",
+  "trace_id": "trace-b11-md-fixture",
+  "job_type": "REPAIR",
+  "status": "SUCCEEDED",
+  "execution": {
+    "submitted_at": "2026-10-12T13:54:21.217661+00:00",
+    "started_at": "2026-10-12T13:54:21.217661+00:00",
+    "finished_at": "2026-10-12T13:54:21.381295+00:00",
+    "timeout_seconds": 30,
+    "idempotency_key": "b11|manual-md|a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69"
+  },
+  "input": {
+    "repository": {
+      "url": "https://git.nju.edu.cn/devops_b11/devops-project-b11",
+      "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69"
+    },
+    "md_report_uri": "artifact://b11/job-md-fixture/md_report.json",
+    "makefile_uri": "repo://a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69/Makefile",
+    "image": "local-prototype:host",
+    "build": {
+      "command": "make clean && make"
+    },
+    "verify_command": "make test",
+    "max_iterations": 1,
+    "timeout_seconds": 30
+  },
+  "output": {
+    "patch_uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/fix.patch",
+    "patch_sha256": "0b2bdfe036970dd68e1eadbe1700667ff636af4606ec1f77bc8165e3172a0a4d",
+    "artifacts": [
+      {
+        "artifact_id": "job-repair-4a112637218e489f90862799db83b893-patch",
+        "type": "PATCH",
+        "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/fix.patch",
+        "media_type": "text/x-diff",
+        "producer_job_id": "job-repair-4a112637218e489f90862799db83b893",
+        "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+        "sha256": "0b2bdfe036970dd68e1eadbe1700667ff636af4606ec1f77bc8165e3172a0a4d"
+      },
+      {
+        "artifact_id": "job-repair-4a112637218e489f90862799db83b893-style_report",
+        "type": "STYLE_REPORT",
+        "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/declaration_style.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-repair-4a112637218e489f90862799db83b893",
+        "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+        "sha256": "a47c43953069182dffafe31f7c6662ccebc98690c271983e652f36ae09a6b74c"
+      },
+      {
+        "artifact_id": "job-repair-4a112637218e489f90862799db83b893-test_result",
+        "type": "TEST_RESULT",
+        "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/test_result.json",
+        "media_type": "application/json",
+        "producer_job_id": "job-repair-4a112637218e489f90862799db83b893",
+        "commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+        "sha256": "ef51024bc5e3e1650112ab98460739305dfcbc416fb3dd8f033221c3bb24c037"
+      }
+    ],
+    "summary": {
+      "candidates_total": 1,
+      "candidates_accepted": 1,
+      "candidates_rejected": 0,
+      "missing_fixed": 1,
+      "recheck_performed": false,
+      "recheck_status": "NOT_RUN",
+      "execution_mode": "LOCAL_PROTOTYPE",
+      "image_used": false
+    }
+  },
+  "error": null
+}

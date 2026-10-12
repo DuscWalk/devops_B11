@@ -1,0 +1,11 @@
+test_draft_runner_is_in_actual_input_snapshot (test_evidence.EvidenceRegressionTests) ... ok
+test_existing_directory_and_exports_are_not_overwritten (test_evidence.EvidenceRegressionTests) ... ok
+test_identity_order_stable_and_configuration_change_visible (test_evidence.EvidenceRegressionTests) ... ok
+test_missing_make_127_is_expected_but_infrastructure_failure_is_not (test_evidence.EvidenceRegressionTests) ... ok
+test_timeout_is_failure_and_output_is_preserved (test_evidence.EvidenceRegressionTests) ... ok
+test_unexpected_exit_retains_log_and_failure_summary (test_evidence.EvidenceRegressionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.383s
+
+OK

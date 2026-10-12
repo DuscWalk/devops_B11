@@ -1,0 +1,31 @@
+{
+  "candidates": [
+    {
+      "accepted": true,
+      "reason": "",
+      "patch": "--- a/Makefile\n+++ b/Makefile\n@@ -6,7 +6,7 @@\n app: app.o\n \t$(CC) -o $@ $^\n \n-app.o: app.c legacy.h\n+app.o: app.c legacy.h config.h\n \t$(CC) $(CFLAGS) -c -o $@ app.c\n \n test: app\n",
+      "description": "add missing dependency config.h to app.o",
+      "build_exit_code": 0,
+      "verify_exit_code": 0,
+      "build_output": "rm -f app app.o\n/usr/bin/cc -Wall -Wextra -O0 -c -o app.o app.c\n/usr/bin/cc -o app app.o\n",
+      "verify_output": ""
+    }
+  ],
+  "candidates_total": 1,
+  "candidates_accepted": 1,
+  "candidates_rejected": 0,
+  "accepted_details": [
+    {
+      "description": "add missing dependency config.h to app.o",
+      "build_exit_code": 0,
+      "verify_exit_code": 0
+    }
+  ],
+  "rejected_details": [],
+  "recheck": {
+    "status": "NOT_RUN",
+    "reason": "No detector invoked; real A11 integration is deferred"
+  },
+  "command_timeout_seconds": 30,
+  "max_iterations_note": "one candidate per finding; iterative search not implemented"
+}

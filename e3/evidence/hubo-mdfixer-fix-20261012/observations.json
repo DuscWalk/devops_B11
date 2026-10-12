@@ -1,0 +1,499 @@
+[
+  {
+    "name": "cc-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "make-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "git-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "gnu-make",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "E2-slides-integrity",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "E3-slides-integrity",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "draft-executable-created",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "draft-local-function",
+    "passed": true,
+    "observed": {
+      "stdout": "hello E3\n"
+    }
+  },
+  {
+    "name": "target-oracle-source",
+    "passed": true,
+    "observed": {
+      "provenance": "B11_REFERENCE_ORACLE"
+    }
+  },
+  {
+    "name": "target-initial-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "target-header-2-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791813248685646180,
+      "object_mtime_ns": 1791813247419586788
+    }
+  },
+  {
+    "name": "target-unfixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "target-unfixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "target-reference-bytes",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "target-fixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "target-header-3-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791813250069094858,
+      "object_mtime_ns": 1791813248868100222
+    }
+  },
+  {
+    "name": "target-fixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "target-recompiled",
+    "passed": true,
+    "observed": {
+      "build_output": "/usr/bin/cc -O0 -Wall -Wextra -c main.c -o main.o\n/usr/bin/cc main.o -o app\n"
+    }
+  },
+  {
+    "name": "target-redundant-declaration-preserved",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "target-invalid-candidate-rejected",
+    "passed": true,
+    "observed": {
+      "accepted": false,
+      "build_exit_code": 2
+    }
+  },
+  {
+    "name": "target-original-restored",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "target-restored-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "macro-oracle-source",
+    "passed": true,
+    "observed": {
+      "provenance": "B11_REFERENCE_ORACLE"
+    }
+  },
+  {
+    "name": "macro-initial-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "macro-header-2-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791813251924707788,
+      "object_mtime_ns": 1791813250589413892
+    }
+  },
+  {
+    "name": "macro-unfixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "macro-unfixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "macro-reference-bytes",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "macro-fixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "macro-header-3-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791813253377935805,
+      "object_mtime_ns": 1791813252115344201
+    }
+  },
+  {
+    "name": "macro-fixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "macro-recompiled",
+    "passed": true,
+    "observed": {
+      "build_output": "/usr/bin/cc -O0 -Wall -Wextra -c main.c -o main.o\n/usr/bin/cc main.o -o app\n"
+    }
+  },
+  {
+    "name": "macro-redundant-declaration-preserved",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "macro-invalid-candidate-rejected",
+    "passed": true,
+    "observed": {
+      "accepted": false,
+      "build_exit_code": 2
+    }
+  },
+  {
+    "name": "macro-original-restored",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "macro-restored-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "hybrid-oracle-source",
+    "passed": true,
+    "observed": {
+      "provenance": "B11_REFERENCE_ORACLE"
+    }
+  },
+  {
+    "name": "hybrid-initial-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "hybrid-header-2-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791813255171175232,
+      "object_mtime_ns": 1791813253906054011
+    }
+  },
+  {
+    "name": "hybrid-unfixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "hybrid-unfixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "hybrid-reference-bytes",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "hybrid-fixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "hybrid-header-3-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791813256800780870,
+      "object_mtime_ns": 1791813255449212560
+    }
+  },
+  {
+    "name": "hybrid-fixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "hybrid-recompiled",
+    "passed": true,
+    "observed": {
+      "build_output": "/usr/bin/cc -O0 -Wall -Wextra -c main.c -o main.o\n/usr/bin/cc main.o -o app\n"
+    }
+  },
+  {
+    "name": "hybrid-redundant-declaration-preserved",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "hybrid-invalid-candidate-rejected",
+    "passed": true,
+    "observed": {
+      "accepted": false,
+      "build_exit_code": 2
+    }
+  },
+  {
+    "name": "hybrid-original-restored",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "hybrid-restored-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "implicit-oracle-source",
+    "passed": true,
+    "observed": {
+      "provenance": "B11_REFERENCE_ORACLE"
+    }
+  },
+  {
+    "name": "implicit-initial-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "implicit-header-2-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791813258769055890,
+      "object_mtime_ns": 1791813257490440592
+    }
+  },
+  {
+    "name": "implicit-unfixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 1,
+      "stdout": "1\n"
+    }
+  },
+  {
+    "name": "implicit-unfixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "implicit-reference-bytes",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "implicit-fixed-clean-output",
+    "passed": true,
+    "observed": {
+      "expected": 2,
+      "stdout": "2\n"
+    }
+  },
+  {
+    "name": "implicit-header-3-newer-than-object",
+    "passed": true,
+    "observed": {
+      "header_mtime_ns": 1791813260300401945,
+      "object_mtime_ns": 1791813258980900628
+    }
+  },
+  {
+    "name": "implicit-fixed-incremental-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "implicit-recompiled",
+    "passed": true,
+    "observed": {
+      "build_output": "/usr/bin/cc -O0 -Wall -Wextra -MMD -MP -c main.c -o main.o\n/usr/bin/cc main.o -o app\n"
+    }
+  },
+  {
+    "name": "implicit-generated-dependency",
+    "passed": true,
+    "observed": {
+      "depfile": "main.o: main.c config.h\nconfig.h:\n"
+    }
+  },
+  {
+    "name": "implicit-invalid-candidate-rejected",
+    "passed": true,
+    "observed": {
+      "accepted": false,
+      "build_exit_code": 2
+    }
+  },
+  {
+    "name": "implicit-original-restored",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "implicit-restored-output",
+    "passed": true,
+    "observed": {
+      "expected": 3,
+      "stdout": "3\n"
+    }
+  },
+  {
+    "name": "prototype-repair-and-honest-scope",
+    "passed": true,
+    "observed": {
+      "report": {
+        "result": "PASS",
+        "source_commit": "a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69",
+        "accepted_candidates": 1,
+        "artifact_reads": 3,
+        "patch_apply_check": true,
+        "build_and_test_exit_code": 0,
+        "header_change_rebuild_verified": true,
+        "redundant_declaration_preserved": true,
+        "detector_recheck": "NOT_RUN",
+        "execution_mode": "LOCAL_PROTOTYPE",
+        "image_used": false
+      }
+    }
+  },
+  {
+    "name": "fresh-artifacts-read-from-separate-root",
+    "passed": true,
+    "observed": {
+      "receipts": [
+        {
+          "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/fix.patch",
+          "bytes": 178,
+          "sha256": "0b2bdfe036970dd68e1eadbe1700667ff636af4606ec1f77bc8165e3172a0a4d"
+        },
+        {
+          "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/declaration_style.json",
+          "bytes": 1276,
+          "sha256": "a47c43953069182dffafe31f7c6662ccebc98690c271983e652f36ae09a6b74c"
+        },
+        {
+          "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/test_result.json",
+          "bytes": 1063,
+          "sha256": "ef51024bc5e3e1650112ab98460739305dfcbc416fb3dd8f033221c3bb24c037"
+        }
+      ]
+    }
+  },
+  {
+    "name": "corrupted-artifact-rejected",
+    "passed": true,
+    "observed": {
+      "error": "artifact sha256 mismatch"
+    }
+  }
+]

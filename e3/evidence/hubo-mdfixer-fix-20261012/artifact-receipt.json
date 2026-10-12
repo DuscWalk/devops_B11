@@ -1,0 +1,21 @@
+{
+  "consumer": "B11_LOCAL_INTEGRATION_CHECK",
+  "a11_received": false,
+  "files": [
+    {
+      "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/fix.patch",
+      "bytes": 178,
+      "sha256": "0b2bdfe036970dd68e1eadbe1700667ff636af4606ec1f77bc8165e3172a0a4d"
+    },
+    {
+      "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/declaration_style.json",
+      "bytes": 1276,
+      "sha256": "a47c43953069182dffafe31f7c6662ccebc98690c271983e652f36ae09a6b74c"
+    },
+    {
+      "uri": "artifact://b11/job-repair-4a112637218e489f90862799db83b893/test_result.json",
+      "bytes": 1063,
+      "sha256": "ef51024bc5e3e1650112ab98460739305dfcbc416fb3dd8f033221c3bb24c037"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "declaration_style": {
+    "uses_tab_recipe": true,
+    "prereq_separator": " ",
+    "has_continuation": false,
+    "variable_patterns": [
+      "CC",
+      "CC",
+      "CFLAGS"
+    ]
+  },
+  "targets_found": [
+    "all",
+    "app",
+    "app.o",
+    "test",
+    "clean",
+    ".PHONY"
+  ],
+  "rule_styles": [
+    {
+      "target": "all",
+      "style": "target"
+    },
+    {
+      "target": "app",
+      "style": "target"
+    },
+    {
+      "target": "app.o",
+      "style": "target"
+    },
+    {
+      "target": "test",
+      "style": "target"
+    },
+    {
+      "target": "clean",
+      "style": "target"
+    },
+    {
+      "target": ".PHONY",
+      "style": "target"
+    }
+  ],
+  "variables": [
+    {
+      "name": "CC",
+      "value": "cc",
+      "line": 1
+    },
+    {
+      "name": "CFLAGS",
+      "value": "-Wall -Wextra -O0",
+      "line": 2
+    }
+  ],
+  "scope": "simple target, single-variable macro/hybrid, and %.o: %.c fixtures",
+  "missing_fixed": 1,
+  "missing_total": 1,
+  "rejected_reasons": [],
+  "summary": {
+    "candidates_total": 1,
+    "candidates_accepted": 1,
+    "candidates_rejected": 0,
+    "missing_fixed": 1,
+    "recheck_performed": false,
+    "recheck_status": "NOT_RUN",
+    "execution_mode": "LOCAL_PROTOTYPE",
+    "image_used": false
+  }
+}

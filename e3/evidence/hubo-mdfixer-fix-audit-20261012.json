@@ -1,0 +1,12 @@
+{
+  "checked_at_utc": "2026-10-12T13:55:34.162257+00:00",
+  "result": "PASS",
+  "code_commit": "298a8db246dfdf1a40a3477ba4c2faa64694e95a",
+  "clean_worktree": true,
+  "archive_files_sha256_checked": 132,
+  "current_input_files_matching_commit": 139,
+  "failure_input_files_matching_original_commit": 139,
+  "environment_fingerprint_verified": true,
+  "changed_markdown_links_valid": true,
+  "note": "Code commit and later evidence-only commit are separate. No historical result was replaced."
+}
