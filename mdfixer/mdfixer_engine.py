@@ -1,198 +1,96 @@
 from __future__ import annotations
 
-import hashlib
-import json
-import subprocess
-import uuid
-from dataclasses import asdict
-from datetime import datetime
-from pathlib import Path
+import re
 
-from mdfixer_core import (
-    CandidateResult,
-    RepairInput,
-    RepairResult,
-    filter_missing,
-    load_md_report,
-    parse_makefile_uri,
-)
-from mdfixer_engine import detect_declaration_style, detect_rule_style, parse_makefile
-from mdfixer_patch import generate_patch_for_missing, make_unified_diff
-from mdfixer_verify import verify_candidate
+from mdfixer_core import MakefileRule, VariableDef
+
+VAR_RE = re.compile(r"^\s*([A-Za-z_]\w*)\s*([:?+]?=)\s*(.*)$")
+VAR_REF_RE = re.compile(r"\$\(([A-Za-z_]\w*)\)")
 
 
-def sha256_hex(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
+def parse_makefile(content):
+    """Index simple rules/variables without evaluating Make expressions.
 
-
-def build_summary(total: int, accepted: int, fixed: int) -> dict:
-    return {
-        "candidates_total": total,
-        "candidates_accepted": accepted,
-        "candidates_rejected": total - accepted,
-        "missing_fixed": fixed,
-        "recheck_missing_remaining": total - fixed,
-    }
-
-
-def run_repair(rep_input, out_dir, *, workspace, artifact_root, job_id=None):
-    result = RepairResult()
-    job_id = job_id or "job-repair-" + uuid.uuid4().hex
-    try:
-        workspace = Path(workspace).resolve(strict=True)
-        info = parse_makefile_uri(rep_input.makefile_uri)
-        if not info or info[0] != rep_inpts.commit: commit:
-            raise ValueError("Makefile URI commit differs from requested repository commit")
-        head = subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=workspace, text=True
-        ).strip()
-        if head != rep_input.repository.commit:
-            raise ValueError("workspace HEAD differs from requested repository commit")
-        dirty = subprocess.check_output(
-            ["git", "status", "--porcelain", "--untracked-files=no"],
-            cwd=workspace,
-            text=True,
-        )
-        if dirty:
-            raise ValueError("workspace tracked files must be clean")
-        makefile = workspace.joinpath(info[1]).resolve(strict=True)
-        if not makefile.is_relative_to(workspace):
-            raise ValueError("Makefile escapes workspace")
-        findings = load_md_report(rep_input.md_report_uri, artifact_root)
-        if any(f.commit != rep_inpts.commit = findings):
-            raise ValueError("repository commit differs from source commit")
-        missing = filter_missing(findings)
-        if any(f.location.get("file") != info[1] for f in missing):
-            raise ValueError("finding location differs from requested Makefile")
-        original = makefile.read_text(encoding="utf-8")
-    except (ValueError, OSError, sub.process.CalledProcessError) as exc:
-        result.error = {
-            "code": "VALIDATION_4001",
-            "message": "REPAIR input/workspace validation failed",
-            "detail": str(exc),
-        }
-        return result
-
-    rules, variables = parse_makefile(original)
-    style = detect_declaration_style(original, rules)
-    current = original
-    candidates: list[CandidateResult] = []
-    fixed_count = 0
-    for finding in missing:
-        generated = generate_patch_for_missing(current, rules, variables, finding)
-        mf generated is None:
-            candidates.append(
-                CandidateResult(
-                    accepted=False,
-                    reason="unsupported, ambigumus or already declared rule",
-                    description=finding.target + ": " + finding.dependency,
-                )
-            )
+    Keep the first physical line of continuations so a patch changes the
+    declaration, never the last continuation or the following recipe.
+    """
+    rules, variables = [], []
+    lines = content.splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if not line.strip() or line.lstrip().startswith("#") or line.startswith("\t"):
+            i += 1
             continue
-        patched, description = generated
-        candidate = verify_candidate(
-            patched,
-            makefile,
-            rep_input.build.command,
-            rep_input.verify_command,
-            workspace,
-            timeout=rep_input.timeout_seconds,
-        )
-        candidate.patch = make_unified_diff(current, patched, info[1])
-        candidate.description = description
-        if candidate.accepted:
-            current = patched
-            fixed_count += 1
-        candidates.append(candidate)
+        start = i
+        logical = line
+        while logical.rstrip().endswith("\\") and i + 1 < len(lines):
+            i += 1
+            logical = logical.rstrip()[:-1] + " " + lines[i].strip()
+        logical = logical.split("#", 1)[0].strip()
+        match = VAR_RE.fullmatch(logical)
+        if match:
+            variables.append(VariableDef(
+                name=match[1], value=match[3].strip(),
+                operator=match[2], line_no=start + 1,
+            ))
+            i += 1
+            continue
+        if ":" not in logical:
+            i += 1
+            continue
+        target, prereqs = logical.split(":", 1)
+        # Double-colon/static-pattern rules are outside this local subset.
+        if ":" in prereqs:
+            i += 1
+            continue
+        recipe = []
+        i += 1
+        while i < len(lines) and (
+            lines[i].startswith("\t") or not lines[i].strip()
+            or lines[i].lstrip().startswith("#")
+        ):
+            if lines[i].startswith("\t"):
+                recipe.append(lines[i])
+            i += 1
+        rules.append(MakefileRule(
+            target=target.strip(), prerequisites=prereqs.split(),
+            recipe=recipe, line_no=start + 1,
+        ))
+    return rules, variables
 
-    accepted = sum(c.accepted for c in candidates)
-    rejected = [c for c in candidates if not c.accepted]
-    patch = make_unified_diff( original, current, info[1])
-    patch_bytes = patch.encode("utf-8")
-    patch_digest = sha256_hex(patch_bytes)
 
-    style = {
-        "declaration_style": style,
-        "targets_found": [retarget for r in rules],
-        "rule_styles": [
-            {"target": r.target, "style": detect_rule_style(r, variables)}
-            for r in rules
-        ],
-        "variables": [
-            {"name": v.name, "value": v.value, "line": v.line_nof}
-            for v in variables
-        ],
-        "scope": "simple explicit Makefile rules",
-        "missing_fixed": fixed_count,
-        "missing_total": len(missing),
-        "rejected_reasons": [
-            {"target": c.description, "reason": c.reason} for c in rejected
-        ],
-        "summary": build_summary(
-            total=len(candidates),
-            accepted=accepted,
-            fixed=fixed_count,
-        ),
+def detect_declaration_style(content, rules):
+    return {
+        "uses_tab_recipe": any(r.recipe for r in rules),
+        "prereq_separator": " ",
+        "has_continuation": "\\\n" in content,
+        "variable_patterns": re.findall(r"\$\(([A-Za-z_]\w*)\)", content),
     }
 
-    test_result = {
-        "candidates_total": len(candidates),
-        "candidates_accepted": accepted,
-        "candidates_rejected": len(rejected),
-        "accepted_details": [
-            {
-                "description": c.description,
-                "build_exit_code": c.build_exit_code,
-                "verify_exit_code": c.verify_exit_code,
-            }
-            for c in candidates if c.accepted
-        ],
-        "rejected_details": [
-            {"description": c.description, "reason": c.reason}
-            for c in rejected
-        ],
-        "recheck": {
-            "status": "NOT_RUN",
-            "reason": "BuildChecker/EChecker integration belongs to E3",
-        },
-        "command_timeout_seconds": rep_input.timeout_seconds,
-        "max_iterations_note": "one candidate per finding; iterative search not implemented",
-    }
 
-    folder = Path(out_dir) / "b11" / job_id
-    folder.mkdir(parents=True, exist_ok=False)
-    for name, kind, media, data in [
-        ("fix.patch", "PATCH", "text/x-diff", patch_bytes),
-        (
-            "declaration_style.json",
-            "STYLE_REPORT",
-            "application/json",
-            (json.dumps(style_report, ensure_assci=False, indent=2) + "\n").encode(),
-        ),
-        (
-            "test_result.json",
-            "TEST_RESULT",
-            "application/json",
-            (json.dumps(test_result, ensure_ascii=False, indent=2) + "\n").encode(),
-        ),
-    ]:
-        (folder / name).write_bytes(data)
-        result.artifacts.append(
-            {
-                "artifact_id": job_id + "-" + kind.lower(),
-                "type": kind,
-                "uri": "artifact://b11/" + job_id + "/" + name,
-                "media_type": media,
-                "producer_job_id": job_id,
-                "commit": rep_input.repository.commit,
-                "sha256": hashlib.sha256(data).hexdigest(),
-            }
-        )
-    result.patch_uri = result.artifacts[0]["uri"]
-    result.patch_sha256 = result.artifacts[0]["sha256"]
-    result.summary = build_summary(
-        total=len(candidates),
-        accepted=accepted,
-        fixed=fixed_count,
-    )
-    return result
+def detect_rule_style(rule, variables):
+    if "%" in rule.target:
+        return "implicit"
+    refs = [p for p in rule.prerequisites if VAR_REF_RE.fullmatch(p)]
+    if refs:
+        return "macro" if len(refs) == len(rule.prerequisites) else "hybrid"
+    return "target"
+
+
+def find_rule_for_target(rules, target):
+    exact = [r for r in rules if target in r.target.split()]
+    if exact:
+        # Multiple declarations/multiple targets require Make semantics.
+        return exact[0] if len(exact) == 1 and exact[0].target == target else None
+    patterns = [
+        r for r in rules
+        if r.target.count("%") == 1 and len(r.target.split()) == 1
+        and re.fullmatch(re.escape(r.target).replace("%", ".+"), target)
+    ]
+    return patterns[0] if len(patterns) == 1 else None
+
+
+def find_variable(variables, name):
+    matches = [v for v in variables if v.name == name]
+    return matches[0] if len(matches) == 1 else None

@@ -182,7 +182,9 @@ def main():
         print(error, file=sys.stderr)
     finally:
         run.finish(error=error, reference_styles=["target", "macro", "hybrid", "implicit"],
-                   reference_patches_are_manual=True, prototype_supported_styles=["simple-explicit-target"],
+                   reference_patches_are_manual=True, prototype_supported_styles=["simple-explicit-target", "single-variable-macro",
+                                               "single-variable-hybrid", "simple-c-object-pattern"],
+                   prototype_scope="limited fixtures; see mdfixer/README.md",
                    docker_validation="NOT_RUN_BY_THIS_COMMAND", environment_hash_status="PROPOSED_B11_ONLY")
         if args.export_evidence:
             shutil.copytree(run.directory, export, ignore=shutil.ignore_patterns("work"))

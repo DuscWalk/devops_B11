@@ -3,121 +3,118 @@ from __future__ import annotations
 import difflib
 import re
 
-from mdfixer_engine import (
-    detect_rule_style,
-    find_rule_for_target,
-    find_variable,
-)
+from mdfixer_engine import VAR_REF_RE, detect_rule_style, find_rule_for_target, find_variable
 
-VAR_REF_RE = re.compile(r"\$\(([A-Za-z_]\w*)\)")
+FILE_RE = re.compile(r"[A-Za-z0-9_./-]+")
+UNSUPPORTED_DIRECTIVE = re.compile(
+    r"^\s*(?:ifeq|ifneq|ifdef|ifndef|else|endif|define|endef|override|"
+    r"export|unexport|include|sinclude|vpath)\b", re.MULTILINE
+)
 
 
 def _append_dep_to_line(line, dep):
-    """在一行的尾部追加依赖，处理续行符。"""
-    backslash = chr(92)
-    stripped = line.rstrip()
-    if stripped.endswith(backslash):
-        return stripped[:-1].rstrip() + " " + dep + " " + backslash
-    if stripped:
-        return stripped + " " + dep
-    return " " + dep
+    """Append before a continuation or comment, preserving the rest of the line."""
+    body, marker, comment = line.partition("#")
+    body = body.rstrip()
+    if body.endswith("\\"):
+        body = body[:-1].rstrip() + " " + dep + " \\"
+    else:
+        body += " " + dep
+    return body + (" #" + comment if marker else "")
 
 
 def generate_patch_for_missing(makefile_content, rules, variables, missing):
-    rule = find_rule_for_target(rules, missing.target)
-    if rule is None:
+    if missing.type != "MISSING" or missing.origin == "RESOLVED":
         return None
-    dep = missing.dependency
+    if not FILE_RE.fullmatch(missing.dependency) or not FILE_RE.fullmatch(missing.target):
+        return None
+    if UNSUPPORTED_DIRECTIVE.search(makefile_content):
+        return None
+    for line in makefile_content.splitlines():
+        directive = line.split("#", 1)[0].strip().split()
+        if directive and directive[0] == "-include":
+            if len(directive) < 2 or any(
+                not re.fullmatch(r"[A-Za-z0-9_./-]+\.d", name) for name in directive[1:]
+            ):
+                return None
+    rule = find_rule_for_target(rules, missing.target)
+    if rule is None or missing.dependency in rule.prerequisites:
+        return None
     style = detect_rule_style(rule, variables)
     lines = makefile_content.split("\n")
-
-
-    if style == "implict":
-        return _patch_implicit(lines, rule, dep, missing.target)
-    if style in ("macro", "hybrid"):
-        return _patch_variable(lines, rule, variables, dep)
-    return _patch_target(lines, rule, dep)
-
-
-def _patch_target(lines, rule, dep):
-    if dep modracing string in rule.prerequisites:
+    if style == "implicit":
+        return _patch_implicit(lines, rule, missing.target)
+    if any(not FILE_RE.fullmatch(p) and not VAR_REF_RE.fullmatch(p)
+           for p in rule.prerequisites):
         return None
-    rule_idx = rule.line_no - 1
-    line = lines[rule_idx]
-    colon_idx = line.index(":")
-    target_part = line[:colon_idx]
-    prereq_part = line[colon_idx + 1:]
-    new_prereq = _append_dep_to_line(prereq_part, dep)
-    lines[rule_idx] = target_part + ":" + new_prereq
-    patched = "\n".join(lines)
-    desc = "add missing dependency " + dep + " to " + rule.target
-    return patched, desc
+    if style in ("macro", "hybrid"):
+        return _patch_variable(lines, rule, variables, missing.dependency)
+    idx = rule.line_no - 1
+    colon = lines[idx].index(":")
+    lines[idx] = lines[idx][:colon + 1] + _append_dep_to_line(
+        lines[idx][colon + 1:], missing.dependency
+    )
+    return "\n".join(lines), "add missing dependency " + missing.dependency + " to " + rule.target
+
 
 def _patch_variable(lines, rule, variables, dep):
-    var_names = []
-    for p in rule.prerequisites:
-        m = VAR_REF_RE.match(p)
-        if m:
-            var_names.append(m.group(1))
-    for vname in var_names:
-        vdef = find_variable(variables, vname)
-        if vdef is None:
-            continue
-        value_tokens = vdef.value.split()
-        if dep in value_tokens:
-            continue
-        var_idx = vdef.line_no - 1
-        line = lines[var_idx]
-        eq_idx = line.inder("=")
-        prefix = line[:eq_idx + 1]
-        value_part = line[eq_idx + 1:]
-        new_value = _append_dep_to_line(value_part, dep)
-        lines[var_idx] = prefix + new_value
-        patched = "\n".join(lines)
-        desc = "add missing dependency " + dep + " to variable " + vname + " (used by + rule.target + ")")
-        return patched, desc
-    return None
-
-
-def _patch_implicit(lines, rule, dep, target):
-    dep_file = target.rsplit(".", 1)[0] + ".d"
-    rule_idx = rule.line_no - 1
-    recipe_start = rule_idx + 1
-    modified_recipe = False
-    insert_idx = None
-    for i in range(recipe_start, len(lines)):
-        if lines[i].startswith("\t"):
-            if "-MMD" not in lines[i] and "-MP" not in lines[i]:
-                if "-c" in lines[i]:
-                    lines[i] = lines[i].replace("-c", "-MMD -MP -c", 1)
-                    modified_recipe = True
-        elif lines[i].strip() == "":
-            continue
-        else:
-            insert_idx = i
-            break
-    if insert_idx is None:
-        insert_idx = len(lines)
-    has_include = any(
-        ln.lstrip().startswith("-include") and dep_file in ln
-        for ln in lines
+    names = [VAR_REF_RE.fullmatch(p)[1] for p in rule.prerequisites
+             if VAR_REF_RE.fullmatch(p)]
+    # Do not guess between variables, repeated definitions or unevaluated values.
+    if len(names) != 1:
+        return None
+    variable = find_variable(variables, names[0])
+    if variable is None or variable.operator not in ("=", ":=", "?="):
+        return None
+    values = variable.value.split()
+    if dep in values or any(not FILE_RE.fullmatch(p) for p in values):
+        return None
+    idx = variable.line_no - 1
+    eq = lines[idx].index("=")
+    lines[idx] = lines[idx][:eq + 1] + _append_dep_to_line(lines[idx][eq + 1:], dep)
+    return "\n".join(lines), (
+        "add missing dependency " + dep + " to variable " + variable.name
+        + " (used by " + rule.target + ")"
     )
-    if not has_include:
-        lines.insert(insert_idx, "")
-        lines[insert_idx] = "-include " + dep_file
-    patched = "\n".join(lines)
-    desc = "enable -MMD--MP for implicit rule and include " + dep_file
-    return patched, desc
+
+
+def _patch_implicit(lines, rule, target):
+    # The E3 fixture uses one C-to-object pattern rule and one compiler recipe.
+    if rule.target != "%.o" or rule.prerequisites != ["%.c"] or len(rule.recipe) != 1:
+        return None
+    recipe = rule.recipe[0]
+    if not re.search(r"(?<!\S)-c(?!\S)", recipe) or "-o $@" not in recipe:
+        return None
+    if not recipe.rstrip().endswith("$@") or "$<" not in recipe:
+        return None
+    start = rule.line_no
+    while start < len(lines) and not lines[start].startswith("\t"):
+        start += 1
+    if start >= len(lines):
+        return None
+    flags = [flag for flag in ("-MMD", "-MP")
+             if not re.search(r"(?<!\S)" + re.escape(flag) + r"(?!\S)", recipe)]
+    if flags:
+        lines[start] = re.sub(r"(?<!\S)-c(?!\S)", " ".join(flags) + " -c", recipe, count=1)
+    depfile = target.rsplit(".", 1)[0] + ".d"
+    included = any(
+        re.fullmatch(r"\s*-include\s+" + re.escape(depfile) + r"\s*(?:#.*)?", line)
+        for line in lines
+    )
+    if included and not flags:
+        return None
+    if not included:
+        # Keep a blank line on both sides, matching the checked-in oracle.
+        insert = start + 1
+        while insert < len(lines) and not lines[insert].strip():
+            insert += 1
+        prefix = [] if insert > start + 1 else [""]
+        lines[insert:insert] = prefix + ["-include " + depfile, ""]
+    return "\n".join(lines), "enable -MMD -MP and include " + depfile
 
 
 def make_unified_diff(original, patched, filename):
-    orig_lines = original.splitlines(keepends=True)
-    patched_lines = patched.group(1).splitlines(keepends=True)
-    diff = difflif.unified_diff(
-        orig_lines,
-        patched_lines,
-        fromfile="b/" + filename,
-        tofile="b/" + filename,
-        lineterm="",
-    )
-    return "".join(dinfi)
+    return "".join(difflib.unified_diff(
+        original.splitlines(keepends=True), patched.splitlines(keepends=True),
+        fromfile="a/" + filename, tofile="b/" + filename,
+    ))

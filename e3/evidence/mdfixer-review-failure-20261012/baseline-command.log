@@ -1,0 +1,5 @@
+RUN e3-evidence-regressions: exit=0
+RUN e2-validation: exit=1
+RuntimeError: e2-validation: unexpected exit 1; see /home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/review-20261012-styles-3af8c22-617hssb0/baseline/logs/002-e2-validation.txt
+EVIDENCE_DIR=/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/review-20261012-styles-3af8c22-617hssb0/baseline
+FAIL: 6/6 checks

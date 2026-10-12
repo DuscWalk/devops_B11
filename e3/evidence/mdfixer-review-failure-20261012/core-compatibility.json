@@ -1,0 +1,29 @@
+{
+  "Finding_fields": [
+    "type",
+    "target",
+    "dependency",
+    "commit",
+    "detector",
+    "location",
+    "evidence",
+    "suggested_fix"
+  ],
+  "CandidateResult_fields": [
+    "accepted",
+    "reason",
+    "patch",
+    "description",
+    "build_exit_code",
+    "verify_exit_code"
+  ],
+  "load_md_report_signature": "(md_report_uri)",
+  "traversal_uri_result": [
+    "b11",
+    "job-md",
+    "../../file"
+  ],
+  "Finding_with_origin": "TypeError: Finding.__init__() got an unexpected keyword argument 'origin'",
+  "CandidateResult_with_build_output": "TypeError: CandidateResult.__init__() got an unexpected keyword argument 'build_output'",
+  "load_md_report_with_artifact_root": "TypeError: load_md_report() takes 1 positional argument but 2 were given"
+}

@@ -1,0 +1,71 @@
+PASS: submission Schema and 13 unchanged historical reference files
+PASS: 4 requests, 202, 4 query responses, 3 complete failed Jobs
+PASS: 6 invalid examples rejected
+
+RUN: -m unittest discover -s e2/tests -v
+test_checksum_is_optional_in_current_reference (test_artifact_access.ArtifactAccessTests) ... ok
+test_file_bytes_and_checksum_are_read (test_artifact_access.ArtifactAccessTests) ... ok
+test_invalid_checksum_format_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_local_path_is_not_an_artifact_uri (test_artifact_access.ArtifactAccessTests) ... ok
+test_media_type_is_required (test_artifact_access.ArtifactAccessTests) ... ok
+test_missing_file_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_modified_file_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_path_escape_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_symlink_outside_root_is_rejected (test_artifact_access.ArtifactAccessTests) ... ok
+test_202_cannot_be_running (test_contract_inputs.ContractInputTests) ... ok
+test_baseline_configuration_mismatch (test_contract_inputs.ContractInputTests) ... ok
+test_draft_without_verification_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_empty_image_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_failed_job_cannot_carry_findings (test_contract_inputs.ContractInputTests) ... ok
+test_incremental_without_baseline_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_query_input_cannot_bypass_service_constraints (test_contract_inputs.ContractInputTests) ... ok
+test_repair_without_report_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_short_repository_commit_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_unknown_job_type_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+test_zero_iterations_is_rejected (test_contract_inputs.ContractInputTests) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.013s
+
+OK
+
+RUN: -m unittest discover -s mdfixer -p test_*.py -v
+test_mdfixer (unittest.loader._FailedTest) ... ERROR
+test_styles (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: test_mdfixer (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_mdfixer
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/tmp/b11-e3-styles-review.Vgw9VI/mdfixer/test_mdfixer.py", line 36
+    self.assertEqual(set(rules[0].prerequisites), {'app.c', 'config.h', 'value.h', 'legacy.hg})
+                                                                                   ^
+SyntaxError: unterminated string literal (detected at line 36)
+
+
+======================================================================
+ERROR: test_styles (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_styles
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/tmp/b11-e3-styles-review.Vgw9VI/mdfixer/test_styles.py", line 8, in <module>
+    from mdfixer_engine import parse_makefile
+  File "/tmp/b11-e3-styles-review.Vgw9VI/mdfixer/mdfixer_engine.py", line 44
+    if not info or info[0] != rep_inpts.commit: commit:
+                                                       ^
+SyntaxError: invalid syntax
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (errors=2)

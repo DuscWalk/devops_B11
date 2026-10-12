@@ -1,0 +1,39 @@
+[
+  {
+    "label": "e3-evidence-regressions",
+    "argv": [
+      "/home/duscwalk/DevOps/lab2/devops-project-b11/.venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "e3/tests",
+      "-v"
+    ],
+    "cwd": "/tmp/b11-e3-styles-review.Vgw9VI",
+    "started_at_utc": "2026-10-12T13:34:55.715993+00:00",
+    "seconds": 0.4305,
+    "exit_code": 0,
+    "timed_out": false,
+    "log": "logs/001-e3-evidence-regressions.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  },
+  {
+    "label": "e2-validation",
+    "argv": [
+      "/home/duscwalk/DevOps/lab2/devops-project-b11/.venv/bin/python",
+      "/tmp/b11-e3-styles-review.Vgw9VI/e2/validate.py"
+    ],
+    "cwd": "/tmp/b11-e3-styles-review.Vgw9VI",
+    "started_at_utc": "2026-10-12T13:34:56.146666+00:00",
+    "seconds": 0.3046,
+    "exit_code": 1,
+    "timed_out": false,
+    "log": "logs/002-e2-validation.txt",
+    "expected_exit_codes": [
+      0
+    ]
+  }
+]

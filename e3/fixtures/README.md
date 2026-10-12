@@ -21,6 +21,6 @@ fzy 沿用 `draft/PROJECT.md` 的固定完整 SHA 和双层验证。Tiny Greetin
 
 每例行为：初始输出 1；只将头文件改为 2，未修复增量仍输出 1；clean 后输出 2；应用参考 Patch 后 clean 输出 2；再次改为 3，不 clean 应输出 3。无效候选加失败 recipe，现有 `verify_candidate` 必须拒绝并恢复原 Makefile，再次构建输出 3。
 
-Target/Macro/Hybrid 保留 `unused.h` 声明作为不自动修 RD 的约束。Implicit 检查编译生成 `main.d` 中的 `config.h`。这些是参考答案测试；现有自动原型只支持简单显式规则，其他风格由王硕后续实现。
+Target/Macro/Hybrid 保留 `unused.h` 声明作为不自动修 RD 的约束。Implicit 检查编译生成 `main.d` 中的 `config.h`。这些是独立的参考答案测试。2026-10-12 修复后的自动原型另有四风格 REPAIR / 构建回归，复用本目录的字节预期，但不将其当作真实检测结果；支持范围见 [模块记录](../mdfixer-notes.md)。
 
 现有原型的真实 REPAIR 输入沿用 `fixtures/mdfixer-project/` 的固定 bundle SHA、报告和来源；不是上面四个样例的伪造服务响应。

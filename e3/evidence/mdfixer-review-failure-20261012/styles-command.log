@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/tmp/b11-e3-styles-review.Vgw9VI/mdfixer/test_styles.py", line 8, in <module>
+    from mdfixer_engine import parse_makefile
+  File "/tmp/b11-e3-styles-review.Vgw9VI/mdfixer/mdfixer_engine.py", line 44
+    if not info or info[0] != rep_inpts.commit: commit:
+                                                       ^
+SyntaxError: invalid syntax

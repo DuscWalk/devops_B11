@@ -2,7 +2,7 @@
 
 小组 B11；配对 A11。孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共验收、证据整合和配对交接。完整课件和要求见 [docs](../docs/README.md)。E2 契约与历史证据保留在 `e2/`。
 
-2026-10-10：公共基线与 DRAFT 运行材料已完成；MDFixer 模块交接、人工交叉复核和最终整合待完成。三人已完成/未完成内容见 [状态](STATUS.md)、[任务表](Backlog.md)、[贡献](CONTRIBUTIONS.md)，各自下一步见 [交接](HANDOFF.md)。
+2026-10-12：公共基线与 DRAFT 材料保留；胡博已修复 MDFixer 分支，完成本轮运行归档；组员人工交叉复核和正式提交仍待完成。三人已完成/未完成内容见 [状态](STATUS.md)、[任务表](Backlog.md)、[贡献](CONTRIBUTIONS.md)，各自下一步见 [交接](HANDOFF.md)。
 
 ## 一键运行
 
@@ -16,7 +16,7 @@ python3 -m venv .venv
 
 最后打印 `EVIDENCE_DIR=...`。每次生成新目录 `e3/work/<时间>-<随机标识>/`；禁止覆盖旧运行。工作副本、Git 初始化、clean、补丁和头文件修改只发生在该目录，不修改原模块或固定 fixture。
 
-本入口完成：课件摘要核验、证据基础设施回归、E2 正式校验；Tiny Greeting 本地构建/行为；四种人工参考补丁；未修复旧值与 clean 对照；修复后不 clean 的头文件重建；真实失败候选的拒绝/恢复；现有 MDFixer 原型；新产物异目录读取与损坏摘要拒绝。参考补丁成功不表示自动原型支持 Macro/Hybrid/Implicit。
+本入口完成：课件摘要核验、证据基础设施回归、E2 正式校验；Tiny Greeting 本地构建/行为；四种人工参考补丁；未修复旧值与 clean 对照；修复后不 clean 的头文件重建；真实失败候选的拒绝/恢复；现有 MDFixer 原型；新产物异目录读取与损坏摘要拒绝。四种人工参考仍独立验证；E2 入口中的 MDFixer 回归另外实际执行自动生成补丁的四风格构建测试，支持范围见 [模块记录](mdfixer-notes.md)。
 
 ## Docker 独立检查
 

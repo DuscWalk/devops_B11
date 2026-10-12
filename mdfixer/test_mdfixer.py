@@ -33,7 +33,7 @@ class RepairRegressionTests(unittest.TestCase):
             self.assertIsNotNone(result)
             content = result[0]
         rules, _ = parse_makefile(content)
-        self.assertEqual(set(rules[0].prerequisites), {'app.c', 'config.h', 'value.h', 'legacy.hg})
+        self.assertEqual(set(rules[0].prerequisites), {'app.c', 'config.h', 'value.h', 'legacy.h'})
         self.assertIn('\\\n', content)
 
     def test_rejected_candidate_restores_makefile(self):
@@ -55,6 +55,79 @@ class RepairRegressionTests(unittest.TestCase):
         content = 'app.o: $(SOURCES)\n\tcc -c app.c\n'
         rules, variables = parse_makefile(content)
         self.assertIsNone(generate_patch_for_missing(content, rules, variables, finding()))
+
+
+class ParsingAndPatchRegressionTests(unittest.TestCase):
+    def patch(self, content, dep='config.h', target='app.o'):
+        item = finding(dep)
+        item.target = target
+        rules, variables = parse_makefile(content)
+        return generate_patch_for_missing(content, rules, variables, item)
+
+    def test_variable_continuation_uses_first_line_and_keeps_recipe(self):
+        content = 'DEPS := app.c \\\n  legacy.h\napp.o: $(DEPS)\n\tcc -c app.c\n'
+        rules, variables = parse_makefile(content)
+        self.assertEqual(variables[0].line_no, 1)
+        self.assertEqual(rules[0].line_no, 3)
+        for dep in ('config.h', 'value.h'):
+            content = self.patch(content, dep)[0]
+        self.assertIn('DEPS := app.c config.h value.h \\\n  legacy.h\n', content)
+        self.assertTrue(content.endswith('\tcc -c app.c\n'))
+
+    def test_inline_comment_does_not_hide_dependency(self):
+        content = 'app.o: app.c # retain comment\n\tcc -c app.c\n'
+        patched = self.patch(content)[0]
+        rules, _ = parse_makefile(patched)
+        self.assertIn('config.h', rules[0].prerequisites)
+        self.assertIn('# retain comment', patched)
+
+    def test_ambiguous_and_unevaluated_make_syntax_is_rejected(self):
+        for content in (
+            'app.o: $(A) $(B)\nA = a.h\nB = b.h\n',
+            'app.o: $(A)\nA = a.h\nA += b.h\n',
+            'app.o: $(A)\nA = $(B)\n',
+            'app.o other.o: app.c\n',
+            'app.o: app.c\napp.o: extra.h\n',
+            'ifeq (x,y)\napp.o: app.c\nendif\n',
+            'app.o: app.c | build-dir\n',
+            '-include config.mk\napp.o: app.c\n',
+            '-include $(DEPS)\napp.o: app.c\n',
+        ):
+            with self.subTest(content=content):
+                self.assertIsNone(self.patch(content))
+        self.assertIsNone(self.patch('app.o: app.c\n', dep='$(shell touch BAD)'))
+
+    def test_pattern_match_is_anchored_and_ambiguity_is_rejected(self):
+        from mdfixer_engine import find_rule_for_target
+        rules, _ = parse_makefile('%.o: %.c\n\tcc -c $< -o $@\n')
+        self.assertIsNotNone(find_rule_for_target(rules, 'app.o'))
+        self.assertIsNone(find_rule_for_target(rules, 'app.o.backup'))
+        rules, _ = parse_makefile('%.o: %.c\na%.o: a%.c\n')
+        self.assertIsNone(find_rule_for_target(rules, 'app.o'))
+
+    def test_implicit_flags_are_completed_once(self):
+        for flag in ('-MMD', '-MP'):
+            content = '%.o: %.c\n\t$(CC) ' + flag + ' -c $< -o $@\n\nclean:\n\trm -f *.o\n'
+            patched = self.patch(content)[0]
+            self.assertEqual(patched.count('-MMD'), 1)
+            self.assertEqual(patched.count('-MP'), 1)
+            self.assertEqual(patched.count('-include app.d'), 1)
+            self.assertIsNone(self.patch(patched))
+
+    def test_artifact_symlink_escape_and_local_path_are_rejected(self):
+        from mdfixer_core import load_md_report
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            artifact_root = root / 'artifacts'
+            folder = artifact_root / 'b11/job-md'
+            folder.mkdir(parents=True)
+            outside = root / 'outside.json'
+            outside.write_text('{"findings": []}')
+            (folder / 'report.json').symlink_to(outside)
+            with self.assertRaises(ValueError):
+                load_md_report('artifact://b11/job-md/report.json', artifact_root)
+            with self.assertRaises(ValueError):
+                load_md_report(str(outside), artifact_root)
 
 
 if __name__ == '__main__':

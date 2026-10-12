@@ -5,12 +5,10 @@ import json
 import subprocess
 import uuid
 from dataclasses import asdict
-from datetime import datetime
 from pathlib import Path
 
 from mdfixer_core import (
     CandidateResult,
-    RepairInput,
     RepairResult,
     filter_missing,
     load_md_report,
@@ -21,17 +19,16 @@ from mdfixer_patch import generate_patch_for_missing, make_unified_diff
 from mdfixer_verify import verify_candidate
 
 
-def sha256_hex(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
-
-
 def build_summary(total: int, accepted: int, fixed: int) -> dict:
     return {
         "candidates_total": total,
         "candidates_accepted": accepted,
         "candidates_rejected": total - accepted,
         "missing_fixed": fixed,
-        "recheck_missing_remaining": total - fixed,
+        "recheck_performed": False,
+        "recheck_status": "NOT_RUN",
+        "execution_mode": "LOCAL_PROTOTYPE",
+        "image_used": False,
     }
 
 
@@ -79,7 +76,8 @@ def run_repair(rep_input, out_dir, *, workspace, artifact_root, job_id=None):
     candidates: list[CandidateResult] = []
     fixed_count = 0
     for finding in missing:
-        generated = generate_patch_for_missing(current, rules, variables, finding)
+        current_rules, current_variables = parse_makefile(current)
+        generated = generate_patch_for_missing(current, current_rules, current_variables, finding)
         if generated is None:
             candidates.append(
                 CandidateResult(
@@ -109,7 +107,6 @@ def run_repair(rep_input, out_dir, *, workspace, artifact_root, job_id=None):
     rejected = [c for c in candidates if not c.accepted]
     patch = make_unified_diff(original, current, info[1])
     patch_bytes = patch.encode("utf-8")
-    patch_sha = sha256_hex(patch_bytes)
 
     style_report = {
         "declaration_style": style,
@@ -122,7 +119,7 @@ def run_repair(rep_input, out_dir, *, workspace, artifact_root, job_id=None):
             {"name": v.name, "value": v.value, "line": v.line_no}
             for v in variables
         ],
-        "scope": "simple explicit Makefile rules",
+        "scope": "simple target, single-variable macro/hybrid, and %.o: %.c fixtures",
         "missing_fixed": fixed_count,
         "missing_total": len(missing),
         "rejected_reasons": [
@@ -136,6 +133,7 @@ def run_repair(rep_input, out_dir, *, workspace, artifact_root, job_id=None):
     }
 
     test_result = {
+        "candidates": [asdict(candidate) for candidate in candidates],
         "candidates_total": len(candidates),
         "candidates_accepted": accepted,
         "candidates_rejected": len(rejected),
@@ -154,7 +152,7 @@ def run_repair(rep_input, out_dir, *, workspace, artifact_root, job_id=None):
         ],
         "recheck": {
             "status": "NOT_RUN",
-            "reason": "BuildChecker/EChecker integration belongs to E3",
+            "reason": "No detector invoked; real A11 integration is deferred",
         },
         "command_timeout_seconds": rep_input.timeout_seconds,
         "max_iterations_note": "one candidate per finding; iterative search not implemented",
@@ -191,11 +189,9 @@ def run_repair(rep_input, out_dir, *, workspace, artifact_root, job_id=None):
         )
     result.patch_uri = result.artifacts[0]["uri"]
     result.patch_sha256 = result.artifacts[0]["sha256"]
-    result.summary = builld_summary(
-        total= len(candidates),
+    result.summary = build_summary(
+        total=len(candidates),
         accepted=accepted,
         fixed=fixed_count,
     )
-    result.patch_bytes = patch.encode("utf-8")
-    result.patch_sha256 = hashlib.sha256(patch.encode("utf-8")).hexdigest()
     return result

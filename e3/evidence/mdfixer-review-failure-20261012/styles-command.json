@@ -1,0 +1,7 @@
+{
+  "command": [
+    "/home/duscwalk/DevOps/lab2/devops-project-b11/.venv/bin/python",
+    "mdfixer/test_styles.py"
+  ],
+  "exit_code": 1
+}

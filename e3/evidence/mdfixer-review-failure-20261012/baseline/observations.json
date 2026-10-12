@@ -1,0 +1,32 @@
+[
+  {
+    "name": "cc-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "make-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "git-available",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "gnu-make",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "E2-slides-integrity",
+    "passed": true,
+    "observed": {}
+  },
+  {
+    "name": "E3-slides-integrity",
+    "passed": true,
+    "observed": {}
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/home/duscwalk/DevOps/lab2/devops-project-b11/.venv/bin/python",
+    "e3/scripts/run_baseline.py",
+    "--out",
+    "/home/duscwalk/DevOps/lab2/devops-project-b11/e3/work/review-20261012-styles-3af8c22-617hssb0/baseline"
+  ],
+  "exit_code": 1
+}

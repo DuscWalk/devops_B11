@@ -1,0 +1,25 @@
+{
+  "checked": 23,
+  "passed": 20,
+  "failed": 3,
+  "errors": [
+    {
+      "file": "mdfixer/mdfixer_engine.py",
+      "line": 44,
+      "message": "invalid syntax (mdfixer_engine.py, line 44)",
+      "source": "        if not info or info[0] != rep_inpts.commit: commit:\n"
+    },
+    {
+      "file": "mdfixer/mdfixer_patch.py",
+      "line": 77,
+      "message": "unmatched ')' (mdfixer_patch.py, line 77)",
+      "source": "        desc = \"add missing dependency \" + dep + \" to variable \" + vname + \" (used by + rule.target + \")\")"
+    },
+    {
+      "file": "mdfixer/test_mdfixer.py",
+      "line": 36,
+      "message": "unterminated string literal (detected at line 36) (test_mdfixer.py, line 36)",
+      "source": "        self.assertEqual(set(rules[0].prerequisites), {'app.c', 'config.h', 'value.h', 'legacy.hg})"
+    }
+  ]
+}

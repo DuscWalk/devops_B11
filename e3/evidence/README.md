@@ -23,3 +23,12 @@
 | [hubo-docker-classifier-failure-20261008](hubo-docker-classifier-failure-20261008/summary.json) | 真正缺 make 的 127 被旧分类器误拒；已修复并回归 |
 
 [archive-audit-20261008.json](archive-audit-20261008.json) 记录 271 个归档文件的 SHA-256 核验、环境指纹复算和成功运行的源码输入/记录 commit 一致性。早期失败保留当时的 dirty 输入清单；不修改原结果。
+
+## 2026-10-12 胡博 MDFixer 修复
+
+| 目录 | 结论与用途 |
+| --- | --- |
+| [mdfixer-review-failure-20261012](mdfixer-review-failure-20261012/README.md) | 保留 3af8c22 的原始语法、导入和接口失败，未覆盖 |
+| [hubo-mdfixer-fix-20261012](hubo-mdfixer-fix-20261012/summary.json) | 修复提交的干净检出；公共 67/67，含 17 项 MDFixer 回归及四风格自动补丁的真实构建 |
+
+本轮代码/文档提交与后续证据归档分开；被测完整源码 SHA 在 source.json。新增修复由胡博授权执行，保留王硕原模块和扩展作者。Docker/fzy 使用 10 月 10 日历史结果，不声称本轮重跑。组员人工复核待实际记录。
