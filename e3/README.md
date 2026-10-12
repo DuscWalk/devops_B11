@@ -2,7 +2,7 @@
 
 小组 B11；配对 A11。孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共验收、证据整合和配对交接。完整课件和要求见 [docs](../docs/README.md)。E2 契约与历史证据保留在 `e2/`。
 
-2026-10-12：公共基线与 DRAFT 材料保留；胡博已修复 MDFixer 分支，完成本轮运行归档；组员人工交叉复核和正式提交仍待完成。三人已完成/未完成内容见 [状态](STATUS.md)、[任务表](Backlog.md)、[贡献](CONTRIBUTIONS.md)，各自下一步见 [交接](HANDOFF.md)。
+2026-10-12：公共基线与 DRAFT 材料保留；胡博已修复 MDFixer、核对作业要求并合入 main，完成运行归档；组员人工交叉复核和正式提交仍待完成。三人已完成/未完成内容见 [状态](STATUS.md)、[任务表](Backlog.md)、[贡献](CONTRIBUTIONS.md)，各自下一步见 [交接](HANDOFF.md)，逐项材料核对见 [作业要求检查](REQUIREMENTS_CHECK.md)。
 
 ## 一键运行
 

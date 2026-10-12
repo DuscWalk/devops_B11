@@ -1,0 +1,147 @@
+{
+  "checked_at": "2026-10-12T22:04:44.399999+08:00",
+  "checked_by": "胡博授权 Codex；系统用户及 Git 身份 duscwalk",
+  "reviewed_head": "565e827032461b221816145b23cd1f682a759cf6",
+  "origin_main_before_merge": "05d9e5e06c89a9f0b7bda7eb12f9fcbea79da1b0",
+  "merge_method": "fast-forward; existing histories retained",
+  "conclusion": "B11 technical materials satisfy the reviewed E3 requirements; ready to merge with open human-review items recorded",
+  "pptx_sources": [
+    {
+      "stage": "E2",
+      "file": "docs/E2_需求与接口契约_20260910.pptx",
+      "sha256": "333c72482782d28dc0dca7f5ab522590b3161cb5e0e14a827cd7cfc44885f902"
+    },
+    {
+      "stage": "E3",
+      "file": "docs/E3_并行测试基线.pptx",
+      "sha256": "dee364f71c39f8c57526dcd4e46a97741d330db6c1e928d615dc208b8b9a930e"
+    }
+  ],
+  "original_lab3_pptx_matches_archive": true,
+  "archive_manifests_checked": 17,
+  "archive_files_sha256_checked": 740,
+  "selected_runs": [
+    {
+      "directory": "e3/evidence/hubo-mdfixer-fix-20261012",
+      "result": "PASS",
+      "checks": 67,
+      "source_commit": "298a8db246dfdf1a40a3477ba4c2faa64694e95a",
+      "recorded_worktree_status": "",
+      "input_files_matching_recorded_commit": 139,
+      "execution_date_utc": "2026-10-12T13:53:57.093725+00:00",
+      "rerun_in_this_merge_check": false
+    },
+    {
+      "directory": "e3/evidence/draft-sjy-20261010-docker-https",
+      "result": "PASS",
+      "checks": 3,
+      "source_commit": "a5d93f9bc2936e151b1135ff97026b74a56a019f",
+      "recorded_worktree_status": "?? e3/evidence/draft-sjy-20261010-docker-final/\n?? e3/evidence/draft-sjy-20261010-docker-proxy/\n?? e3/evidence/draft-sjy-20261010-docker-retry/\n?? e3/evidence/draft-sjy-20261010-docker/\n?? e3/evidence/draft-sjy-20261010-fzy/\n?? e3/evidence/draft-sjy-20261010-local-final/\n?? e3/evidence/draft-sjy-20261010-local/\n",
+      "input_files_matching_recorded_commit": 137,
+      "execution_date_utc": "2026-10-10T15:36:10.005527+00:00",
+      "rerun_in_this_merge_check": false,
+      "unchanged_draft_input_files": 23,
+      "documentation_differences_reviewed": [
+        "draft/E3_PLAN.md",
+        "draft/README.md"
+      ],
+      "documentation_difference_note": "Only progress paragraphs added; build inputs, commands and validation conditions unchanged."
+    },
+    {
+      "directory": "e3/evidence/draft-sjy-20261010-fzy-pinned",
+      "result": "PASS",
+      "checks": 5,
+      "source_commit": "a5d93f9bc2936e151b1135ff97026b74a56a019f",
+      "recorded_worktree_status": "?? e3/evidence/draft-sjy-20261010-docker-final/\n?? e3/evidence/draft-sjy-20261010-docker-proxy/\n?? e3/evidence/draft-sjy-20261010-docker-retry/\n?? e3/evidence/draft-sjy-20261010-docker/\n?? e3/evidence/draft-sjy-20261010-fzy/\n?? e3/evidence/draft-sjy-20261010-local-final/\n?? e3/evidence/draft-sjy-20261010-local/\n",
+      "input_files_matching_recorded_commit": 137,
+      "execution_date_utc": "2026-10-10T15:36:20.227515+00:00",
+      "rerun_in_this_merge_check": false,
+      "unchanged_draft_input_files": 23,
+      "documentation_differences_reviewed": [
+        "draft/E3_PLAN.md",
+        "draft/README.md"
+      ],
+      "documentation_difference_note": "Only progress paragraphs added; build inputs, commands and validation conditions unchanged."
+    }
+  ],
+  "current_input_files_matching_clean_tested_commit": 139,
+  "clean_tested_commit": "298a8db246dfdf1a40a3477ba4c2faa64694e95a",
+  "regressions": {
+    "e2_public": 20,
+    "mdfixer": 17,
+    "e3_evidence": 6,
+    "unified_baseline": 67
+  },
+  "fixed_md_report_matches_source_bundle": true,
+  "requirements": [
+    {
+      "pages": [
+        6,
+        7,
+        8,
+        29,
+        32
+      ],
+      "requirement": "DRAFT 固定项目、构建和功能判据",
+      "status": "PASS"
+    },
+    {
+      "pages": [
+        6,
+        30,
+        31
+      ],
+      "requirement": "可定位的工具链失败及参考容器成功",
+      "status": "PASS"
+    },
+    {
+      "pages": [
+        6,
+        33
+      ],
+      "requirement": "固定 MD 报告、同版本 Makefile、人工补丁依据",
+      "status": "PASS"
+    },
+    {
+      "pages": [
+        34,
+        35,
+        36
+      ],
+      "requirement": "四风格参考、patch 应用、无 clean 头文件重建、隐式 .d",
+      "status": "PASS"
+    },
+    {
+      "pages": [
+        37
+      ],
+      "requirement": "无效候选拒绝、Makefile 恢复及再构建",
+      "status": "PASS"
+    },
+    {
+      "pages": [
+        9,
+        10,
+        12
+      ],
+      "requirement": "README、环境/命令/日志、SHA/贡献、来源和失败记录分开",
+      "status": "PASS"
+    },
+    {
+      "pages": [
+        10
+      ],
+      "requirement": "组员本人相互检查记录",
+      "status": "OPEN: RV-01; automatic execution is not peer sign-off"
+    }
+  ],
+  "open_items": [
+    "孙静怡/王硕本人的人工审阅和 RV-01 记录尚未收到，保留待办。",
+    "LMS 截止时间、提交格式和教师权限需按课程通知确认；本次不代提交 LMS 或创建正式 tag。",
+    "A11 真实数据联调为 E12；重检 NOT_RUN、环境指纹 PROPOSED_B11_ONLY 保持原状态。"
+  ],
+  "limits": [
+    "本轮未重跑 Docker/fzy；核验 10 月 10 日原始证据和相关实现/构建输入，文档仅新增进度段落。",
+    "当前实现与 10 月 12 日干净检出验证的 139 个输入字节一致；未重复运行相同实现。"
+  ]
+}

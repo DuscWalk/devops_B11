@@ -1,14 +1,14 @@
 # E3 三人分工与交接
 
-更新：2026-10-12。胡博已在 `fix/e3-mdfixer-baseline` 修复 MDFixer，并整合 main 与 MDFixer 分支历史。公共基线与模块自动验收通过；DRAFT 的原有运行材料完整保留。当前任务是组员人工复核与正式提交整理，A11 不作为前置条件。
+更新：2026-10-12。胡博已将 `fix/e3-mdfixer-baseline` 的修复及证据合入 main，保留原分支历史；[课件要求核对](REQUIREMENTS_CHECK.md) 已完成。公共基线与模块自动验收通过；DRAFT 的原有运行材料完整保留。当前任务是组员人工复核与正式提交整理，A11 不作为前置条件。
 
-## 接收修复分支
+## 接收 main
 
 先保存自己的改动，再拉取并在独立目录复跑：
 
 ```bash
 git fetch origin
-git worktree add --detach ../b11-e3-review origin/fix/e3-mdfixer-baseline
+git worktree add --detach ../b11-e3-review origin/main
 cd ../b11-e3-review
 python3 -m venv .venv
 .venv/bin/python -m pip install -r e2/requirements.txt
@@ -37,10 +37,10 @@ DRAFT 的 fzy、失败/参考成功、Docker 与环境记录已归档，见 [DRA
 
 ## 给胡博
 
-技术修复、完整文档恢复、本地统一验收和干净检出证据已完成。保留当前修复分支供组员接收，不把它提前标为正式小组提交。
+技术修复、完整文档恢复、本地统一验收和干净检出证据已完成。已按胡博指令合入 main，供组员复核；合并不登记为人工复核或 LMS 提交。
 
 1. 收齐两人的 RV-01 记录，处理实际发现的问题。
-2. 审阅并将修复分支合入 main；若又有新代码进入，针对差异复验。
+2. 后续若有新代码进入 main，针对差异复验；本轮已完成合并。
 3. 最终提交时核对公共和 Docker 记录的版本、日期与适用范围；本轮未重新运行 Docker，现有记录来自 10 月 10 日。
 4. 更新提交清单，确定正式 SHA/归档及 E3 tag，按 LMS 的格式和截止要求提交。
 
