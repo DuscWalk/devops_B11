@@ -10,3 +10,6 @@
 
 # Preserve the instructor supplement byte-for-byte (sources.json).
 docs/e4/Other-Instructions.txt -text whitespace=cr-at-eol
+
+# Evidence is archived byte-for-byte, including terminal whitespace.
+e4/evidence/** -text -whitespace

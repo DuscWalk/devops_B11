@@ -1,0 +1,6 @@
+               total        used        free      shared  buff/cache   available
+Mem:           1.7Gi       471Mi       166Mi       2.0Mi       1.1Gi       1.1Gi
+Swap:             0B          0B          0B
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        79G  6.1G   70G   9% /
+-- No entries --

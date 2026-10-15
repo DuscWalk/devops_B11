@@ -1,0 +1,25 @@
+{
+  "date_china": "2026-10-16",
+  "executor": "胡博授权 Codex 执行",
+  "student_id": "241276007",
+  "source_sha": "9765d5794fe43a0c5496be969004d3b84d5b740f",
+  "full_run": "work/20261015T162726-492220498Z",
+  "verification_run": "work/20261015T163103-560051893Z-verification",
+  "make_all_exit_code": 0,
+  "service_tests": {
+    "passed": 4,
+    "total": 4
+  },
+  "history_regressions": {
+    "passed": 2,
+    "total": 2
+  },
+  "fake_key_detected": true,
+  "cleaned_scan_passed": true,
+  "env_ignored": true,
+  "env_permissions": "600",
+  "container_user": "app (uid 10001)",
+  "physical_memory_gib": 1.7,
+  "member_reproduction": "PENDING",
+  "cross_group_readme_reproduction": "PENDING"
+}
