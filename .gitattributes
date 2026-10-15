@@ -9,4 +9,4 @@
 *.patch -text -whitespace
 
 # Preserve the instructor supplement byte-for-byte (sources.json).
-docs/e4/Other-Instructions.txt -text
+docs/e4/Other-Instructions.txt -text whitespace=cr-at-eol
