@@ -1,0 +1,30 @@
+{
+  "archived_on": "2026-10-16",
+  "files": [
+    {
+      "file": "E4_可重复工程环境_20260929_鼓楼.pptx",
+      "sha256": "69d614639c8ae19e9e27ca98fa0caef5479eabf9d36768cc90631003c834b01f",
+      "source": "/home/duscwalk/DevOps/lab4/E4_可重复工程环境_20260929_鼓楼.pptx"
+    },
+    {
+      "file": "E4_可重复工程环境.pptx",
+      "sha256": "a64c770bd227a893204d0dbe6b36c398b2521519bb95e8046b6fcd14b2460ca1",
+      "source": "/home/duscwalk/DevOps/lab4/E4_可重复工程环境.pptx"
+    },
+    {
+      "file": "E4实验包.zip",
+      "sha256": "689694f368ac36ed6fcd5d94eec08ea7b89365973e2c4804324c3b2188234f4d",
+      "source": "/home/duscwalk/DevOps/lab4/E4实验包.zip"
+    },
+    {
+      "file": "Other-Instructions.txt",
+      "sha256": "6b1c82eddf4da2a7fb95efa53a0d521399ea63d0ad73a7788d269e55ac74abc1",
+      "source": "/home/duscwalk/DevOps/lab4/Other-Instructions.txt"
+    },
+    {
+      "file": "服务器登录.png",
+      "sha256": "116640fcd905ee82a7c608470febde1c2d34a9e6a3da1cfcf9435789e287e687",
+      "source": "/home/duscwalk/DevOps/lab4/服务器登录.png"
+    }
+  ]
+}
