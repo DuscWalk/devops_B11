@@ -68,3 +68,5 @@ make scan   # 应通过，另存清理后的证据目录
 保留固定基础镜像 digest 和 Python 包哈希；新增显式 2 GB 配置、完整构建输出、源码 SHA 证据、串行执行及每学号的 smoke 镜像标签；旧 Git 历史含非 UTF-8 文本时扫描按替代字符解码，ASCII 密钥模式照常扫描；限制 Docker 构建上下文为 E4 服务和样例，避免带入 E2/E3 工件。
 
 当前完成情况和执行记录见 [STATUS.md](STATUS.md)。
+
+云端实测原 Debian 源下载较慢，本组服务 Dockerfile 改用华为 Debian HTTPS 镜像（保留原 Debian 签名验证），地址和实际软件版本写入 toolchain.lock。基础镜像 digest 与 Python 包哈希不变。

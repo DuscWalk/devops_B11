@@ -20,10 +20,12 @@ ENV LC_ALL=C.UTF-8 \
 COPY --from=docker-cli /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=docker-cli /usr/local/libexec/docker/cli-plugins/docker-buildx /usr/local/libexec/docker/cli-plugins/docker-buildx
 
-RUN apt-get update \
+RUN sed -i 's|http://deb.debian.org/debian|https://repo.huaweicloud.com/debian|g' /etc/apt/sources.list.d/debian.sources \
+ && apt-get update \
  && apt-get install -y --no-install-recommends git \
  && rm -rf /var/lib/apt/lists/* \
  && dpkg-query -W -f='${Package}=${Version}\n' git > /opt/toolchain.lock \
+ && echo 'apt-mirror=https://repo.huaweicloud.com/debian' >> /opt/toolchain.lock \
  && echo "docker-cli=$(docker --version)" >> /opt/toolchain.lock \
  && echo "python3=$(python3 -c 'import platform; print(platform.python_version())')" >> /opt/toolchain.lock \
  && echo "arch=$(dpkg --print-architecture)" >> /opt/toolchain.lock
