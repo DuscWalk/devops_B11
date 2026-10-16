@@ -31,6 +31,3 @@ Thumbs.db
 /E3_并行测试基线.pptx
 # E3 disposable runs; selected text evidence is explicitly exported
 /e3/work/
-
-# E4 per-run evidence (selected submission evidence lives under e4/evidence)
-/work/
