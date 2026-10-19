@@ -1,6 +1,6 @@
 # B11 E4 提交材料说明
 
-日期：2026-10-16。当前为**胡博已完成部分 + 公共环境交接材料**。组员独立运行、至少两人结果对照、相邻组 README 复现尚未完成，补齐后才能作为全组最终提交。
+更新：2026-10-19。当前包括**公共环境、胡博及孙静怡授权执行的个人运行证据、两份结果对照**。王硕个人记录、成员人工审阅及相邻组 README 复现仍待补齐，不能登记全组已正式提交。
 
 ## 已备材料
 
@@ -9,6 +9,7 @@
 - 公共工程：根目录 Makefile、compose.yaml、requirements-dev.lock、services/draft、scripts、fixtures/draft。
 - 验收与差异：[STATUS](STATUS.md)、[PPT 对比](../docs/e4/PPT_COMPARISON.md)。
 - 胡博原始证据：[evidence/hu-bo-20261016](evidence/hu-bo-20261016/README.md)，包含完整流程、非 root Docker 访问、假 Key 检测和清理记录及逐文件摘要。
+- 孙静怡原始证据及对照：[evidence/sun-jingyi-20261019](evidence/sun-jingyi-20261019/README.md)，同一 SHA、新个人克隆、完整流程及两次扫描；工具清单字节一致、测试与冒烟结论一致。
 - 每位成员贡献：[CONTRIBUTIONS](CONTRIBUTIONS.md)；其他成员填写 [MEMBER_RUN_TEMPLATE](MEMBER_RUN_TEMPLATE.md)。
 - 操作和交接：[README](README.md)、[HANDOFF](HANDOFF.md)。
 - 课件、教师实验包原件及摘要：docs/e4/。
@@ -23,8 +24,8 @@
 
 ## 最终提交前补齐
 
-1. 孙静怡、王硕在自己学号目录运行同一 SHA，交回成功日志、负向扫描日志和真实贡献说明。
-2. 填写至少两位成员的 toolchain/test/smoke 对照，解释差异。
+1. 王硕在自己学号目录运行同一 SHA，交回成功日志、负向扫描日志和真实贡献说明；孙静怡运行材料已齐，待本人审阅及组长接收。
+2. 审阅已归档的孙静怡/胡博 toolchain/test/smoke 对照；镜像 ID 不同、工具版本与结论一致。该对照不等于双方新增人工确认。
 3. 留下相邻组仅按 README 重跑的实际反馈。
 4. 由胡博汇总，按课程平台要求统一提交；补充通知未规定固定文件格式或截止时间。
 
