@@ -1,4 +1,4 @@
-# DevOps B11 · E2 接口契约 / E3 测试基线
+# DevOps B11 · E2 接口契约 / E3 测试基线 / E4 可重复环境
 
 B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与联调。配对组 A11 负责 BuildChecker、EChecker。
 
@@ -6,7 +6,11 @@ B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与
 
 2026-09-22，胡博明确确认 A11 已认可前序接口方案；确认来源和范围见 [AGREEMENT.md](e2/AGREEMENT.md)。三人分支保留提交历史并合入交付版本。正式 Schema、四类请求/响应、错误样例、产物、设计记录、贡献与验证结果已集中归档。
 
-## 快速验证
+## E4 入口
+
+本次实验见 [E4 操作与交接](e4/README.md)、[执行状态](e4/STATUS.md)、[两版 PPT 差异](docs/e4/PPT_COMPARISON.md)。服务器每位组员各自克隆同一源码 SHA，在本人学号身份下运行 `make all`。默认采用经说明的 B11 2 GB 配置，真实资源和原模板差异写入证据。
+
+## E2 快速验证
 
 需要 Linux/WSL、Python 3.10+、Git、Make 和 C 编译器。仓库根目录运行：
 

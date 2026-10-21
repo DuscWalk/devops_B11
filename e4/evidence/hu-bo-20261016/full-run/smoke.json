@@ -1,0 +1,21 @@
+{
+  "fixture": "fixtures/draft",
+  "docker_server": "29.1.3",
+  "build_exit_code": 1,
+  "build_seconds": 0.8,
+  "build_log": "#0 building with \"default\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.broken\n#1 transferring dockerfile: 225B done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 57B done\n#3 DONE 0.0s\n\n#4 [1/4] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74\n#4 resolve m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 0.0s done\n#4 CACHED\n\n#5 [internal] load build context\n#5 transferring context: 245B done\n#5 DONE 0.1s\n\n#6 [2/4] WORKDIR /work\n#6 DONE 0.1s\n\n#7 [3/4] COPY main.c Makefile ./\n#7 DONE 0.0s\n\n#8 [4/4] RUN make\n#8 0.173 /bin/sh: 1: make: not found\n#8 ERROR: process \"/bin/sh -c make\" did not complete successfully: exit code: 127\n------\n > [4/4] RUN make:\n0.173 /bin/sh: 1: make: not found\n------\nDockerfile.broken:4\n--------------------\n   2 |     WORKDIR /work\n   3 |     COPY main.c Makefile ./\n   4 | >>> RUN make\n   5 |     CMD [\"./hello\"]\n   6 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c make\" did not complete successfully: exit code: 127\n",
+  "log_tail": [
+    "--------------------",
+    "   2 |     WORKDIR /work",
+    "   3 |     COPY main.c Makefile ./",
+    "   4 | >>> RUN make",
+    "   5 |     CMD [\"./hello\"]",
+    "   6 |     ",
+    "--------------------",
+    "ERROR: failed to build: failed to solve: process \"/bin/sh -c make\" did not complete successfully: exit code: 127"
+  ],
+  "make_error_line": "#8 0.173 /bin/sh: 1: make: not found",
+  "make_not_found": true,
+  "passed": true,
+  "note": "E4 验证构建链路并保存完整日志；错误定位和修复属于 E5/E6"
+}

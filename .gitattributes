@@ -7,3 +7,9 @@
 *.bundle binary
 # Unified diff context lines contain intentional leading spaces and tabs.
 *.patch -text -whitespace
+
+# Preserve the instructor supplement byte-for-byte (sources.json).
+docs/e4/Other-Instructions.txt -text whitespace=cr-at-eol
+
+# Evidence is archived byte-for-byte, including terminal whitespace.
+e4/evidence/** -text -whitespace

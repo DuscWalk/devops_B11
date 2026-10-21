@@ -1,0 +1,20 @@
+# 胡博 E4 云端证据
+
+执行日期：2026-10-16（北京时间）。目录使用 UTC，`20261015T16…Z` 对应北京时间 10 月 16 日零点以后。
+
+- 来源：华为云 HuaweiDevOps，`/home/duscwalk/241276007/draft`。
+- 执行：胡博授权 Codex，以 duscwalk 系统用户、本地 Git 学号 241276007 运行。
+- 完整源码 SHA：`9765d5794fe43a0c5496be969004d3b84d5b740f`；开始运行时工作区干净。
+- 完整流程原目录：`work/20261015T162726-492220498Z`，退出码 0。
+- 补充核验原目录：`work/20261015T163103-560051893Z-verification`。
+- 服务镜像：`e4-draft:241276007`；本地 image ID：`sha256:d1fa4d6bb7a26fe578fe346ce28e00acc15761a7a5b62d188855ce6b58e146fa`。未发布 registry。
+
+`full-run/` 保留构建、测试、smoke、扫描及环境原始文件。4 项单测通过；预期缺少 make 的构建返回非零，smoke passed=true。`smoke-build.log` 与 JSON 内完整日志逐字一致。
+
+`verification/` 保留非 root app 访问宿主机 Docker、两项扫描器回归、假 Key 被检出及清理后通过的证据。`teacher-profile.json` 的失败是原 3.5 GiB 阈值的预期结果，用来展示与本组 2 GB 配置的差异，不是完整流程失败。假 Key 只暂存、从未提交，日志中值已遮蔽。`.env` 未被跟踪且权限为 600。
+
+首轮 c250e93 在原 Debian 源下载停滞，人工中断构建（130）；改用华为源后在上述 SHA 完整通过。首轮原始记录仍保留在服务器和本地 `work/e4-cloud-20261016/work/20261015T161910-424040462Z`，不计入成功证据。
+
+E3 回归为本地 WSL 实际重跑的 67/67，附原 summary/source/environment；其全部原始命令与工件保留于仓库 `e3/work/20261015T161949Z-1fe0bcd1`（忽略目录）。本轮未重跑 E3 Docker 验证，不把历史 Docker 结果当成本轮结果。
+
+这些证据只属于胡博，孙静怡、王硕独立运行和相邻组 README 复现仍待完成。`SHA256SUMS.json` 对选定证据逐文件计算摘要。
