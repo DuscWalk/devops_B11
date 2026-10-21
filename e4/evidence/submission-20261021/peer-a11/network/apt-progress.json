@@ -1,0 +1,62 @@
+[
+  {
+    "time_utc": "2026-10-21T12:14:36.460225+00:00",
+    "processes": [
+      {
+        "apt_pid": "1706841",
+        "downloads": [
+          {
+            "file": "deb.debian.org_debian_dists_trixie_main_binary-amd64_Packages.xz",
+            "bytes": 2048422,
+            "mtime": 1792584876.330082
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "time_utc": "2026-10-21T12:18:23.458989+00:00",
+    "processes": [
+      {
+        "apt_pid": "1706841",
+        "downloads": [
+          {
+            "file": "deb.debian.org_debian_dists_trixie_main_binary-amd64_Packages.xz",
+            "bytes": 4386630,
+            "mtime": 1792585103.363136
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "time_utc": "2026-10-21T12:22:47.907910+00:00",
+    "processes": [
+      {
+        "apt_pid": "1706841",
+        "downloads": [
+          {
+            "file": "deb.debian.org_debian_dists_trixie_main_binary-amd64_Packages.xz",
+            "bytes": 7167702,
+            "mtime": 1792585367.6643884
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "time_utc": "2026-10-21T12:25:14.118067+00:00",
+    "processes": [
+      {
+        "apt_pid": "1706841",
+        "downloads": [
+          {
+            "file": "deb.debian.org_debian_dists_trixie_main_binary-amd64_Packages.xz",
+            "bytes": 8648662,
+            "mtime": 1792585514.049158
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "time_utc": "2026-10-21T12:07:55.592522+00:00",
+  "build_elapsed_seconds": 309,
+  "signal": "SIGTERM",
+  "target": "timeout 900 docker compose --progress=plain build",
+  "reason": "Operator stopped this review attempt after approximately five minutes; build log remained at download of Debian trixie/main amd64 Packages. This is not expiry of the Makefile 900-second timeout."
+}

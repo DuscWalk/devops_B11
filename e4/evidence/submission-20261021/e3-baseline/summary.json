@@ -1,0 +1,28 @@
+{
+  "suite": "b11-e3-hubo-local-baseline",
+  "result": "PASS",
+  "started_at_utc": "2026-10-21T11:50:12.159551+00:00",
+  "ended_at_utc": "2026-10-21T11:50:44.919491+00:00",
+  "checks_passed": 67,
+  "checks_total": 67,
+  "commands_recorded": 82,
+  "error": null,
+  "cross_group_read_verified": false,
+  "a11_detector_recheck": "NOT_RUN",
+  "reference_styles": [
+    "target",
+    "macro",
+    "hybrid",
+    "implicit"
+  ],
+  "reference_patches_are_manual": true,
+  "prototype_supported_styles": [
+    "simple-explicit-target",
+    "single-variable-macro",
+    "single-variable-hybrid",
+    "simple-c-object-pattern"
+  ],
+  "prototype_scope": "limited fixtures; see mdfixer/README.md",
+  "docker_validation": "NOT_RUN_BY_THIS_COMMAND",
+  "environment_hash_status": "PROPOSED_B11_ONLY"
+}

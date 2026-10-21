@@ -1,0 +1,20 @@
+{
+  "source_sha": "b45d2d5ba9f04ac24276e54b5f0e0c5c4bac8c78",
+  "e4_commits": [
+    "0a8629f47b5453e2b77d914a85e37475f908eebf 邱 添 <241250091@smail.nju.edu.cn> e4分支产物已提交，合并到main"
+  ],
+  "tracked_member_reports": [
+    "e4/work/RERUN-241250090.md",
+    "e4/work/RERUN-241250091.md",
+    "e4/work/RERUN-241250095.md"
+  ],
+  "root_readme_present": false,
+  "e4_readme_present": true,
+  "notes": [
+    "E4 commit author is a Chinese name; the email contains the student number. The current PPT asks for student number as author name.",
+    "Root README.md is absent. E4 commands are documented in e4/README.md.",
+    "e4/work tracks three RERUN Markdown reports; original per-run env/build/test/smoke/scan files are not tracked there.",
+    "e4/README.md section 10 still says other members have not filled rerun results; three RERUN documents are already present.",
+    "Generated e4/work run directory is not ignored; post-run status reports it as untracked."
+  ]
+}

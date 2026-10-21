@@ -10,7 +10,7 @@ B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与
 
 **E4 提交入口：[提交说明](e4/SUBMISSION.md)、[实验报告](e4/REPORT.md)、[三人贡献](e4/CONTRIBUTIONS.md)。固定标签：`e4-b11-submission-20261021`。**
 
-三人的运行日志和对照已整合：单测各 4/4，冒烟与密钥扫描通过；相邻组复现记录尚未提供。操作见 [E4 README](e4/README.md)，实际所测 SHA 差异见 [对照说明](e4/COMPARISON.md)，当前状态见 [STATUS](e4/STATUS.md)。默认采用经说明的 B11 2 GB 配置，真实资源和原模板差异写入证据。
+三人的运行日志和对照已整合：单测各 4/4，冒烟与密钥扫描通过；B11 对 A11 的 README 复现记录见 [互评记录](e4/PEER_REVIEW_A11.md)，尚未收到 A11 对 B11 的复现反馈。操作见 [E4 README](e4/README.md)，实际所测 SHA 差异见 [对照说明](e4/COMPARISON.md)，当前状态见 [STATUS](e4/STATUS.md)。默认采用经说明的 B11 2 GB 配置，真实资源和原模板差异写入证据。
 
 ## E2 快速验证
 

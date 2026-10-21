@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "command": "COMPOSE_FILE=compose.yaml:/home/duscwalk/241276007/a11-e4-mirror-diagnostic-20261021/compose.mirror.yaml make all IMAGE=e4-buildchecker:241276007-a11-diagnostic",
+  "make_all_exit_code": 0,
+  "source_sha": "b45d2d5ba9f04ac24276e54b5f0e0c5c4bac8c78",
+  "tests_passed": 9,
+  "smoke": "PASS",
+  "worktree_history_image_scan_findings": 0,
+  "started_at_utc": "2026-10-21T12:15:39Z",
+  "ended_at_utc": "2026-10-21T12:16:14Z",
+  "original_readme_unchanged_reproduction": false,
+  "changes": [
+    "Debian source host/scheme changed to Huawei HTTPS, retaining signature validation",
+    "PIP_INDEX_URL build argument set to Huawei mirror, retaining pip --require-hashes",
+    "Separate image tag and external Dockerfile/Compose overlay; no A11 tracked source edits"
+  ],
+  "toolchain_sha256": "a5459a49cde9e2299c18eff4dbf581d85277df056eebb043a90a81e0c7615214",
+  "limits": "Runs on same host while original download continues; not a bitwise image or clean-host reproducibility claim."
+}

@@ -1,0 +1,77 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 599B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.10kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+#3 DONE 5.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 120B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 25.18kB done
+#5 DONE 0.0s
+
+#6 [1/9] FROM docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+#6 resolve docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f 0.0s done
+#6 sha256:2f5b06adfd9138ef928aaf8b34f3fecf122b137a537133dfe421509dd57b4a47 0B / 250B 0.2s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 0B / 11.92MB 0.2s
+#6 sha256:65a67aec859c5fafe6ca38c2ed07825c97acf3febdcf62b79441a1bfca4f3a4a 0B / 1.29MB 0.2s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 0B / 29.84MB 0.2s
+#6 sha256:2f5b06adfd9138ef928aaf8b34f3fecf122b137a537133dfe421509dd57b4a47 250B / 250B 1.6s done
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 2.10MB / 29.84MB 3.5s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 4.19MB / 29.84MB 3.8s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 0B / 11.92MB 5.3s
+#6 sha256:65a67aec859c5fafe6ca38c2ed07825c97acf3febdcf62b79441a1bfca4f3a4a 0B / 1.29MB 5.3s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 1.05MB / 11.92MB 5.7s
+#6 sha256:65a67aec859c5fafe6ca38c2ed07825c97acf3febdcf62b79441a1bfca4f3a4a 1.05MB / 1.29MB 5.6s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 2.10MB / 11.92MB 6.9s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 3.15MB / 11.92MB 7.7s
+#6 sha256:65a67aec859c5fafe6ca38c2ed07825c97acf3febdcf62b79441a1bfca4f3a4a 1.29MB / 1.29MB 7.9s done
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 6.29MB / 29.84MB 8.6s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 4.19MB / 11.92MB 9.9s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 8.39MB / 29.84MB 10.5s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 5.24MB / 11.92MB 12.5s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 10.49MB / 29.84MB 12.9s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 6.29MB / 11.92MB 15.3s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 12.58MB / 29.84MB 15.9s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 7.34MB / 11.92MB 17.9s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 14.68MB / 29.84MB 18.8s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 16.78MB / 29.84MB 21.0s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 8.39MB / 11.92MB 21.5s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 9.44MB / 11.92MB 23.7s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 18.87MB / 29.84MB 23.6s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 10.49MB / 11.92MB 26.6s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 20.97MB / 29.84MB 27.0s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 23.07MB / 29.84MB 29.3s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 11.53MB / 11.92MB 29.6s
+#6 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 11.92MB / 11.92MB 30.5s done
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 25.17MB / 29.84MB 31.5s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 27.26MB / 29.84MB 33.5s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 29.36MB / 29.84MB 36.0s
+#6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 29.84MB / 29.84MB 36.8s done
+#6 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e
+#6 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 0.7s done
+#6 DONE 37.7s
+
+#6 [1/9] FROM docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+#6 extracting sha256:65a67aec859c5fafe6ca38c2ed07825c97acf3febdcf62b79441a1bfca4f3a4a 0.1s done
+#6 extracting sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446
+#6 extracting sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 0.3s done
+#6 DONE 38.1s
+
+#6 [1/9] FROM docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+#6 extracting sha256:2f5b06adfd9138ef928aaf8b34f3fecf122b137a537133dfe421509dd57b4a47 0.0s done
+#6 DONE 38.1s
+
+#7 [2/9] RUN apt-get update  && apt-get install -y --no-install-recommends       gcc make libc6-dev strace git  && rm -rf /var/lib/apt/lists/*  && dpkg-query -W -f='${Package}=${Version}\n'       gcc make libc6-dev strace git       > /opt/toolchain.lock
+#7 2.044 Hit:1 http://deb.debian.org/debian trixie InRelease
+#7 2.394 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#7 2.906 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#7 4.901 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+

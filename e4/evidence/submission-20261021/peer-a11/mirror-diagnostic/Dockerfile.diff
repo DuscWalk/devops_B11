@@ -1,0 +1,12 @@
+--- a/e4/services/buildchecker/Dockerfile
++++ diagnostic/Dockerfile
+@@ -7,7 +7,8 @@
+     PYTHONUNBUFFERED=1 \
+     PIP_DISABLE_PIP_VERSION_CHECK=1
+ 
+-RUN apt-get update \
++RUN sed -i 's|http://deb.debian.org|https://mirrors.huaweicloud.com|g' /etc/apt/sources.list.d/debian.sources \
++ && apt-get update \
+  && apt-get install -y --no-install-recommends \
+       gcc make libc6-dev strace git \
+  && rm -rf /var/lib/apt/lists/* \

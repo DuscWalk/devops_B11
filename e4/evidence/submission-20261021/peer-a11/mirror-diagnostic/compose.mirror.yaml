@@ -1,0 +1,7 @@
+services:
+  buildchecker:
+    image: e4-buildchecker:241276007-a11-diagnostic
+    build:
+      dockerfile: /home/duscwalk/241276007/a11-e4-mirror-diagnostic-20261021/Dockerfile
+      args:
+        PIP_INDEX_URL: https://mirrors.huaweicloud.com/repository/pypi/simple

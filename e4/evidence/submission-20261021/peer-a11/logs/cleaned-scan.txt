@@ -1,0 +1,9 @@
+E4 secret scan
+timestamp_utc=2026-10-21T12:04:26.816775+00:00
+[SCAN] worktree files=112
+[PASS] no matching secret pattern
+[SCAN] git history
+[PASS] no matching secret pattern
+[SCAN] image SKIPPED
+[PASS] no matching secret pattern
+[RESULT] findings=0

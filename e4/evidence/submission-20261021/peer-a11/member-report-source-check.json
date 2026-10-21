@@ -1,0 +1,56 @@
+[
+  {
+    "report": "e4/work/RERUN-241250090.md",
+    "report_sha256": "4d4151d03e2b457a894c65ef3c95c246d5b691113bce308b2f977b4665c7d06b",
+    "cited_tested_commits": [
+      {
+        "sha": "98dc35c119bb392b795e9fe0ba9e86dfcd07bf1c",
+        "available_in_supplied_repository": false,
+        "direct_fetch_exit_code": 0,
+        "direct_fetch_output": "From git.nju.edu.cn:devops-group11/devops-group11\n * branch            98dc35c119bb392b795e9fe0ba9e86dfcd07bf1c -> FETCH_HEAD\n",
+        "available_after_direct_fetch": true,
+        "runtime_files_different_from_reviewed_main": []
+      }
+    ]
+  },
+  {
+    "report": "e4/work/RERUN-241250091.md",
+    "report_sha256": "9547f55ca918048cf5c114455774795cb3c8aa7c7bfc1cbc78a4f495c48c90b6",
+    "cited_tested_commits": [
+      {
+        "sha": "ff52bbe6ba7d2358c46f3317eb30b5def4106890",
+        "available_in_supplied_repository": false,
+        "direct_fetch_exit_code": 0,
+        "direct_fetch_output": "From git.nju.edu.cn:devops-group11/devops-group11\n * branch            ff52bbe6ba7d2358c46f3317eb30b5def4106890 -> FETCH_HEAD\n",
+        "available_after_direct_fetch": true,
+        "runtime_files_different_from_reviewed_main": [
+          "e4/scripts/secret_scan.py",
+          "e4/services/buildchecker/buildchecker/__init__.py",
+          "e4/services/buildchecker/buildchecker/__main__.py",
+          "e4/services/buildchecker/pytest.ini",
+          "e4/services/buildchecker/tests/test_cli.py"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "e4/work/RERUN-241250095.md",
+    "report_sha256": "50cf81416124ebf21c6aa508e19156fa0389fdb3be3020ec97cd44712bf17fbc",
+    "cited_tested_commits": [
+      {
+        "sha": "57bab6d99ff665c6ac49c66a25bc6ae5088165eb",
+        "available_in_supplied_repository": false,
+        "direct_fetch_exit_code": 0,
+        "direct_fetch_output": "From git.nju.edu.cn:devops-group11/devops-group11\n * branch            57bab6d99ff665c6ac49c66a25bc6ae5088165eb -> FETCH_HEAD\n",
+        "available_after_direct_fetch": true,
+        "runtime_files_different_from_reviewed_main": [
+          "e4/scripts/secret_scan.py",
+          "e4/services/buildchecker/buildchecker/__init__.py",
+          "e4/services/buildchecker/buildchecker/__main__.py",
+          "e4/services/buildchecker/pytest.ini",
+          "e4/services/buildchecker/tests/test_cli.py"
+        ]
+      }
+    ]
+  }
+]

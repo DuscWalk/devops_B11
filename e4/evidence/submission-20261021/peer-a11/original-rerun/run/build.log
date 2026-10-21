@@ -1,0 +1,29 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 599B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.10kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 120B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f
+#5 resolve docker.io/library/python:3.13-slim@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f 0.0s done
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 1.01kB done
+#6 DONE 0.0s
+
+#7 [2/9] RUN apt-get update  && apt-get install -y --no-install-recommends       gcc make libc6-dev strace git  && rm -rf /var/lib/apt/lists/*  && dpkg-query -W -f='${Package}=${Version}\n'       gcc make libc6-dev strace git       > /opt/toolchain.lock
+#7 2.847 Hit:1 http://deb.debian.org/debian trixie InRelease
+#7 3.060 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#7 3.586 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#7 4.219 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+

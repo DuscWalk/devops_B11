@@ -1,0 +1,9 @@
+E4 secret scan
+timestamp_utc=2026-10-21T12:04:26.759741+00:00
+[SCAN] worktree files=113
+[FOUND] scope=worktree:e4/secret-probe.txt kind=openai_key line=1 value=sk-B***(27)
+[SCAN] git history
+[PASS] no matching secret pattern
+[SCAN] image SKIPPED
+[PASS] no matching secret pattern
+[RESULT] findings=1

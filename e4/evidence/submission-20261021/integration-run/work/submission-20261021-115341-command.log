@@ -1,0 +1,188 @@
+/etc/bash.bashrc: line 7: PS1: unbound variable
+/etc/bash.bashrc: line 7: PS1: unbound variable
+/etc/bash.bashrc: line 7: PS1: unbound variable
+/etc/bash.bashrc: line 7: PS1: unbound variable
+/etc/bash.bashrc: line 7: PS1: unbound variable
+/etc/bash.bashrc: line 7: PS1: unbound variable
+git rev-parse HEAD > work/20261021T115341-957532821Z/source-sha.txt
+/etc/bash.bashrc: line 7: PS1: unbound variable
+git status --porcelain > work/20261021T115341-957532821Z/source-status.txt
+/etc/bash.bashrc: line 7: PS1: unbound variable
+python3 scripts/doctor.py --profile b11-2gb --out work/20261021T115341-957532821Z/env.json
+/etc/bash.bashrc: line 7: PS1: unbound variable
+{
+  "time": "2026-10-21T11:53:42.005977+00:00",
+  "hostname": "ecs-19dd",
+  "os": "Ubuntu 22.04.5 LTS",
+  "kernel": "5.15.0-186-generic",
+  "arch": "x86_64",
+  "spec": {
+    "cpus": 2,
+    "mem_gib": 1.7,
+    "disk_gib": 69.0
+  },
+  "tools": {
+    "docker": "29.1.3",
+    "compose": "2.40.3+ds1-0ubuntu1~22.04.1",
+    "buildx": "github.com/docker/buildx 0.30.1 0.30.1-0ubuntu1~22.04.1",
+    "git": "git version 2.34.1",
+    "make": "GNU Make 4.3",
+    "python3": "Python 3.10.12"
+  },
+  "problems": [],
+  "warnings": [
+    "B11 按助教 2 GB 参考配置运行；原模板要求 3.5 GiB，实际构建与测试须另行通过",
+    "cpus=2 低于建议值 4",
+    "mem_gib=1.7 低于建议值 8",
+    "disk_gib=69.0 低于建议值 100"
+  ],
+  "resource_policy": {
+    "profile": "b11-2gb",
+    "minimum": {
+      "cpus": 2,
+      "mem_gib": 1.5,
+      "disk_gib": 40
+    },
+    "teacher_minimum": {
+      "cpus": 2,
+      "mem_gib": 3.5,
+      "disk_gib": 40
+    },
+    "basis": "胡博 2026-10-16 转述助教参考配置为 2 GB"
+  },
+  "docker_sock_gid": 120,
+  "registry_mirrors": [
+    "https://docker.m.daocloud.io/",
+    "https://docker.1ms.run/",
+    "https://docker.1panel.live/",
+    "https://swr.cn-east-3.myhuaweicloud.com/"
+  ],
+  "git": {
+    "user.name": "241276007",
+    "user.email": "241276007@smail.nju.edu.cn"
+  }
+}
+
+环境自检：通过
+docker compose -p e4-draft-241276007 --progress=plain build 2>&1 | tee work/20261021T115341-957532821Z/build.log; test ${PIPESTATUS[0]} -eq 0
+/etc/bash.bashrc: line 7: PS1: unbound variable
+#1 [internal] load local bake definitions
+#1 reading from stdin 540B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.42kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for m.daocloud.io/docker.io/library/docker@sha256:9190b0613792e658a7783cf14b2d5ace5941bb68ede7276922ea36ee457d76ad
+#3 DONE 0.3s
+
+#4 [internal] load metadata for m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#4 DONE 1.6s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 319B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 10.15kB done
+#6 DONE 0.0s
+
+#7 [stage-1  1/10] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#7 resolve m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 0.0s done
+#7 DONE 0.0s
+
+#8 [docker-cli 1/1] FROM m.daocloud.io/docker.io/library/docker@sha256:9190b0613792e658a7783cf14b2d5ace5941bb68ede7276922ea36ee457d76ad
+#8 resolve m.daocloud.io/docker.io/library/docker@sha256:9190b0613792e658a7783cf14b2d5ace5941bb68ede7276922ea36ee457d76ad 0.0s done
+#8 DONE 0.0s
+
+#9 [stage-1  8/10] WORKDIR /app
+#9 CACHED
+
+#10 [stage-1  6/10] RUN pip install --no-cache-dir --require-hashes -r /tmp/requirements-dev.lock  && pip freeze | sed 's/^/pip:/' >> /opt/toolchain.lock
+#10 CACHED
+
+#11 [stage-1  2/10] COPY --from=docker-cli /usr/local/bin/docker /usr/local/bin/docker
+#11 CACHED
+
+#12 [stage-1  3/10] COPY --from=docker-cli /usr/local/libexec/docker/cli-plugins/docker-buildx /usr/local/libexec/docker/cli-plugins/docker-buildx
+#12 CACHED
+
+#13 [stage-1  5/10] COPY requirements-dev.lock /tmp/requirements-dev.lock
+#13 CACHED
+
+#14 [stage-1  7/10] RUN useradd --create-home --uid 10001 app && install -d -o app -g app /app
+#14 CACHED
+
+#15 [stage-1  4/10] RUN sed -i 's|http://deb.debian.org/debian|https://repo.huaweicloud.com/debian|g' /etc/apt/sources.list.d/debian.sources  && apt-get update  && apt-get install -y --no-install-recommends git  && rm -rf /var/lib/apt/lists/*  && dpkg-query -W -f='${Package}=${Version}\n' git > /opt/toolchain.lock  && echo 'apt-mirror=https://repo.huaweicloud.com/debian' >> /opt/toolchain.lock  && echo "docker-cli=$(docker --version)" >> /opt/toolchain.lock  && echo "python3=$(python3 -c 'import platform; print(platform.python_version())')" >> /opt/toolchain.lock  && echo "arch=$(dpkg --print-architecture)" >> /opt/toolchain.lock
+#15 CACHED
+
+#16 [stage-1  9/10] COPY --chown=app:app services/draft/ /app/
+#16 CACHED
+
+#17 [stage-1 10/10] COPY --chown=app:app fixtures/draft/ /app/fixtures/draft/
+#17 CACHED
+
+#18 exporting to image
+#18 exporting layers done
+#18 exporting manifest sha256:198f881ab5fee45d9c5a32258a1a742982254de695cb07e9842d45f56ea3a835 done
+#18 exporting config sha256:231d04e1e23fafa034679d425a0ffffa023fedd0dfd5130aac17d45bf4190d8a done
+#18 exporting attestation manifest sha256:a285877b49700f10ad7cc41a750796d82182fe02e1591569fd2084b1659c25d3 0.0s done
+#18 exporting manifest list sha256:5cae99f13eb003951be4b0a9188a871933e79169063fad69f73e8b2631d4717b
+#18 exporting manifest list sha256:5cae99f13eb003951be4b0a9188a871933e79169063fad69f73e8b2631d4717b 0.0s done
+#18 naming to docker.io/library/e4-draft:241276007 done
+#18 unpacking to docker.io/library/e4-draft:241276007 done
+#18 DONE 0.1s
+
+#19 resolving provenance for metadata file
+#19 DONE 0.0s
+ e4-draft:241276007  Built
+docker image inspect e4-draft:241276007 --format '{"image":"e4-draft:241276007","id":"{{.Id}}","arch":"{{.Architecture}}","created":"{{.Created}}"}' | tee work/20261021T115341-957532821Z/image.json
+/etc/bash.bashrc: line 7: PS1: unbound variable
+{"image":"e4-draft:241276007","id":"sha256:5cae99f13eb003951be4b0a9188a871933e79169063fad69f73e8b2631d4717b","arch":"amd64","created":"2026-10-16T00:29:44.139550133+08:00"}
+docker compose -p e4-draft-241276007 run --rm --no-deps -T --interactive=false draft cat /opt/toolchain.lock | tee work/20261021T115341-957532821Z/toolchain.lock
+/etc/bash.bashrc: line 7: PS1: unbound variable
+git=1:2.47.3-0+deb13u1
+apt-mirror=https://repo.huaweicloud.com/debian
+docker-cli=Docker version 28.5.1, build e180ab8
+python3=3.13.14
+arch=amd64
+pip:iniconfig==2.3.0
+pip:packaging==26.3
+pip:pluggy==1.6.0
+pip:Pygments==2.21.0
+pip:pytest==8.4.2
+timeout 600 docker compose -p e4-draft-241276007 run --rm -T --interactive=false draft pytest 2>&1 | tee work/20261021T115341-957532821Z/test.log; test ${PIPESTATUS[0]} -eq 0
+/etc/bash.bashrc: line 7: PS1: unbound variable
+....                                                                     [100%]
+4 passed in 0.02s
+timeout 600 docker compose -p e4-draft-241276007 run --rm -T --interactive=false draft python3 -m draft smoke --tag e4-smoke-broken:241276007 | tee work/20261021T115341-957532821Z/smoke.json
+/etc/bash.bashrc: line 7: PS1: unbound variable
+{
+  "fixture": "fixtures/draft",
+  "docker_server": "29.1.3",
+  "build_exit_code": 1,
+  "build_seconds": 0.6,
+  "build_log": "#0 building with \"default\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.broken\n#1 transferring dockerfile: 225B done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 57B done\n#3 DONE 0.0s\n\n#4 [internal] load build context\n#4 DONE 0.0s\n\n#5 [1/4] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74\n#5 resolve m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 0.0s done\n#5 DONE 0.0s\n\n#4 [internal] load build context\n#4 transferring context: 245B done\n#4 DONE 0.0s\n\n#6 [2/4] WORKDIR /work\n#6 CACHED\n\n#7 [3/4] COPY main.c Makefile ./\n#7 CACHED\n\n#8 [4/4] RUN make\n#8 0.191 /bin/sh: 1: make: not found\n#8 ERROR: process \"/bin/sh -c make\" did not complete successfully: exit code: 127\n------\n > [4/4] RUN make:\n0.191 /bin/sh: 1: make: not found\n------\nDockerfile.broken:4\n--------------------\n   2 |     WORKDIR /work\n   3 |     COPY main.c Makefile ./\n   4 | >>> RUN make\n   5 |     CMD [\"./hello\"]\n   6 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c make\" did not complete successfully: exit code: 127\n",
+  "log_tail": [
+    "--------------------",
+    "   2 |     WORKDIR /work",
+    "   3 |     COPY main.c Makefile ./",
+    "   4 | >>> RUN make",
+    "   5 |     CMD [\"./hello\"]",
+    "   6 |     ",
+    "--------------------",
+    "ERROR: failed to build: failed to solve: process \"/bin/sh -c make\" did not complete successfully: exit code: 127"
+  ],
+  "make_error_line": "#8 0.191 /bin/sh: 1: make: not found",
+  "make_not_found": true,
+  "passed": true,
+  "note": "E4 验证构建链路并保存完整日志；错误定位和修复属于 E5/E6"
+}
+python3 -c 'import json,pathlib; p=pathlib.Path("work/20261021T115341-957532821Z"); (p/"smoke-build.log").write_text(json.loads((p/"smoke.json").read_text())["build_log"])'
+/etc/bash.bashrc: line 7: PS1: unbound variable
+python3 scripts/secret_scan.py . --history --image e4-draft:241276007 | tee work/20261021T115341-957532821Z/secret-scan.txt; test ${PIPESTATUS[0]} -eq 0
+/etc/bash.bashrc: line 7: PS1: unbound variable
+密钥检查：未发现问题（文件 1056 个，含 Git 历史，含镜像 e4-draft:241276007）
+/etc/bash.bashrc: line 7: PS1: unbound variable
+证据目录：work/20261021T115341-957532821Z

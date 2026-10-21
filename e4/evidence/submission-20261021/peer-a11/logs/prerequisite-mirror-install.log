@@ -1,0 +1,6 @@
+Looking in indexes: https://mirrors.huaweicloud.com/repository/pypi/simple
+Collecting uv==0.9.5
+  Downloading https://mirrors.huaweicloud.com/repository/pypi/packages/9b/83/a0bdf4abf86ede79b427778fe27e2b4a022c98a7a8ea1745dcd6c6561f17/uv-0.9.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (21.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.3/21.3 MB 9.8 MB/s eta 0:00:00
+Installing collected packages: uv
+Successfully installed uv-0.9.5

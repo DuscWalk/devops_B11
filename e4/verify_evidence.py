@@ -41,6 +41,67 @@ def equivalent(left, right):
     return p.returncode == 0
 
 
+def verify_submission():
+    root = ROOT / "e4/evidence/submission-20261021"
+    manifest = read_json(root / "SHA256SUMS.json")
+    for relative, digest in manifest.items():
+        path = (root / relative).resolve()
+        require(path.is_relative_to(root.resolve()), "Submission path outside evidence")
+        require(hashlib.sha256(path.read_bytes()).hexdigest() == digest,
+                "Submission hash mismatch: " + relative)
+    run = root / "integration-run/work/20261021T115501-607657048Z"
+    source = (run / "source-sha.txt").read_text().strip()
+    require(equivalent(source, "HEAD"), "Runtime differs from integration run")
+    require((run / "source-status.txt").read_bytes() == b"", "Integration source was dirty")
+    require(read_json(run / "env.json")["problems"] == [], "Integration doctor failed")
+    require("4 passed" in (run / "test.log").read_text(), "Integration tests failed")
+    smoke = read_json(run / "smoke.json")
+    require(smoke["passed"] is True and smoke["build_exit_code"] == 1,
+            "Integration smoke failed")
+    require(smoke["build_log"] == (run / "smoke-build.log").read_text(),
+            "Integration smoke log mismatch")
+    require("未发现问题" in (run / "secret-scan.txt").read_text(), "Integration scan failed")
+    require((root / "integration-run/work/submission-20261021-115501-command-exit-code.txt")
+            .read_text().strip() == "0", "Integration make all failed")
+    baseline = read_json(root / "e3-baseline/summary.json")
+    require(baseline["result"] == "PASS" and baseline["checks_passed"] == baseline["checks_total"] == 67,
+            "E3 baseline failed")
+    peer = read_json(root / "peer-a11/review.json")
+    require(peer["direction"] == "B11 -> A11", "Incorrect peer review direction")
+    primary = root / "peer-a11/original-rerun"
+    require(peer["source_sha"] == (primary / "logs/source-sha.txt").read_text().strip(),
+            "Peer source SHA mismatch")
+    code = int((primary / "logs/command-exit-code.txt").read_text().strip())
+    require(peer["make_all_exit_code"] == code, "Peer exit code mismatch")
+    require(peer["result"] == ("PASS" if code == 0 else "NOT_COMPLETED"), "Peer result mismatch")
+    require((root / "peer-a11/logs/source-status-before.txt").read_bytes() == b"",
+            "Peer checkout was initially dirty")
+    for name in ("source-status-after.txt", "source-status-after-scan.txt"):
+        status = (root / "peer-a11/logs" / name).read_text().splitlines()
+        require(status == ["?? e4/work/20261021T200246+0800/"],
+                "Unexpected peer changes beyond generated work evidence")
+    for name in ("source-status-before.txt", "source-status-after.txt"):
+        status = (primary / "logs" / name).read_text().splitlines()
+        require(all(re.fullmatch(r"\?\? e4/work/\d{8}T\d{6}[+-]\d{4}/", line)
+                    for line in status), "Unexpected peer changes in original-flow rerun")
+    for name in ("repository-scan.txt", "cleaned-scan.txt"):
+        require("[RESULT] findings=0" in (root / "peer-a11/logs" / name).read_text(),
+                "Peer repository scan failed")
+    require("[RESULT] findings=1" in (root / "peer-a11/logs/negative-scan.txt").read_text(),
+            "Peer negative scan missing")
+    diagnostic = root / "peer-a11/mirror-diagnostic"
+    require((diagnostic / "logs/command-exit-code.txt").read_text().strip() == "0",
+            "Peer mirror diagnostic failed")
+    require("9 passed" in (diagnostic / "run/test.log").read_text(), "Peer diagnostic tests failed")
+    require(read_json(diagnostic / "run/smoke.json")["status"] == "PASS",
+            "Peer diagnostic smoke failed")
+    require("[RESULT] findings=0" in (diagnostic / "run/secret-scan.txt").read_text(),
+            "Peer diagnostic scan failed")
+    require(peer["mirror_diagnostic"]["result"] == "PASS", "Peer diagnostic summary mismatch")
+    return {"integration_source_sha": source, "integration_make_all": "PASS",
+            "e3_local_baseline": "67/67", "supplementary_files_verified": len(manifest)}, peer
+
+
 def audit():
     rows, toolchains, host_tools, hashes = [], [], [], {}
     for name, student, directory, negative, cleaned in MEMBERS:
@@ -92,13 +153,16 @@ def audit():
     require(len(set(toolchains)) == 1, "Member toolchains differ")
     require(all(tools == host_tools[0] for tools in host_tools), "Host tool versions differ")
     require(equivalent(BASELINE, "HEAD"), "Current runtime differs from tested baseline")
+    submission, peer = verify_submission()
     return {"result": "PASS", "baseline_sha": BASELINE, "members": rows,
             "all_toolchains_byte_identical": True, "all_host_tools_equal": True,
             "all_member_source_shas_identical": len({r["source_sha"] for r in rows}) == 1,
             "same_sha_pair": ["241276007", "241250112"],
             "current_runtime_matches_baseline": True,
             "comparison_scope": "Archived records; shared host/cache; no new member execution or human sign-off",
-            "cross_group_reproduction": "NOT_PROVIDED",
+            "submission_validation": submission,
+            "cross_group_reproduction": {"b11_reviews_a11": peer,
+                                         "a11_reviews_b11": "NOT_PROVIDED"},
             "evidence_sha256": hashes}
 
 
@@ -115,7 +179,9 @@ def main():
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(text, encoding="utf-8")
     print("PASS: 3 member records; tests 4/4 each; smoke/scan/negative scans; matching toolchains")
-    print("Source SHAs differ; runtime files match. Cross-group reproduction has no supplied evidence.")
+    print("Source SHAs differ; runtime files match. Integration make all PASS; E3 local baseline 67/67.")
+    print("B11 -> A11 original configuration:", result["cross_group_reproduction"]["b11_reviews_a11"]["result"],
+          "; mirror diagnostic: PASS; A11 -> B11: NOT_PROVIDED.")
     print("SHA256 recorded for", len(result["evidence_sha256"]), "evidence files")
 
 

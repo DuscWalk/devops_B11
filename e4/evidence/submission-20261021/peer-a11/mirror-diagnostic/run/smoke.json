@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "started_at": "2026-10-21T12:16:13.732813+00:00",
+  "fixture_dir": "/app/fixtures/md-rd",
+  "work_dir": "/app/work/20261021T201539+0800",
+  "commands": [
+    {
+      "command": [
+        "make",
+        "clean"
+      ],
+      "exit": 0,
+      "stdout": "rm -f main.o app\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "strace",
+        "-ff",
+        "-o",
+        "trace.log",
+        "-e",
+        "trace=%file,%process",
+        "make"
+      ],
+      "exit": 0,
+      "stdout": "cc -c main.c -o main.o\ncc main.o -o app\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "./app"
+      ],
+      "exit": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    }
+  ],
+  "trace_files": [
+    "trace.log.12",
+    "trace.log.13",
+    "trace.log.14",
+    "trace.log.15",
+    "trace.log.16",
+    "trace.log.17",
+    "trace.log.18"
+  ],
+  "config_h_opened": true,
+  "make_exit": 0,
+  "app_exit": 0,
+  "app_output": "1",
+  "error": "",
+  "trace_evidence_dir": "/app/work/20261021T201539+0800/smoke-trace",
+  "finished_at": "2026-10-21T12:16:13.902700+00:00"
+}
