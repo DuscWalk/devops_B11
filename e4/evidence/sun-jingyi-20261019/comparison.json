@@ -1,0 +1,36 @@
+{
+  "members": [
+    "Sun Jingyi / 241250112",
+    "Hu Bo / 241276007"
+  ],
+  "source_sha": "9765d5794fe43a0c5496be969004d3b84d5b740f",
+  "same_source_sha": true,
+  "toolchain_bytes_equal": true,
+  "toolchain_sha256": "ab4be6eeacdb753d1d2baf2475dc07613def30f7ccd5e8f88c127c2837e8aa05",
+  "both_tests_4_passed": true,
+  "both_smoke_passed": true,
+  "both_expected_missing_make": true,
+  "build_exit_codes": [
+    1,
+    1
+  ],
+  "same_host_tools": true,
+  "image_ids": [
+    "sha256:11a0453d14764ba52ae950876b28fb1007bc1e4134ce3ec3850c523adcab73d3",
+    "sha256:d1fa4d6bb7a26fe578fe346ce28e00acc15761a7a5b62d188855ce6b58e146fa"
+  ],
+  "image_ids_equal": false,
+  "disk_gib": [
+    69.0,
+    69.7
+  ],
+  "times": [
+    "2026-10-19T14:19:41.932080+00:00",
+    "2026-10-15T16:27:26.539002+00:00"
+  ],
+  "notes": [
+    "Same shared server and daemon; fresh personal clone, existing build cache reused.",
+    "Different image IDs and timestamps are allowed; tool versions and test/smoke results agree.",
+    "Comparison by Codex under Sun Jingyi authorization; no new Hu Bo human confirmation claimed."
+  ]
+}
