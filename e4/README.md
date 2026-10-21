@@ -2,7 +2,9 @@
 
 本次使用教师 B-draft 模板建立服务骨架，保留已有 E2/E3。课件原件和差异见 [docs/e4](../docs/e4/PPT_COMPARISON.md)。华为云代替手册中的阿里云；本组 SSH 别名为 `HuaweiDevOps`（每人的本机配置可不同）。
 
-## 每位成员独立运行
+提交报告与三人证据入口：[SUBMISSION.md](SUBMISSION.md)。当前进度见 [STATUS.md](STATUS.md)。
+
+## 复现提交版
 
 服务器已有 Docker、Compose、Buildx、Git、Make、Python。共享实验工作账号为 `duscwalk`，可由现有 SSH 登录后执行 `sudo -iu duscwalk`（root 登录使用 `runuser -l duscwalk`）。不需要复制任何私钥到服务器。
 
@@ -11,8 +13,8 @@ mkdir -p ~/<自己的学号>
 cd ~/<自己的学号>
 git clone https://git.nju.edu.cn/devops_b11/devops-project-b11.git draft
 cd draft
-# 使用组长在 e4/STATUS.md 公布的完整源码 SHA
-git checkout <统一源码SHA>
+# 固定本次提交版；历史成员日志的实际 SHA 另见 STATUS
+git checkout e4-b11-submission-20261021
 git config --local user.name '<自己的学号>'
 git config --local user.email '<自己的学号邮箱>'
 make all
@@ -59,9 +61,9 @@ make scan   # 应通过，另存清理后的证据目录
 
 ## 贡献和复现交接
 
-孙静怡、王硕分别按上面步骤独立运行，交回学号、完整 SHA、成功证据目录和与另一人的工具版本/测试结论比较。镜像 ID、耗时可以不同，工具版本和预期结果应一致。原始 work 忽略；组长审核选定文本证据后放入 e4/evidence，或收集到最终提交附件。每人的真实贡献记入 CONTRIBUTIONS.md。
+三位成员的独立运行与扫描证据已收齐，见 [贡献表](CONTRIBUTIONS.md) 和 [对照说明](COMPARISON.md)。后续新增复现按上面步骤固定提交标签并留下本人的证据。镜像 ID、耗时可以不同，工具版本和预期结果应一致。原始 work 忽略；组长审核选定文本证据后放入 e4/evidence，或收集到最终提交附件。每人的真实贡献记入 CONTRIBUTIONS.md。
 
-与相邻组（可协调 A11）交换仓库地址，请对方仅按 README 重跑并记录问题。此项还未执行，E4 不等待 A11 的真实检测报告。由组长按补充通知统一提交，未规定固定附件格式或截止时间。
+与相邻组（可协调 A11）交换仓库地址，请对方仅按 README 重跑并记录问题。此项尚未提供记录，E4 不等待 A11 的真实检测报告。由组长按补充通知统一提交，未规定固定附件格式或截止时间。
 
 ## 模板调整
 

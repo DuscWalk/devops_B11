@@ -8,7 +8,9 @@ B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与
 
 ## E4 入口
 
-本次实验见 [E4 操作与交接](e4/README.md)、[执行状态](e4/STATUS.md)、[两版 PPT 差异](docs/e4/PPT_COMPARISON.md)。服务器每位组员各自克隆同一源码 SHA，在本人学号身份下运行 `make all`。默认采用经说明的 B11 2 GB 配置，真实资源和原模板差异写入证据。
+**E4 提交入口：[提交说明](e4/SUBMISSION.md)、[实验报告](e4/REPORT.md)、[三人贡献](e4/CONTRIBUTIONS.md)。固定标签：`e4-b11-submission-20261021`。**
+
+三人的运行日志和对照已整合：单测各 4/4，冒烟与密钥扫描通过；相邻组复现记录尚未提供。操作见 [E4 README](e4/README.md)，实际所测 SHA 差异见 [对照说明](e4/COMPARISON.md)，当前状态见 [STATUS](e4/STATUS.md)。默认采用经说明的 B11 2 GB 配置，真实资源和原模板差异写入证据。
 
 ## E2 快速验证
 
@@ -26,7 +28,8 @@ python3 -m venv .venv
 
 | 目录 | 内容 |
 | --- | --- |
-| [docs/](docs/README.md) | E2/E3 原课件、逐页文字、要求和来源摘要 |
+| [docs/](docs/README.md) | E2/E3 原课件与逐页文字、E4 两版课件与教师实验包、来源摘要 |
+| [e4/](e4/SUBMISSION.md) | 当前提交报告、三人证据、版本对照与贡献 |
 | [e3/](e3/README.md) | 当前基线、统一验收、环境提案、证据与组员交接 |
 | [e2/](e2/README.md) | 正式契约、OpenAPI、ADR、Backlog、确认、贡献、AI 使用、状态和证据 |
 | [draft/](draft/README.md) | DRAFT 输入输出、5 个交接文件、固定 fzy 版本、手工 Docker 基线及执行日志 |

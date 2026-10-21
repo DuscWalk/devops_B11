@@ -1,32 +1,26 @@
-# B11 E4 提交材料说明
+# B11 第四次实验提交说明
 
-更新：2026-10-19。当前包括**公共环境、胡博及孙静怡授权执行的个人运行证据、两份结果对照**。王硕个人记录、成员人工审阅及相邻组 README 复现仍待补齐，不能登记全组已正式提交。
+提交材料整理日期：2026-10-21（America/New_York）。本版本集中三位成员的工程成果、运行证据和组长汇总报告，可作为本组仓库提交入口；相邻组 README 复现尚未提供记录，报告中保持待补。
 
-## 已备材料
+## 提交定位
 
-- 小组仓库：https://git.nju.edu.cn/devops_b11/devops-project-b11
-- 实测源码 SHA：`9765d5794fe43a0c5496be969004d3b84d5b740f`。
-- 公共工程：根目录 Makefile、compose.yaml、requirements-dev.lock、services/draft、scripts、fixtures/draft。
-- 验收与差异：[STATUS](STATUS.md)、[PPT 对比](../docs/e4/PPT_COMPARISON.md)。
-- 胡博原始证据：[evidence/hu-bo-20261016](evidence/hu-bo-20261016/README.md)，包含完整流程、非 root Docker 访问、假 Key 检测和清理记录及逐文件摘要。
-- 孙静怡原始证据及对照：[evidence/sun-jingyi-20261019](evidence/sun-jingyi-20261019/README.md)，同一 SHA、新个人克隆、完整流程及两次扫描；工具清单字节一致、测试与冒烟结论一致。
-- 每位成员贡献：[CONTRIBUTIONS](CONTRIBUTIONS.md)；其他成员填写 [MEMBER_RUN_TEMPLATE](MEMBER_RUN_TEMPLATE.md)。
-- 操作和交接：[README](README.md)、[HANDOFF](HANDOFF.md)。
-- 课件、教师实验包原件及摘要：docs/e4/。
+- 小组：B11；配对组 A11。
+- 成员：胡博 241276007、孙静怡 241250112、王硕 241250110。
+- 仓库：https://git.nju.edu.cn/devops_b11/devops-project-b11
+- 分支：main；固定标签：`e4-b11-submission-20261021`。最终完整 SHA 由 `git rev-parse e4-b11-submission-20261021^{commit}` 查询，也记录在提交 ZIP 的 MANIFEST.json。
+- 实验报告：[REPORT.md](REPORT.md)。成员贡献：[CONTRIBUTIONS.md](CONTRIBUTIONS.md)。要求核对：[REQUIREMENTS_CHECK.md](REQUIREMENTS_CHECK.md)。
+- 原始日志：[胡博](evidence/hu-bo-20261016/README.md)、[孙静怡](evidence/sun-jingyi-20261019/README.md)、[王硕](evidence/241250110-20261021/README.md)。
+- 复现对照：[COMPARISON.md](COMPARISON.md) 和 [机器报告](evidence/submission-20261021/member-comparison.json)。
+- 原课件、教师实验包和两版差异：docs/e4/。原始资料与成员证据均保留，不修改其日期、SHA 或作者。
 
-## 胡博完成部分可用说明
+## 可粘贴到课程平台
 
-本组在已有 E2/E3 仓库上接入教师 B-draft 服务骨架。按助教参考 2 GB 配置，在华为云 Ubuntu 22.04（2 核、实际可见内存 1.7 GiB、无 swap）完成 make all：镜像成功构建，4 项服务单测通过；冒烟样例因缺少 make 按预期失败，完整日志与退出码保存，passed=true；仓库、全部 Git 历史和镜像密钥扫描通过，另验证了假 Key 能被检出、清理后扫描通过。
+B11 完成 E4 可重复工程环境，将教师 B-draft 服务骨架接入原 E2/E3 仓库。采用固定基础镜像 digest、Python 依赖哈希锁、实际工具版本清单、非 root 服务及 Compose、一键 doctor/build/test/smoke/scan。按助教参考 2 GB 配置，在华为云实际可见内存 1.7 GiB、无 swap 的服务器上完成三位成员的独立目录运行：每人服务单测 4/4，冒烟准确记录缺少 make 的预期失败和完整日志，正常密钥扫描通过，假 Key 可检出、清理后通过。三人的工具清单完全一致；胡博与孙静怡使用同一源码 SHA，王硕使用仅增加归档材料的后继版本，运行文件一致，差异已单列说明。
 
-原包要求 3.5 GiB，本组以显式 b11-2gb 配置适配助教参考规格，env.json 同时记录原阈值、采用阈值和真实资源。原默认 teacher 配置仍会拒绝该主机，相关证据附上。基础镜像 digest、Python 依赖哈希不变；为解决下载停滞改用华为 Debian HTTPS 源，保留签名验证并导出实际版本。补全 smoke 完整日志、修复历史非 UTF-8 解码、避免并行步骤和证据覆盖。E3 本地 67 项基线回归仍全部通过。
+组长已汇总三人贡献和原始日志、整合分支并准备提交版。相邻组仅按 README 复现尚无提供记录；未将自动运行记作其他成员人工签字或组间互评通过。未代上传 LMS。
 
-胡博授权 Codex 执行上述准备、修复、云端运行和整理，E4 新提交作者经本人确认使用学号 241276007。现有成员历史成果不改作者。其他组员独立执行与组间复现未代做、未填为通过。
+## 复现和附件
 
-## 最终提交前补齐
+正式复现从真实 Git 远端克隆后 checkout 提交标签，再依 [README](README.md) 设置本地学号身份运行 `make all`。ZIP 中 repository/ 是完整已跟踪源码快照，不含 .git，不能替代正式 Git 历史扫描所需的克隆。只阅读报告和日志可直接解压附件。
 
-1. 王硕在自己学号目录运行同一 SHA，交回成功日志、负向扫描日志和真实贡献说明；孙静怡运行材料已齐，待本人审阅及组长接收。
-2. 审阅已归档的孙静怡/胡博 toolchain/test/smoke 对照；镜像 ID 不同、工具版本与结论一致。该对照不等于双方新增人工确认。
-3. 留下相邻组仅按 README 重跑的实际反馈。
-4. 由胡博汇总，按课程平台要求统一提交；补充通知未规定固定文件格式或截止时间。
-
-提交附件不含 .env、SSH 私钥、缓存或临时假 Key。服务镜像保留在 HuaweiDevOps 的 Docker daemon，名称 e4-draft:241276007；没有向外部 registry 发布，不虚构可拉取的镜像地址。
+镜像保留在课程服务器 Docker daemon，名称 e4-draft:<学号>；没有发布外部 registry 地址。本地 image ID 不冒充可拉取的 registry RepoDigest。附件不含 .env、SSH 私钥、临时假 Key 或缓存。平台未在现有通知中规定固定文档格式或截止时间，按 LMS 实际入口提交。

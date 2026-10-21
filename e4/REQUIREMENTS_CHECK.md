@@ -1,18 +1,20 @@
-# E4 要求与现状核对
+# E4 作业要求核对
 
-2026-10-16；页号为实际页序。两版差异已逐页核对，采用能同时满足两版的证据准备方式。补充说明覆盖云平台为华为云。
+更新：2026-10-21。引用页号为 PPT 实际页序；补充通知覆盖平台为华为云，并由组长汇总每人贡献统一提交。
 
-| 要求 | 对应文件/证据 | 状态 |
+| 作业要求 | 当前证据 | 结果 |
 | --- | --- | --- |
-| 服务骨架、Compose、Dockerfile、一键构建（2、4、16 页） | 根 Makefile、services/draft、compose.yaml；胡博 full-run/build.log | 通过 |
-| 基础镜像固定 digest、Python 哈希锁、系统版本记录（6–9 页） | Dockerfile、requirements-dev.lock、toolchain.lock | 通过；系统包导出实际版本，未宣称跨时间逐字节相同 |
-| 非 root、docker.sock 权限和资源限制（9–13 页） | Dockerfile/Compose，verification/container-access.txt | app uid 10001 实测可以访问 Server |
-| 配置不入仓库与镜像、密钥扫描（14–15、18 页） | .gitignore/.dockerignore/.env.example，secret-scan.txt；负向与清理后扫描 | 通过；.env 权限 600，未被跟踪 |
-| 单测与预期失败冒烟（16–17 页） | test.log、smoke.json、smoke-build.log | 4/4，完整日志，预期缺少 make |
-| 证据关联源码提交（19 页） | source-sha.txt、source-status.txt、SHA256SUMS.json | 已归档胡博本人的真实运行 |
-| 每人独立运行，至少两位成员对照（19 页及手册） | MEMBER_RUN_TEMPLATE、CONTRIBUTIONS | 胡博完成；孙静怡/王硕及成员对照待完成 |
-| 相邻组 README 复现（20 页） | HANDOFF | 待对方实际参与 |
-| 学号作者与个人贡献（新增版 5、20 页） | E4 新提交作者 241276007；CONTRIBUTIONS | 胡博完成，其他成员贡献待补，不改旧历史 |
-| 组长汇总统一提交（Other-Instructions.txt） | SUBMISSION.md、交接包 | 已准备胡博部分，待全组证据齐备 |
+| 服务骨架、Dockerfile、Compose、一键构建（2、4、16 页） | services/draft、compose.yaml、Makefile；三人 build.log | 通过 |
+| digest、哈希依赖和系统版本记录（6–9 页） | 固定基础镜像、requirements-dev.lock、各自 toolchain.lock | 通过；系统包导出实际版本，未承诺跨时间位级相同 |
+| 非 root 及 docker.sock 组权限（9–13 页） | Dockerfile/Compose；胡博 container-access.txt | app UID 10001 实测可访问宿主 Server |
+| 密钥不入仓库/镜像，扫描器能报错（14–15、18 页） | 三人正常/假 Key/清理后扫描；.gitignore/.dockerignore | 通过，假 Key 未提交，日志值遮蔽 |
+| 单元测试与预期失败冒烟（16–17 页） | 三份 test.log、smoke.json、smoke-build.log | 三人均 4/4；预期缺少 make，完整日志一致 |
+| 证据对应源码提交（19 页） | 每人 source-sha.txt、source-status.txt；COMPARISON.md | 已逐个对应；王硕版本差异单列 |
+| 每人运行，至少两人同 SHA 对照（19 页、手册） | 三人独立目录日志；胡博/孙静怡使用同一 SHA | 运行证据齐全，三人结果已机器核验 |
+| 学号作者与个人贡献（新增版 5、20 页） | 保留三人学号作者；CONTRIBUTIONS.md | 已汇总，不重写旧历史 |
+| 组长汇总提交（Other-Instructions.txt） | REPORT.md、SUBMISSION.md、提交 ZIP 与标签 | 本次准备提交版，未代上传 LMS |
+| 相邻组仅按 README 复现（20 页） | HANDOFF.md 留有反馈字段 | 未提供记录，不能登记通过 |
 
-资源差异单列：原包 3.5 GiB 阈值与胡博转述的助教 2 GB 参考配置不一致。B11 显式适配且保留原模式；原模式拒绝、适配模式完整通过的两类结果都归档。不能把本次小型骨架跑通推断为后续所有论文负载都适用 2 GB。
+资源差异：教师包默认 3.5 GiB 与胡博转述助教 2 GB 参考规格不同；B11 显式 b11-2gb 配置保留真实 1.7 GiB 和原阈值，原模式拒绝及适配模式成功均有证据。此次小型骨架运行通过不意味着 E5 以后所有负载都适用 2 GB。
+
+不把组员运行或组长自动核验当作未发生的成员人工签字；相邻组互评仍需实际反馈，报告与材料对此如实披露。
