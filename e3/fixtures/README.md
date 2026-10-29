@@ -1,12 +1,12 @@
 # E3 公共验收样例
 
-来源：胡博授权 Codex 依据 E3 课件重新编写，标记 `B11_REFERENCE_ORACLE`。没有读取教师实验包，不能使用 `INSTRUCTOR_ORACLE` 或声称这些文件是教师原文件。人工预期在各目录 `oracle.json`；实际运行输出单独在 `work/` 和导出的 `evidence/`。
+来源：依据 E3 课件重新编写，标记 `B11_REFERENCE_ORACLE`。没有读取教师实验包，不能使用 `INSTRUCTOR_ORACLE` 或声称这些文件是教师原文件。人工预期在各目录 `oracle.json`；实际运行输出单独在 `work/` 和导出的 `evidence/`。
 
 ## DRAFT
 
 `draft/tiny-greeting/` 含源码、Makefile、故意缺工具链的 Dockerfile 和人工参考成功 Dockerfile。构建 `make`，验证 `./hello`，输出必须精确为 `hello E3\n` 且退出 0。主仓提交 SHA 加目录路径、逐文件摘要固定源码；基础镜像 tag 和 APT 包尚未固定版本，每次记录解析后的镜像 ID/digest 与包清单。
 
-fzy 沿用 `draft/PROJECT.md` 的固定完整 SHA 和双层验证。Tiny Greeting 是公共验收的离线小样例，不能代替孙静怡的 fzy 模块运行或 A11 的真实环境使用。
+fzy 沿用 `draft/PROJECT.md` 的固定完整 SHA 和双层验证。Tiny Greeting 是公共验收的离线小样例，不能代替 B11 的 fzy 模块运行或 A11 的真实环境使用。
 
 ## MDFixer 四种声明
 

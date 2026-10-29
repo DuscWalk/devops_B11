@@ -1,6 +1,6 @@
 # GitHub CI 与合并门禁证据
 
-仓库：[DuscWalk/devops_B11](https://github.com/DuscWalk/devops_B11)。默认分支 `main` 要求 `e7-b-quality-gate` 检查（GitHub Actions App ID `15368`）、strict 更新、enforce admins、零审批和对话解决。
+仓库：[B11 GitHub 仓库](https://github.com/DuscWalk/devops_B11)。默认分支 `main` 要求 `e7-b-quality-gate` 检查（GitHub Actions App ID `15368`）、strict 更新、enforce admins、零审批和对话解决。
 
 - `normal-pr1/`：PR #1 正常检查运行 [40895134404](https://github.com/DuscWalk/devops_B11/actions/runs/40895134404) 的 artifact、PR 合并 JSON；合并提交 `2d3d857abf5133619ef302e89d2f9d6b0f85ab57`。
 - `rejection-pr2/`：PR #2 故意错误断言的失败运行 [40895904554](https://github.com/DuscWalk/devops_B11/actions/runs/40895904554) 的 artifact、失败日志、`OPEN / BLOCKED` 状态、保护规则快照和合并拒绝输出。错误测试结果为 1 failed、25 passed；合并尝试退出码为 1。

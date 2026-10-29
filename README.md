@@ -1,10 +1,10 @@
 # DevOps B11 · E2 接口契约 / E3 测试基线 / E4 可重复环境
 
-B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与联调。配对组 A11 负责 BuildChecker、EChecker。
+B11 负责 DRAFT、MDFixer 与公共接口联调；配对组 A11 负责 BuildChecker、EChecker。
 
 **E2 提交入口：[e2/README.md](e2/README.md)。LMS 填写说明：[e2/SUBMISSION.md](e2/SUBMISSION.md)。**
 
-2026-09-22，胡博明确确认 A11 已认可前序接口方案；确认来源和范围见 [AGREEMENT.md](e2/AGREEMENT.md)。三人分支保留提交历史并合入交付版本。正式 Schema、四类请求/响应、错误样例、产物、设计记录、贡献与验证结果已集中归档。
+2026-09-22 的接口认可范围和确认记录见 [AGREEMENT.md](e2/AGREEMENT.md)。组员分支保留提交历史并合入交付版本。正式 Schema、四类请求/响应、错误样例、产物、设计记录、贡献与验证结果已集中归档。
 
 ## E4 入口
 
@@ -14,7 +14,7 @@ B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与
 
 ## E5–E7 入口
 
-**E5–E7：论文 1 复现（B11 / DRAFT）** 已在学院分配的 2 核、1.7 GiB 可见内存服务器完成小型样例、自动构建、25 项单测和五场景门禁。GitHub CI、main 保护和 PR 拒绝/恢复演示仍待组级 GitHub 仓库与账号认证。复现说明、候选来源、完整日志和资源/网络诊断见 [E5–E7 报告](docs/e5/REPORT.md) 与 [材料索引](docs/e5/README.md)。
+**E5–E7：论文 1 复现（B11 / DRAFT）** 已在学院分配的 2 核、约 1.7 GiB 可见内存服务器完成小型样例、自动构建、单元测试和五场景门禁。组级 GitHub CI、main 保护及 PR 拒绝/恢复演示也已通过 PR 完成。复现说明、候选来源、运行日志和资源/网络诊断见 [E5–E7 报告](docs/e5/REPORT.md) 与 [材料索引](docs/e5/README.md)。
 
 ## E2 快速验证
 

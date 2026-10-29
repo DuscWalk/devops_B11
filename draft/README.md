@@ -2,7 +2,7 @@
 
 E3 最新进度（2026-10-10）：已完成公共基线复跑及 fzy 真实缺工具链/参考成功对照，见 [模块交接与证据](../e3/draft-notes.md)。可复跑的 fzy 入口见 [e3-fzy](e3-fzy/README.md)。
 
-负责人孙静怡。接口方案由胡博于 2026-09-22 明确确认 A11 已认可，见 [AGREEMENT](../e2/AGREEMENT.md)。
+模块由 B11 DRAFT 负责人维护。接口方案于 2026-09-22 确认 A11 已认可，见 [AGREEMENT](../e2/AGREEMENT.md)。
 
 已交付：固定 fzy 版本、构建/验证命令、DRAFT 请求/202/完整成功失败响应、5 个可读文件，WSL 和手工 Docker 基线日志。自动生成/迭代服务尚未实现。
 
@@ -22,6 +22,6 @@ E3 最新进度（2026-10-10）：已完成公共基线复跑及 fzy 真实缺�
 .venv/bin/python draft/validate_examples.py
 ```
 
-校验使用本仓库 e2/task.schema.json 及记录的摘要，ZIP 无需额外 Git 对象。胡博整合时保持内容样例不变，仅切换正式 Schema 和补强反例校验。
+校验使用本仓库 e2/task.schema.json 及记录的摘要，ZIP 无需额外 Git 对象。整合时保持内容样例不变，仅切换正式 Schema 和补强反例校验。
 
-基线为 fzy `28195b3a709995354b6c33cec9bb7c9f81532eb6`，Ubuntu24.04/GCC13.3/Make4.3；make clean && make；make check && ./fzy --help。来源日志记录 31 测试、99 断言通过，Ruby acceptance 未运行。镜像仅在孙静怡的 Docker daemon，尚未交付 A11。人工成功样例不代表自动 DRAFT 执行。
+基线为 fzy `28195b3a709995354b6c33cec9bb7c9f81532eb6`，Ubuntu24.04/GCC13.3/Make4.3；make clean && make；make check && ./fzy --help。来源日志记录 31 测试、99 断言通过，Ruby acceptance 未运行。镜像仍在模块负责人的 Docker daemon，未交付 A11。人工成功样例不代表自动 DRAFT 执行。
