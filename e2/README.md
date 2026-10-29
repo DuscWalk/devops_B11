@@ -3,10 +3,10 @@
 | 项目 | 内容 |
 | --- | --- |
 | 小组 / 配对组 | B11 / A11 |
-| 成员 | 孙静怡：DRAFT；王硕：MDFixer；胡博：接口与联调 |
+| 分工 | B11：DRAFT、MDFixer、公共接口与联调 |
 | 仓库 | https://git.nju.edu.cn/devops_b11/devops-project-b11 |
 | 协议 / 提交修订 | schema_version 1.1.0 / b11-e2-r1 |
-| 确认 | 2026-09-22 胡博明确确认 A11 已认可，见 AGREEMENT.md |
+| 确认 | 2026-09-22 确认 A11 已认可，见 AGREEMENT.md |
 | 验证入口 | 仓库根目录 `.venv/bin/python e2/validate.py` |
 
 ## 交付索引

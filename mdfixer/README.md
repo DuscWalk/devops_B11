@@ -1,6 +1,6 @@
 # MDFixer · B11 本地原型
 
-模块负责人王硕；胡博在 2026-10-12 授权 Codex 修复 E3 分支的源码损坏和接口回退，并补充实际验证。适配 [公共提交契约](../e2/task.schema.json)，只处理 MISSING，保留 REDUNDANT，过滤 RESOLVED。当前是本地主机执行的原型。
+本模块由 B11 成员维护；2026-10-12 的 E3 分支修复处理源码损坏和接口回退，并补充实际验证。适配 [公共提交契约](../e2/task.schema.json)，只处理 MISSING，保留 REDUNDANT，过滤 RESOLVED。当前是本地主机执行的原型。
 
 ## 运行
 
@@ -45,4 +45,4 @@ git clone fixtures/mdfixer-project/project.bundle /tmp/b11-md-project
 
 输出 `PATCH`、`STYLE_REPORT`、`TEST_RESULT`，记录实际构建/验证输出、候选统计与 SHA-256。`missing_fixed` 是接受候选的计数，不是检测器证明；重检始终为 `NOT_RUN`，不返回推算的 `recheck_missing_remaining`。
 
-实现与证据见 [E3 模块记录](../e3/mdfixer-notes.md)。原 E2 作者、王硕 E3 扩展和胡博本轮修复均保留在 Git 历史中。
+实现与证据见 [E3 模块记录](../e3/mdfixer-notes.md)。原 E2 实现、E3 扩展和本轮修复均保留在 Git 历史中。

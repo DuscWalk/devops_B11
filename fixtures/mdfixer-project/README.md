@@ -1,6 +1,6 @@
 # MDFixer 固定人工项目
 
-来源：胡博在 2026-09-22 整合王硕原型时编写的教学项目，detector=MANUAL。它不是 fzy、A11 实际检测结果或论文数据集。源文件、报告、Git bundle 与摘要均在本目录。
+来源：B11 成员在 2026-09-22 整合原型时编写的教学项目，detector=MANUAL。它不是 fzy、A11 实际检测结果或论文数据集。源文件、报告、Git bundle 与摘要均在本目录。
 
 固定独立源码提交：`a6d77c66a910b3dbfbf5444cf7b86cc893cf0c69`。该 SHA 属于随附 project.bundle 的仓库，不是 B11 主仓提交；source.json 明确其来源和逐文件摘要。报告中的 repository.url 指向保存 bundle 的 B11 仓库，源码由 bundle 取得。
 

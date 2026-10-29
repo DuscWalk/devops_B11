@@ -1,6 +1,6 @@
 # MDFixer 修复前失败记录
 
-2026-10-12，胡博授权 Codex 复查 B11 仓库的 origin/feat/mdfixer-e3-styles，完整 SHA 为 3af8c221de2044fd7a6d01a854ffc9aaf96c8c7e（提交时间 21:08:59 +08:00）。独立检出，未修改被测源码。
+2026-10-12，对 B11 仓库的 origin/feat/mdfixer-e3-styles 进行复查，完整 SHA 为 3af8c221de2044fd7a6d01a854ffc9aaf96c8c7e（提交时间 21:08:59 +08:00）。独立检出，未修改被测源码。
 
 - [语法检查](syntax.json)：23 个已跟踪 Python 文件，3 个失败（engine、patch、test_mdfixer）。
 - [统一入口](baseline/summary.json)：整体 FAIL，6 项前置检查通过后在 E2 的 MDFixer 测试导入处停止。
