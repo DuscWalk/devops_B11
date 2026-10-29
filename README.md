@@ -12,6 +12,10 @@ B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与
 
 三人的运行日志和对照已整合：单测各 4/4，冒烟与密钥扫描通过；B11 对 A11 的 README 复现记录见 [互评记录](e4/PEER_REVIEW_A11.md)，尚未收到 A11 对 B11 的复现反馈。操作见 [E4 README](e4/README.md)，实际所测 SHA 差异见 [对照说明](e4/COMPARISON.md)，当前状态见 [STATUS](e4/STATUS.md)。默认采用经说明的 B11 2 GB 配置，真实资源和原模板差异写入证据。
 
+## E5–E7 入口
+
+**E5–E7：论文 1 复现（B11 / DRAFT）** 已在学院分配的 2 核、1.7 GiB 可见内存服务器完成小型样例、自动构建、25 项单测和五场景门禁。GitHub CI、main 保护和 PR 拒绝/恢复演示仍待组级 GitHub 仓库与账号认证。复现说明、候选来源、完整日志和资源/网络诊断见 [E5–E7 报告](docs/e5/REPORT.md) 与 [材料索引](docs/e5/README.md)。
+
 ## E2 快速验证
 
 需要 Linux/WSL、Python 3.10+、Git、Make 和 C 编译器。仓库根目录运行：

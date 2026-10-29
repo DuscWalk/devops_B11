@@ -1,0 +1,1 @@
+docker build --progress=plain -f work/candidate/Dockerfile -t course1020-draft-e5:241276007 work/e5-02/project

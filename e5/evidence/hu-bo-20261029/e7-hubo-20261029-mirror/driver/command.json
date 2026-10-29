@@ -1,0 +1,12 @@
+[
+  "/usr/bin/python3",
+  "scripts/run_e7_b_gate.py",
+  "--image",
+  "course1020-draft:local",
+  "--out",
+  "/home/duscwalk/241276007/e5-b11-20261029/work/e7-hubo-20261029-mirror/gate",
+  "--candidate",
+  "/home/duscwalk/241276007/e5-b11-20261029/fixtures/ci-candidates/DeepSeek-E5.Dockerfile",
+  "--build-timeout",
+  "600"
+]

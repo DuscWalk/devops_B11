@@ -1,0 +1,21 @@
+{
+  "result": "PASS_E5_B_DRAFT_MICRO_FIXTURE",
+  "review_date": "2026-10-29",
+  "executor": "胡博 241276007 / Codex",
+  "host_user": "duscwalk",
+  "cloud_repo_source_sha": "1075c1e8c887a9816026184342f93cbd17232311",
+  "doctor_exit_code": 1,
+  "doctor_resource_note": "2 CPU, 1.7 GiB visible RAM; generic package doctor requires 4 GiB and reports this one resource issue. Institution-provided 2 GB server retained; experiment proceeded on user instruction.",
+  "baseline_docker_build_exit_code": 1,
+  "baseline_expected_failure": "/bin/sh: 1: make: not found",
+  "lab_cloud_e5_exit_code": 0,
+  "selected_candidate_sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+  "candidate_build_exit_code": 0,
+  "candidate_image_id": "sha256:0c452b64f26114cf975e782bf651fa7ebbf2faff264e1613f60da3ae2145d372",
+  "candidate_run_command": "docker run --rm --network none <same image id>",
+  "candidate_run_exit_code": 0,
+  "candidate_stdout": "hello E3\n",
+  "e6": "NOT_RUN",
+  "e7": "NOT_RUN",
+  "ci": "NOT_RUN"
+}
