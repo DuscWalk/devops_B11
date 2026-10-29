@@ -30,5 +30,6 @@ E6 自动构建与证据校验通过；E7 的 25 项单测和五个真实场景�
 - e7-hubo-20261029-customtest/：最终 E7 五场景、服务单测和 CSV/JSON 汇总
 - build-hubo-20261029/：服务镜像官方源诊断、镜像源构建、inspect 和单测
 - build-hubo-20261029-customtest/：含 B11 自定义测试的最终镜像构建和 25/25 单测
+- ci/：组级 GitHub Actions 正常、失败和恢复运行 artifacts；main 保护配置、失败 PR 合并拒绝输出及 PR 合并记录
 
 摘要：同目录 checksums.json。课程代码来源和包清单：docs/e5/README.md、docs/e5/Student_Cloud_MANIFEST.sha256.json。

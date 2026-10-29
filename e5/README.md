@@ -6,7 +6,7 @@
 
 - B 轨道：DRAFT，已完成 E5 失败基线与候选、E6 自动构建、E7 五场景和 B11 自定义测试。
 - 本次样例：fixtures/draft/ 中由课程编写的 hello E3 微型项目，不是论文数据集。
-- GitHub CI、main 分支保护和 PR 拒绝/恢复演示仍待组级 GitHub 仓库与账号认证；不把它们标记为已通过。
+- 组级 GitHub 仓库 CI、main 分支保护和 PR 拒绝/恢复演示已完成；运行与 artifact 见 `evidence/hu-bo-20261029/ci/`。
 
 ## 来源与复现
 
