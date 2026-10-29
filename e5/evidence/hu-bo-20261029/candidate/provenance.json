@@ -1,0 +1,30 @@
+{
+  "provider": "OpenAI Codex (current assistant)",
+  "model_version": "Exact backend version not exposed",
+  "api_call": false,
+  "date": "2026-10-29",
+  "prompt_paths": [
+    "evidence/hu-bo-20261029/e5-02/iter-01/prompt-error-driven.txt",
+    "evidence/hu-bo-20261029/e5-02/iter-01/prompt-context-driven.txt"
+  ],
+  "responses": [
+    {
+      "candidate_id": "candidate-01",
+      "response_path": "work/candidate/candidate-01-error-driven-response.md",
+      "candidate_path": "work/candidate/candidate-01-error-driven.Dockerfile",
+      "candidate_sha256": "7daf10bdc3bfa8a4bef9525c48eeba947aebb06ea5117ebde55a046cf31577fd"
+    },
+    {
+      "candidate_id": "candidate-02",
+      "response_path": "work/candidate/candidate-02-context-driven-response.md",
+      "candidate_path": "work/candidate/candidate-02-context-driven.Dockerfile",
+      "candidate_sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1"
+    }
+  ],
+  "selected_candidate": "candidate-02",
+  "selection_reason": "It preserves the pinned digest and commands, installs build-essential, and adapts the observed slow Debian source on this host using the Huawei HTTPS mirror. The mirror choice is an environment-specific adaptation, not a claim about the paper's default setup.",
+  "manual_changes": [],
+  "source_evidence": "The same Huawei host measured approximately 14-15 KB/s from Debian HTTP/HTTPS and approximately 10 MB/s from the Huawei HTTPS mirror in the E4 A11 reproduction diagnosis.",
+  "selected_candidate_path": "work/candidate/Dockerfile",
+  "selected_candidate_sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1"
+}

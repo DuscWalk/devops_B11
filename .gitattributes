@@ -3,6 +3,7 @@
 *.jpg binary
 *.pdf binary
 *.pptx binary
+*.zip binary
 
 *.bundle binary
 # Unified diff context lines contain intentional leading spaces and tabs.
@@ -13,3 +14,4 @@ docs/e4/Other-Instructions.txt -text whitespace=cr-at-eol
 
 # Evidence is archived byte-for-byte, including terminal whitespace.
 e4/evidence/** -text -whitespace
+e5/evidence/** -text -whitespace
