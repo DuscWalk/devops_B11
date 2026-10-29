@@ -1,8 +1,4 @@
-"""Deliberately wrong oracle for a protected-branch rejection demonstration.
-
-Use on the demonstration branch. After capturing the failed PR and merge-block
-evidence, repair the expected return code from 1 to 0.
-"""
+"""Corrected oracle after the protected-branch rejection demonstration."""
 from draft.cli import main
 
 

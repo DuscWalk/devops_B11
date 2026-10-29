@@ -10,10 +10,10 @@
 |E5 失败基线|Docker build 到 `RUN make`，实际出现 `make: not found`，构建退出 1；课程脚本将预期失败归档并生成两类提示。|[失败日志与结果](../../e5/evidence/hu-bo-20261029/e5-02/iter-01/)|
 |候选构建与运行|选择 context-driven 候选，固定 base digest，安装 `build-essential`，使用华为 Debian HTTPS 镜像。构建退出 0；同一完整 image ID 在 `--network none` 下退出 0，输出 `hello E3`。|[候选](../../e5/labs/B-draft/work/candidate/Dockerfile)、[镜像和运行证据](../../e5/evidence/hu-bo-20261029/work/e5-02/)|
 |E6 自动构建|通过。第一轮分类为 `MISSING_MAKE`；候选第二轮构建退出 0，运行同一镜像 ID 成功，输出匹配。证据校验器返回 `passed: true`。|[E6 报告和日志](../../e5/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/)、[校验器输出](../../e5/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/runner/)|
-|E7 门禁|通过。25 项服务单测和正常、输出不符、无效候选、构建失败、运行超时五个真实场景全部通过；超时容器已清理。|[gate-result.json](../../e5/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/gate-result.json)、[results.csv](../../e5/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/results.csv)|
+|E7 门禁|通过。本机 25 项服务单测和正常、输出不符、无效候选、构建失败、运行超时五个真实场景全部通过；GitHub 恢复演示加入一项测试后 26 项通过；超时容器已清理。|[本机 gate-result.json](../../e5/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/gate-result.json)、[results.csv](../../e5/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/results.csv)、[GitHub 恢复 artifact](../../e5/evidence/hu-bo-20261029/ci/recovery-pr2/artifact/e7-b-evidence-40896410596-1/gate/unit-tests/stdout.log)|
 |B11 自定义测试|通过。新增测试拒绝带第二个构建阶段的候选 Dockerfile；该测试包含在 25/25 服务单测中。|[自定义测试](../../e5/labs/B-draft/services/draft/tests/b11_custom/test_candidate_policy.py)、[单测日志](../../e5/evidence/hu-bo-20261029/build-hubo-20261029-customtest/unit-tests.log)|
 |密钥扫描|通过。工作区和 Git 历史扫描 1576 个文件，最终服务镜像扫描 33 个文件/镜像元数据；均未发现问题。|[工作区与历史](../../e5/evidence/hu-bo-20261029/secret-scan.txt)、[镜像扫描](../../e5/evidence/hu-bo-20261029/build-hubo-20261029-customtest/image-secret-scan.txt)|
-|GitHub CI 与合并门禁|PENDING。当前环境的 GitHub CLI 未登录，无法创建课程要求的组级 GitHub 仓库、配置 main 保护、运行失败 PR 和修复合并演示。|课程学生包 `docs/04_GitHub_CI与合并门禁.md`；尚无 GitHub run/artifact 链接|
+|GitHub CI 与合并门禁|通过。组级仓库 CI 正常通过；main 保护拦截故意失败 PR；修正断言后 CI 恢复并 PR 合并。|见下方 GitHub CI 与合并门禁记录及 `e5/evidence/hu-bo-20261029/ci/`|
 
 ## 来源与方法
 
@@ -30,3 +30,11 @@ B-DRAFT 参考代码来自课程包 `DevOps_1020_Student_Cloud.zip`，其中 77 
 ## 证据索引
 
 本报告内路径均相对仓库根目录。完整运行记录在 `e5/evidence/hu-bo-20261029/`，包含输入副本、Dockerfile、image inspect、stdout/stderr、退出码、JSON 报告和 SHA-256 清单。E5、E6、E7 都仅验证课程包内的 `hello E3` 微型样例；没有运行论文数据集实验。
+
+## GitHub CI 与合并门禁
+
+组级仓库：[DuscWalk/devops_B11](https://github.com/DuscWalk/devops_B11)，公开仓库，默认分支为 `main`。`main` 要求 GitHub Actions App ID `15368` 的 `e7-b-quality-gate` 检查成功、分支保持最新、管理员受同样限制、审批人数为 0，并要求解决所有 PR 对话。
+
+正常流程：PR [#1](https://github.com/DuscWalk/devops_B11/pull/1) 的检查运行 [40895134404](https://github.com/DuscWalk/devops_B11/actions/runs/40895134404) 通过，artifact 位于 `e5/evidence/hu-bo-20261029/ci/normal-pr1/artifact/`。PR 合并提交为 `2d3d857abf5133619ef302e89d2f9d6b0f85ab57`。
+
+拒绝演示：PR [#2](https://github.com/DuscWalk/devops_B11/pull/2) 首次提交 `159139c` 故意断言 `version` 返回 1；运行 [40895904554](https://github.com/DuscWalk/devops_B11/actions/runs/40895904554) 因该测试失败而阻断，结果为 1 failed、25 passed。PR 状态为 `OPEN / BLOCKED`；普通合并命令退出码为 1，拒绝信息和保护配置快照见 `e5/evidence/hu-bo-20261029/ci/rejection-pr2/`。修复提交 `6b1028b` 将期望值改为 0；运行 [40896410596](https://github.com/DuscWalk/devops_B11/actions/runs/40896410596) 通过，26 项单测和五个场景通过，artifact 位于 `e5/evidence/hu-bo-20261029/ci/recovery-pr2/artifact/`。PR #2 于 `2026-10-29 15:01:32 UTC` 合并，合并提交为 `701be1bee2e0246107a6638f5aed49e4bd349019`。

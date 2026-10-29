@@ -1,0 +1,40 @@
+e7-b-quality-gate	Run the real component and fault gate	﻿2026-10-29T14:53:19.5854775Z ##[group]Run set -euo pipefail
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5855042Z ^[[36;1mset -euo pipefail^[[0m
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5855233Z ^[[36;1margs=()^[[0m
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5855420Z ^[[36;1mif [[ "$FAIL_DEMO" == "true" ]]; then^[[0m
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5855689Z ^[[36;1m  args+=(--case success --inject-bad-oracle)^[[0m
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5855921Z ^[[36;1mfi^[[0m
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5856504Z ^[[36;1mpython3 scripts/run_e7_b_gate.py --image "$IMAGE" --candidate fixtures/ci-candidates/DeepSeek-E5.Dockerfile --out work/ci/gate --build-timeout 600 "${args[@]}" 2>&1 | tee work/ci/gate-console.log^[[0m
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5874571Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5874850Z env:
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5875009Z   IMAGE: e7-draft:ci
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5875194Z   FAIL_DEMO: 
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.5875358Z ##[endgroup]
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:19.6347336Z [unit-tests] Running service tests...
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4511798Z {
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4512253Z   "passed": false,
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4512852Z   "image": "e7-draft:ci",
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4513475Z   "cases": [
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4513758Z     {
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4513996Z       "case": "unit-tests",
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4514299Z       "passed": false,
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4514570Z       "exit_code": 1
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4514835Z     },
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4515063Z     {
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4515291Z       "case": "runner",
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4515564Z       "passed": false,
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4515868Z       "error": "Service unit tests failed"
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4516203Z     }
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4516423Z   ],
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4516662Z   "intentional_failure": false,
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4517510Z   "selected_cases": [
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4517775Z     "success",
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4518019Z     "wrong-output",
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4518289Z     "invalid-candidate",
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4518558Z     "build-failed",
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4518825Z     "runtime-timeout"
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4519080Z   ],
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4519316Z   "build_timeout_seconds": 600,
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4520009Z   "scope": "Recorded candidate replay for selected real workflow cases; not model generation or a three-project benchmark"
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4520687Z }
+e7-b-quality-gate	Run the real component and fault gate	2026-10-29T14:53:20.4579213Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,2 @@
+completed	success	Demonstrate protected branch rejection	E5 B quality gate	e7-gate-reject-demo	pull_request	40896410596	45s	2026-10-29T14:55:56Z
+completed	failure	Demonstrate protected branch rejection	E5 B quality gate	e7-gate-reject-demo	pull_request	40895904554	31s	2026-10-29T14:52:54Z

@@ -1,6 +1,6 @@
 # E5–E7：论文 1 复现（B11 / DRAFT）
 
-E5 失败基线与候选、E6 自动构建、E7 五场景和 B11 自定义测试已在学院 2 GB 服务器完成。GitHub CI、main 分支保护和 PR 拒绝/恢复演示待 GitHub 账号认证及组级仓库。
+E5 失败基线与候选、E6 自动构建、E7 五场景、B11 自定义测试和 GitHub CI 合并门禁演示均已完成。GitHub 正常、失败、恢复运行及分支保护证据已归档在 `e5/evidence/hu-bo-20261029/ci/`。
 
 - 原始课件：[E5 PPT](E5_论文1复现_20261020_讲稿优化版.pptx)
 - 课程学生包：[E5–E7 ZIP](E5-7_Student_Cloud.zip)
