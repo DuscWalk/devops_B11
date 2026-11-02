@@ -1,0 +1,22 @@
+{
+  "git_sha": "9cb50ab71ff0c0ef8ccb2420a2c5e26afb37f470",
+  "git_status": "",
+  "files": {
+    "scripts/lab_cloud.py": "7b18458810390a9ec267c071e99c117b806eb9d80d2c7f519f310ecc127fd4d1",
+    "scripts/prepare_e5_prompts.py": "21063add1f027c977b9208a36bfc505f5808b6fc40ea62314b0dac04bb8a3240",
+    "scripts/doctor.py": "f2f545e66581cf4b860122941940a60d14daa9eccc628bdf58ad471ff406af47",
+    "course-source.json": "d363fe4d3241e5b071401245ed68a18ba5907234544b9737d083357b1615e249",
+    "scripts/secret_scan.py": "e3aefad5e87201d684841b931b8586a3d81d2930968bfa02867eff41cfcfbc65",
+    "fixtures/ci-candidates/DeepSeek-E5.Dockerfile": "ede21b0fab394071641526e2fccefc41565efb00de6fb54d9d5b906aebeb535d",
+    "fixtures/draft/main.c": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+    "fixtures/draft/.dockerignore": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+    "fixtures/draft/Makefile": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+    "fixtures/draft/README.md": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+    "fixtures/draft/Dockerfile.broken": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d"
+  },
+  "course_package": {
+    "zip_sha256": "4068d3bf98dc8218cc80c6a0f09674d9ed54289b3fcac5cb86eda327fb0cd688",
+    "source_prefix": "DevOps_1020_Student_Cloud/labs/B-draft/",
+    "extraction": "unchanged teaching B track; no A track or teaching evidence imported"
+  }
+}

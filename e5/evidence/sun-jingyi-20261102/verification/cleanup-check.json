@@ -1,0 +1,5 @@
+{
+  "container_id": "71f430e03fb3273113c4ff20dfb42c93838565b8c56a2474628feeeafafc7f56",
+  "inspect_exit_code": 1,
+  "stderr": "Error response from daemon: No such container: 71f430e03fb3273113c4ff20dfb42c93838565b8c56a2474628feeeafafc7f56\n"
+}

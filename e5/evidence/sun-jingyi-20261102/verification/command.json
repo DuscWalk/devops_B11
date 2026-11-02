@@ -1,0 +1,16 @@
+[
+  "docker",
+  "run",
+  "--rm",
+  "--network",
+  "none",
+  "--cpus",
+  "2",
+  "--memory",
+  "1g",
+  "--pids-limit",
+  "256",
+  "--cidfile",
+  "/home/duscwalk/241250112/e5-20261102/work/verification/container-id.txt",
+  "sha256:57dfd1ba5f0438ef068a2f42f0d0a315f32cf02e040be68d21de5b4b9ee2eeca"
+]

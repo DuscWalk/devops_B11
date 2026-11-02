@@ -1,0 +1,50 @@
+[
+    {
+        "Id": "sha256:57dfd1ba5f0438ef068a2f42f0d0a315f32cf02e040be68d21de5b4b9ee2eeca",
+        "RepoTags": [
+            "course1020-draft-e5:241250112"
+        ],
+        "RepoDigests": [
+            "course1020-draft-e5@sha256:57dfd1ba5f0438ef068a2f42f0d0a315f32cf02e040be68d21de5b4b9ee2eeca"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-02T21:12:34.194118528+08:00",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.16",
+                "PYTHON_SHA256=f4b1bfb3c79b5bb11b8d228a12504163b4c0dab4d679828d8f5f26b6cb6ab35d"
+            ],
+            "Cmd": [
+                "./hello"
+            ],
+            "WorkingDir": "/work",
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 149200699,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
+                "sha256:285510654d1d6a26507ed6576cae8fa995ba16469050787032499e9a34cbe9f5",
+                "sha256:acbf34fa608c522642659b109edfd70959b7c26593ea51141f3d339cc1875cfd",
+                "sha256:d175833b7147479e4e08f4f5d9dd2055b5ee746dc2f73520462468538d168bf6",
+                "sha256:04e48acda4ebb08af248adae979f6a2b4893cff71db3bc6410d1fbdcc4e551a8",
+                "sha256:fd21cfb355bf659ab939d5f976aa8ee1a6f1e20ac4af71566704fbf5cdb4cb65",
+                "sha256:8204db8f93a291612e8f8e9033436b902fb790f7252bf22e6869885b4e399d44",
+                "sha256:7a8ad351b8cbe8399cf196ef1c1d8e941a8d52bc0a546ea4a7ed2e0f42b05268"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-02T13:12:46.71777407Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:57dfd1ba5f0438ef068a2f42f0d0a315f32cf02e040be68d21de5b4b9ee2eeca",
+            "size": 856
+        }
+    }
+]

@@ -1,0 +1,10 @@
+[
+  "docker",
+  "build",
+  "--progress=plain",
+  "-f",
+  "work/candidates/context-driven/Dockerfile",
+  "-t",
+  "course1020-draft-e5:241250112",
+  "work/e5-01/project"
+]

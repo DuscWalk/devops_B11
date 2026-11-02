@@ -1,0 +1,15 @@
+{
+  "provider": "OpenAI Codex current assistant conversation",
+  "model_version": "not recorded",
+  "time_utc": "2026-11-02T13:08:05.364026+00:00",
+  "prompt_path": "prompt.txt",
+  "raw_response_path": "model-response.txt",
+  "candidate_path": "Dockerfile",
+  "candidate_sha256": "ee7139c33965290b64cbfbb671a76e54b60f883196035d9d0eaa84945c83c0c5",
+  "manual_changes": [],
+  "is_recorded_replay": false,
+  "independent_api_call": false,
+  "shared_conversation_context": true,
+  "selected": true,
+  "selection_reason": "Standard build-essential package supplies Make, C compiler and development headers; original instructions retained."
+}

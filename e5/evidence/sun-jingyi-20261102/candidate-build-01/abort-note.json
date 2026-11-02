@@ -1,0 +1,5 @@
+{
+  "reason": "No new build log progress during Debian package-index download; explicitly terminated this run buildx process.",
+  "build_exit_code": 130,
+  "not_missing_make_failure": true
+}

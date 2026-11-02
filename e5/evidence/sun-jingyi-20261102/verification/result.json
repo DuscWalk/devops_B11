@@ -1,0 +1,10 @@
+{
+  "status": "SUCCEEDED",
+  "image_id": "sha256:57dfd1ba5f0438ef068a2f42f0d0a315f32cf02e040be68d21de5b4b9ee2eeca",
+  "exit_code": 0,
+  "expected_output": "hello E3\n",
+  "actual_output": "hello E3\n",
+  "output_matches": true,
+  "network": "none",
+  "container_removed": true
+}
