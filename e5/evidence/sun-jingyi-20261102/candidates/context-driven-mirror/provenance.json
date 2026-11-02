@@ -1,0 +1,17 @@
+{
+  "provider": "OpenAI Codex current assistant conversation",
+  "model_version": "not recorded",
+  "time_utc": "2026-11-02T13:08:05.364026+00:00",
+  "prompt_path": "../context-driven/prompt.txt",
+  "raw_response_path": "../context-driven/model-response.txt",
+  "candidate_path": "Dockerfile",
+  "candidate_sha256": "ab02877a21190dc0412592247dd6308c24f7312abc2731fcb3b2ec25859bffd7",
+  "manual_changes": [
+    "Codex operational adjustment: Huawei HTTPS Debian mirror, retain Debian signature verification and exact FROM digest; bound APT index download time."
+  ],
+  "is_recorded_replay": false,
+  "independent_api_call": false,
+  "shared_conversation_context": true,
+  "selected": true,
+  "selection_reason": "Original candidate build canceled after prolonged index download with no progress; mirror response sampled successfully; verify actual build separately."
+}

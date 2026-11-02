@@ -34,3 +34,6 @@ Thumbs.db
 
 # E4 per-run evidence (selected submission evidence lives under e4/evidence)
 /work/
+
+# Local course package; keep teaching materials and sample evidence off Git
+/DevOps_20261020_Course/

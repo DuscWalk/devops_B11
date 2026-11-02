@@ -1,0 +1,10 @@
+{
+  "initial_selection": "context-driven",
+  "initial_build_result": "CANCELED_DOWNLOAD_NO_PROGRESS",
+  "final_selection": "context-driven-mirror",
+  "final_candidate_sha256": "ab02877a21190dc0412592247dd6308c24f7312abc2731fcb3b2ec25859bffd7",
+  "final_build_exit_code": 0,
+  "verification_image_id": "sha256:57dfd1ba5f0438ef068a2f42f0d0a315f32cf02e040be68d21de5b4b9ee2eeca",
+  "comparison": "Explicit make/gcc/libc6-dev versus standard build-essential. Both preserve original instructions. Error-driven candidate was not built.",
+  "adaptation": "Post-response operational adjustment to Huawei HTTPS Debian mirror; exact response remains unchanged."
+}

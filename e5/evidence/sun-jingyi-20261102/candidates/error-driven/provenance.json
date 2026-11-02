@@ -1,0 +1,15 @@
+{
+  "provider": "OpenAI Codex current assistant conversation",
+  "model_version": "not recorded",
+  "time_utc": "2026-11-02T13:08:05.363803+00:00",
+  "prompt_path": "prompt.txt",
+  "raw_response_path": "model-response.txt",
+  "candidate_path": "Dockerfile",
+  "candidate_sha256": "19d406e1669d75f5ae26dce5087dc2c04c1a5aea9b9f6300373f3b106262d27f",
+  "manual_changes": [],
+  "is_recorded_replay": false,
+  "independent_api_call": false,
+  "shared_conversation_context": true,
+  "selected": false,
+  "selection_reason": "Explicit minimal tool list; retained as comparison, not built."
+}

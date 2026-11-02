@@ -1,0 +1,12 @@
+{
+  "remote_file_count_verified": 67,
+  "zip_sha256_verified": true,
+  "source_files_match_original_zip": true,
+  "original_responses_match_saved_candidates": true,
+  "initial_missing_make_verified": true,
+  "interrupted_attempt_preserved": true,
+  "selected_build_and_exact_output_verified": true,
+  "same_image_id_verified": true,
+  "cleanup_verified": true,
+  "doctor_failed_memory_requirement_preserved": true
+}

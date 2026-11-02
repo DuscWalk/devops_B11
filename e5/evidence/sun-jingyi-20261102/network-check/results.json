@@ -1,0 +1,14 @@
+[
+  {
+    "url": "http://deb.debian.org/debian/dists/trixie/Release",
+    "seconds": 0.96,
+    "status": 200,
+    "bytes_sampled": 1024
+  },
+  {
+    "url": "https://repo.huaweicloud.com/debian/dists/trixie/Release",
+    "seconds": 0.09,
+    "status": 200,
+    "bytes_sampled": 1024
+  }
+]
