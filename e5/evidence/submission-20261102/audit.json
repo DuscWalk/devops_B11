@@ -1,0 +1,206 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "scope": "E5 only",
+  "method": "local archive audit and prompt regeneration; no Docker rerun or new model invocation",
+  "member_source_commit": "3e6573ab13dd51f6dd101113c045c0285093eae8",
+  "checks": [
+    {
+      "check": "SHA256SUMS.json",
+      "passed": true,
+      "details": {
+        "entries": 71,
+        "mismatches": []
+      }
+    },
+    {
+      "check": "REMOTE_SHA256SUMS.json",
+      "passed": true,
+      "details": {
+        "entries": 67,
+        "mismatches": []
+      }
+    },
+    {
+      "check": "source_manifest",
+      "passed": true,
+      "details": {
+        "entries": 11
+      }
+    },
+    {
+      "check": "original_student_zip",
+      "passed": true,
+      "details": {
+        "sha256": "4068d3bf98dc8218cc80c6a0f09674d9ed54289b3fcac5cb86eda327fb0cd688"
+      }
+    },
+    {
+      "check": "teaching_source_matches_zip",
+      "passed": true,
+      "details": {
+        "mismatches": []
+      }
+    },
+    {
+      "check": "regenerate_prompts",
+      "passed": true,
+      "details": {
+        "exit_code": 0,
+        "model_calls": 0
+      }
+    },
+    {
+      "check": "regenerated_prompt-error-driven.txt",
+      "passed": true,
+      "details": {
+        "comparison": "byte-for-byte"
+      }
+    },
+    {
+      "check": "regenerated_prompt-context-driven.txt",
+      "passed": true,
+      "details": {
+        "comparison": "byte-for-byte"
+      }
+    },
+    {
+      "check": "regenerated_error-localization.json",
+      "passed": true,
+      "details": {
+        "comparison": "byte-for-byte"
+      }
+    },
+    {
+      "check": "candidate_hash_error-driven",
+      "passed": true,
+      "details": {
+        "sha256": "19d406e1669d75f5ae26dce5087dc2c04c1a5aea9b9f6300373f3b106262d27f"
+      }
+    },
+    {
+      "check": "original_response_error-driven",
+      "passed": true,
+      "details": {
+        "comparison": "fenced response body equals saved Dockerfile"
+      }
+    },
+    {
+      "check": "prompt_copy_error-driven",
+      "passed": true,
+      "details": {
+        "comparison": "byte-for-byte"
+      }
+    },
+    {
+      "check": "candidate_hash_context-driven",
+      "passed": true,
+      "details": {
+        "sha256": "ee7139c33965290b64cbfbb671a76e54b60f883196035d9d0eaa84945c83c0c5"
+      }
+    },
+    {
+      "check": "original_response_context-driven",
+      "passed": true,
+      "details": {
+        "comparison": "fenced response body equals saved Dockerfile"
+      }
+    },
+    {
+      "check": "prompt_copy_context-driven",
+      "passed": true,
+      "details": {
+        "comparison": "byte-for-byte"
+      }
+    },
+    {
+      "check": "candidate_hash_context-driven-mirror",
+      "passed": true,
+      "details": {
+        "sha256": "ab02877a21190dc0412592247dd6308c24f7312abc2731fcb3b2ec25859bffd7"
+      }
+    },
+    {
+      "check": "expected_missing_make",
+      "passed": true,
+      "details": {
+        "docker_build_exit_code": 1,
+        "run_layer_exit_code": 127
+      }
+    },
+    {
+      "check": "e5_driver",
+      "passed": true,
+      "details": {
+        "exit_code": 0
+      }
+    },
+    {
+      "check": "network_abort_preserved",
+      "passed": true,
+      "details": {
+        "exit_code": 130
+      }
+    },
+    {
+      "check": "successful_candidate_build",
+      "passed": true,
+      "details": {
+        "exit_code": 0,
+        "elapsed_seconds": 88.75
+      }
+    },
+    {
+      "check": "selection_hash",
+      "passed": true,
+      "details": {
+        "candidate": "context-driven-mirror"
+      }
+    },
+    {
+      "check": "same_image_id",
+      "passed": true,
+      "details": {
+        "image_id": "sha256:57dfd1ba5f0438ef068a2f42f0d0a315f32cf02e040be68d21de5b4b9ee2eeca"
+      }
+    },
+    {
+      "check": "disabled_network",
+      "passed": true,
+      "details": {
+        "network": "none"
+      }
+    },
+    {
+      "check": "program_success",
+      "passed": true,
+      "details": {
+        "exit_code": 0,
+        "expected_stdout": "hello E3\n"
+      }
+    },
+    {
+      "check": "container_cleanup",
+      "passed": true,
+      "details": {
+        "source": "verification/cleanup-check.json"
+      }
+    },
+    {
+      "check": "original_doctor_failure_preserved",
+      "passed": true,
+      "details": {
+        "exit_code": 1,
+        "note": "Known 4 GiB check on the allocated 2 GB server; not reported as PASS for resources."
+      }
+    },
+    {
+      "check": "original_member_archive_preserved",
+      "passed": true,
+      "details": {
+        "changed_paths": []
+      }
+    }
+  ],
+  "passed": true
+}
