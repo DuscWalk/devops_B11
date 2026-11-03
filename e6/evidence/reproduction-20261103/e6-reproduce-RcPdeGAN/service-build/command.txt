@@ -1,0 +1,1 @@
+docker build --progress=plain --build-arg BASE_IMAGE=b11-e6-base:e6-reproduce-rcpdegan -f services/draft/Dockerfile -t b11-e6-draft:e6-reproduce-rcpdegan . 

@@ -1,0 +1,178 @@
+{
+  "course_archive": "docs/e5/E5-7_Student_Cloud.zip",
+  "course_archive_sha256": "4068d3bf98dc8218cc80c6a0f09674d9ed54289b3fcac5cb86eda327fb0cd688",
+  "course_files": [
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/.dockerignore",
+      "path": "e6/labs/B-draft/.dockerignore",
+      "sha256": "fe49249345cb96bbbd2c982a935cc707d673d33e59d8bacb24917d59ccf37fd2"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/.env.example",
+      "path": "e6/labs/B-draft/.env.example",
+      "sha256": "bd800b0f7b18224cf1e6411d6e9a08c0dbbd63e73ece1b4f31b4da9ab5e84ecd"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/.gitignore",
+      "path": "e6/labs/B-draft/.gitignore",
+      "sha256": "7f4b21a7294d8319fc04ef5904f9735408d5577a6cd9e74446ca1adda15e39a2"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/compose.yaml",
+      "path": "e6/labs/B-draft/compose.yaml",
+      "sha256": "d3c72761e3c572a527b6eae112c06b9109d1081db4f9aed06196321e821fbf90"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/fixtures/ci-candidates/DeepSeek-E5.Dockerfile",
+      "path": "e6/labs/B-draft/fixtures/ci-candidates/DeepSeek-E5.Dockerfile",
+      "sha256": "ede21b0fab394071641526e2fccefc41565efb00de6fb54d9d5b906aebeb535d"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/fixtures/ci-candidates/provenance.json",
+      "path": "e6/labs/B-draft/fixtures/ci-candidates/provenance.json",
+      "sha256": "e4d5bea93010dd4c34ca5163be593843c4cc7b3dbb728ea7d71f1719ada04224"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/fixtures/draft/.dockerignore",
+      "path": "e6/labs/B-draft/fixtures/draft/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/fixtures/draft/Dockerfile.broken",
+      "path": "e6/labs/B-draft/fixtures/draft/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/fixtures/draft/main.c",
+      "path": "e6/labs/B-draft/fixtures/draft/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/fixtures/draft/Makefile",
+      "path": "e6/labs/B-draft/fixtures/draft/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/fixtures/draft/README.md",
+      "path": "e6/labs/B-draft/fixtures/draft/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/Makefile",
+      "path": "e6/labs/B-draft/Makefile",
+      "sha256": "f86aa7dac217d227778b4c27623ec589c83bcc6c990288d95a2cc82a25fea4c2"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/README.md",
+      "path": "e6/labs/B-draft/README.md",
+      "sha256": "7806b7a6abce798ec9ccfea1870febe0e6208aea654eedfae23968e9c9c0a420"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/requirements-dev.in",
+      "path": "e6/labs/B-draft/requirements-dev.in",
+      "sha256": "40457296154aab4b3db2e2b9c25d2c6440ae9d9a0752b24f838450f64b1826ae"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/requirements-dev.lock",
+      "path": "e6/labs/B-draft/requirements-dev.lock",
+      "sha256": "24f54d917487599d98e13c5733a75ca4a86652fa11cdccaf863c08e1cc66f5df"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/scripts/doctor.py",
+      "path": "e6/labs/B-draft/scripts/doctor.py",
+      "sha256": "f2f545e66581cf4b860122941940a60d14daa9eccc628bdf58ad471ff406af47"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/scripts/lab_cloud.py",
+      "path": "e6/labs/B-draft/scripts/lab_cloud.py",
+      "sha256": "7b18458810390a9ec267c071e99c117b806eb9d80d2c7f519f310ecc127fd4d1"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/scripts/prepare_e5_prompts.py",
+      "path": "e6/labs/B-draft/scripts/prepare_e5_prompts.py",
+      "sha256": "21063add1f027c977b9208a36bfc505f5808b6fc40ea62314b0dac04bb8a3240"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/scripts/run_e7_b_gate.py",
+      "path": "e6/labs/B-draft/scripts/run_e7_b_gate.py",
+      "sha256": "fe30de327a63b33e22cffa4918cdfe9fd79b592ae819b4498f2e004b955b342d"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/scripts/secret_scan.py",
+      "path": "e6/labs/B-draft/scripts/secret_scan.py",
+      "sha256": "e3aefad5e87201d684841b931b8586a3d81d2930968bfa02867eff41cfcfbc65"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/scripts/verify_e6_b_evidence.py",
+      "path": "e6/labs/B-draft/scripts/verify_e6_b_evidence.py",
+      "sha256": "5d5fe31da29a6f19b8a457940729bd571882bb0ee702101af121ad4bc4751f4a"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/Dockerfile",
+      "path": "e6/labs/B-draft/services/draft/Dockerfile",
+      "sha256": "c7f1ee93feebcd9db8b866467ea0a436efa9b80397029ce9fd33cd970dd8a445"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/draft/__init__.py",
+      "path": "e6/labs/B-draft/services/draft/draft/__init__.py",
+      "sha256": "7c9b461c79148f28c89cc35ada2b7a07d1243fc16c1fe9d6809da3eac0449900"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/draft/__main__.py",
+      "path": "e6/labs/B-draft/services/draft/draft/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/draft/autobuild.py",
+      "path": "e6/labs/B-draft/services/draft/draft/autobuild.py",
+      "sha256": "46afe8c9016f78f217372e6cdfef70ed495f9577677806ee87712e49160ff6fd"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/draft/cli.py",
+      "path": "e6/labs/B-draft/services/draft/draft/cli.py",
+      "sha256": "5d7389655c01143a8428ba0a093ca1f0ad206ba34ea72e6f870df72eb5f92308"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/draft/smoke.py",
+      "path": "e6/labs/B-draft/services/draft/draft/smoke.py",
+      "sha256": "f7df9a45cde12a2311aaeb7e79184c92e94864f5d5f3baeabf8984bc55cf3709"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/pytest.ini",
+      "path": "e6/labs/B-draft/services/draft/pytest.ini",
+      "sha256": "f211820b112f706314629c1055868340301685733ea465af1151e0a92de620cc"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/tests/test_autobuild.py",
+      "path": "e6/labs/B-draft/services/draft/tests/test_autobuild.py",
+      "sha256": "13741af248835c26b476a172281950dffb15d0bbf4c3135d12c8a41a891f826d"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/tests/test_cli.py",
+      "path": "e6/labs/B-draft/services/draft/tests/test_cli.py",
+      "sha256": "36ef3925167826ee4e15ee25f610e2723950af4c31606531b694b24279a71f12"
+    },
+    {
+      "package_path": "DevOps_1020_Student_Cloud/labs/B-draft/services/draft/tests/test_workflow_failures.py",
+      "path": "e6/labs/B-draft/services/draft/tests/test_workflow_failures.py",
+      "sha256": "93f65cbc8191cd3b3c93e89b0ab490f25ede028f733c258d095685f32eb82714"
+    }
+  ],
+  "omitted_course_files": [
+    "DevOps_1020_Student_Cloud/labs/B-draft/.github/workflows/e7-quality-gate.yml"
+  ],
+  "custom_test": {
+    "source_commit": "93b44511a7e23044edc215e85a0f9adbbb932e4f",
+    "source_path": "e5/labs/B-draft/services/draft/tests/b11_custom/test_candidate_policy.py",
+    "path": "e6/labs/B-draft/services/draft/tests/b11_custom/test_candidate_policy.py",
+    "sha256": "ffd7bc29d73d5a74e29547af65e379c758ffbdf6122f47f232b4d82e9dd9ed99"
+  },
+  "evidence": {
+    "source_commit": "93b44511a7e23044edc215e85a0f9adbbb932e4f",
+    "source_directory": "e5/evidence/hu-bo-20261029",
+    "destination": "e6/evidence/hu-bo-20261029",
+    "manifest": "e6/evidence/hu-bo-20261029/SHA256SUMS.json",
+    "files": 212,
+    "scope": "Byte-for-byte selection of existing cloud run artifacts; not a new cloud execution."
+  }
+}

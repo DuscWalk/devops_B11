@@ -1,0 +1,1 @@
+python3 scripts/lab_cloud.py gate --image sha256:d80a166c4809af87457d401e15a00421de8082875af6acb55d906a642814147c --candidate /home/duscwalk/241276007/e6-b11-20261103-review/e6/evidence/hu-bo-20261029/candidate/Dockerfile --out /home/duscwalk/241276007/e6-b11-20261103-review/e6/labs/B-draft/work/e6-reproduce-RcPdeGAN/gate --build-timeout 600 

@@ -1,0 +1,1 @@
+docker build --progress=plain -f /home/duscwalk/241276007/e6-b11-20261103-review/e6/labs/B-draft/work/e6-reproduce-hnZQQFyP/service.Dockerfile -t b11-e6-draft:e6-reproduce-hnzqqfyp . 

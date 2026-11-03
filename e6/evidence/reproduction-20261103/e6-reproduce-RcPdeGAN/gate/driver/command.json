@@ -1,0 +1,12 @@
+[
+  "/usr/bin/python3",
+  "scripts/run_e7_b_gate.py",
+  "--image",
+  "sha256:d80a166c4809af87457d401e15a00421de8082875af6acb55d906a642814147c",
+  "--out",
+  "/home/duscwalk/241276007/e6-b11-20261103-review/e6/labs/B-draft/work/e6-reproduce-RcPdeGAN/gate/gate",
+  "--candidate",
+  "/home/duscwalk/241276007/e6-b11-20261103-review/e6/evidence/hu-bo-20261029/candidate/Dockerfile",
+  "--build-timeout",
+  "600"
+]

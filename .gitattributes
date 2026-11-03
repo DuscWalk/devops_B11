@@ -14,3 +14,7 @@ docs/e4/Other-Instructions.txt -text whitespace=cr-at-eol
 # Evidence is archived byte-for-byte, including terminal whitespace.
 e4/evidence/** -text -whitespace
 e5/evidence/** -text -whitespace
+e6/evidence/** -text -whitespace
+# Keep imported course source bytes and the generated repair diff intact.
+e6/labs/B-draft/** -text
+e6/candidate-repair.diff -text -whitespace

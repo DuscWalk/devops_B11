@@ -1,0 +1,8 @@
+{
+  "track": "B",
+  "stage": "gate",
+  "time_utc": "2026-11-03T06:50:06.038182+00:00",
+  "image": "sha256:127883804fa40f79a81313518da7b9b3d7d37ffa20935329b222b1614a82791b",
+  "packaging_entrypoint": "cloud-v1",
+  "replay": false
+}

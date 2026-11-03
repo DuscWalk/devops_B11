@@ -1,0 +1,65 @@
+[
+    {
+        "Id": "sha256:545cda1d2f1d7e662a57584a7c4b25b9a17ba1c0e463decf70e6f1560c1f0c2c",
+        "RepoTags": [
+            "course1020-draft:local"
+        ],
+        "RepoDigests": [
+            "course1020-draft@sha256:545cda1d2f1d7e662a57584a7c4b25b9a17ba1c0e463decf70e6f1560c1f0c2c"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-29T18:28:48.897761186+08:00",
+        "Config": {
+            "User": "app",
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.14",
+                "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+                "PIP_INDEX_URL=https://repo.huaweicloud.com/repository/pypi/simple",
+                "LC_ALL=C.UTF-8",
+                "TZ=UTC",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "python3",
+                "-m",
+                "draft",
+                "--help"
+            ],
+            "WorkingDir": "/app",
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 126882366,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:f4f8b983b714f130e2cff99176baa26352db6a55d3622e10ada40f2b4720a4eb",
+                "sha256:7ef9ddba6965cfcb2dcd5bf24e61737a0031c2d9be2b3377339111ab1ad3f0f2",
+                "sha256:ef9f8c7c1d6b6b918d5e93cba9a7de4c837e3047ca733296bd396d9a413ae64f",
+                "sha256:fde42b5dd2510411f5cd411982dd5fa72f546553ccba3e5260f33a3da21bbf8f",
+                "sha256:0396d4b8a226301d0c2cfd31157cfe8a44e88a10ba67296481837c58a2a9e41d",
+                "sha256:59f3b85a76e72ef48e80fff9006124527479e7f45222a563724484e0dc751c0b",
+                "sha256:076e910ad37ddb56ae845eb0eaa87cef6d1064343154df1c69f5d0c83f7e541d",
+                "sha256:742e313cf83d0cf303eb6f71bcb5465ddb36ccff68a1a12db0eccc30bf953f6d",
+                "sha256:0df8536f444cb985031e3f0333a9a7f55b6cec70b467bd545ba65abb5d3b9deb",
+                "sha256:79eb6c8e36e99d73842db662345b08edfbef23845bc8ab62ef19b083e42b6246",
+                "sha256:be38325c0b0bb12ced931d409893aad1d21830e21cc3da3e04045393861dac6a",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:da9edb7cf6eb65367f350c924504a7edab10991e28d309da24001cdb396ac207",
+                "sha256:800b62ee1af832c54b773c0537f338126f8590c950eb5bcc9ce731c24c653f37"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-29T10:28:49.103856347Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:545cda1d2f1d7e662a57584a7c4b25b9a17ba1c0e463decf70e6f1560c1f0c2c",
+            "size": 856
+        }
+    }
+]

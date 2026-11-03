@@ -1,0 +1,1 @@
+docker run --rm --network none sha256:d80a166c4809af87457d401e15a00421de8082875af6acb55d906a642814147c pytest 

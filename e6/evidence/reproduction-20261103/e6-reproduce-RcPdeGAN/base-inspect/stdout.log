@@ -1,0 +1,46 @@
+[
+    {
+        "Id": "sha256:42ad52499f97c7fe8a09b26a792938f4550c23ec8578898cf11fc02c9a47508d",
+        "RepoTags": [
+            "b11-e6-base:e6-reproduce-rcpdegan"
+        ],
+        "RepoDigests": [
+            "b11-e6-base@sha256:42ad52499f97c7fe8a09b26a792938f4550c23ec8578898cf11fc02c9a47508d"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-29T18:07:54.313188725+08:00",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.14",
+                "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+                "PIP_INDEX_URL=https://repo.huaweicloud.com/repository/pypi/simple"
+            ],
+            "Cmd": [
+                "python3"
+            ]
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 42974857,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:f4f8b983b714f130e2cff99176baa26352db6a55d3622e10ada40f2b4720a4eb",
+                "sha256:7ef9ddba6965cfcb2dcd5bf24e61737a0031c2d9be2b3377339111ab1ad3f0f2",
+                "sha256:ef9f8c7c1d6b6b918d5e93cba9a7de4c837e3047ca733296bd396d9a413ae64f",
+                "sha256:fde42b5dd2510411f5cd411982dd5fa72f546553ccba3e5260f33a3da21bbf8f",
+                "sha256:0396d4b8a226301d0c2cfd31157cfe8a44e88a10ba67296481837c58a2a9e41d"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-03T06:46:52.146528605Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:42ad52499f97c7fe8a09b26a792938f4550c23ec8578898cf11fc02c9a47508d",
+            "size": 856
+        }
+    }
+]

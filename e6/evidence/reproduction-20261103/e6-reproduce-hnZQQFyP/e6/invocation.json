@@ -1,0 +1,10 @@
+{
+  "track": "B",
+  "stage": "e6",
+  "time_utc": "2026-11-03T06:50:03.942579+00:00",
+  "image": "sha256:127883804fa40f79a81313518da7b9b3d7d37ffa20935329b222b1614a82791b",
+  "packaging_entrypoint": "cloud-v1",
+  "replay": false,
+  "candidate_sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+  "candidate_source": "student supplied; see student provenance record"
+}

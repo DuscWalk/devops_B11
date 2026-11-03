@@ -1,0 +1,6 @@
+{
+  "course_dockerfile_sha256": "c7f1ee93feebcd9db8b866467ea0a436efa9b80397029ce9fd33cd970dd8a445",
+  "mirror_adapter_sha256": "7b9a592020dd994624b6c310b0d3ff930e3cbbf64ace22c82fc29752335c684e",
+  "generated_dockerfile_sha256": "44272ae3f74c91b73c2c8dc69c09564dd4359f88f05837b3bde34c9ec2da656f",
+  "change": "Insert archived RUN/ENV mirror settings after final-stage FROM; keep fixed course base and dependency lock."
+}

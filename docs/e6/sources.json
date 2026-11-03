@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-03",
+  "timezone": "America/New_York",
+  "ppt": {
+    "file": "E6_论文1MVP_20261020_讲稿优化版.pptx",
+    "source": "/home/duscwalk/DevOps/lab5/extracted/01_授课PPT/E6_论文1MVP_20261020_讲稿优化版.pptx",
+    "sha256": "e7acd6825614af520a8c6b124945449c0e8734bc2de3a6449121f013b3f29525"
+  },
+  "student_package": {
+    "path": "../e5/E5-7_Student_Cloud.zip",
+    "sha256": "4068d3bf98dc8218cc80c6a0f09674d9ed54289b3fcac5cb86eda327fb0cd688"
+  }
+}

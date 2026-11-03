@@ -1,0 +1,30 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.19kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.3s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/docker:28.5.1-cli@sha256:9190b0613792e658a7783cf14b2d5ace5941bb68ede7276922ea36ee457d76ad
+#4 DONE 1.1s
+
+#5 [internal] load metadata for docker.io/library/sha256:9fc1e01add4010d6e5db19517932fcba0f2c85ffcf23ad4e9163ebc955fb6b61
+#5 ERROR: unexpected status from HEAD request to https://docker.m.daocloud.io/v2/library/sha256/manifests/9fc1e01add4010d6e5db19517932fcba0f2c85ffcf23ad4e9163ebc955fb6b61?ns=docker.io: 403 Forbidden
+------
+ > [internal] load metadata for docker.io/library/sha256:9fc1e01add4010d6e5db19517932fcba0f2c85ffcf23ad4e9163ebc955fb6b61:
+------
+Dockerfile:13
+--------------------
+  11 |     FROM ${DOCKER_CLI_IMAGE} AS docker-cli
+  12 |     
+  13 | >>> FROM ${BASE_IMAGE}
+  14 |     
+  15 |     ENV LC_ALL=C.UTF-8 \
+--------------------
+ERROR: failed to build: failed to solve: unexpected status from HEAD request to https://docker.m.daocloud.io/v2/library/sha256/manifests/9fc1e01add4010d6e5db19517932fcba0f2c85ffcf23ad4e9163ebc955fb6b61?ns=docker.io: 403 Forbidden

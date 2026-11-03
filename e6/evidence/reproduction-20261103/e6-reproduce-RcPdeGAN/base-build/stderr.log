@@ -1,0 +1,30 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from service-base-mirror.Dockerfile
+#1 transferring dockerfile: 333B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.13-slim@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 106B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/library/python:3.13-slim@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#4 resolve docker.io/library/python:3.13-slim@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 0.0s done
+#4 DONE 0.0s
+
+#5 [2/2] RUN sed -i 's|http://deb.debian.org|https://mirrors.huaweicloud.com|g' /etc/apt/sources.list.d/debian.sources
+#5 CACHED
+
+#6 exporting to image
+#6 exporting layers done
+#6 exporting manifest sha256:4bc867ea73fe6032bc5c027d86e17bb005ecf14337fc4f307cbda5046ed91a79 done
+#6 exporting config sha256:827407724db84bde263ee1a51b2f9a96ad7f82d56d0cc4bf95d39b00292e853e done
+#6 exporting attestation manifest sha256:ebba6dd86f5a49fa36fcf9daa2ccad74ffe548c33577699524bacea0034d6676
+#6 exporting attestation manifest sha256:ebba6dd86f5a49fa36fcf9daa2ccad74ffe548c33577699524bacea0034d6676 0.0s done
+#6 exporting manifest list sha256:42ad52499f97c7fe8a09b26a792938f4550c23ec8578898cf11fc02c9a47508d 0.0s done
+#6 naming to docker.io/library/b11-e6-base:e6-reproduce-rcpdegan done
+#6 unpacking to docker.io/library/b11-e6-base:e6-reproduce-rcpdegan done
+#6 DONE 0.1s

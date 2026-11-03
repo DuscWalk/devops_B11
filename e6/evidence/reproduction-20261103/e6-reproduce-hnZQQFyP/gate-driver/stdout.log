@@ -1,0 +1,37 @@
+EVIDENCE_DIR=/home/duscwalk/241276007/e6-b11-20261103-review/e6/labs/B-draft/work/e6-reproduce-hnZQQFyP/gate
+      "trace_id": "e6-b-f161b93abe0f450cbe668cc49e7fb521"
+    },
+    {
+      "case": "invalid-candidate",
+      "passed": true,
+      "exit_code": 1,
+      "workflow_status": "FAILED",
+      "trace_id": ""
+    },
+    {
+      "case": "build-failed",
+      "passed": true,
+      "exit_code": 1,
+      "workflow_status": "FAILED",
+      "trace_id": "e6-b-786e3f85a86249368c81a865b80356a1"
+    },
+    {
+      "case": "runtime-timeout",
+      "passed": true,
+      "exit_code": 1,
+      "workflow_status": "TIMED_OUT",
+      "trace_id": "e6-b-0a68446ae96e45f681e200f08833c530"
+    }
+  ],
+  "intentional_failure": false,
+  "selected_cases": [
+    "success",
+    "wrong-output",
+    "invalid-candidate",
+    "build-failed",
+    "runtime-timeout"
+  ],
+  "build_timeout_seconds": 600,
+  "scope": "Recorded candidate replay for selected real workflow cases; not model generation or a three-project benchmark"
+}
+

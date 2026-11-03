@@ -1,0 +1,1 @@
+docker image inspect b11-e6-draft:e6-reproduce-rcpdegan 

@@ -1,0 +1,1 @@
+docker build --progress=plain -f /home/duscwalk/241276007/e6-b11-20261103-review/e6/evidence/hu-bo-20261029/service-base-mirror.Dockerfile -t b11-e6-base:e6-reproduce-rcpdegan . 

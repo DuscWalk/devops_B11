@@ -1,0 +1,11 @@
+[
+  "docker",
+  "run",
+  "--rm",
+  "--network",
+  "none",
+  "--cidfile",
+  "/home/duscwalk/241276007/e6-b11-20261103-review/e6/labs/B-draft/work/e6-reproduce-hnZQQFyP/gate/gate/unit-tests/service-container-id.txt",
+  "sha256:127883804fa40f79a81313518da7b9b3d7d37ffa20935329b222b1614a82791b",
+  "pytest"
+]

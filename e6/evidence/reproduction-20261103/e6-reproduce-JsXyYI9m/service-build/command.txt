@@ -1,0 +1,1 @@
+docker build --progress=plain --build-arg BASE_IMAGE=sha256:9fc1e01add4010d6e5db19517932fcba0f2c85ffcf23ad4e9163ebc955fb6b61 -f services/draft/Dockerfile -t b11-e6-draft:e6-reproduce-jsxyyi9m . 

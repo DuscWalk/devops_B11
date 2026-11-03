@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-03",
+  "timezone": "America/New_York",
+  "archive": "e6/evidence/reproduction-20261103",
+  "accepted_run": "e6-reproduce-hnZQQFyP",
+  "remote_root": "/home/duscwalk/241276007/e6-b11-20261103-review",
+  "system_user": "duscwalk",
+  "executed_command": "bash e6/scripts/reproduce.sh",
+  "files": 447,
+  "attempts": [
+    {
+      "directory": "e6-reproduce-JsXyYI9m",
+      "status": "FAILED",
+      "reason": "BuildKit parsed a bare local image ID in FROM as a registry image name; service build exit 1."
+    },
+    {
+      "directory": "e6-reproduce-RcPdeGAN",
+      "status": "SUCCEEDED",
+      "reason": "Unique local base tag resolved after a wait; all steps passed. No timeout truncation."
+    },
+    {
+      "directory": "e6-reproduce-hnZQQFyP",
+      "status": "SUCCEEDED",
+      "reason": "Final submitted script generates a mirror-adapted working Dockerfile using the fixed course base; all steps passed."
+    }
+  ]
+}

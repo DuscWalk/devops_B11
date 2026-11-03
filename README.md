@@ -1,10 +1,16 @@
-# DevOps B11 · E2 接口契约 / E3 测试基线 / E4 可重复环境 / E5 论文复现
+# DevOps B11 · E2 接口契约 / E3 测试基线 / E4 可重复环境 / E5 论文复现 / E6 MVP
 
 B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与联调。配对组 A11 负责 BuildChecker、EChecker。
 
 **E2 提交入口：[e2/README.md](e2/README.md)。LMS 填写说明：[e2/SUBMISSION.md](e2/SUBMISSION.md)。**
 
 2026-09-22，胡博明确确认 A11 已认可前序接口方案；确认来源和范围见 [AGREEMENT.md](e2/AGREEMENT.md)。三人分支保留提交历史并合入交付版本。正式 Schema、四类请求/响应、错误样例、产物、设计记录、贡献与验证结果已集中归档。
+
+## E6 入口
+
+**E6 审阅入口：[复现说明](e6/README.md)、[实验报告](e6/REPORT.md)、[要求核对](e6/REQUIREMENTS_CHECK.md)、[提交说明](e6/SUBMISSION.md)。分支：`feat/e6-submission`。**
+
+B-DRAFT 的 CLI 自动完成初始缺 make 失败、候选构建及同一镜像 ID 的禁网验证。新增候选约束测试，重新构建后 25 项单测和课程门禁通过；源码与报告字段对照、原始日志及来源分别归档。课件见 [docs/e6](docs/e6/README.md)。
 
 ## E5 入口
 
@@ -34,7 +40,8 @@ python3 -m venv .venv
 
 | 目录 | 内容 |
 | --- | --- |
-| [docs/](docs/README.md) | E2–E5 原课件、逐页文字、教师实验包及来源摘要 |
+| [docs/](docs/README.md) | E2–E6 原课件、逐页文字、教师实验包及来源摘要 |
+| [e6/](e6/SUBMISSION.md) | E6 自动构建、程序验证、扩展测试、原始证据与报告 |
 | [e5/](e5/SUBMISSION.md) | E5 提交报告、模型候选、手工构建与运行证据 |
 | [e4/](e4/SUBMISSION.md) | E4 提交报告、三人证据、版本对照与贡献 |
 | [e3/](e3/README.md) | 当前基线、统一验收、环境提案、证据与组员交接 |
