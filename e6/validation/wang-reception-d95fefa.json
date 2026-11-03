@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-03",
+  "timezone": "America/New_York",
+  "member": "241250110",
+  "branch": "feat/e6-auto-build",
+  "commit": "d95fefab7e0e463e910bfe208abf6729de9e8753",
+  "scope": "Read-only reception audit of remote Git objects; no new Docker execution, no merge, not a member review.",
+  "evidence_manifest_entries": 27,
+  "evidence_sha256": "passed",
+  "course_verifier": {
+    "passed": true,
+    "trace_id": "e6-b-a2b1782bd9594814921af948843dc0f1",
+    "baseline_failure": "MISSING_MAKE",
+    "fixed_build_exit_code": 0,
+    "verify_exit_code": 0,
+    "verified_output": "hello E3",
+    "candidate_sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+    "image_id": "sha256:ad96eb4df72181ea9a9946bd73f8b2478c93f90977036b90c4659390bd0aceb9",
+    "scope": "Saved evidence consistency; does not independently rerun builds"
+  },
+  "exact_stdout": "hello E3\n",
+  "course_original_files": [
+    "services/draft/draft/autobuild.py",
+    "scripts/lab_cloud.py",
+    "scripts/verify_e6_b_evidence.py",
+    "services/draft/tests/test_autobuild.py",
+    "services/draft/tests/test_workflow_failures.py"
+  ],
+  "followup": [
+    "Report test log link is e6-tests.log but committed file is .e6-tests.log.",
+    "Report reproduction deletes work/e6-own; replace with a fresh output directory.",
+    "Explicitly identify unchanged teaching core/tests vs CLI integration and student image wrapper."
+  ],
+  "test_log_limit": "Saved .e6-tests.log contains 25 dots and [100%], but no separately saved pytest process exit code. Do not promote it to a newly verified exit-code record."
+}

@@ -4,6 +4,8 @@
 
 入口：[实验报告](REPORT.md)、[要求核对](REQUIREMENTS_CHECK.md)、[来源与贡献](SOURCES_AND_CONTRIBUTIONS.md)、[证据索引](EVIDENCE.md)、[提交说明](SUBMISSION.md)。
 
+**组员下一步见 [交接安排](HANDOFF.md)：孙静怡审阅 DRAFT，王硕已提供 E6 分支并补报告说明，胡博接收与整合。**原分工继续沿用，已有运行无需三人重复一遍。
+
 ## 目录
 
 | 路径 | 内容 |
