@@ -14,6 +14,7 @@
 | 使用同一镜像 ID 验证输出 | PASS：禁网运行 exit=0，精确输出 `hello E3\n` | [运行验证](evidence/sun-jingyi-20261102/verification/) |
 | 对照论文步骤，解释实际做法与限制 | 齐全：微型样例、两类提示、同会话候选、单次复现 | [小组报告](REPORT.md) |
 | 证据路径、摘要与复现说明 | PASS：归档摘要核验；新输出目录的复现步骤已提供 | [README](README.md)、[接收核验](evidence/submission-20261102/audit.json) |
+| 组内分工：王硕独立复跑及交叉核对 | 已接收：回放组内候选的复跑记录、与孙静怡结果的对照、63 项摘要全部匹配；运行命令的镜像 ID 记录按组长确认保留现状 | [王硕报告](WANG_SHUO_REPORT.md)、[接收核验](evidence/submission-20261102/wang-shuo-audit.json) |
 | 课程资源自检 | 原始 FAIL：1.7 GiB 低于通用 4 GiB；学院 2 GB 主机已实际完成样例 | [doctor](evidence/sun-jingyi-20261102/preflight/doctor.log) |
 
 E5 技术流程和提交材料已完成。以上 PASS 指已核验的真实记录，不表示教师已评分、LMS 已上传或自动核验等同于成员人工签字。E5 课件没有把新增 GitHub 仓库、CI 门禁或 A11 的业务结果列为本次提交前提。

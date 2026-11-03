@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "scope": "Wang Shuo E5 archive reception, not Docker rerun",
+  "member_commits": [
+    "53fb4f2",
+    "8b9fb65"
+  ],
+  "path_fix_commit": "d399ac4",
+  "checks": [
+    {
+      "check": "archive_checksums",
+      "passed": true,
+      "details": {
+        "entries": 63,
+        "mismatches": []
+      }
+    },
+    {
+      "check": "archive_manifest_coverage",
+      "passed": true,
+      "details": {
+        "files": 63
+      }
+    },
+    {
+      "check": "missing_make_baseline",
+      "passed": true,
+      "details": {
+        "build_exit_code": 1
+      }
+    },
+    {
+      "check": "successful_candidate_build",
+      "passed": true,
+      "details": {
+        "exit_code": 0
+      }
+    },
+    {
+      "check": "build_image_id",
+      "passed": true,
+      "details": {
+        "image_id": "sha256:49dc498ec1cb1984f45c54ddd167d27825f4d892fb8f6e108485206f2b47ed6d"
+      }
+    },
+    {
+      "check": "program_output",
+      "passed": true,
+      "details": {
+        "exit_code": 0,
+        "stdout": "hello E3\n"
+      }
+    },
+    {
+      "check": "relocated_log_bytes",
+      "passed": true,
+      "details": {
+        "from": "e5-01/e5-console.log",
+        "to": "build-01/build-console.log"
+      }
+    },
+    {
+      "check": "member_archive_unchanged_since_path_fix",
+      "passed": true,
+      "details": {
+        "source_commit": "d399ac4fd970cb49096dfbbe83c0e65804773722",
+        "files": 64
+      }
+    },
+    {
+      "check": "cross_check_report_preserved",
+      "passed": true,
+      "details": {
+        "report": "e5/WANG_SHUO_REPORT.md"
+      }
+    }
+  ],
+  "passed": true,
+  "accepted_limitation": "Runtime command still uses an image-id placeholder; user explicitly accepted retaining it. Build ID/log consistency and output were checked separately, not asserted as machine proof of the runtime image."
+}

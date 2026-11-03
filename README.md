@@ -8,9 +8,9 @@ B11：孙静怡负责 DRAFT，王硕负责 MDFixer，胡博负责公共接口与
 
 ## E5 入口
 
-**E5 提交入口：[提交说明](e5/SUBMISSION.md)、[小组报告](e5/REPORT.md)、[要求核对](e5/REQUIREMENTS_CHECK.md)。固定标签：`e5-b11-submission-20261102`。**
+**E5 提交入口：[提交说明](e5/SUBMISSION.md)、[小组报告](e5/REPORT.md)、[要求核对](e5/REQUIREMENTS_CHECK.md)。固定标签：`e5-b11-submission-20261102-r2`。**
 
-已接收孙静怡的 E5 分支，完成初始缺 make 失败、两类提示与候选、候选选择和换源调整、实际构建及同一镜像 ID 的禁网运行。输出精确为 `hello E3\n`。胡博汇总并核验原始证据；来源与个人贡献分别保留。本次按 E5 课件第 19 页提交，E6 自动服务及 E7 测试、GitHub CI 与合并门禁属于后续阶段。复现步骤见 [E5 README](e5/README.md)，原课件见 [docs/e5](docs/e5/README.md)。
+已接收孙静怡的 E5 分支及王硕的独立复跑、交叉检查记录。孙静怡完成初始缺 make 失败、两类提示与候选、候选选择和换源调整、实际构建及同一镜像 ID 的禁网运行；王硕回放组内已有候选并核对两人的结果。胡博汇总并核验原始证据；来源与个人贡献分别保留。本次按 E5 课件第 19 页提交，E6 自动服务及 E7 测试、GitHub CI 与合并门禁属于后续阶段。复现步骤见 [E5 README](e5/README.md)，原课件见 [docs/e5](docs/e5/README.md)。
 
 ## E4 入口
 

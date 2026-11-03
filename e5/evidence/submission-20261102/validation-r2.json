@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "scope": "E5 submission revision 2, both member archives",
+  "sun_archive_checksums": {
+    "local_entries": 71,
+    "remote_entries": 67,
+    "passed": true
+  },
+  "wang_archive_checksums": {
+    "entries": 63,
+    "coverage_complete": true,
+    "passed": true
+  },
+  "wang_reception_audit": "wang-shuo-audit.json",
+  "changed_markdown_links": "PASS",
+  "git_diff_check": "PASS",
+  "reproduction_shell_syntax": "PASS",
+  "secret_scan": {
+    "command": "python3 scripts/secret_scan.py . --history",
+    "exit_code": 0,
+    "files": 1395,
+    "output": "secret-scan-r2.txt"
+  },
+  "docker_rerun": false,
+  "runtime_image_record": "User requested no change to Wang Shuo runtime/image association record."
+}

@@ -1,0 +1,13 @@
+{
+  "provider": "OpenAI Codex（组内已保存回复，2026-10-29）",
+  "model_version": "Exact backend version not exposed",
+  "date": "2026-10-29",
+  "prompt_path": "work/e5-01/iter-01/prompt-error-driven.txt",
+  "raw_response_path": "work/e5-01/candidates/candidate-02/model-response.txt",
+  "candidate_path": "work/e5-01/candidates/candidate-02/Dockerfile",
+  "candidate_sha256": "7daf10bdc3bfa8a4bef9525c48eeba947aebb06ea5117ebde55a046cf31577fd",
+  "manual_changes": [],
+  "selection_reason": "仅按错误日志补全 build-essential，未使用 README 上下文；apt 源仍为官方 Debian",
+  "is_recorded_replay": true,
+  "source_note": "组内 experiment 已保存候选，原始回复见 e5/labs/B-draft/work/candidate/provenance.json"
+}
