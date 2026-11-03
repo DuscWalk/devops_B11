@@ -34,7 +34,7 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./e5-01/candid
 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./e5-01/candidate-build-exit-code.txt
 1475dfd91bc48b84f57e4ca7c74c4ec8a2bbb7c8e52bcf0ca36deea53a6eb620  ./e5-01/candidate-build.log
 af099f87ae1899354eb35228adbf7c168186e9ade1719e4720309e1f59bb8e17  ./e5-01/candidate-image-id.txt
-7558cf4464600b7965e7d1e4320d7dfc7422b48abd4e042f52754ede3162feeb  ./e5-01/e5-console.log
+7558cf4464600b7965e7d1e4320d7dfc7422b48abd4e042f52754ede3162feeb  ./build-01/build-console.log
 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./e5-01/e5-exit-code.txt
 61ac987215f73e72b8f2f1f3ea2858adb080bd885b3ce66750aac5609ecfd111  ./e5-01/git-status.txt
 aabc67954a2d36be682f18fd3835ff506cd339253adfa2b03df3c8d422d1d262  ./e5-01/invocation.json
