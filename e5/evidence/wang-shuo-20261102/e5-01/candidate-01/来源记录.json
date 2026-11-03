@@ -1,0 +1,13 @@
+{
+  "provider": "DeepSeek（课程包内已保存记录）",
+  "model_version": "未记录",
+  "date": "课程包记录",
+  "prompt_path": "work/e5-01/iter-01/prompt-error-driven.txt",
+  "raw_response_path": "fixtures/ci-candidates/DeepSeek-E5.Dockerfile",
+  "candidate_path": "work/e5-01/candidates/candidate-01/Dockerfile",
+  "candidate_sha256": "ede21b0fab394071641526e2fccefc41565efb00de6fb54d9d5b906aebeb535d",
+  "manual_changes": [],
+  "selection_reason": "课内候选对照项：补齐 build-essential，保留固定 FROM digest 与 RUN make、CMD；apt 源为官方 Debian，未针对本机网络做适配",
+  "is_recorded_replay": true,
+  "source_note": "包内已保存 DeepSeek 候选（fixtures/ci-candidates/provenance.json），非本次现场新生成"
+}
