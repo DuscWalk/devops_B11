@@ -1,6 +1,6 @@
 # B11 E6 实验报告：候选自动构建与运行验证
 
-整理日期：2026-11-03（America/New_York）。小组 B11，B 轨道 DRAFT。实验执行归属：胡博 241276007，Codex 辅助。仓库：https://git.nju.edu.cn/devops_b11/devops-project-b11 。提交分支：`feat/e6-submission`，完整 SHA 记录于提交 ZIP 的 `MANIFEST.json`。
+整理日期：2026-11-03，更新：2026-11-04（America/New_York）。小组 B11，B 轨道 DRAFT。主运行及提交脚本实测归属胡博 241276007，Codex 辅助；另接收王硕 241250110 的根目录服务集成及独立运行，分别记录如下。仓库：https://git.nju.edu.cn/devops_b11/devops-project-b11 。提交分支：`feat/e6-submission`，完整 SHA 记录于提交 ZIP 的 `MANIFEST.json`；已有审阅附件的版本范围见 [提交说明](SUBMISSION.md)。
 
 ## 任务与环境
 
@@ -67,6 +67,14 @@ E5 根据真实失败日志生成错误驱动和上下文驱动两类提示，Co
 - [33 项执行源码摘要](evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/executed-source-sha256.json) 与本次提交的课程源码、新增测试和复现脚本一致。447 个新采集文件从服务器取回后逐项核验。
 
 调试过程保留：首轮 `e6-reproduce-JsXyYI9m` 将裸镜像 ID 传给构建用的 FROM，BuildKit 将其解析为仓库名，服务构建退出 1；这属于复现脚本错误，不是课程缺 make 基线。第二轮 `e6-reproduce-RcPdeGAN` 改用独有本地标签，镜像解析等待后完整通过，没有因时长截断。最终脚本改为直接生成仅增加镜像源设置的工作 Dockerfile，避免本地基础标签解析，再次完整通过。三轮的命令、时间、退出码和日志均保留。
+
+## 王硕的服务集成与独立运行
+
+`d95fefa` 将课程 E6 核心及测试接入仓库根目录的服务骨架，扩展 CLI 并提供学号镜像入口；于 `8d63bee` 合入本分支。来源和命令见 [王硕报告](../docs/e6/E6_B_241250110.md)，`1e3a101` 已补齐代码来源及保留旧证据的重跑说明，个人交接已完成。
+
+[独立运行结果](evidence/wang-shuo-20261103/e6-own/evidence/result.json) 记录首轮 `MISSING_MAKE`、第二轮构建成功，并用同一镜像 `sha256:ad96eb4df72181ea9a9946bd73f8b2478c93f90977036b90c4659390bd0aceb9` 禁网运行，退出 0、输出 `hello E3\n`。27 项证据摘要及课程校验器通过。个人服务单测日志只有 25 个进度点和 `[100%]`，未单独归档 pytest 退出码；上述组级 25 项单测与新增测试以各自完整记录为依据，两套数量不相加。
+
+这里的记录是王硕原运行和归档核验，未登记为合并后的新 Docker 运行；孙静怡的模块审阅仍待交回。
 
 ## 复现、限制与证据
 
