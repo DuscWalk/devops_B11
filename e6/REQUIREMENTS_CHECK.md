@@ -8,11 +8,11 @@
 | 11–13 页 | 固定 FROM、保留项目指令、两轮构建 | 已完成；[首轮](evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-01/Dockerfile)、[候选](evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-02/Dockerfile) |
 | 13、18 页 | 第一轮 MISSING_MAKE，第二轮成功 | 已完成；[result.json](evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/result.json) 和同目录原始日志 |
 | 14、18 页 | 同一完整镜像 ID 禁网运行，退出 0、hello E3 | 已完成；[image inspect](evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-02/image-inspect.json)、[输出](evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/verify.log)；课程校验器通过 |
-| 16–17 页 | 至少一项自己的测试，重建并运行 | 已完成；[新增测试](labs/B-draft/services/draft/tests/b11_custom/test_candidate_policy.py)、[25 项单测](evidence/hu-bo-20261029/build-hubo-20261029-customtest/unit-tests.log)、[门禁](evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/gate-result.json) |
+| 16–17 页 | 至少一项自己的测试，重建并运行 | 已完成（labs 副本新增 `b11_custom/test_candidate_policy.py`；仓库根服务另有新增 `test_autobuild.py`、`test_workflow_failures.py`，同一镜像 25 项通过，见 [王硕证据](evidence/wang-shuo-20261103/)）；[新增测试](labs/B-draft/services/draft/tests/b11_custom/test_candidate_policy.py)、[25 项单测](evidence/hu-bo-20261029/build-hubo-20261029-customtest/unit-tests.log)、[门禁](evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/gate-result.json) |
 | 17 页 | 定位与报告字段对应的源码 | 已整理；[报告](REPORT.md)中的函数、行号、字段和实际值对照 |
 | 17 页 | 输入副本、JSON、原始日志 | 已归档；[证据索引](EVIDENCE.md)、[212 项摘要](evidence/hu-bo-20261029/SHA256SUMS.json) |
 | 17 页 | 候选原始回复与来源 | 已归档；[候选来源](evidence/hu-bo-20261029/candidate/provenance.json)，历史路径迁移见证据索引 |
-| 17 页 | 仓库地址、SHA、自己的代码修改、报告 | 分支 `feat/e6-submission`；SHA 在交付附件中固定；[提交说明](SUBMISSION.md)、[来源与贡献](SOURCES_AND_CONTRIBUTIONS.md) |
+| 17 页 | 仓库地址、SHA、自己的代码修改、报告 | 分支 `feat/e6-submission`（合并提交 `8d63bee`）；SHA 在交付附件 `MANIFEST.json` 中固定；[提交说明](SUBMISSION.md)、[来源与贡献](SOURCES_AND_CONTRIBUTIONS.md) |
 
 历史环境自检因通用 4 GiB 要求未通过，保留原始结果；学院 2 GB 主机上的上述构建和运行已有实测证据。提交范围为 E6，不使用 E7 的 CI 或保护设置作为 E6 完成条件。
 

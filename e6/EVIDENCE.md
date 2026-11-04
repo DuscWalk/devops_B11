@@ -24,6 +24,20 @@
 
 服务镜像 ID 与候选程序镜像 ID 应分别解释；不要把服务 build 日志中的 ID 当作被验证的 C 程序镜像。E6 程序镜像的 inspect、报告和运行命令由课程校验器交叉核对。
 
+## 王硕 241250110 的服务集成证据
+
+[wang-shuo-20261103](evidence/wang-shuo-20261103/) 保存王硕在仓库根目录接入 `auto-build` 的完整运行记录：28 个文件、13 份原始日志（`build-service-image.log`、`service-tests.log`，以及 `e6-own/evidence/` 下两轮构建、镜像检查、禁网验证、清理与 runner 的 stdout/stderr）。
+
+| 内容 | 结果 |
+| --- | --- |
+| 第一轮（初始 Dockerfile） | 退出 1，`MISSING_MAKE`，日志含 `make: not found` |
+| 第二轮（候选） | 退出 0，镜像 `sha256:ad96eb4df721…0aceb9` |
+| 断网运行 | 同一镜像 ID、`--network none`，退出 0，stdout 精确 `hello E3` |
+| 课程校验器 | `passed: true`，trace `e6-b-a2b1782bd9594814921af948843dc0f1` |
+| 服务单测 | 25 passed |
+
+根目录 `SHA256SUMS.txt` 覆盖其余 27 个文件，日志重命名后已重算并逐条通过。
+
 ## 本次复现脚本验证
 
 [reproduction-20261103](evidence/reproduction-20261103/) 保存本次新增脚本的三轮云端记录，详细元数据见 [reproduction.json](reproduction.json)。

@@ -4,7 +4,7 @@
 
 入口：[实验报告](REPORT.md)、[要求核对](REQUIREMENTS_CHECK.md)、[来源与贡献](SOURCES_AND_CONTRIBUTIONS.md)、[证据索引](EVIDENCE.md)、[提交说明](SUBMISSION.md)。
 
-**组员下一步见 [交接安排](HANDOFF.md)：孙静怡审阅 DRAFT，王硕已提供 E6 分支并补报告说明，胡博接收与整合。**原分工继续沿用，已有运行无需三人重复一遍。
+**组员下一步见 [交接安排](HANDOFF.md)：孙静怡审阅 DRAFT；王硕的 E6 分支已于 2026-11-04 合入（`8d63bee`），个人报告见 [E6_B_241250110](../docs/e6/E6_B_241250110.md)；胡博接收与整合。**原分工继续沿用，已有运行无需三人重复一遍。
 
 ## 目录
 
@@ -13,6 +13,7 @@
 | `labs/B-draft/` | 课程 B 轨道源码、锁文件、CLI、fixtures，以及 B11 新增的一项候选约束测试 |
 | `evidence/hu-bo-20261029/` | 原始云端实验日志、两类候选/回复、两轮构建及重新构建后的单测和门禁 |
 | `evidence/reproduction-20261103/` | 本次复现脚本的云端验证，最终成功目录为 `e6-reproduce-hnZQQFyP/`；保留前序诊断 |
+| `evidence/wang-shuo-20261103/` | 王硕 241250110 的仓库根服务集成运行：两轮构建、镜像检查、断网验证、25 项单测与原始日志 |
 | `scripts/reproduce.sh` | 使用已验证镜像源，在新目录构建服务并执行 E6、单测和门禁 |
 | `scripts/verify_archive.py` | 不运行 Docker，核验课程来源、归档摘要和结果的一致性 |
 | `source-manifest.json` | 课程文件逐项摘要、原提交和迁移路径 |
