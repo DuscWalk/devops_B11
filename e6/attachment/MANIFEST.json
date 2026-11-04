@@ -3,20 +3,20 @@
   "experiment": "E6",
   "member": "241250110",
   "branch": "feat/e6-submission",
-  "commit": "26ff16ff3362ee27d27a1e7443c6b93068ee76d4",
-  "commit_short": "26ff16f",
+  "commit": "1e3a1012f9b82c9f89472324e47891dcb82a16ad",
+  "commit_short": "1e3a101",
   "generated_at": "2026-11-04T09:00:00Z",
   "file_count": 746,
   "files": [
     {
       "path": "START_HERE.md",
-      "sha256": "e7db980226b619023766406caba1e63dbd7e21de89f93e78f52ba2adaddbea4e",
+      "sha256": "45c9d53732ea18ac4b9f3a481c4bde77c60660dc668ac12a7dfffa5b054a17bd",
       "size": 1073
     },
     {
       "path": "repository/docs/e6/E6_B_241250110.md",
-      "sha256": "ac2f88d8d5d546b5eacb2775a693da72142a87b47a8d49bdc347e95a23f68b6b",
-      "size": 5912
+      "sha256": "1156151bb22d8244741650ab47324b8ede629b6ae7905ba42e7628b55ade65f8",
+      "size": 6657
     },
     {
       "path": "repository/docs/e6/E6_论文1MVP_20261020_讲稿优化版.pptx",
