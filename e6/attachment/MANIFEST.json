@@ -3,20 +3,20 @@
   "experiment": "E6",
   "member": "241250110",
   "branch": "feat/e6-submission",
-  "commit": "1e3a1012f9b82c9f89472324e47891dcb82a16ad",
-  "commit_short": "1e3a101",
+  "commit": "ad29e88cef0defe65658eee75845927b8e3ccae8",
+  "commit_short": "ad29e88",
   "generated_at": "2026-11-04T09:00:00Z",
   "file_count": 746,
   "files": [
     {
       "path": "START_HERE.md",
-      "sha256": "45c9d53732ea18ac4b9f3a481c4bde77c60660dc668ac12a7dfffa5b054a17bd",
+      "sha256": "a06ea112d869a649273b1ce4b3c332042530c9653003ce7b8da2b8abf87170d3",
       "size": 1073
     },
     {
       "path": "repository/docs/e6/E6_B_241250110.md",
-      "sha256": "1156151bb22d8244741650ab47324b8ede629b6ae7905ba42e7628b55ade65f8",
-      "size": 6657
+      "sha256": "2c4d0db056abdd235a9857fd142d67669650345d4948c78467d605dd301c72ff",
+      "size": 7480
     },
     {
       "path": "repository/docs/e6/E6_论文1MVP_20261020_讲稿优化版.pptx",
@@ -45,23 +45,23 @@
     },
     {
       "path": "repository/e6/HANDOFF.md",
-      "sha256": "15982132ffacf388b6dcbf348c2faaf61c73b65d179c24221adfba61e80fd553",
-      "size": 6996
+      "sha256": "1b715ba5feb840f6bb1cfa843f1ed1f42719e2ef8e068401045b80960f8d00ab",
+      "size": 5489
     },
     {
       "path": "repository/e6/README.md",
-      "sha256": "3668a1d1a595a9cdf42427d7087a02d41e0dc78696314b24d58f6ccf828684e2",
-      "size": 4161
+      "sha256": "105fd47ed2f08080afb6025ebee2b5709f13759f05e6ed828159efb4a07e09f9",
+      "size": 4176
     },
     {
       "path": "repository/e6/REPORT.md",
-      "sha256": "65ba1679c82e08ff6954a7dbfb9e34d7137ab035baf80b8cd562273853bb25cb",
-      "size": 8593
+      "sha256": "b3abc2840ff9def9dbc4477d65f4220be3033148cffe2ecd5a7b9bb7dc5104f0",
+      "size": 9787
     },
     {
       "path": "repository/e6/REQUIREMENTS_CHECK.md",
-      "sha256": "7ac615de9ce6cf44ab2fc1650915de29d8d4ca50fefe8209fb16a50c6f269d3f",
-      "size": 2822
+      "sha256": "b80aed37c6bf20847376bdc4a7965ac7efe85e9c87ba07ee4a4e15c6771d3945",
+      "size": 2818
     },
     {
       "path": "repository/e6/REVIEW_TEMPLATE.md",
@@ -70,13 +70,13 @@
     },
     {
       "path": "repository/e6/SOURCES_AND_CONTRIBUTIONS.md",
-      "sha256": "18562fbdd409dd41a5a8683f2aa1ec13e0de9f37f78a82083999c53985bf2e91",
-      "size": 3105
+      "sha256": "441672a81df303ed61220cf785cb24253d2b5ffd79b92d6d53a3f1fa1376cebc",
+      "size": 3374
     },
     {
       "path": "repository/e6/SUBMISSION.md",
-      "sha256": "dd652dee9e5dff043605a665dfe1f6d331c8b61c7306d8c586d70cc77cd0682e",
-      "size": 1976
+      "sha256": "8af0ba16b1504c330e201c38afb3ef1d407b8e01afa1c0039db8c26bfd702de4",
+      "size": 2132
     },
     {
       "path": "repository/e6/candidate-repair.diff",
