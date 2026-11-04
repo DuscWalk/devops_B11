@@ -1,0 +1,3743 @@
+{
+  "project": "B11 / B-DRAFT",
+  "experiment": "E6",
+  "member": "241250110",
+  "branch": "feat/e6-submission",
+  "commit": "26ff16ff3362ee27d27a1e7443c6b93068ee76d4",
+  "commit_short": "26ff16f",
+  "generated_at": "2026-11-04T09:00:00Z",
+  "file_count": 746,
+  "files": [
+    {
+      "path": "START_HERE.md",
+      "sha256": "e7db980226b619023766406caba1e63dbd7e21de89f93e78f52ba2adaddbea4e",
+      "size": 1073
+    },
+    {
+      "path": "repository/docs/e6/E6_B_241250110.md",
+      "sha256": "ac2f88d8d5d546b5eacb2775a693da72142a87b47a8d49bdc347e95a23f68b6b",
+      "size": 5912
+    },
+    {
+      "path": "repository/docs/e6/E6_论文1MVP_20261020_讲稿优化版.pptx",
+      "sha256": "e7acd6825614af520a8c6b124945449c0e8734bc2de3a6449121f013b3f29525",
+      "size": 370822
+    },
+    {
+      "path": "repository/docs/e6/E6_逐页文字.md",
+      "sha256": "fa34ed323c04a31b4eb8ed753be7f6bf1dbc5bb28ec539292a6eb3f0ce6bc485",
+      "size": 8091
+    },
+    {
+      "path": "repository/docs/e6/README.md",
+      "sha256": "c9645e1fe58205963419c697cdfb5c146f7af2b89475ac0027f0641cb8c919df",
+      "size": 1038
+    },
+    {
+      "path": "repository/docs/e6/sources.json",
+      "sha256": "3c5de05accbf2832e12215d446d75f60ba40d985c2c1585a664928a2e659da74",
+      "size": 481
+    },
+    {
+      "path": "repository/e6/EVIDENCE.md",
+      "sha256": "dbb58f76aaf19800f40f2b6cec479f8a125feca8f6264a12ffc8d637a7fb2b10",
+      "size": 4040
+    },
+    {
+      "path": "repository/e6/HANDOFF.md",
+      "sha256": "15982132ffacf388b6dcbf348c2faaf61c73b65d179c24221adfba61e80fd553",
+      "size": 6996
+    },
+    {
+      "path": "repository/e6/README.md",
+      "sha256": "3668a1d1a595a9cdf42427d7087a02d41e0dc78696314b24d58f6ccf828684e2",
+      "size": 4161
+    },
+    {
+      "path": "repository/e6/REPORT.md",
+      "sha256": "65ba1679c82e08ff6954a7dbfb9e34d7137ab035baf80b8cd562273853bb25cb",
+      "size": 8593
+    },
+    {
+      "path": "repository/e6/REQUIREMENTS_CHECK.md",
+      "sha256": "7ac615de9ce6cf44ab2fc1650915de29d8d4ca50fefe8209fb16a50c6f269d3f",
+      "size": 2822
+    },
+    {
+      "path": "repository/e6/REVIEW_TEMPLATE.md",
+      "sha256": "5b434a43cf2a8d9484c428c38b68b38aa5fb98e64bc1d74a4ded3f849243252f",
+      "size": 1028
+    },
+    {
+      "path": "repository/e6/SOURCES_AND_CONTRIBUTIONS.md",
+      "sha256": "18562fbdd409dd41a5a8683f2aa1ec13e0de9f37f78a82083999c53985bf2e91",
+      "size": 3105
+    },
+    {
+      "path": "repository/e6/SUBMISSION.md",
+      "sha256": "dd652dee9e5dff043605a665dfe1f6d331c8b61c7306d8c586d70cc77cd0682e",
+      "size": 1976
+    },
+    {
+      "path": "repository/e6/candidate-repair.diff",
+      "sha256": "395a0a13b9ff1bd4f2ebe04fbdc0785aeab95a79cb8891467849bc11c3e02fbf",
+      "size": 467
+    },
+    {
+      "path": "repository/e6/candidates/candidate-01.Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/.gitignore",
+      "sha256": "47f95eda20a18084dfd3d52ddd031bd3735983e1ad016739a490fb3e9c91dd54",
+      "size": 75
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/SHA256SUMS.json",
+      "sha256": "6a814dc5bbed2b45d626331e5ec385d629554db18973c798274dcd804cddcd0d",
+      "size": 27863
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/build/command.json",
+      "sha256": "c28c9e080fb366d23be26e00ca8096a4c2a6559f8d289ba72ae228f8b1fa554b",
+      "size": 129
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/build/exit-code.json",
+      "sha256": "ada35c8ef6e7f760d973448deaf0e7d10c170dbd749209d04efa45f048e3fbe4",
+      "size": 18
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/build/stderr.log",
+      "sha256": "dedeec246c972b1328ab28d38fa41a6b5b999af1a30f83ecd9c8784fc8f901b4",
+      "size": 4377
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/build/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/image.json",
+      "sha256": "7cfe6295d2aa31397196dae6f8050c60fa7dcf50511058cddcc909d04d0550a1",
+      "size": 3018
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/invocation.json",
+      "sha256": "8f18c98478de1af556de58c0e49fe291ab18ab532f79883a5897b01031c0717a",
+      "size": 182
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/service-build-official-network.log",
+      "sha256": "acb9b228c6fb7e49f99f3e49801e8fc020670bd1a98fa8ed2473d4296b856df0",
+      "size": 20658
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/service-build.log",
+      "sha256": "84a17b4c892c27c5b45e0dc0ad910a6f1afabf75fe2fd8f52c19fb6fdf4e426d",
+      "size": 22419
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029/unit-tests.log",
+      "sha256": "e915b21e1eb0672738c06e418f82a566418c43451fd59d6d003ca146aea1709e",
+      "size": 99
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029-customtest/image-secret-scan.txt",
+      "sha256": "2a4100248a27d4c9bdbd562004f9e8071a2a906fe75caa548e7deb0ca1f66de1",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029-customtest/image.json",
+      "sha256": "66071bf4008605dd0fbc5e9460f779a15746aa3ed43f4f819ce252a245be5dcd",
+      "size": 3018
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029-customtest/service-build.log",
+      "sha256": "870f5c3b5cfeefd20defa0bf8028be448e50467ab96448bd11b7b5c0a65eb9ca",
+      "size": 3466
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/build-hubo-20261029-customtest/unit-tests.log",
+      "sha256": "a15ead4e7e3ad56fe8773c8504b41229914a60731ea6590fe70297c607ca6c20",
+      "size": 99
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/candidate/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/candidate/candidate-01-error-driven-response.md",
+      "sha256": "544fd28cc2a3da2c523f7dd237bcbccd97a50d222822adae512b7e9e30d9c665",
+      "size": 491
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/candidate/candidate-01-error-driven.Dockerfile",
+      "sha256": "7daf10bdc3bfa8a4bef9525c48eeba947aebb06ea5117ebde55a046cf31577fd",
+      "size": 284
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/candidate/candidate-02-context-driven-response.md",
+      "sha256": "6d18cbc0fcf6f5173cbe58afbe8bfc3a63acaeb5abda325e34710baa2d8e41c6",
+      "size": 958
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/candidate/candidate-02-context-driven.Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/candidate/provenance.json",
+      "sha256": "4f364bbed9eb71af7c66ea7a7bb3b537808fa29983f130b5f77143cc1ba8cc54",
+      "size": 1648
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/doctor-exit-code.txt",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/doctor.txt",
+      "sha256": "c5ee5c62efbb1a399b049450344d37d9366e2bfb1e6f819aeee1b1dcdcde2697",
+      "size": 977
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-build-command.txt",
+      "sha256": "5506b5bd622c41b8781ac465b13dcec321b615471fe924166392f2da6452f153",
+      "size": 111
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-build-end.txt",
+      "sha256": "ec380cf37fb9a58043382ec4ec4c277e7efb1bb80d65ca4d0846c85a3fc92d45",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-build-exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-build-start.txt",
+      "sha256": "cf5b1976ab3dc58ca7cb90458c31987b504bb82c1aacf2dec5c5da496a8d7746",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-build.log",
+      "sha256": "788fdf3bd111449cbd517d8e8d8bfe985e8dc0d6c899a5b9334c4fd3b4db5efd",
+      "size": 28263
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-image-id.txt",
+      "sha256": "d078ca65fa6f11e9dfc9616cfd62f047e0620e225d7928c9111f6fca2fa5d3dd",
+      "size": 72
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-image-inspect.json",
+      "sha256": "3d3b1e6da114b58e95627c0bde50eafb864a6ac85fb858a52a437086074c4850",
+      "size": 2154
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-run-exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-run-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-run.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/candidate-sha256.txt",
+      "sha256": "9f0ab7749098121501cfe556a889840cbfd3b1c3cfbbe9664178e3dbef3b119a",
+      "size": 92
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/invocation.json",
+      "sha256": "2f753245fe777cb992ee3ad4606405e018dfe700f4dbbfd66d4ef7d74b7c4947",
+      "size": 179
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/build/command.json",
+      "sha256": "cab7509535b9f63383f78fee35910495e3c538bd0d2d706dcd5cf585f8b78e46",
+      "size": 238
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/build/exit-code.json",
+      "sha256": "2618b95f1f6be6bfde8537756f85b83845d039001563135b9d59d817446733eb",
+      "size": 16
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/build/stderr.log",
+      "sha256": "e74a86d0a4e0bd325bc2a0aa7fb270c8460fff58fb31e69691e6fb7dea640d08",
+      "size": 1312
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/build/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/build-retry.log",
+      "sha256": "8b3c621eb7a76ee554efd1ea1750efe98acc9b8c12501ecf776b7123b44088a8",
+      "size": 1313
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/error-localization.json",
+      "sha256": "1ebf25a55ee099bc9f4a5065921a4908d62d69af0a61e5197a27f3cb85ed7d73",
+      "size": 861
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/prompt-context-driven.txt",
+      "sha256": "13122ce28770b95991fb80e6b9de4786c55edb46c48c467548a686a5209cb52c",
+      "size": 2277
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/prompt-error-driven.txt",
+      "sha256": "054888eb98eb99e1a26d0e73e7dd4ea4a30ef5acb906976fd330ab6a0ba65681",
+      "size": 2006
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/iter-01/result-retry.json",
+      "sha256": "de2b5f8962c2172a3efe750fbb7800433054b63ebb0325fd1280cd972c76893a",
+      "size": 22
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e5-02/result.json",
+      "sha256": "08fa6b9036e06a96e05076036e77ccb8b86543ee9ef7c4f06aff5c3885d700db",
+      "size": 1028
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/cleanup-stderr.log",
+      "sha256": "1a6bb0d857ca8214dbe6d4a2957cb500cd7f1edcd3b783159119d0304eb27390",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-01/build-stderr.log",
+      "sha256": "09abf2fa47d53b4307079ee556fea7e7ff0e36e6844ec3e41a6d5c276bbd7ddc",
+      "size": 1356
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-02/build-stderr.log",
+      "sha256": "6de798367715ab2918735273dc052a94d64a39a266468329096debf8a11c0d72",
+      "size": 1866
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-02/image-inspect.json",
+      "sha256": "052e3fa80f10b8feb654d90f23f286ee675d7238b7eb659094a08790f375c17b",
+      "size": 2480
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/result.json",
+      "sha256": "d4db2b79a54cba927c0bef7cadcc74b00d89500528991bed6b69b92a1a9dec7c",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/verify-container-id.txt",
+      "sha256": "f373d0a13f23ba9c1f0cdb0f818e409c57cf722957a2007da6444503a99a7ee1",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/invocation.json",
+      "sha256": "eb6ea9f2246d29749f5f63f6e097c99fb74328c50d5cb46ec366192a04cac086",
+      "size": 342
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/runner/command.json",
+      "sha256": "641aea960d29fb2224ff6ae7863911b43e6888049f08ee47909d5ef921883c4b",
+      "size": 806
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/runner/exit-code.json",
+      "sha256": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01",
+      "size": 16
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/runner/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/runner/stdout.log",
+      "sha256": "d4db2b79a54cba927c0bef7cadcc74b00d89500528991bed6b69b92a1a9dec7c",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e6-hubo-20261029-mirror/service-container-id.txt",
+      "sha256": "b78279b8e5bbad42e9b9cebc4cba215cf49f7ee1ae35d904b9b3b81eb0c438b0",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/driver/command.json",
+      "sha256": "9c31b806f690704064312341fc937cbfd264fdaac896001692902621bc32d1b7",
+      "size": 309
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/driver/exit-code.json",
+      "sha256": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01",
+      "size": 16
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/driver/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/driver/stdout.log",
+      "sha256": "da63c1e8d72b64b8f49b98967df460b7b1e574744e8389c9698a7cef487da589",
+      "size": 1887
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/candidate.Dockerfile",
+      "sha256": "1e22cf7fcfdfa57e5b026a9f7d62b6ee207875142b10ab4c30645cf4404d0a9e",
+      "size": 408
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/command.json",
+      "sha256": "7cc37f523aabb8eef34222e3d5d2e2d6d82ec26904a06e0afccf904e2bf3abf9",
+      "size": 1075
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/iter-01/build-stderr.log",
+      "sha256": "57752b3f415fe5a312bf2a3e4d62376b46ee38aa4187e4bd26e0996cc8c62f0f",
+      "size": 1309
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/iter-02/Dockerfile",
+      "sha256": "1e22cf7fcfdfa57e5b026a9f7d62b6ee207875142b10ab4c30645cf4404d0a9e",
+      "size": 408
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/iter-02/build-stderr.log",
+      "sha256": "9ad6f87a7e5ffb4203cb026c32502451d5e179dd47bd5323603adb6748d52e8f",
+      "size": 1576
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/evidence/result.json",
+      "sha256": "5ee20bd47cc4e9bb1c2ef3d697e2fb82a90a271aa4a8bc036c9c2d881e22a24d",
+      "size": 1658
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/service-container-id.txt",
+      "sha256": "b198097b020a680a8987c82a379c1533ea6438133993e25d7d0b27885839b44a",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/build-failed/stdout.log",
+      "sha256": "5ee20bd47cc4e9bb1c2ef3d697e2fb82a90a271aa4a8bc036c9c2d881e22a24d",
+      "size": 1658
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/gate-result.json",
+      "sha256": "a9e6c5e9e9ce8c3c7ab2a0252d57d00ac1a3969fe062f1e04f9c975cef4af34c",
+      "size": 1348
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/image/command.json",
+      "sha256": "553ee5b661ea58d6ba7f19f2e827ec2d94d21ac9c32bfdfe1047a4fcd2a2b97e",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/image/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/image/stdout.log",
+      "sha256": "66071bf4008605dd0fbc5e9460f779a15746aa3ed43f4f819ce252a245be5dcd",
+      "size": 3018
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/candidate.Dockerfile",
+      "sha256": "bf65e1ce1b83ec59b37bfea2728b4c1cc4d4c3b529a7ef15b4023f05086f9063",
+      "size": 405
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/command.json",
+      "sha256": "1dabf3b419bc823d7958f2fed6991c21567cc1aabff54e3ed5205b1445efc2bd",
+      "size": 1095
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/service-container-id.txt",
+      "sha256": "643939d55040e8f1f06102cb060445dc8d89d33c3e7fc2a1335b76af4c148133",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/invalid-candidate/stdout.log",
+      "sha256": "ed642912d37587b030025bda8d2aba0df92d889ea218d5b07f4dd4f2e9899eea",
+      "size": 101
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/results.csv",
+      "sha256": "56008179f917e22ff6e168bf27d9c5f4cdda7854249d78ed890ccfc443edab0f",
+      "size": 376
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/candidate.Dockerfile",
+      "sha256": "1063779d2f1fdcf96cafdc971b3d3dfede874a9a4190dfd0d2893b31df0ac529",
+      "size": 423
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/command.json",
+      "sha256": "d5b3a9cbb6c36e543b039d43c3c8900830194551985aac0ce4e59b0b6d4809ae",
+      "size": 1086
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/cleanup-check/command.json",
+      "sha256": "48384840fd00c05206d3b887434bb0b737099caf71804d3471cf1ae404192cfd",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/cleanup-check/stderr.log",
+      "sha256": "41f633b9d2b57db94e1653b430182cf9cb8dd37d4a863c7c5f93ed2ad177e96d",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/cleanup-check/stdout.log",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/cleanup-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/cleanup.log",
+      "sha256": "40f4338b896f6beaaf8f7fea891461fa3cad57df79e62ad16a8936cf4ce2c5d7",
+      "size": 65
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/iter-01/Dockerfile",
+      "sha256": "c4c81c83e9aabb89af7620f4b4ae38fd7375bac7c039aa579b121f02eecdf560",
+      "size": 184
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/iter-01/build-stderr.log",
+      "sha256": "c430f865fe7b3aa30385d3c1d8a10d76144f5f8f772faa0aa6ae55b4dc1549b8",
+      "size": 1365
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/iter-02/Dockerfile",
+      "sha256": "1063779d2f1fdcf96cafdc971b3d3dfede874a9a4190dfd0d2893b31df0ac529",
+      "size": 423
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/iter-02/build-stderr.log",
+      "sha256": "e2b88ace90200eae181e9f8240cfa8d7361f89ebe32b82f9944afea0e3a16e90",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/iter-02/image-inspect.json",
+      "sha256": "ce5fcaf957addd4dca9c6739f9e3ab854da1e854eee75aafcfe5cdefc23ed4d6",
+      "size": 2539
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/project/Dockerfile.broken",
+      "sha256": "4254b4fc2e02527caa5685012cace78fe0587e014b6ff014afc94ad76cafdde5",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/result.json",
+      "sha256": "0596979aa3ea0c6542b2c01e231ba441f97185a2c6b633ba84d65c023e7c9a72",
+      "size": 1736
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/verify-container-id.txt",
+      "sha256": "c30ff3bc0bfeafea92a45260d6eb5029474705754b39b3ea3d80dde6478eb33c",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/evidence/verify.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/fault-injection.json",
+      "sha256": "e6cf708e9dbc0140629fe5a01b4454fc3c976d2db7dfb7eed2035e56a6e0f81d",
+      "size": 281
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/fixture/Dockerfile.broken",
+      "sha256": "4254b4fc2e02527caa5685012cace78fe0587e014b6ff014afc94ad76cafdde5",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/service-container-id.txt",
+      "sha256": "fa4cd94143e017992e38d0bf119dd8c2ea0e9ae7a32edb5ad02b4c5b453e4f0d",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/runtime-timeout/stdout.log",
+      "sha256": "0596979aa3ea0c6542b2c01e231ba441f97185a2c6b633ba84d65c023e7c9a72",
+      "size": 1736
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/candidate.Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/command.json",
+      "sha256": "1957f3cadd8d0d456fa69acea285839a69d88886dbd339216da6e7cba7e4d34e",
+      "size": 1055
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/cleanup-stderr.log",
+      "sha256": "9550e8d7b7e9b2792a0d5d3ce5248097c024196e63277747833652bf26720c95",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/iter-01/build-stderr.log",
+      "sha256": "1d3ba813b18e7e61fa2092ea5f0f48acac0f7f36701c91b864ae6be2ac3d358f",
+      "size": 1356
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/iter-02/build-stderr.log",
+      "sha256": "feea41f4acbc453e314541641081ea5f20c1a5df5d7f32e9cc10f8d494bd76e0",
+      "size": 1878
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/iter-02/image-inspect.json",
+      "sha256": "a315d7792ec3ada76b5c23a036e03a670137e836593be4dc280da2b67d1fdf3a",
+      "size": 2480
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/result.json",
+      "sha256": "0e4831e89c28e146094081490cf4a783167d1a1e8990e14c43951cc3e05cce74",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/verify-container-id.txt",
+      "sha256": "fc90d2abf9abcf19f30ba8c9b70c159ce5edf4b637c3bdea88c384a0390c9b17",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/service-container-id.txt",
+      "sha256": "b12043758bee2601857b0774091c3f412146b467ad3f49c1cb133909291313bc",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/success/stdout.log",
+      "sha256": "0e4831e89c28e146094081490cf4a783167d1a1e8990e14c43951cc3e05cce74",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/unit-tests/command.json",
+      "sha256": "fb122bba5cdf531611a3fed1a4fcccd4175e614df599823f76f6d9a9d8b3ca83",
+      "size": 233
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/unit-tests/service-container-id.txt",
+      "sha256": "b34a6a7ba34454f2ef8830ee1e0558593a81fb4721c29200dddfb29b5ff0c09b",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/unit-tests/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/unit-tests/stdout.log",
+      "sha256": "a15ead4e7e3ad56fe8773c8504b41229914a60731ea6590fe70297c607ca6c20",
+      "size": 99
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/candidate.Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/command.json",
+      "sha256": "b1936e5b35ca6b785cc55bb270ec5564bfe25025781fabb336aa4fc0065db1b1",
+      "size": 1093
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/cleanup-stderr.log",
+      "sha256": "03e2b04302773e5540539efb9b73c44fffacd7c9944ab3d3008b260dbaf463a5",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/iter-01/build-stderr.log",
+      "sha256": "f14bcd2767449aa7a6a1bf4e3e948e47062c5a074475bacb8957d064092f171c",
+      "size": 1356
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/iter-02/build-stderr.log",
+      "sha256": "d6b341ba596b2c8a8a13b2cbd04418a88eee9083f2c9fec9f7a2d1654b0f759a",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/iter-02/image-inspect.json",
+      "sha256": "401d952ad25f92a249f2cec9513462c9dab25129c20666aa6d2983a5501240f1",
+      "size": 2480
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/result.json",
+      "sha256": "34c6597364c20f9273255d301ee32700b316823d26221a597c1204725ef676c2",
+      "size": 2258
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/verify-container-id.txt",
+      "sha256": "7a10f4501a73b937c1d2b2083ccdaeb966cfb8e9c0d3cf5c7cad5c9e6fb74dbd",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/service-container-id.txt",
+      "sha256": "c287a5c67f3a14540df0384718d15aee8c20ec109fe619a8669be170d0106ad2",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/gate/wrong-output/stdout.log",
+      "sha256": "34c6597364c20f9273255d301ee32700b316823d26221a597c1204725ef676c2",
+      "size": 2258
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/e7-hubo-20261029-customtest/invocation.json",
+      "sha256": "20318fcb0a315bc6d53f84d6b9873b7a226acff071d28810a7a1c74fdcad0deb",
+      "size": 181
+    },
+    {
+      "path": "repository/e6/evidence/hu-bo-20261029/service-base-mirror.Dockerfile",
+      "sha256": "7b9a592020dd994624b6c310b0d3ff930e3cbbf64ace22c82fc29752335c684e",
+      "size": 274
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/SHA256SUMS.json",
+      "sha256": "f311495c389f33559b097ae75acd8ef45c382d153b3dfe7bd1403586e0c3055c",
+      "size": 59517
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-build/command.txt",
+      "sha256": "8e88e72bff681912ccee8cb752e90e67f68f86fcac41a4f252a69ca482cd7506",
+      "size": 179
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-build/end-utc.txt",
+      "sha256": "cb3a9918310bacfde1c5973200b2699f37e7f9a780b2827cd8af257de56f150a",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-build/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-build/start-utc.txt",
+      "sha256": "2c6470c307ea5ed6306707835f4f6a807ea72b3b3044f0ceda57343edcd061d0",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-build/stderr.log",
+      "sha256": "82db679e10d42ab5ca3476ef9a1f4e3fd4f75efaeb125de071799299c7ae01bc",
+      "size": 1537
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-build/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-inspect/command.txt",
+      "sha256": "f7d1a0898469933d1552c03761cdb023fb287339b55c2063eeb56658af910bea",
+      "size": 56
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-inspect/end-utc.txt",
+      "sha256": "cb3a9918310bacfde1c5973200b2699f37e7f9a780b2827cd8af257de56f150a",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-inspect/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-inspect/start-utc.txt",
+      "sha256": "cb3a9918310bacfde1c5973200b2699f37e7f9a780b2827cd8af257de56f150a",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-inspect/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/base-inspect/stdout.log",
+      "sha256": "cb34134e0c9fd26a2a46f8e232aae75458bf9c0c3a3708caeba1dcd11a0b3c71",
+      "size": 1894
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/environment/command.txt",
+      "sha256": "ce20a66fd817ccc84868e958989fc5fdf79c1092ca49df50660057aa2a7966f6",
+      "size": 13
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/environment/end-utc.txt",
+      "sha256": "2c6470c307ea5ed6306707835f4f6a807ea72b3b3044f0ceda57343edcd061d0",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/environment/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/environment/start-utc.txt",
+      "sha256": "2c6470c307ea5ed6306707835f4f6a807ea72b3b3044f0ceda57343edcd061d0",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/environment/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/environment/stdout.log",
+      "sha256": "23087728408c5d7917e3afc70f03412d72107c8938f84b5e3bb8591febd5cc24",
+      "size": 1671
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/service-build/command.txt",
+      "sha256": "83cf6faa29430d5bc4c7f8cf9eb3bcdbc25eb6a8b3439e4d773c3d4a1cbd3683",
+      "size": 195
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/service-build/end-utc.txt",
+      "sha256": "1e5efb2c3cb04aa58514004d7d092f4f59c33881d1ffedc6367ccac95bdb805a",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/service-build/exit-code.txt",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/service-build/start-utc.txt",
+      "sha256": "cb3a9918310bacfde1c5973200b2699f37e7f9a780b2827cd8af257de56f150a",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/service-build/stderr.log",
+      "sha256": "038ab2eacdc46b03ef65128c3cee6528491a2922d23fcab754e27153bc55d3a7",
+      "size": 1538
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-JsXyYI9m/service-build/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-build/command.txt",
+      "sha256": "f9cf0240ead7362e14117692bb6772e879ee718689ae268540567a55a10a9f04",
+      "size": 179
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-build/end-utc.txt",
+      "sha256": "298440bea993715054d94eaa393e97d26f760dcde6b7e17a5b6184af4fed596b",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-build/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-build/start-utc.txt",
+      "sha256": "1bd77f642c2bd5ed4ee967ba16c7c4440b4a668f9e0a1cb7066cc826e13dd355",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-build/stderr.log",
+      "sha256": "a899e18f0450434b9a1a52c274832cbc6b9527ac08c135ee1f70461388007207",
+      "size": 1539
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-build/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-inspect/command.txt",
+      "sha256": "e204da16c926f6f996b12d37a9b69a7f9e853cfe7768f8a94f78e766fa5e1c4c",
+      "size": 56
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-inspect/end-utc.txt",
+      "sha256": "298440bea993715054d94eaa393e97d26f760dcde6b7e17a5b6184af4fed596b",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-inspect/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-inspect/start-utc.txt",
+      "sha256": "298440bea993715054d94eaa393e97d26f760dcde6b7e17a5b6184af4fed596b",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-inspect/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/base-inspect/stdout.log",
+      "sha256": "ebb7c134c0e4d274607b3d7a426a1cab1478fedf2d38520f564762746766d848",
+      "size": 1894
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/cleanup-stderr.log",
+      "sha256": "d3c6cfd01d5db831b512f31b386b251b9d40e39afe967c448f0281af53e0c64b",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/iter-01/build-stderr.log",
+      "sha256": "debac5784dd7731e9398a150de0d66808cbbe56b40cee25c26ffa84ba41661fd",
+      "size": 1356
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/iter-02/build-stderr.log",
+      "sha256": "59a00cbf00caa37b260dbe40aae1ac9f7f54c1991c0d763807a98a14012dfe6f",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/iter-02/image-inspect.json",
+      "sha256": "d8cb3ef38d3cd80cf5b16bdbca885a9014c20829ec8d0542abb3566aac734c0a",
+      "size": 2480
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/result.json",
+      "sha256": "07b3c60f932815de0b4cb8f44e46f51af63a268dd879b30a5858147501a6ab35",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/verify-container-id.txt",
+      "sha256": "114130f826b2205d91d46eb57f2b85c7b39b46fb26a074d46676235bc8668408",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/invocation.json",
+      "sha256": "ce61af38edcb36c2ce00834bd48b83fc2376ed7e14a0c387f8d904f1c70b2d9a",
+      "size": 391
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/runner/command.json",
+      "sha256": "a9816ce769a3dc5953656c084caec8fdf3d7da02e9a75fd5c877fa90f97d0281",
+      "size": 932
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/runner/exit-code.json",
+      "sha256": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01",
+      "size": 16
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/runner/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/runner/stdout.log",
+      "sha256": "07b3c60f932815de0b4cb8f44e46f51af63a268dd879b30a5858147501a6ab35",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6/service-container-id.txt",
+      "sha256": "b7c60d155575dcf5f80cc11486c95a8615657dae0522f34d432a73f674922eb7",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-check/command.txt",
+      "sha256": "be97d742c994c146cc8088d0db5869f5fe22ddbafe153775637b96d8dace5b99",
+      "size": 154
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-check/end-utc.txt",
+      "sha256": "83cb79397749b29bed8dab89d7242e0703a6d3b011cadc5dd33cf6a729da6d5e",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-check/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-check/start-utc.txt",
+      "sha256": "83cb79397749b29bed8dab89d7242e0703a6d3b011cadc5dd33cf6a729da6d5e",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-check/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-check/stdout.log",
+      "sha256": "85cbae989447ee7c0c3decaac284533cd9ad986e5e570063ac05ef78c8aba46c",
+      "size": 459
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-driver/command.txt",
+      "sha256": "96c79e61652e08d68eff966cd3a52f626f134e0a59b4a3f7f715be0dbd786929",
+      "size": 341
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-driver/end-utc.txt",
+      "sha256": "83cb79397749b29bed8dab89d7242e0703a6d3b011cadc5dd33cf6a729da6d5e",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-driver/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-driver/start-utc.txt",
+      "sha256": "78df97a4af3df1993735039f145f758fc3d5c2288d3f525ec513db1469813d83",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-driver/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/e6-driver/stdout.log",
+      "sha256": "a9798a0b90789717a53d29d7fdbe52d97b91837faf6949f57aeb95aadbeff292",
+      "size": 1196
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/environment/command.txt",
+      "sha256": "ce20a66fd817ccc84868e958989fc5fdf79c1092ca49df50660057aa2a7966f6",
+      "size": 13
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/environment/end-utc.txt",
+      "sha256": "1bd77f642c2bd5ed4ee967ba16c7c4440b4a668f9e0a1cb7066cc826e13dd355",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/environment/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/environment/start-utc.txt",
+      "sha256": "1bd77f642c2bd5ed4ee967ba16c7c4440b4a668f9e0a1cb7066cc826e13dd355",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/environment/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/environment/stdout.log",
+      "sha256": "19efb8e0b331ce8884f7be1bc70c4c38612c1286ac20e051212bbe98284ba41d",
+      "size": 1671
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/driver/command.json",
+      "sha256": "6a38bd3f7f4902b1785ab5363c8bfe9c1d64a9984819ab3b2f4f5c3a9e95220e",
+      "size": 409
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/driver/exit-code.json",
+      "sha256": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01",
+      "size": 16
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/driver/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/driver/stdout.log",
+      "sha256": "0d3d3621d6a1c597617e89b122db4230aea8c7ea73b84d0e07461cc6aaa424f0",
+      "size": 1936
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/candidate.Dockerfile",
+      "sha256": "1e22cf7fcfdfa57e5b026a9f7d62b6ee207875142b10ab4c30645cf4404d0a9e",
+      "size": 408
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/command.json",
+      "sha256": "3895d12ce2155d24a453ae39f39aa043e8168d4c8ef3886cc817f7be84718a79",
+      "size": 1212
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/iter-01/build-stderr.log",
+      "sha256": "25f0baaa1490a0cc709dc9478b42dda9220b198a01bd83d225cdd934e519dc9a",
+      "size": 1356
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/iter-02/Dockerfile",
+      "sha256": "1e22cf7fcfdfa57e5b026a9f7d62b6ee207875142b10ab4c30645cf4404d0a9e",
+      "size": 408
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/iter-02/build-stderr.log",
+      "sha256": "9ad6f87a7e5ffb4203cb026c32502451d5e179dd47bd5323603adb6748d52e8f",
+      "size": 1576
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/evidence/result.json",
+      "sha256": "afb679b60a38e09f9fe4c781cd51284ed46d0501d232efed769ec682754ded1b",
+      "size": 1657
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/service-container-id.txt",
+      "sha256": "2db8867fbd3ce1e51d992cbe653db70db2d4444ecf52c3d0de1bf961bcbd884d",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/build-failed/stdout.log",
+      "sha256": "afb679b60a38e09f9fe4c781cd51284ed46d0501d232efed769ec682754ded1b",
+      "size": 1657
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/gate-result.json",
+      "sha256": "67aa84e4e0c54291089248f78e1c287c732f594f85130922d8237b94bcdfd3f0",
+      "size": 1397
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/image/command.json",
+      "sha256": "ee3f51a6f386652719c8abeac306c88e2535b844568a472599b1a12e5c66de5c",
+      "size": 115
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/image/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/image/stdout.log",
+      "sha256": "ff57d26dccdd2570a9ea35fceba2dab6ab05afd9f89740c7bc6dfc00a88fea6f",
+      "size": 3026
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/candidate.Dockerfile",
+      "sha256": "bf65e1ce1b83ec59b37bfea2728b4c1cc4d4c3b529a7ef15b4023f05086f9063",
+      "size": 405
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/command.json",
+      "sha256": "0876c83a3e1c5a17be69ae6bba96ccacfb6341d76189419f0985da40bcbbfd5f",
+      "size": 1232
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/service-container-id.txt",
+      "sha256": "c00b8a4fd8397e68a06789e5907e5449b0b1710f67704d02582d18360372439e",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/invalid-candidate/stdout.log",
+      "sha256": "ed642912d37587b030025bda8d2aba0df92d889ea218d5b07f4dd4f2e9899eea",
+      "size": 101
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/results.csv",
+      "sha256": "95744e3b8bb72ac2bf03879fa1f8099a5597f5ecbc365a915c91a91228cfc494",
+      "size": 383
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/candidate.Dockerfile",
+      "sha256": "1063779d2f1fdcf96cafdc971b3d3dfede874a9a4190dfd0d2893b31df0ac529",
+      "size": 423
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/command.json",
+      "sha256": "96cb74a198bccaa6ad0a5fa7f2684466c6fafae175c255bf0efbaf07997d273a",
+      "size": 1223
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/cleanup-check/command.json",
+      "sha256": "7fb2110723ec403f1906987a0583ade8a6f33a0b1740bc03a3d519df17613d35",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/cleanup-check/stderr.log",
+      "sha256": "2bfbfc1e72893f8e344b6b5e5b9d48e7a839381c67d3ac64fd20a328e6883671",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/cleanup-check/stdout.log",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/cleanup-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/cleanup.log",
+      "sha256": "e94e44bfee8af3397ed1bde2587a7c180a2ba52a687f46b06215183fd4d0d8e1",
+      "size": 65
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/iter-01/Dockerfile",
+      "sha256": "c4c81c83e9aabb89af7620f4b4ae38fd7375bac7c039aa579b121f02eecdf560",
+      "size": 184
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/iter-01/build-stderr.log",
+      "sha256": "5c9466d193de509f13cef98a8ff3970dcdf7776988329765468c5a74db5399a7",
+      "size": 1383
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/iter-02/Dockerfile",
+      "sha256": "1063779d2f1fdcf96cafdc971b3d3dfede874a9a4190dfd0d2893b31df0ac529",
+      "size": 423
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/iter-02/build-stderr.log",
+      "sha256": "bed79311a50838e745674209d68904cd725b942885b8812b1a1b4d027658a9c8",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/iter-02/image-inspect.json",
+      "sha256": "f6c53c6c370c9e9081e5de16aa51cfd5943270ba5b67160248c2ec291f2a9753",
+      "size": 2539
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/project/Dockerfile.broken",
+      "sha256": "4254b4fc2e02527caa5685012cace78fe0587e014b6ff014afc94ad76cafdde5",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/result.json",
+      "sha256": "75f4cf6053c7c41e5518914354c8584ebe02ed9b9d4aa7a7b8213584b2b5a1f3",
+      "size": 1736
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/verify-container-id.txt",
+      "sha256": "25405d984746041a21bfb125eb78b75bac2c1c6cab124a3478bdabab9315fb36",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/evidence/verify.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/fault-injection.json",
+      "sha256": "e6cf708e9dbc0140629fe5a01b4454fc3c976d2db7dfb7eed2035e56a6e0f81d",
+      "size": 281
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/fixture/Dockerfile.broken",
+      "sha256": "4254b4fc2e02527caa5685012cace78fe0587e014b6ff014afc94ad76cafdde5",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/service-container-id.txt",
+      "sha256": "ef0d05b0bbe53966a4ebebabcf9355b1bb6b826743019ba55d29545b9b81260d",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/runtime-timeout/stdout.log",
+      "sha256": "75f4cf6053c7c41e5518914354c8584ebe02ed9b9d4aa7a7b8213584b2b5a1f3",
+      "size": 1736
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/candidate.Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/command.json",
+      "sha256": "29ec804571fc2680a2e7d5e17ccb48a5e4aaa372e260915df817a748d702586b",
+      "size": 1192
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/cleanup-stderr.log",
+      "sha256": "648b03248bb48cf09989961d28b907bf13f590071e6889a3a5cbf17a0c85d603",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/iter-01/build-stderr.log",
+      "sha256": "e30b10470e8214557ba5c6ce88d51118ca2cbd466bed273fe2173cf7b22a87c7",
+      "size": 1334
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/iter-02/build-stderr.log",
+      "sha256": "557737c575dd037a273aaf974eaef179bd815519f0140db5f9c2f3b54ac02353",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/iter-02/image-inspect.json",
+      "sha256": "56827feec7a69bce9ec5e1fdafa96f6b00e43621a9fac260e22fa273bee751ec",
+      "size": 2479
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/result.json",
+      "sha256": "d9d8116324f01ff29f1c42ad339881d8f4e2cb815e94b7f030adc9d5567ed71c",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/verify-container-id.txt",
+      "sha256": "81364a99876f34eaae709aac456a0be2876c1084f8675e7da32f0819d1b0227a",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/service-container-id.txt",
+      "sha256": "30a3bea649692baef62e713621a3aecc5524b7875adbe3c99c9918227a2eedcf",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/success/stdout.log",
+      "sha256": "d9d8116324f01ff29f1c42ad339881d8f4e2cb815e94b7f030adc9d5567ed71c",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/unit-tests/command.json",
+      "sha256": "a5de185a8a6ba3dd579554023d0a325f614acbe1bd61fbace65c2e81a2c88b39",
+      "size": 304
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/unit-tests/service-container-id.txt",
+      "sha256": "9fd37b9cc68b717cc25e74ca1476d4ecfcfb6ce16c62be698f6f5eb89050fa97",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/unit-tests/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/unit-tests/stdout.log",
+      "sha256": "a15ead4e7e3ad56fe8773c8504b41229914a60731ea6590fe70297c607ca6c20",
+      "size": 99
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/candidate.Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/command.json",
+      "sha256": "a6d246ee51287c8e0998dc5c5da035b09b2bd6e7c223944e56aef9c9ecbb69d8",
+      "size": 1230
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/cleanup-stderr.log",
+      "sha256": "5392e127e47acf9438da752a4f1e2999dd3bc398872fa2a3fa90726abb517a7a",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/iter-01/build-stderr.log",
+      "sha256": "47ebccb57269b4e40ee8926c604979bb4da4130359f6723702dc300b9b5d7e35",
+      "size": 1474
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/iter-02/build-stderr.log",
+      "sha256": "c37abfb07d74af90df539b155939433b7c69802f6fb8b8c99c13ebaf1bdd21e1",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/iter-02/image-inspect.json",
+      "sha256": "3ac9158d4bfc7cabca5df8154aa14fefe2201bbd5002a4b0288f174d5396b0ff",
+      "size": 2480
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/result.json",
+      "sha256": "28a57803b517689871b7f58591d5308239785a510fa4ebe07cf40b3b8ba964af",
+      "size": 2258
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/verify-container-id.txt",
+      "sha256": "eb663b81617c4b14a7e8c170e6d3fa6c7ef19898cb28111887a01ad11eadca78",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/service-container-id.txt",
+      "sha256": "63cf3920d1a5b5cc259765356a5a049c9b1d4b1d4c14fa48244b214dad69ad55",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/gate/wrong-output/stdout.log",
+      "sha256": "28a57803b517689871b7f58591d5308239785a510fa4ebe07cf40b3b8ba964af",
+      "size": 2258
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate/invocation.json",
+      "sha256": "1570473b10fb3c7a5b35cc551f02baaa29dbafe79490275a1c00ec166798dd31",
+      "size": 230
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate-driver/command.txt",
+      "sha256": "0bbccc0dcaced3f832c33ac63d947c8eea75936d5d27b14d28d45c4ad84d4287",
+      "size": 345
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate-driver/end-utc.txt",
+      "sha256": "f4fcf4884833bf043643efb9512b0e2a6fabd19716bc2ec75b0900f117a767d6",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate-driver/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate-driver/start-utc.txt",
+      "sha256": "83cb79397749b29bed8dab89d7242e0703a6d3b011cadc5dd33cf6a729da6d5e",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate-driver/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/gate-driver/stdout.log",
+      "sha256": "1ffa93b6fef5c470b88db8e4a526deaee6aa88184a538a7278d46a39f8f9f588",
+      "size": 1011
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-build/command.txt",
+      "sha256": "27e8fcd7fc72175420270fdd7063b414580b2ad69b010476ad48bfe0ca3f6c16",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-build/end-utc.txt",
+      "sha256": "9db3f96565e606e59a908a1fcba16f1dc099db947eba72a8b5de297d77c9e616",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-build/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-build/start-utc.txt",
+      "sha256": "298440bea993715054d94eaa393e97d26f760dcde6b7e17a5b6184af4fed596b",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-build/stderr.log",
+      "sha256": "5bf2ab0a4babb984d4a5f5a53ead96996c342346a070b91b37ed6a1735eb27d9",
+      "size": 3527
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-build/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-inspect/command.txt",
+      "sha256": "5c54bc85088f609b830edee92663d2e10bf978045ddea8d9e60ac6f9408c8970",
+      "size": 57
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-inspect/end-utc.txt",
+      "sha256": "9db3f96565e606e59a908a1fcba16f1dc099db947eba72a8b5de297d77c9e616",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-inspect/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-inspect/start-utc.txt",
+      "sha256": "9db3f96565e606e59a908a1fcba16f1dc099db947eba72a8b5de297d77c9e616",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-inspect/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/service-inspect/stdout.log",
+      "sha256": "ff57d26dccdd2570a9ea35fceba2dab6ab05afd9f89740c7bc6dfc00a88fea6f",
+      "size": 3026
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/unit-tests/command.txt",
+      "sha256": "0cb0c24036927c5812f8bc1b6e6fa9932912e15edd7f7ae2b71106642ceb0aba",
+      "size": 111
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/unit-tests/end-utc.txt",
+      "sha256": "78df97a4af3df1993735039f145f758fc3d5c2288d3f525ec513db1469813d83",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/unit-tests/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/unit-tests/start-utc.txt",
+      "sha256": "9db3f96565e606e59a908a1fcba16f1dc099db947eba72a8b5de297d77c9e616",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/unit-tests/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-RcPdeGAN/unit-tests/stdout.log",
+      "sha256": "a7569e7fe5e53b8210adf288a440e0bcf4b8927fb24f3280ed4e52ab38b7dc64",
+      "size": 99
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/build-source.json",
+      "sha256": "cd359dde88904ff15e5f7a7986d117d82292d6c82621b316763022a918922f37",
+      "size": 420
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/cleanup-stderr.log",
+      "sha256": "5430e4a81d77237397dcfe3247f18468fa4462c30b324c13c79c74e62f471ea2",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/iter-01/build-stderr.log",
+      "sha256": "7c09e85893cd69f2565e914252b604d79fdc936481f97d25935ab9a739a4e40f",
+      "size": 1356
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/iter-02/build-stderr.log",
+      "sha256": "cb6378b8df91764815de537f98001fce8ec10088b3a6b91ec7531ffd044f0866",
+      "size": 1859
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/iter-02/image-inspect.json",
+      "sha256": "9e4050e150b41dbb53cd6b9d0ca1b8e89727eaaca99cc16956d24ecc24f07640",
+      "size": 2479
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/result.json",
+      "sha256": "705eea968f909c437b9f0362ec9f8a57935b4109ac26bd11fbce1af7cf8dfa43",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/verify-container-id.txt",
+      "sha256": "316882a7334db6015ca9a106a33f9e9dc2978440943d45c4a3d58bba1f080831",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/invocation.json",
+      "sha256": "5d6d323e3437d1517877dbf9aff4041eb71dc815e73362c9f45e5276e0810514",
+      "size": 391
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/runner/command.json",
+      "sha256": "c965a26f4b4cde5fe252ce32c6f86709eae189755a62464f2a0183569a364a40",
+      "size": 932
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/runner/exit-code.json",
+      "sha256": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01",
+      "size": 16
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/runner/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/runner/stdout.log",
+      "sha256": "705eea968f909c437b9f0362ec9f8a57935b4109ac26bd11fbce1af7cf8dfa43",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6/service-container-id.txt",
+      "sha256": "60abd3bea5e1f6bfa284e3af6fa9bed464c26b111806853284e611f03bcd4eb1",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-check/command.txt",
+      "sha256": "d96f4c174417452cfbfbd84be02a9243cc600f6cb6620506107db008e1650a4d",
+      "size": 154
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-check/end-utc.txt",
+      "sha256": "5571ddbd457ea497dce0fdeac46454dd9f90b6eb96e40c5475bc7548a3b76190",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-check/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-check/start-utc.txt",
+      "sha256": "3772d20b936af29fc7b1f306688a0f67efdda006716755aa42bd01715d357f1c",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-check/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-check/stdout.log",
+      "sha256": "632be2348deba149c856d7b05c4809b9296f38ffbd2e61c83242130d45bde1e7",
+      "size": 459
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-driver/command.txt",
+      "sha256": "e250753013709f810e531291e8a77dbbbc9ecb6b568d5e5ab4ab995c2b20ec96",
+      "size": 341
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-driver/end-utc.txt",
+      "sha256": "3772d20b936af29fc7b1f306688a0f67efdda006716755aa42bd01715d357f1c",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-driver/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-driver/start-utc.txt",
+      "sha256": "59665bee7577d6d3a22627fa9ae092baec8843fa123ab218977d97005fe0efbe",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-driver/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/e6-driver/stdout.log",
+      "sha256": "4790bb2808f5132295a6cb1442d690b4b34cdbcee45be8b17cce87bf220f6fd1",
+      "size": 1196
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/environment/command.txt",
+      "sha256": "ce20a66fd817ccc84868e958989fc5fdf79c1092ca49df50660057aa2a7966f6",
+      "size": 13
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/environment/end-utc.txt",
+      "sha256": "bdff40a83a2fb551b342cc413e6c2e556e85f338c7789f7c5761488b6c56b664",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/environment/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/environment/start-utc.txt",
+      "sha256": "bdff40a83a2fb551b342cc413e6c2e556e85f338c7789f7c5761488b6c56b664",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/environment/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/environment/stdout.log",
+      "sha256": "885cb03ae1b8ba7d69e6da0476a485e8872151e9e3808cb3a6dee5de8996b689",
+      "size": 1671
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/executed-source-sha256.json",
+      "sha256": "3df2b04055f3a63d0cbb6c4909e2bc1217d7b55c0d1686f61dd9eb2d7940d83e",
+      "size": 3813
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/driver/command.json",
+      "sha256": "1a65e112981ef5cb3553bd2734081680c7f32254bf32abffb4fb2274f0405ab7",
+      "size": 409
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/driver/exit-code.json",
+      "sha256": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01",
+      "size": 16
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/driver/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/driver/stdout.log",
+      "sha256": "04794275f0f24e3495cf1bfc6d1b8bec46a71869caf3fe56b31d8bd203e0c973",
+      "size": 1936
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/candidate.Dockerfile",
+      "sha256": "1e22cf7fcfdfa57e5b026a9f7d62b6ee207875142b10ab4c30645cf4404d0a9e",
+      "size": 408
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/command.json",
+      "sha256": "c0d42b086af78f55d5b9352b55bc6c8e64a715523278a85e9d3a0b5902c72305",
+      "size": 1212
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/iter-01/build-stderr.log",
+      "sha256": "cbe09f3369171923c475a26f84a3b23dd2bf11fee588ac4f6fd4d692a0188a3a",
+      "size": 1356
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/iter-02/Dockerfile",
+      "sha256": "1e22cf7fcfdfa57e5b026a9f7d62b6ee207875142b10ab4c30645cf4404d0a9e",
+      "size": 408
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/iter-02/build-stderr.log",
+      "sha256": "9ad6f87a7e5ffb4203cb026c32502451d5e179dd47bd5323603adb6748d52e8f",
+      "size": 1576
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/evidence/result.json",
+      "sha256": "21cde90dd943f58e5d25699976f64fe8dd59e098d56376f23083d0f74d9e156b",
+      "size": 1657
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/service-container-id.txt",
+      "sha256": "1f4436eb8ff3e51e9894d04ad68f0b3b681a7950ec36bc8daf5304634b522c75",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/build-failed/stdout.log",
+      "sha256": "21cde90dd943f58e5d25699976f64fe8dd59e098d56376f23083d0f74d9e156b",
+      "size": 1657
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/gate-result.json",
+      "sha256": "3d4b9335e0a474b5f6d42a2c6765f9afee8519ff16446b6f1f79c408d6cf2aa9",
+      "size": 1397
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/image/command.json",
+      "sha256": "aca95c3969f4ef2679bc30e269159ff38472d28bdd333e5239f745e0ec3b6e7d",
+      "size": 115
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/image/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/image/stdout.log",
+      "sha256": "8f50b42228645f66814e9d17dc4adf4a6051cd9cb8284d5fa1b5add22631b3d1",
+      "size": 3026
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/candidate.Dockerfile",
+      "sha256": "bf65e1ce1b83ec59b37bfea2728b4c1cc4d4c3b529a7ef15b4023f05086f9063",
+      "size": 405
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/command.json",
+      "sha256": "bedc848510eb6b40de33630a95f7e98ff25413bbc981a0003653aff05b2afc6a",
+      "size": 1232
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/service-container-id.txt",
+      "sha256": "d8d1ff99f9627f7b2ba17602e44951cc4be8351841fc46c64f3313e754391d94",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/invalid-candidate/stdout.log",
+      "sha256": "ed642912d37587b030025bda8d2aba0df92d889ea218d5b07f4dd4f2e9899eea",
+      "size": 101
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/results.csv",
+      "sha256": "49e39dce30049529af0455a33f78c333d26a0b5f6609167497a77c918e6e4f94",
+      "size": 383
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/candidate.Dockerfile",
+      "sha256": "1063779d2f1fdcf96cafdc971b3d3dfede874a9a4190dfd0d2893b31df0ac529",
+      "size": 423
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/command.json",
+      "sha256": "a1bc587ea9c7315082cbbddfdc26393690be749a0a656499cfdc6b0595c98462",
+      "size": 1223
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/cleanup-check/command.json",
+      "sha256": "675f7d1e35954a055183834dd86831bce8ceb16a7d117cb312f37e880a182a58",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/cleanup-check/stderr.log",
+      "sha256": "5351b4aa2e144919021a078bcf8e7cf952f3c0e0cafd04eea24ec4e8958e605d",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/cleanup-check/stdout.log",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/cleanup-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/cleanup.log",
+      "sha256": "bdaa5a39f75da84a9df965ec67cf8dd194f149ee1063be280c31700635b955d2",
+      "size": 65
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/iter-01/Dockerfile",
+      "sha256": "c4c81c83e9aabb89af7620f4b4ae38fd7375bac7c039aa579b121f02eecdf560",
+      "size": 184
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/iter-01/build-stderr.log",
+      "sha256": "ff7e67273104b679906f38f9fb5990f8fc1c6635c5baf028f2953da7b560573b",
+      "size": 1383
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/iter-02/Dockerfile",
+      "sha256": "1063779d2f1fdcf96cafdc971b3d3dfede874a9a4190dfd0d2893b31df0ac529",
+      "size": 423
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/iter-02/build-stderr.log",
+      "sha256": "c38215fc4dc83328c5bdf9ee764356addbc0946cb36d51b52f1b4a0191adccd3",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/iter-02/image-inspect.json",
+      "sha256": "33d740d8264f0c904aa7915c5e44dfc94abba2b7acd77272229b1ef7ce8bff50",
+      "size": 2539
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/project/Dockerfile.broken",
+      "sha256": "4254b4fc2e02527caa5685012cace78fe0587e014b6ff014afc94ad76cafdde5",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/result.json",
+      "sha256": "5b994d734ea67f9b94a488b91b2528740c13e7d376bf422a3cd84cbb4e0075b1",
+      "size": 1736
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/verify-container-id.txt",
+      "sha256": "b73c975bf94726e1ac3e2701e30f08097df2a68d6e1c007e78d8aa39abe2b615",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/evidence/verify.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/fault-injection.json",
+      "sha256": "e6cf708e9dbc0140629fe5a01b4454fc3c976d2db7dfb7eed2035e56a6e0f81d",
+      "size": 281
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/fixture/Dockerfile.broken",
+      "sha256": "4254b4fc2e02527caa5685012cace78fe0587e014b6ff014afc94ad76cafdde5",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/service-container-id.txt",
+      "sha256": "5366ebda1de4806cb83608af6b8f8e5c65b02438717dbc74f84a0cb8e052aa9e",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/runtime-timeout/stdout.log",
+      "sha256": "5b994d734ea67f9b94a488b91b2528740c13e7d376bf422a3cd84cbb4e0075b1",
+      "size": 1736
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/candidate.Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/command.json",
+      "sha256": "f5abcb4c50138279759b1d77a6b460ee0ef51f0bc45f09ced603ee354e082615",
+      "size": 1192
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/cleanup-stderr.log",
+      "sha256": "e8445ef4a0a96f9cf1a3b73c38904020bcd983f43225f62ca5d8c5702df8786d",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/iter-01/build-stderr.log",
+      "sha256": "1ad7b809a990de35a87edc2dadaa55d2d75d20edc5b11fedd7999d73c60eff35",
+      "size": 1356
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/iter-02/build-stderr.log",
+      "sha256": "993f598e53dd71a909d55338c0eadee7fbac4358e1ebaca86ac5a37786bf5f30",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/iter-02/image-inspect.json",
+      "sha256": "4757ee4e253c82d9d293949c110c3fca2af64fb3d681389bad5dc60f6141a72d",
+      "size": 2480
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/result.json",
+      "sha256": "073dca7ad26ed139fd0f9b85f7f57d9181df7e056ed115b0cf41422759b2d815",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/verify-container-id.txt",
+      "sha256": "82adaa0d0302b5f2b56eddb38c49c212621fd6d9a0710a753a01a8d3fdfc91bb",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/service-container-id.txt",
+      "sha256": "392d47a36ce4bc411d5f53b3c834a5a7e1099bde5898defaa19393efa96867e9",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/success/stdout.log",
+      "sha256": "073dca7ad26ed139fd0f9b85f7f57d9181df7e056ed115b0cf41422759b2d815",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/unit-tests/command.json",
+      "sha256": "e229321ab90cec3817a1b32572e171c9832606506dab408fceb934d81c57ff54",
+      "size": 304
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/unit-tests/service-container-id.txt",
+      "sha256": "865daf55eae5644e824f5c7584b7d8cf45eadafa7b569b72478b404306dc028b",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/unit-tests/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/unit-tests/stdout.log",
+      "sha256": "9d50d7aeddf611a4e7960dfe5b0364ba592ce7a3c5b1c91cd277db06afaab9d0",
+      "size": 99
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/candidate.Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/command.json",
+      "sha256": "6a29d56e43ecbae6c845b4f556dca564a9f93f4080ccad11eafb815aa652c327",
+      "size": 1230
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/cleanup-stderr.log",
+      "sha256": "3b906ddc17affedd4821544031a44f302d4f6e47469f8fb0be6853dc5d5f966e",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/iter-01/build-stderr.log",
+      "sha256": "991a6c1af21715289c3e374b1ff12786b16b742725fbc7c6cad181e270cdee7a",
+      "size": 1338
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/iter-02/build-stderr.log",
+      "sha256": "46932269dbb5e32e39a3239f555cb1ac2baad9b1e6380a0ffcb3cf79165cc118",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/iter-02/image-inspect.json",
+      "sha256": "e9793bbc813bf5ad3633a8964e46f239c754f9a93f640a592c225e1a652e0416",
+      "size": 2479
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/result.json",
+      "sha256": "d12aede18c7ddbe8cb1acac8f46bcbe0b9bc91944ac41a71b28e64588b080185",
+      "size": 2258
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/verify-container-id.txt",
+      "sha256": "b2a1f3695c2fdce9fb1de74761b55591865a433e76b0ead14e9bb910bf030160",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/fixture/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/fixture/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/fixture/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/fixture/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/fixture/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/service-container-id.txt",
+      "sha256": "fa1cebb3166e9f85263e9ff35be1ca0c70c5913c6eeeb711e4758c87343ebc14",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/gate/wrong-output/stdout.log",
+      "sha256": "d12aede18c7ddbe8cb1acac8f46bcbe0b9bc91944ac41a71b28e64588b080185",
+      "size": 2258
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate/invocation.json",
+      "sha256": "cb02e073f73b5251247456d2339931f3164420451b8aa9d95889d2afbb532226",
+      "size": 230
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate-driver/command.txt",
+      "sha256": "ef1dedaa118b11a35855e177ee45916c551bc681b5b85a1a8a97f96d80dbbb75",
+      "size": 345
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate-driver/end-utc.txt",
+      "sha256": "029990b4d0cad200ec3caa60c7e243f01dcb711039cb2a5aeefbb7081b9e3b42",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate-driver/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate-driver/start-utc.txt",
+      "sha256": "5571ddbd457ea497dce0fdeac46454dd9f90b6eb96e40c5475bc7548a3b76190",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate-driver/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/gate-driver/stdout.log",
+      "sha256": "e6fd497e6e966c01a748127d5427bf07dd074f5f5220d1771073826530a424c2",
+      "size": 1011
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-build/command.txt",
+      "sha256": "c549550a4967b6f7f4f47428b6e19fda0c6238c701a33fbbb79ad5d75a2dd792",
+      "size": 184
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-build/end-utc.txt",
+      "sha256": "2842bee115a71d489fc0d957ec311fef6dcd38ca4621015ae2c002316dd2dba8",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-build/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-build/start-utc.txt",
+      "sha256": "bdff40a83a2fb551b342cc413e6c2e556e85f338c7789f7c5761488b6c56b664",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-build/stderr.log",
+      "sha256": "830ea23abe60e9dcaf27ad1006884e06fec49b3a79b282396e6fe45a27b00640",
+      "size": 22666
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-build/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-inspect/command.txt",
+      "sha256": "59b31b9dae1d133eb47fd93b0a43d7a45ac42e297bbc05d67dc35871672ea4fb",
+      "size": 57
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-inspect/end-utc.txt",
+      "sha256": "2842bee115a71d489fc0d957ec311fef6dcd38ca4621015ae2c002316dd2dba8",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-inspect/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-inspect/start-utc.txt",
+      "sha256": "2842bee115a71d489fc0d957ec311fef6dcd38ca4621015ae2c002316dd2dba8",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-inspect/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service-inspect/stdout.log",
+      "sha256": "8f50b42228645f66814e9d17dc4adf4a6051cd9cb8284d5fa1b5add22631b3d1",
+      "size": 3026
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/service.Dockerfile",
+      "sha256": "44272ae3f74c91b73c2c8dc69c09564dd4359f88f05837b3bde34c9ec2da656f",
+      "size": 2332
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/unit-tests/command.txt",
+      "sha256": "a2e7fbe168a419a3ccd279b98e88ebb65d3e8d44187440c3f50ca5ec51269f2a",
+      "size": 111
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/unit-tests/end-utc.txt",
+      "sha256": "59665bee7577d6d3a22627fa9ae092baec8843fa123ab218977d97005fe0efbe",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/unit-tests/exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size": 2
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/unit-tests/start-utc.txt",
+      "sha256": "2842bee115a71d489fc0d957ec311fef6dcd38ca4621015ae2c002316dd2dba8",
+      "size": 21
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/unit-tests/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/reproduction-20261103/e6-reproduce-hnZQQFyP/unit-tests/stdout.log",
+      "sha256": "a336e1d3665eb59fea127ced62b384af34c139ad76b7d9825e83e6ca456c7615",
+      "size": 99
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/SHA256SUMS.txt",
+      "sha256": "517633463cc11247a2621406cfdea16073f7be4a9883585e8ca1c85636e549ba",
+      "size": 2675
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/build-service-image.log",
+      "sha256": "a924a6568d551cfaeb19c612c1b5be170c851acb0590d6ad348782669a7df64c",
+      "size": 3416
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/cleanup-stderr.log",
+      "sha256": "0397a30608883175ca6d7cbbf34e7df2420b8199ebc1d5943f5ff27435682b58",
+      "size": 112
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/iter-01/Dockerfile",
+      "sha256": "b78528f9ffdd220ae172b93c488c4620efc5de137a41aa77d33d8dd6b0f72db1",
+      "size": 157
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/iter-01/build-stderr.log",
+      "sha256": "cd0381848fde0f2de31f04b7491bc202e357c618fd33d8c59514cbe7e1b28a13",
+      "size": 1291
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/iter-01/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/iter-02/Dockerfile",
+      "sha256": "6c1408e3365a8effc32df5321e54dbb6cd26bd89ee958d9c0f9009d4d17c70d1",
+      "size": 396
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/iter-02/build-stderr.log",
+      "sha256": "109bd4f7ac9ae594539f78b39ce99a6e1e02db0f4dd841d3620ea83f821c1476",
+      "size": 1873
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/iter-02/build-stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/iter-02/image-inspect.json",
+      "sha256": "64c056d2267cac797c874b839902694df2858a3c6ae08fda53746b1c0b2a8284",
+      "size": 2480
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/iter-02/inspect-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/project/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/project/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/project/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/project/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/project/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/result.json",
+      "sha256": "1cd99a75de4f37e57798ea130f490d36e03e4249602c9e9b024914bc2f2b00df",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/verify-container-id.txt",
+      "sha256": "7c43fd4634d344ba825cbb78028ebcff6247dac57dda16e56afbc94adf122682",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/verify-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/evidence/verify.log",
+      "sha256": "8e4e09b0c3458c9c59e691c847d4d7484995403e663549d919fac7c2a5823548",
+      "size": 9
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/invocation.json",
+      "sha256": "d1fd959499b998e479742a51ca1bebe145a4c8336ba74d98c080be07da67bf18",
+      "size": 346
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/runner/command.json",
+      "sha256": "20c7b93b1b27cd3efc6b43b51c3c0ce9b19a482812c71413e39803445e05a936",
+      "size": 738
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/runner/exit-code.json",
+      "sha256": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01",
+      "size": 16
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/runner/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/runner/stdout.log",
+      "sha256": "1cd99a75de4f37e57798ea130f490d36e03e4249602c9e9b024914bc2f2b00df",
+      "size": 2165
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/e6-own/service-container-id.txt",
+      "sha256": "9a113eb0f37b03fca7e4ef59340c7b94f8146f55a308f3f3ff38d8c9b0c1e21a",
+      "size": 64
+    },
+    {
+      "path": "repository/e6/evidence/wang-shuo-20261103/service-tests.log",
+      "sha256": "c6ce8518a2cc113cc5560b3731e234ed6d559e746221ae903ce01599dfe7e797",
+      "size": 80
+    },
+    {
+      "path": "repository/e6/labs/B-draft/.dockerignore",
+      "sha256": "fe49249345cb96bbbd2c982a935cc707d673d33e59d8bacb24917d59ccf37fd2",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/labs/B-draft/.env.example",
+      "sha256": "bd800b0f7b18224cf1e6411d6e9a08c0dbbd63e73ece1b4f31b4da9ab5e84ecd",
+      "size": 344
+    },
+    {
+      "path": "repository/e6/labs/B-draft/.gitignore",
+      "sha256": "7f4b21a7294d8319fc04ef5904f9735408d5577a6cd9e74446ca1adda15e39a2",
+      "size": 151
+    },
+    {
+      "path": "repository/e6/labs/B-draft/Makefile",
+      "sha256": "f86aa7dac217d227778b4c27623ec589c83bcc6c990288d95a2cc82a25fea4c2",
+      "size": 3456
+    },
+    {
+      "path": "repository/e6/labs/B-draft/README.md",
+      "sha256": "7806b7a6abce798ec9ccfea1870febe0e6208aea654eedfae23968e9c9c0a420",
+      "size": 508
+    },
+    {
+      "path": "repository/e6/labs/B-draft/compose.yaml",
+      "sha256": "d3c72761e3c572a527b6eae112c06b9109d1081db4f9aed06196321e821fbf90",
+      "size": 1166
+    },
+    {
+      "path": "repository/e6/labs/B-draft/fixtures/ci-candidates/DeepSeek-E5.Dockerfile",
+      "sha256": "ede21b0fab394071641526e2fccefc41565efb00de6fb54d9d5b906aebeb535d",
+      "size": 281
+    },
+    {
+      "path": "repository/e6/labs/B-draft/fixtures/ci-candidates/provenance.json",
+      "sha256": "e4d5bea93010dd4c34ca5163be593843c4cc7b3dbb728ea7d71f1719ada04224",
+      "size": 489
+    },
+    {
+      "path": "repository/e6/labs/B-draft/fixtures/draft/.dockerignore",
+      "sha256": "4e2d01841cd05ae77ebcac6d7ed12f277fc7ab86506a5eb0186d2b7600e6487c",
+      "size": 17
+    },
+    {
+      "path": "repository/e6/labs/B-draft/fixtures/draft/Dockerfile.broken",
+      "sha256": "5c24884b5c48b5476fe19f2596487bb9105093113b3df5428710c841adb9502d",
+      "size": 85
+    },
+    {
+      "path": "repository/e6/labs/B-draft/fixtures/draft/Makefile",
+      "sha256": "7ed3f5b85a10827cf4c177ee9fa9855b1c70166b5339e5da8e81f4decee74cc3",
+      "size": 109
+    },
+    {
+      "path": "repository/e6/labs/B-draft/fixtures/draft/README.md",
+      "sha256": "706f5780103451757caa6327b11159989d0bbcd80688405a25e5f15eaa57c011",
+      "size": 234
+    },
+    {
+      "path": "repository/e6/labs/B-draft/fixtures/draft/main.c",
+      "sha256": "05f3bcbf50c51513eb01dd78b3a9a4ae0a01115140fed7d1030cc47451807bc1",
+      "size": 66
+    },
+    {
+      "path": "repository/e6/labs/B-draft/requirements-dev.in",
+      "sha256": "40457296154aab4b3db2e2b9c25d2c6440ae9d9a0752b24f838450f64b1826ae",
+      "size": 107
+    },
+    {
+      "path": "repository/e6/labs/B-draft/requirements-dev.lock",
+      "sha256": "24f54d917487599d98e13c5733a75ca4a86652fa11cdccaf863c08e1cc66f5df",
+      "size": 1276
+    },
+    {
+      "path": "repository/e6/labs/B-draft/scripts/doctor.py",
+      "sha256": "f2f545e66581cf4b860122941940a60d14daa9eccc628bdf58ad471ff406af47",
+      "size": 5159
+    },
+    {
+      "path": "repository/e6/labs/B-draft/scripts/lab_cloud.py",
+      "sha256": "7b18458810390a9ec267c071e99c117b806eb9d80d2c7f519f310ecc127fd4d1",
+      "size": 9750
+    },
+    {
+      "path": "repository/e6/labs/B-draft/scripts/prepare_e5_prompts.py",
+      "sha256": "21063add1f027c977b9208a36bfc505f5808b6fc40ea62314b0dac04bb8a3240",
+      "size": 3502
+    },
+    {
+      "path": "repository/e6/labs/B-draft/scripts/run_e7_b_gate.py",
+      "sha256": "fe30de327a63b33e22cffa4918cdfe9fd79b592ae819b4498f2e004b955b342d",
+      "size": 13605
+    },
+    {
+      "path": "repository/e6/labs/B-draft/scripts/secret_scan.py",
+      "sha256": "e3aefad5e87201d684841b931b8586a3d81d2930968bfa02867eff41cfcfbc65",
+      "size": 4196
+    },
+    {
+      "path": "repository/e6/labs/B-draft/scripts/verify_e6_b_evidence.py",
+      "sha256": "5d5fe31da29a6f19b8a457940729bd571882bb0ee702101af121ad4bc4751f4a",
+      "size": 3375
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/Dockerfile",
+      "sha256": "c7f1ee93feebcd9db8b866467ea0a436efa9b80397029ce9fd33cd970dd8a445",
+      "size": 2151
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/draft/__init__.py",
+      "sha256": "7c9b461c79148f28c89cc35ada2b7a07d1243fc16c1fe9d6809da3eac0449900",
+      "size": 102
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/draft/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "size": 48
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/draft/autobuild.py",
+      "sha256": "46afe8c9016f78f217372e6cdfef70ed495f9577677806ee87712e49160ff6fd",
+      "size": 7805
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/draft/cli.py",
+      "sha256": "5d7389655c01143a8428ba0a093ca1f0ad206ba34ea72e6f870df72eb5f92308",
+      "size": 1554
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/draft/smoke.py",
+      "sha256": "f7df9a45cde12a2311aaeb7e79184c92e94864f5d5f3baeabf8984bc55cf3709",
+      "size": 1630
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/pytest.ini",
+      "sha256": "f211820b112f706314629c1055868340301685733ea465af1151e0a92de620cc",
+      "size": 75
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/tests/b11_custom/test_candidate_policy.py",
+      "sha256": "ffd7bc29d73d5a74e29547af65e379c758ffbdf6122f47f232b4d82e9dd9ed99",
+      "size": 635
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/tests/test_autobuild.py",
+      "sha256": "13741af248835c26b476a172281950dffb15d0bbf4c3135d12c8a41a891f826d",
+      "size": 2185
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/tests/test_cli.py",
+      "sha256": "36ef3925167826ee4e15ee25f610e2723950af4c31606531b694b24279a71f12",
+      "size": 764
+    },
+    {
+      "path": "repository/e6/labs/B-draft/services/draft/tests/test_workflow_failures.py",
+      "sha256": "93f65cbc8191cd3b3c93e89b0ab490f25ede028f733c258d095685f32eb82714",
+      "size": 5822
+    },
+    {
+      "path": "repository/e6/reproduction.json",
+      "sha256": "489af8402da7452d82f1e17fb1f69f345cc9732d6cf1e956ec52c83bad3403c7",
+      "size": 946
+    },
+    {
+      "path": "repository/e6/scripts/reproduce.sh",
+      "sha256": "3c7af675601a054bd0cc83a2a4b47d40044c9bc21e46f8523851dbbdf83e64db",
+      "size": 3465
+    },
+    {
+      "path": "repository/e6/scripts/verify_archive.py",
+      "sha256": "70c7712e845c36ee387d700644945f02e2a8a4c6364de78614f7da495d4e8034",
+      "size": 6495
+    },
+    {
+      "path": "repository/e6/source-manifest.json",
+      "sha256": "5a38805a3094cf47cb694cf12605c56de08add099d3f0d20a40ea04313e789ed",
+      "size": 8612
+    },
+    {
+      "path": "repository/e6/validation/archive-check.json",
+      "sha256": "eb0d0495e1d689d3e59a4cc7074b8e0878e661ed52e4c0440f3206ec0a862440",
+      "size": 1492
+    },
+    {
+      "path": "repository/e6/validation/material-check.json",
+      "sha256": "aa8a587032e27ea244c8d36db21c3544412fcff3489a24c5fb5f117701ba78d3",
+      "size": 250
+    },
+    {
+      "path": "repository/e6/validation/secret-scan.txt",
+      "sha256": "ba19dd9978d3a437b6786197be72c62db18de9e2ce1115eeb50f1b97c87e86ed",
+      "size": 69
+    },
+    {
+      "path": "repository/e6/validation/wang-reception-d95fefa.json",
+      "sha256": "0c82ef635ab0fb7ee98fc20f054e96f63d95ab1523c9a28cf170ab068763ab8b",
+      "size": 1604
+    }
+  ],
+  "note": "Attachment commit itself does not change content; verify against this commit SHA."
+}
