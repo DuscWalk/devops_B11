@@ -1,0 +1,40 @@
+{
+  "sha": "700f16b838eb437a219fc039e6b6149c8179685a",
+  "node_id": "C_kwDOVbuD_toAKDcwMGYxNmI4MzhlYjQzN2EyMTlmYzAzOWU2YjYxNDljODE3OTY4NWE",
+  "url": "https://api.github.com/repos/DuscWalk/devops_B11/git/commits/700f16b838eb437a219fc039e6b6149c8179685a",
+  "html_url": "https://github.com/DuscWalk/devops_B11/commit/700f16b838eb437a219fc039e6b6149c8179685a",
+  "author": {
+    "name": "Bo Hu",
+    "email": "1909165099@qq.com",
+    "date": "2026-10-29T14:55:54Z"
+  },
+  "committer": {
+    "name": "GitHub",
+    "email": "noreply@github.com",
+    "date": "2026-10-29T14:55:54Z"
+  },
+  "tree": {
+    "sha": "8a194060ddde990bafbe6af0f9cd89c18b330bd3",
+    "url": "https://api.github.com/repos/DuscWalk/devops_B11/git/trees/8a194060ddde990bafbe6af0f9cd89c18b330bd3"
+  },
+  "message": "Merge 6b1028bcfc48551452c9a220a770e64c74011724 into 2d3d857abf5133619ef302e89d2f9d6b0f85ab57",
+  "parents": [
+    {
+      "sha": "2d3d857abf5133619ef302e89d2f9d6b0f85ab57",
+      "url": "https://api.github.com/repos/DuscWalk/devops_B11/git/commits/2d3d857abf5133619ef302e89d2f9d6b0f85ab57",
+      "html_url": "https://github.com/DuscWalk/devops_B11/commit/2d3d857abf5133619ef302e89d2f9d6b0f85ab57"
+    },
+    {
+      "sha": "6b1028bcfc48551452c9a220a770e64c74011724",
+      "url": "https://api.github.com/repos/DuscWalk/devops_B11/git/commits/6b1028bcfc48551452c9a220a770e64c74011724",
+      "html_url": "https://github.com/DuscWalk/devops_B11/commit/6b1028bcfc48551452c9a220a770e64c74011724"
+    }
+  ],
+  "verification": {
+    "verified": true,
+    "reason": "valid",
+    "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq4156CRC1aQ7uu5UhlAAAqU0QAHmN+FDDjtMyZbMNOZCS20oT\n/hD2rLnAYqkg8BVLQ6ohdDd7RIO6WZ8oo+Zx06HRxy6/G6Be6a6UVlBSqL6fDzFH\n4VFWxjvYVwEOBJt+OpmwFKA+fhOLfmVOkCd+3XWQ/G78+Oyk9gVlKityUqm02keJ\nK4VzABoMipIMExVARmMSeMT/+TV/mwRYLnoO2NTTn5x4u7iR3nkBxxDAsy2K4bTn\nGO5b4Q6WFW75cJkjygyJJSqXz4ZcQXdsbYEgJv1iWOxeTUlopYWH7TshShGtmxKR\n+f8MXJz3Z7jYWKDvCl6NsqnCd93wRYmaAE06gff9WpnCo3S4PN1vPu39fO6sc12D\nVZCTajN0MOED64wQXI+6tW0PJ4oQYGTbCIWgJf3If+/9EQyliQ1nfcR00z6oT4Rw\nlRTgPNiI8VacUCpPlSeRSR1xfUMitAViAtHnf5z0yzbaBfUy6VA7TiXLkZMBK9RZ\n0IqXCAsPeLBHNIjD8bApg2NLcXhwFFWlVXL+xukbW5H6HXvvSkEZucizPT/WWUm0\nONA+RMLdUSlG4YsV5mOcI5qWVb8qhYIm0LQ3euokVEjjBFzP8nhTBh2AonaPLyjY\nzdtF79dfz9ufslye214fHo3KwONT2Z1KiFz0iNQcBceXyUljHob04HfKZNhEhUHP\n1beOe+Vo8QCia2nfInX+\n=daiB\n-----END PGP SIGNATURE-----\n",
+    "payload": "tree 8a194060ddde990bafbe6af0f9cd89c18b330bd3\nparent 2d3d857abf5133619ef302e89d2f9d6b0f85ab57\nparent 6b1028bcfc48551452c9a220a770e64c74011724\nauthor Bo Hu <1909165099@qq.com> 1793285754 +0000\ncommitter GitHub <noreply@github.com> 1793285754 +0000\n\nMerge 6b1028bcfc48551452c9a220a770e64c74011724 into 2d3d857abf5133619ef302e89d2f9d6b0f85ab57\n",
+    "verified_at": "2026-10-29T14:55:55Z"
+  }
+}

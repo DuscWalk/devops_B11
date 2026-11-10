@@ -14,6 +14,8 @@ B11 负责 DRAFT、MDFixer 与公共接口联调；配对组 A11 负责 BuildChe
 
 ## E5–E7 入口
 
+**E7 独立提交入口：[测试与 CI 报告](e7/REPORT.md)、[要求核对](e7/REQUIREMENTS_CHECK.md)、[复现与归档核验](e7/README.md)。** 最新材料在 `feat/e7-submission` 分支，包含正常、失败、恢复运行及同一 PR 最终合并的原始证据。
+
 **E5–E7：论文 1 复现（B11 / DRAFT）** 已在学院分配的 2 核、约 1.7 GiB 可见内存服务器完成小型样例、自动构建、单元测试和五场景门禁。组级 GitHub CI、main 保护及 PR 拒绝/恢复演示也已通过 PR 完成。复现说明、候选来源、运行日志和资源/网络诊断见 [E5–E7 报告](docs/e5/REPORT.md) 与 [材料索引](docs/e5/README.md)。
 
 ## E2 快速验证

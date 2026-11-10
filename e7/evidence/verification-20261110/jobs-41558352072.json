@@ -1,0 +1,113 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 125662658253,
+      "run_id": 41558352072,
+      "workflow_name": "E5 B quality gate",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/DuscWalk/devops_B11/actions/runs/41558352072",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVbuD_s8AAAAdQhP-zQ",
+      "head_sha": "8e84e4215275ed8fab14de801bae1df910e87677",
+      "url": "https://api.github.com/repos/DuscWalk/devops_B11/actions/jobs/125662658253",
+      "html_url": "https://github.com/DuscWalk/devops_B11/actions/runs/41558352072/job/125662658253",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-03T01:13:56Z",
+      "started_at": "2026-11-03T01:14:05Z",
+      "completed_at": "2026-11-03T01:14:47Z",
+      "name": "e7-b-quality-gate",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-03T01:14:06Z",
+          "completed_at": "2026-11-03T01:14:06Z"
+        },
+        {
+          "name": "Check out the exact triggering revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-03T01:14:06Z",
+          "completed_at": "2026-11-03T01:14:08Z"
+        },
+        {
+          "name": "Prepare evidence and check Python syntax",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-03T01:14:08Z",
+          "completed_at": "2026-11-03T01:14:08Z"
+        },
+        {
+          "name": "Scan tracked sources and Git history",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-03T01:14:08Z",
+          "completed_at": "2026-11-03T01:14:09Z"
+        },
+        {
+          "name": "Build the service image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-03T01:14:09Z",
+          "completed_at": "2026-11-03T01:14:25Z"
+        },
+        {
+          "name": "Scan built image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-03T01:14:25Z",
+          "completed_at": "2026-11-03T01:14:25Z"
+        },
+        {
+          "name": "Run the real component and fault gate",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-03T01:14:25Z",
+          "completed_at": "2026-11-03T01:14:44Z"
+        },
+        {
+          "name": "Archive evidence even when checks fail",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-03T01:14:44Z",
+          "completed_at": "2026-11-03T01:14:45Z"
+        },
+        {
+          "name": "Post Check out the exact triggering revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-11-03T01:14:45Z",
+          "completed_at": "2026-11-03T01:14:45Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-03T01:14:45Z",
+          "completed_at": "2026-11-03T01:14:46Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/DuscWalk/devops_B11/check-runs/125662658253",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000000243,
+      "runner_name": "GitHub Actions 1000000243",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

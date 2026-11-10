@@ -1,0 +1,30 @@
+{
+  "ppt": {
+    "file": "E7_论文1验证_20261020_讲稿优化版.pptx",
+    "sha256": "c2e18b174b971396bca536b64f407485b728e0f026fb0fbe894dcfe4b5514572"
+  },
+  "student_archive": "docs/e5/E5-7_Student_Cloud.zip",
+  "student_archive_sha256": "4068d3bf98dc8218cc80c6a0f09674d9ed54289b3fcac5cb86eda327fb0cd688",
+  "course_documents": [
+    {
+      "path": "docs/e7/GitHub_CI与合并门禁_课程原文.md",
+      "package_relative_path": "docs/04_GitHub_CI与合并门禁.md",
+      "sha256": "277d0616c0287ca1afbf05a641b0fd0f14df2d76fab3e72b0d1ddcc911bf94f9"
+    },
+    {
+      "path": "docs/e7/实验报告模板_课程原文.md",
+      "package_relative_path": "templates/实验报告.md",
+      "sha256": "55b14ca4c8c4ed917da7de2f075da33508505ac9d481a34bc4b2c121b64e7d45"
+    },
+    {
+      "path": "docs/e7/验收记录模板_课程原文.csv",
+      "package_relative_path": "templates/验收记录.csv",
+      "sha256": "9c2edbc1e5f3a4669e1b10c80a218f48228a2f9804d8a18cbc64b05c10c7b4b8"
+    },
+    {
+      "path": "docs/e7/B-main-protection.json",
+      "package_relative_path": "ci/B-main-protection.json",
+      "sha256": "4b804a8da424da3e55fe5dfee5910f26e634600afb4234a26c275ceda4a279d4"
+    }
+  ]
+}

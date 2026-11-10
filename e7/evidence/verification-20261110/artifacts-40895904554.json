@@ -1,0 +1,25 @@
+{
+  "total_count": 1,
+  "artifacts": [
+    {
+      "id": 12907580466,
+      "node_id": "MDg6QXJ0aWZhY3QxMjkwNzU4MDQ2Ng==",
+      "name": "e7-b-evidence-40895904554-1",
+      "size_in_bytes": 13700,
+      "url": "https://api.github.com/repos/DuscWalk/devops_B11/actions/artifacts/12907580466",
+      "archive_download_url": "https://api.github.com/repos/DuscWalk/devops_B11/actions/artifacts/12907580466/zip",
+      "expired": false,
+      "digest": "sha256:e15bebd11285f47a590aa198bce77fcede2284dce4a3aa2344498b0ded79e531",
+      "created_at": "2026-10-29T14:53:21Z",
+      "updated_at": "2026-10-29T14:53:21Z",
+      "expires_at": "2026-11-12T14:53:20Z",
+      "workflow_run": {
+        "id": 40895904554,
+        "repository_id": 1438352382,
+        "head_repository_id": 1438352382,
+        "head_branch": "e7-gate-reject-demo",
+        "head_sha": "159139ce49e885bbca831b638c2dd9de51989894"
+      }
+    }
+  ]
+}
