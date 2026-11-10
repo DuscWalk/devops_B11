@@ -5,3 +5,6 @@ C06,B,CI,必需检查与实际拒绝合并,PASS,e5/evidence/hu-bo-20261029/ci/re
 C07,B,CI,同一PR恢复并最终合并,PASS,e5/evidence/hu-bo-20261029/ci/recovery-pr2/,PR2 MERGED；701be1bee2e0246107a6638f5aed49e4bd349019
 C08,B,CI,当前main保护与成功检查,PASS,e7/evidence/verification-20261110/,App15368；strict/enforce_admins=true；审批0
 B03,B,E7,五场景与超时清理,PASS,e7/evidence/verification-20261110/main-artifact/e7-b-evidence-41558352072-1/gate/,26单测及五场景；CSV/JSON一致；运行超时容器已移除
+G01,B,组内交接,DRAFT负责人验收,PENDING,e7/HANDOFF.md,尚未收到本轮E7结论
+G02,B,组内交接,CI交叉验收,PENDING,e7/HANDOFF.md,尚未收到本轮E7结论
+G03,B,组内交接,最终整合与提交包,PENDING,e7/STATUS.md,接收两项验收后再确认最终版本

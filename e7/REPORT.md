@@ -1,8 +1,10 @@
 # B11 E7 实验报告：验证与合并门禁
 
-核验日期：2026-11-10（America/New_York）。小组 B11，B / DRAFT。仓库：https://github.com/DuscWalk/devops_B11 。本次整理分支为 `feat/e7-submission`，提交包的 `MANIFEST.json` 固定完整 SHA。
+核验日期：2026-11-10（America/New_York）。小组 B11，B / DRAFT。仓库：https://github.com/DuscWalk/devops_B11 。本次审阅分支为 `review/e7-handoff`。
 
-## 结论和本次修改
+**整体状态：待组员验收与最终整合。** 本报告中的通过结论仅对应已完成的技术检查和原始运行；DRAFT 负责人验收、交叉验收及最终接收尚未完成，见 [状态](STATUS.md)。
+
+## 技术核验和本次修改
 
 E7 的核心能力、五个实际工作流场景、同一 PR 的失败拦截和修复合并已经执行。本次重新查询 GitHub，并下载正常、失败、恢复三次 artifact，分别与仓库中的 139、16、139 个文件逐字节一致；补存当前 main 的成功运行与保护配置。
 
@@ -49,6 +51,6 @@ main 当前仍要求 GitHub Actions App ID **15368** 的 **`e7-b-quality-gate`**
 
 [归档清单](evidence-manifest.json) 固定原始日志、API 快照和运行源码的摘要；执行 `python3 e7/scripts/verify_archive.py` 可离线检查六项结果、CSV、镜像 ID、输入哈希、超时清理记录和 PR/提交对应关系。它只核验既有证据，不把历史运行描述成本次重新执行 Docker。
 
-新工作流仍对 push/PR 执行语法检查、源文件与 Git 历史扫描、服务构建、镜像扫描、单测和完整门禁；`if: always()` 归档 `work/ci/`，保留 14 天。新的 CI 运行及下载附件随最终提交包归档。
+新工作流仍对 push/PR 执行语法检查、源文件与 Git 历史扫描、服务构建、镜像扫描、单测和完整门禁；`if: always()` 归档 `work/ci/`，保留 14 天。现有 CI 运行及下载附件属于审阅材料；待组员验收、最终接收及合并后，再按最终 SHA 生成正式提交包。
 
 本次验收不依赖 A11 服务，也不需要三名成员各重复同一套 CI；不把未收到的成员复核记为已完成。历史正常/拒绝/恢复演示已经完成，此次整理 PR 不冒充当时的演示 PR。

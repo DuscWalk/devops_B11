@@ -1,6 +1,8 @@
 # B11 E7：测试、CI 与合并门禁
 
-E7 的提交入口：[实验报告](REPORT.md)、[要求核对](REQUIREMENTS_CHECK.md)、[验收记录](验收记录.csv)、[提交说明](SUBMISSION.md)。课程原件及逐页文字见 [docs/e7](../docs/e7/README.md)。
+**当前状态：技术验证通过，待组员验收与最终整合，尚未形成最终提交版。** 分支为 `review/e7-handoff`。
+
+E7 的审阅入口：[状态](STATUS.md)、[组员交接](HANDOFF.md)、[实验报告](REPORT.md)、[要求核对](REQUIREMENTS_CHECK.md)、[验收记录](验收记录.csv)、[审阅说明](REVIEW.md)。课程原件及逐页文字见 [docs/e7](../docs/e7/README.md)。
 
 B 轨道要求的六项检查、正常/失败/恢复 CI、main 保护、实际拒绝合并及同一 PR 修复后合并已有真实证据。本次整理保留原始日志，并把此前混在 E5–E7 材料中的 E7 要求单独列出。课程实现仍在 `e5/labs/B-draft/`，工作流入口现为 `.github/workflows/e7-quality-gate.yml`，必需检查始终为 `e7-b-quality-gate`。
 
