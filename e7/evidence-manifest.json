@@ -2081,6 +2081,47 @@
     {
       "path": "e7/evidence/verification-20261110/run-41558352072.json",
       "sha256": "3143f3e27f88077a523aba91d06d600d2e0c1012d9c5b3addb481c5e71996313"
+    },
+    {
+      "path": "e7/reviews/241250112-DRAFT.md",
+      "sha256": "909159eb85e8633bcd96276febe45c4c3dedbdae665d474b61e22d854c61b313"
+    },
+    {
+      "path": "e7/reviews/241250110-CI.md",
+      "sha256": "1bacd90855557344ff3b2def8c94c7fd4668e8a7f11256edcf0f9b1e502c2a0c"
+    },
+    {
+      "path": "e7/evidence/integration-20261113/integration-check.json",
+      "sha256": "0cdbc065f44aa4eada1c7f96ad1eb027257675c4d713cb9f4114ed770b82a85b"
+    },
+    {
+      "path": "e7/evidence/integration-20261113/main-check-runs.json",
+      "sha256": "6e738854c6f44c3006fb645d77f115b54a2b52bec721d02e5503bbe7e993fd60"
+    },
+    {
+      "path": "e7/evidence/integration-20261113/main-protection.json",
+      "sha256": "edbe09080055390b56005ef333468efd7fd7d3ff8a409e545fe895f10148b8e4"
+    },
+    {
+      "path": "e7/evidence/integration-20261113/pr-9-merged.json",
+      "sha256": "ad7c64193ec8fa25eeb0fe831e4da6dad69ff14fb065bf6a7839b94ac21a8911"
+    },
+    {
+      "path": "e7/evidence/integration-20261113/run-43397999906.json",
+      "sha256": "b0d804ab4f3f39d2a4906f2edd1efe02e99eb7725bb49a85fc8417f5acc7e651"
+    },
+    {
+      "path": "e7/evidence/integration-20261113/run-43409128007.json",
+      "sha256": "d36749372891a46065ce1d2918d9099c6a8f908f38c8fa0f39733d75f9d2a618"
+    },
+    {
+      "path": "e7/evidence/integration-20261113/run-43409166075.json",
+      "sha256": "97a35c70d915b955da057f6e7f0b2c70c9155aad1aefa56d3306fb4ba7df9a14"
     }
+  ],
+  "acceptance_date": "2026-11-13",
+  "accepted_review_commits": [
+    "8dd3b710c784e32879701be19334bab7ecdd6370",
+    "ba569b91d3ba67d7f47d3a33f00a606694a475bd"
   ]
 }

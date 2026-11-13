@@ -1,0 +1,10 @@
+{
+  "baseRefName": "review/e7-handoff",
+  "headRefOid": "ba569b91d3ba67d7f47d3a33f00a606694a475bd",
+  "mergeCommit": {
+    "oid": "4bfa2b5d980b0bd0371f497088b5d8b02eb5c5e8"
+  },
+  "mergedAt": "2026-11-13T11:52:01Z",
+  "state": "MERGED",
+  "url": "https://github.com/DuscWalk/devops_B11/pull/9"
+}

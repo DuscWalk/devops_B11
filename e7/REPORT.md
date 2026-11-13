@@ -1,8 +1,8 @@
 # B11 E7 实验报告：验证与合并门禁
 
-核验日期：2026-11-10（America/New_York）。小组 B11，B / DRAFT。仓库：https://github.com/DuscWalk/devops_B11 。本次审阅分支为 `review/e7-handoff`。
+初次核验：2026-11-10；组员接收与整合：2026-11-13（America/New_York）。小组 B11，B / DRAFT。仓库：https://github.com/DuscWalk/devops_B11 。集成分支为 `review/e7-handoff`，交付版本按 [提交说明](SUBMISSION.md) 的最终 main SHA 固定。
 
-**整体状态：待组员验收与最终整合。** 本报告中的通过结论仅对应已完成的技术检查和原始运行；DRAFT 负责人验收、交叉验收及最终接收尚未完成，见 [状态](STATUS.md)。
+**技术验证与两项组员验收均完成，已接收并整合。** [DRAFT 验收](reviews/241250112-DRAFT.md)、[CI 交叉验收](reviews/241250110-CI.md)及[组级接收记录](ACCEPTANCE.md)分别保留实际范围；不存在待交回的组员任务。
 
 ## 技术核验和本次修改
 
@@ -20,7 +20,7 @@ GitHub CI 使用 Ubuntu 24.04 托管 runner；Docker 版本和服务镜像 inspe
 
 ## 场景：先写预期，再核对实际
 
-下表预期来自课程门禁实现和 E7 第 9–12 页；实际以当前 main `8e84e4215275ed8fab14de801bae1df910e87677` 的运行 [41558352072](https://github.com/DuscWalk/devops_B11/actions/runs/41558352072) 为例。对应 artifact 在 `e7/evidence/verification-20261110/main-artifact/e7-b-evidence-41558352072-1/`，场景目录均在其 `gate/` 下。
+下表预期来自课程门禁实现和 E7 第 9–12 页；实际以 2026-11-10 核验时 main `8e84e4215275ed8fab14de801bae1df910e87677` 的运行 [41558352072](https://github.com/DuscWalk/devops_B11/actions/runs/41558352072) 为例。对应 artifact 在 `e7/evidence/verification-20261110/main-artifact/e7-b-evidence-41558352072-1/`，场景目录均在其 `gate/` 下。
 
 | 检查项/输入 | 预期 | 实际状态、退出码与判定 | 原始证据 |
 | --- | --- | --- | --- |
@@ -45,12 +45,12 @@ PR workflow 默认检出 GitHub 生成的临时合并提交，所以 `commit.txt
 
 历史证据位于 `e5/evidence/hu-bo-20261029/ci/{normal-pr1,rejection-pr2,recovery-pr2}/`。拒绝时 PR #2 为 `OPEN / BLOCKED`，[普通合并日志](../e5/evidence/hu-bo-20261029/ci/rejection-pr2/merge-rejection.log) 记录策略阻止合并及退出码 1。修正预期后，PR #2 于 **2026-10-29 15:01:32 UTC** 合并，merge commit 为 **`701be1bee2e0246107a6638f5aed49e4bd349019`**，已与本次 GitHub API 查询核对。
 
-main 当前仍要求 GitHub Actions App ID **15368** 的 **`e7-b-quality-gate`**；`strict=true`、`enforce_admins=true`、`required_approving_review_count=0`，通过 PR 合并，禁止强推。当前 main 对应检查成功，保护和 check-runs 快照见 `e7/evidence/verification-20261110/`。
+main 当前仍要求 GitHub Actions App ID **15368** 的 **`e7-b-quality-gate`**；`strict=true`、`enforce_admins=true`、`required_approving_review_count=0`，通过 PR 合并，禁止强推。2026-11-10 的 main 检查和保护快照见 `e7/evidence/verification-20261110/`；11 月 13 日再次复核保护见 `e7/evidence/integration-20261113/`。最终合并 SHA 对应的新运行随正式包归档。
 
 ## 归档、复现与范围
 
 [归档清单](evidence-manifest.json) 固定原始日志、API 快照和运行源码的摘要；执行 `python3 e7/scripts/verify_archive.py` 可离线检查六项结果、CSV、镜像 ID、输入哈希、超时清理记录和 PR/提交对应关系。它只核验既有证据，不把历史运行描述成本次重新执行 Docker。
 
-新工作流仍对 push/PR 执行语法检查、源文件与 Git 历史扫描、服务构建、镜像扫描、单测和完整门禁；`if: always()` 归档 `work/ci/`，保留 14 天。现有 CI 运行及下载附件属于审阅材料；待组员验收、最终接收及合并后，再按最终 SHA 生成正式提交包。
+新工作流仍对 push/PR 执行语法检查、源文件与 Git 历史扫描、服务构建、镜像扫描、单测和完整门禁；`if: always()` 归档 `work/ci/`，保留 14 天。历史运行和最终 PR/main 的新运行分开归档，正式提交包固定最终 main SHA，并附该 SHA 对应的 CI 原始下载附件。
 
-本次验收不依赖 A11 服务，也不需要三名成员各重复同一套 CI；不把未收到的成员复核记为已完成。历史正常/拒绝/恢复演示已经完成，此次整理 PR 不冒充当时的演示 PR。
+本次验收不依赖 A11 服务，也不需要三名成员各重复同一套 CI；两份已收到的成员复核及其接收状态见 [CONTRIBUTIONS.md](CONTRIBUTIONS.md)。历史正常/拒绝/恢复演示已经完成，此次整理 PR 不冒充当时的演示 PR。
