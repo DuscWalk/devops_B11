@@ -1,4 +1,4 @@
-name: E5 B quality gate
+name: E7 B quality gate
 
 on:
   push:
@@ -24,6 +24,7 @@ jobs:
     env:
       IMAGE: e7-draft:ci
       FAIL_DEMO: ${{ inputs.fail_demo }}
+      TRIGGER_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
       - name: Check out the exact triggering revision
         uses: actions/checkout@v7.0.1
@@ -37,6 +38,18 @@ jobs:
           set -euo pipefail
           mkdir -p work/ci
           git rev-parse HEAD > work/ci/commit.txt
+          python3 - <<'PYMETA'
+          import json, os, subprocess
+          from pathlib import Path
+          Path("work/ci/trigger.json").write_text(json.dumps({
+              "checked_out_sha": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+              "event": os.environ["GITHUB_EVENT_NAME"],
+              "head_sha": os.environ["TRIGGER_HEAD_SHA"],
+              "github_sha": os.environ["GITHUB_SHA"],
+              "run_id": os.environ["GITHUB_RUN_ID"],
+              "run_attempt": os.environ["GITHUB_RUN_ATTEMPT"],
+          }, indent=2) + "\n")
+          PYMETA
           docker version > work/ci/docker-version.txt
           python3 -m compileall -q services/draft/draft scripts
 
@@ -67,7 +80,13 @@ jobs:
           if [[ "$FAIL_DEMO" == "true" ]]; then
             args+=(--case success --inject-bad-oracle)
           fi
+          set +e
           python3 scripts/run_e7_b_gate.py --image "$IMAGE" --candidate fixtures/ci-candidates/DeepSeek-E5.Dockerfile --out work/ci/gate --build-timeout 600 "${args[@]}" 2>&1 | tee work/ci/gate-console.log
+          codes=("${PIPESTATUS[@]}")
+          set -e
+          printf '%s\n' "${codes[0]}" > work/ci/gate-exit-code.txt
+          if [[ "${codes[0]}" != 0 ]]; then exit "${codes[0]}"; fi
+          exit "${codes[1]}"
 
       - name: Archive evidence even when checks fail
         if: always()

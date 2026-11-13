@@ -14,6 +14,8 @@ B11 负责 DRAFT、MDFixer 与公共接口联调；配对组 A11 负责 BuildChe
 
 ## E5–E7 入口
 
+**E7：技术验证、两项组员验收及组级接收已完成。** [提交说明](e7/SUBMISSION.md)、[接收记录](e7/ACCEPTANCE.md)、[测试与 CI 报告](e7/REPORT.md)。最终版本及合并后的 CI 记录固定在正式提交包中。
+
 **E5–E7：论文 1 复现（B11 / DRAFT）** 已在学院分配的 2 核、约 1.7 GiB 可见内存服务器完成小型样例、自动构建、单元测试和五场景门禁。组级 GitHub CI、main 保护及 PR 拒绝/恢复演示也已通过 PR 完成。复现说明、候选来源、运行日志和资源/网络诊断见 [E5–E7 报告](docs/e5/REPORT.md) 与 [材料索引](docs/e5/README.md)。
 
 ## E2 快速验证

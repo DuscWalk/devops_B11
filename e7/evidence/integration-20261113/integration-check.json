@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-13",
+  "timezone": "America/New_York",
+  "accepted_reviews": [
+    {
+      "source_commit": "8dd3b710c784e32879701be19334bab7ecdd6370",
+      "path": "e7/reviews/241250112-DRAFT.md",
+      "sha256": "909159eb85e8633bcd96276febe45c4c3dedbdae665d474b61e22d854c61b313",
+      "original_bytes_preserved": true
+    },
+    {
+      "source_commit": "ba569b91d3ba67d7f47d3a33f00a606694a475bd",
+      "path": "e7/reviews/241250110-CI.md",
+      "sha256": "1bacd90855557344ff3b2def8c94c7fd4668e8a7f11256edcf0f9b1e502c2a0c",
+      "original_bytes_preserved": true
+    }
+  ],
+  "service_and_workflow_unchanged_from": "3bdb020ac9b0873861c17ca402be63c2218da384",
+  "personal_review_scope": "Saved artifact/code/API review, not new Docker runs",
+  "conflicts_resolved": "Shared status/contribution documents only"
+}

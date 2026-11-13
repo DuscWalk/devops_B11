@@ -15,3 +15,7 @@ docs/e4/Other-Instructions.txt -text whitespace=cr-at-eol
 # Evidence is archived byte-for-byte, including terminal whitespace.
 e4/evidence/** -text -whitespace
 e5/evidence/** -text -whitespace
+
+# Keep E7 downloaded evidence and original course templates byte-for-byte.
+e7/evidence/** -text -whitespace
+docs/e7/*课程原文* -text
