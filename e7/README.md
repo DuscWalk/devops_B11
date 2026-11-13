@@ -1,6 +1,6 @@
 # B11 E7：测试、CI 与合并门禁
 
-**当前状态：技术验证与 DRAFT 委托审阅已完成；个人审阅待共享，CI 交叉验收和最终整合待完成，尚未形成最终提交版。** 审阅基线为 `review/e7-handoff`，个人审阅在 `review/e7-draft-241250112`。
+**当前状态：技术验证与 DRAFT 场景审阅已完成；CI 交叉验收和最终整合待完成，尚未形成最终提交版。** 审阅基线为 `review/e7-handoff`，个人审阅在 `review/e7-draft-241250112`。
 
 E7 的审阅入口：[状态](STATUS.md)、[组员交接](HANDOFF.md)、[孙静怡 DRAFT 审阅](reviews/241250112-DRAFT.md)、[成员贡献](CONTRIBUTIONS.md)、[实验报告](REPORT.md)、[要求核对](REQUIREMENTS_CHECK.md)、[验收记录](验收记录.csv)、[审阅说明](REVIEW.md)。课程原件及逐页文字见 [docs/e7](../docs/e7/README.md)。
 

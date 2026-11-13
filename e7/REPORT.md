@@ -2,7 +2,7 @@
 
 核验日期：2026-11-10（America/New_York）。小组 B11，B / DRAFT。仓库：https://github.com/DuscWalk/devops_B11 。本次审阅分支为 `review/e7-handoff`。
 
-**整体状态：DRAFT 审阅待共享，CI 交叉验收与最终整合待完成。** 本报告中的通过结论对应已完成的技术检查和原始运行；孙静怡委托 Codex 的 [DRAFT 场景验收](reviews/241250112-DRAFT.md) 已形成，但尚未推送，CI 交叉验收及最终接收尚未完成，见 [状态](STATUS.md)。
+**整体状态：DRAFT 场景审阅已完成，CI 交叉验收与最终整合待完成。** 本报告中的通过结论对应已完成的技术检查和原始运行；[孙静怡的 DRAFT 场景验收](reviews/241250112-DRAFT.md)已形成，CI 交叉验收及最终接收尚未完成，见 [状态](STATUS.md)。
 
 ## 技术核验和本次修改
 
