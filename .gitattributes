@@ -19,3 +19,8 @@ e5/evidence/** -text -whitespace
 # Keep E7 downloaded evidence and original course templates byte-for-byte.
 e7/evidence/** -text -whitespace
 docs/e7/*课程原文* -text
+
+# Preserve E8-E9 course sources and raw evidence bytes.
+docs/e8-e9/course/** -text
+labs/e8e10/** -text
+e8e9/evidence/** -text -whitespace

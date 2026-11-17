@@ -1,0 +1,177 @@
+{
+  "course_archive": "docs/e8-e9/DevOps_E8_E10_20261031.zip",
+  "sha256": "9ac10fc8dbd10258f139647f4f9861f815936aed49f733d9d18082a15eb3f259",
+  "track": "B / MDfixer",
+  "requested_stages": [
+    "e8",
+    "e9"
+  ],
+  "course_files": [
+    {
+      "path": ".github/workflows/e8e10.yml",
+      "package_path": "DevOps_E8_E10/03_实验包/.github/workflows/e8e10.yml",
+      "sha256": "639ad1094644f4a64d7b59e8a31029752250fe6625ae426e1c0ce4610f723144"
+    },
+    {
+      "path": "classroom_helpers.sh",
+      "package_path": "DevOps_E8_E10/03_实验包/classroom_helpers.sh",
+      "sha256": "f1ce2f6290dfd2df199fa19a51775dd1382a2747bd51fea93485fceb28b0ade7"
+    },
+    {
+      "path": "labs/e8e10/environment/.dockerignore",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/.dockerignore",
+      "sha256": "fe49249345cb96bbbd2c982a935cc707d673d33e59d8bacb24917d59ccf37fd2"
+    },
+    {
+      "path": "labs/e8e10/environment/.env.example",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/.env.example",
+      "sha256": "ce1d8c75e75bf50f1e5794d73ed87a8824e78d9f73ebe4f1f28afbf4108db3ee"
+    },
+    {
+      "path": "labs/e8e10/environment/.github/workflows/e7-quality-gate.yml",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/.github/workflows/e7-quality-gate.yml",
+      "sha256": "fb454545dbf885b56d2840a9854ca6cc0c62cdd2dab982b4aa8bc34dfeed1d33"
+    },
+    {
+      "path": "labs/e8e10/environment/.gitignore",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/.gitignore",
+      "sha256": "7f4b21a7294d8319fc04ef5904f9735408d5577a6cd9e74446ca1adda15e39a2"
+    },
+    {
+      "path": "labs/e8e10/environment/Makefile",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/Makefile",
+      "sha256": "bf86bc7e1f62a7ace57c35261249ec263aea7c186879e9691c5267f463ad8d4a"
+    },
+    {
+      "path": "labs/e8e10/environment/README.md",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/README.md",
+      "sha256": "7b8bbcd1fd690bff18fe9413e80c470f3b62d54ca31b1cf66c711de869a942bb"
+    },
+    {
+      "path": "labs/e8e10/environment/compose.yaml",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/compose.yaml",
+      "sha256": "cc9a1abf6135756e07d657232cbdb7255ae534003afccec62a5a84cafe671f80"
+    },
+    {
+      "path": "labs/e8e10/environment/fixtures/md-rd/Makefile",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/fixtures/md-rd/Makefile",
+      "sha256": "fd1dcd76a0bd9678351a1503941a5a875351455d4a6879e76af0af0b6c64772f"
+    },
+    {
+      "path": "labs/e8e10/environment/fixtures/md-rd/config.h",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/fixtures/md-rd/config.h",
+      "sha256": "ac32a92f4af359517c993d6e8583ea2d9b053c2ad171b4c602bc242894bd9696"
+    },
+    {
+      "path": "labs/e8e10/environment/fixtures/md-rd/main.c",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/fixtures/md-rd/main.c",
+      "sha256": "bfa1c2d1abeb70ba92e60c414923265296dafa0cc98bee068251b0301e6da197"
+    },
+    {
+      "path": "labs/e8e10/environment/fixtures/md-rd/unused.h",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/fixtures/md-rd/unused.h",
+      "sha256": "1e4315549ec63325a22265e33a27e3cff8940d3ceec9756d7d193e9e51b966c9"
+    },
+    {
+      "path": "labs/e8e10/environment/requirements-dev.in",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/requirements-dev.in",
+      "sha256": "40457296154aab4b3db2e2b9c25d2c6440ae9d9a0752b24f838450f64b1826ae"
+    },
+    {
+      "path": "labs/e8e10/environment/requirements-dev.lock",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/requirements-dev.lock",
+      "sha256": "24f54d917487599d98e13c5733a75ca4a86652fa11cdccaf863c08e1cc66f5df"
+    },
+    {
+      "path": "labs/e8e10/environment/scripts/doctor.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/scripts/doctor.py",
+      "sha256": "f2f545e66581cf4b860122941940a60d14daa9eccc628bdf58ad471ff406af47"
+    },
+    {
+      "path": "labs/e8e10/environment/scripts/lab_cloud.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/scripts/lab_cloud.py",
+      "sha256": "7b18458810390a9ec267c071e99c117b806eb9d80d2c7f519f310ecc127fd4d1"
+    },
+    {
+      "path": "labs/e8e10/environment/scripts/run_e7_a_gate.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/scripts/run_e7_a_gate.py",
+      "sha256": "f18b2e60a8bf8f1eba0a957db9ec3a288e73bfbd956a782fe75223b0e340d455"
+    },
+    {
+      "path": "labs/e8e10/environment/scripts/secret_scan.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/scripts/secret_scan.py",
+      "sha256": "e3aefad5e87201d684841b931b8586a3d81d2930968bfa02867eff41cfcfbc65"
+    },
+    {
+      "path": "labs/e8e10/environment/scripts/verify_e6_evidence.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/scripts/verify_e6_evidence.py",
+      "sha256": "8583f3e077e5b1bfad399bee6d44d82c0ed03c97368a1413d2d34dca9dcaf948"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/Dockerfile",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/Dockerfile",
+      "sha256": "5901ef9a36ce8f8f64cc61971d11e048a91b9321a6ce0a4ff52184f4b32d5b3f"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/buildchecker/__init__.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/buildchecker/__init__.py",
+      "sha256": "3e7097b3bd96f87c4c6962afa8a4cb3a8c3be1b4df775b57828ebd48a9a9d05c"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/buildchecker/__main__.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/buildchecker/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/buildchecker/cli.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/buildchecker/cli.py",
+      "sha256": "6c3663b1f39bf7ecfccebdc82a6235b317e71a6d1c1ce2aa9a9c8ac3e56114d9"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/buildchecker/fullcheck.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/buildchecker/fullcheck.py",
+      "sha256": "21a66422856be2d46a28db3569a9645864a83622d552841873e3c6a82fdea0e9"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/buildchecker/smoke.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/buildchecker/smoke.py",
+      "sha256": "782d355fbf9013825778dff771d18eac5e84b558b6eee73966608755da288d08"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/pytest.ini",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/pytest.ini",
+      "sha256": "f211820b112f706314629c1055868340301685733ea465af1151e0a92de620cc"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/tests/test_cli.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/tests/test_cli.py",
+      "sha256": "c9c1912e463f6b5e7496f802cb40f9b0e67ddec1fac4ba5651950088ffa0bffb"
+    },
+    {
+      "path": "labs/e8e10/environment/services/buildchecker/tests/test_fullcheck.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/services/buildchecker/tests/test_fullcheck.py",
+      "sha256": "c143d2f7ab2608284a3f5a575f593a0f66531f668c8271590d37a799ead46bac"
+    },
+    {
+      "path": "labs/e8e10/environment/tests/e7/test_e7_a_gate.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/environment/tests/e7/test_e7_a_gate.py",
+      "sha256": "8a86c9467cebcc178de75c2ba8d76da6059fda54cab8264830141cf64e5bc76d"
+    },
+    {
+      "path": "labs/e8e10/lab.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/lab.py",
+      "sha256": "753e50483e40a6aa066d939d32bad3c5bec8acd1d09731f12abe9868fa962ecf"
+    },
+    {
+      "path": "labs/e8e10/test_profile.py",
+      "package_path": "DevOps_E8_E10/03_实验包/labs/e8e10/test_profile.py",
+      "sha256": "47a389acb9e7c09c40b2d63cb7a6369e6667922da9e7979cc81f8f922bc152df"
+    },
+    {
+      "path": "run_lab.py",
+      "package_path": "DevOps_E8_E10/03_实验包/run_lab.py",
+      "sha256": "e222ae531e46d1ec41d4b0186a3910f545fd1356c3a63a0cc2a95efa4e9e03bf"
+    }
+  ],
+  "teacher_examples": "In original archive only; never counted as B11 execution"
+}
