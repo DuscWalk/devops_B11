@@ -7,7 +7,7 @@
 ## 运行与版本
 
 - 原版 7 项测试源码：`5e6372d7e5eb061f3b44d2b016cbc3f5bc52418c`。
-- 本次实际测试和 E8/E9 源码：`5920735c0e785b6994f055f09a33ecd65818e933`。
+- 本次实际测试和 E8/E9 源码：`0ecac4cb9e0488a1740df935a11a55ee7ac0a43a`。
   随后的报告、证据提交用于归档，不倒写为原运行源码 SHA。
 - 学院服务器：Linux x86_64，普通用户 duscwalk / UID 1000，内存实际可见约 1.7 GiB，无 swap。
   2 GB 配置成功构建未修改的课程 Dockerfile；实验在 `--network none` 容器运行。
@@ -15,12 +15,12 @@
   `sha256:fe4f9564f5856532361da04a9f11073fb093bd6dc2a5fa138725a190a3aa3653`。
 - 记录的工具链：Python 3.13.14、GCC 元包 4:14.2.0-1、GNU Make 4.4.1-2、Git 2.47.3、strace 6.13、amd64。
   完整软件包版本见证据 `toolchain.lock`，不声称 apt 未固定版本的安装能逐字节重建。
-- 实际时间：2026-11-17 07:33:03–07:33:06 UTC（本地 2026-11-16）。
+- 实际时间：2026-11-17 07:50:03–07:50:08 UTC（本地 2026-11-16）。
 - 外层目录：`/home/duscwalk/241276007/e8e9-b11-20261116/repo`。
-- 命令：`bash e8e9/run.sh`，生成 `work/e8e9-B.tLP54Uq5`；
-  `python3 e8e9/verify.py work/e8e9-B.tLP54Uq5` 成功。
-- 归档位置：`e8e9/evidence/cloud/e8e9-B.tLP54Uq5`，原构建及 7 项基线测试在相邻目录。
-  运行时的内层 `.git` 不提交，8 个 sample bundle 保留对应 Git 历史。
+- 命令：`bash e8e9/run.sh`，生成 `work/e8e9-B.gM5BkQWq`；
+  `python3 e8e9/verify.py work/e8e9-B.gM5BkQWq` 成功。
+- 归档位置：`e8e9/evidence/cloud/e8e9-B.gM5BkQWq`，原构建及 7 项基线测试在相邻目录。
+  运行时的内层 `.git` 不提交，12 个 sample bundle 保留对应 Git 历史。
 
 ## 按要求逐项判定
 
@@ -34,20 +34,21 @@
 |E9 mixed|保持 HEADERS 定义和引用；给目标行增加 config.h|对应 mixed 三份产物及原项目；配方及 RD 保持|
 |E8 自主扩展|HEAD 相同但头文件已修改，应拒绝；越界 symlink、未绑定提交的依赖和错误报告也应拒绝|`test_b11_handoff.py` 中 7 项 E8 测试全部通过；其中明确先证明原 patch 接受脏输入，再验证新接口拒绝|
 |E9 自主测试|三种风格各有 config.h 和 extra.h 两条 MD，保留其余全部字节；第二目标无效不得部分写回|同文件 2 项 E9 测试分别覆盖 3 种风格，全部通过；预期是手工给定目标行/变量行替换和完整文件字节|
+|E9 指定自主练习：共享变量影响|只有 main.o 报 MD；shared DEPS 同时被 helper.o 引用；对照组 helper.o 不引用 DEPS|`e9-shared/impact.json` 显示 helper.o 同时增加 config.h 并形成新增 RD；`e9-unshared/impact.json` 显示 helper.o 不变；GNU Make 展开数据库和 GCC 报告分别核对|
 
 原基线和个人接口在不同的 `baseline-e8/e9`、`personal-e8/e9` 目录重跑。
-所有五个步骤（测试及四次实验）的退出码均为 0；16 项测试包括未改的课程 7 项及个人 9 项。
-本机下载后重算 146 个文件哈希，从 bundle 克隆样例，核对内部 SHA 和原输入，应用补丁到临时副本，
+所有七个步骤（测试、四次基线/个人实验及两个共享影响实验）的退出码均为 0；18 项测试包括课程 7 项及个人 11 项。
+本机下载后重算 210 个文件哈希，从 bundle 克隆样例，核对内部 SHA 和原输入，应用补丁到临时副本，
 与整文件预期比较；验证通过。E8/E9 候选生成不包含 E10 构建、功能测试、动态重检及回滚验收。
 
 内部样例提交（与外层学生源码提交用途不同）：
 
 |样例|内部 SHA|
 |---|---|
-|E8 project|`2d8ac9fc41f4f2b6a14a6d91c62697d8a48580f7`|
-|E9 direct|`af49589aeff7f069f0741b24505722a33914eafe`|
-|E9 macro|`73497f792dd02b27fcf5a31e5dd2d96b42b6c7d1`|
-|E9 mixed|`17dcac95af7266cff7f578add48ea58ad0aa09f6`|
+|E8 project|`3a634b46310f74eaf211bb1434199d978ce679dd`|
+|E9 direct|`e899b94367f1bda2566cc70223b5dc6767ba2506`|
+|E9 macro|`22dc3a088cdc26940014ef6946dd18182f5c0f56`|
+|E9 mixed|`ac08d16a30102b6d9883a0aef3dc6d76d94c17ea`|
 
 baseline 与 personal 样例在同一秒由相同 fixture 生成，可能有相同内部 SHA；它们是不同目录，
 对应日志、命令和模式分别保存，不能据此将外层源码 SHA 与样例 SHA 混用。
@@ -63,8 +64,17 @@ baseline 与 personal 样例在同一秒由相同 fixture 生成，可能有相�
 
 MDfixer 论文思想在此体现为定位声明、保持已有声明结构并生成候选。direct 改目标，macro 改变量定义，
 mixed 保留宏并改目标。本次只是两个 C 翻译单元、项目内头文件、显式 Make 规则和简单变量的教学子集；
-未实现完整声明图距离/DIS、隐式/模式规则、递归 Make、LLM 修复。共享变量跨目标影响由核心负责人继续扩展；
-本人的 E9 用例验证多 MD 的结构保持，不冒充共享变量算法。代码运行不调用外部模型服务。
+未实现完整声明图距离/DIS、隐式/模式规则、递归 Make、LLM 修复。
+本次复核补充 `b11_shared_impact.analyze()` 和两个独立测试，用 GNU Make 展开数据库验证共享变量影响：
+原算法虽消除了 main.o 的 MD，却让没有报告 MD 的 helper.o 增加 config.h，形成新 RD；不共享对照无此变化。
+共享变量须检查所有引用目标再选择局部修复或拒绝。此为个人影响分析，核心修复策略仍由 MDFixer 负责人扩展。
+代码运行不调用外部模型服务。
+
+## 复核更正
+
+此前 16 项测试版本完成三风格基本流程，但没有完成 E9 B 手册第 7 节点名的“去重测试或共享变量影响分析”。
+本次用新源码和新 OUT 补齐共享/非共享影响实验；此前“本人 E9 完成”改为“本次补正后技术内容完成”。
+完整核查及依据见 `e8e9/REQUIREMENTS_AUDIT.md`。旧记录保留，不能用旧运行代替本次 18 项结果。
 
 ## CI、协作和未完成项
 
@@ -80,6 +90,12 @@ mixed 保留宏并改目标。本次只是两个 C 翻译单元、项目内头�
 对应 artifact 与 API 元数据在 `e8e9/evidence/ci/44039585738`。
 PR 的实际 checkout 为 GitHub 临时合并提交，`trigger.json` 记录的 head_sha 才是个人分支源码；
 归档分别保留二者并核对，未将临时合并 SHA 误当个人提交。
+
+本次补齐 E9 指定练习的源码 `0ecac4cb9e0488a1740df935a11a55ee7ac0a43a`（18 项测试）
+已通过 [E8/E9 检查](https://github.com/DuscWalk/devops_B11/actions/runs/44041753199) 和
+[E7 回归](https://github.com/DuscWalk/devops_B11/actions/runs/44041753288)；这是 push 运行，
+对应原始 artifact 保存在 `e8e9/evidence/ci/44041753199`，摘要校验及重新恢复样例通过。
+本次归档提交的最终 PR 检查在 PR #11 和更新的本地交接包中单独保存。
 
 公共导入 PR #10 已经用户确认后合并，main 为 `cee2486e78bfb10f20be5f5ca608252bcff1a080`。
 个人 PR #11 等待审阅；组员还需各自完成代码、运行及报告，

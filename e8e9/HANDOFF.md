@@ -31,7 +31,7 @@ git switch -c "student/$SID/e8-e10"
 
 |原角色 / 个人分支|E8 本人完成|E9 本人完成|交付位置|
 |---|---|---|---|
-|接口与联调 / `student/241276007/e8-e10`|公共环境与固定报告；提交号、干净输入、路径边界；拒绝证据|三种声明输入/补丁/计划完整归档；多 MD 整文件保持和原子拒绝测试|`labs/e8e10/b11_handoff.py`、`test_b11_handoff.py`、`e8e9/`、本人报告|
+|接口与联调 / `student/241276007/e8-e10`|公共环境与固定报告；提交号、干净输入、路径边界；拒绝证据|三种声明输入/补丁/计划完整归档；多 MD 整文件保持、原子拒绝及共享变量影响分析|`labs/e8e10/b11_handoff.py`、`test_b11_handoff.py`、`e8e9/`、本人报告|
 |MDFixer / `student/241250110/e8-e10`|亲自完成 B 手册；新增重复 MD 报告场景，明确重复输入预期|新增自己的修复入口及测试：重复依赖只添加一次；分析共享变量被多个目标引用时的影响，选择明确拒绝或局部修复并给证据|建议独立 `labs/e8e10/mdfixer_extension.py`、`test_mdfixer_extension.py`、本人报告|
 |DRAFT、交叉验证 / `student/241250112/e8-e10`|亲自完成 B 手册；RD-only 或未知目标反例，字节与 Git 状态前后对比|独立验证 direct/macro/mixed；测试多目标或共享变量影响，手工写预期，验证 MDFixer 负责人的扩展；保存失败及修复后的真实运行|建议 `labs/e8e10/test_cross_review.py`、本人报告|
 

@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "make",
+    "--no-print-directory",
+    "-rR",
+    "-qp"
+  ],
+  "exit_code": 1,
+  "allowed_exit_codes": [
+    0,
+    1
+  ]
+}

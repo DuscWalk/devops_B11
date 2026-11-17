@@ -1,0 +1,1 @@
+docker run --rm --network none --cap-add SYS_PTRACE --user 1000:1000 -e HOME=/tmp -e PYTHONDONTWRITEBYTECODE=1 -v /home/duscwalk/241276007/e8e9-b11-20261116/repo:/course -w /course course-e8e10:241276007 python3 labs/e8e10/run_b11_evidence.py e8 --baseline --out work/e8e9-B.gM5BkQWq/baseline-e8 

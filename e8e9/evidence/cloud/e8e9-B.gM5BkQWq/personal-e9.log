@@ -1,0 +1,40 @@
+COMMIT_MATCH direct e899b94367f1bda2566cc70223b5dc6767ba2506
+APPLY_CHECK_PASS_SOURCE_CLEAN direct
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ CFLAGS = -O0
+ app: main.o helper.o
+ 	gcc main.o helper.o -o app
+-main.o: main.c unused.h
++main.o: main.c unused.h config.h
+ 	gcc $(CFLAGS) -c main.c -o main.o
+ helper.o: helper.c
+ 	gcc $(CFLAGS) -c helper.c -o helper.o
+ PLAN [{"target": "main.o", "dependency": "config.h", "style": "direct"}]
+COMMIT_MATCH macro 22dc3a088cdc26940014ef6946dd18182f5c0f56
+APPLY_CHECK_PASS_SOURCE_CLEAN macro
+--- a/Makefile
++++ b/Makefile
+@@ -1,4 +1,4 @@
+-DEPS = main.c unused.h
++DEPS = main.c unused.h config.h
+ CFLAGS = -O0
+ app: main.o helper.o
+ 	gcc main.o helper.o -o app
+ PLAN [{"target": "main.o", "dependency": "config.h", "style": "macro"}]
+COMMIT_MATCH mixed ac08d16a30102b6d9883a0aef3dc6d76d94c17ea
+APPLY_CHECK_PASS_SOURCE_CLEAN mixed
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@
+ CFLAGS = -O0
+ app: main.o helper.o
+ 	gcc main.o helper.o -o app
+-main.o: main.c $(HEADERS)
++main.o: main.c $(HEADERS) config.h
+ 	gcc $(CFLAGS) -c main.c -o main.o
+ helper.o: helper.c
+ 	gcc $(CFLAGS) -c helper.c -o helper.o
+ PLAN [{"target": "main.o", "dependency": "config.h", "style": "mixed"}]
+APPLY_TO_COPY_PASS
