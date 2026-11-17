@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -11,7 +12,59 @@ def command(args, cwd):
     return subprocess.check_output(args, cwd=cwd, text=True, stderr=subprocess.STDOUT).strip()
 
 
-def verify(out):
+def verify_shared(out):
+    for shared, label in ((True, 'e9-shared'), (False, 'e9-unshared')):
+        folder = out / label
+        assert (out / (label + '.exit-code.txt')).read_text().strip() == '0'
+        impact = json.loads((folder / 'impact.json').read_text())
+        assert impact['shared'] is shared and impact['source_unchanged'] is True
+        expected_before = {'main.o': ['main.c', 'unused.h'],
+                           'helper.o': ['helper.c', 'main.c', 'unused.h'] if shared else ['helper.c']}
+        expected_after = {'main.o': ['config.h', 'main.c', 'unused.h'],
+                          'helper.o': ['config.h', 'helper.c', 'main.c', 'unused.h'] if shared else ['helper.c']}
+        assert impact['make_before'] == expected_before
+        assert impact['make_after'] == expected_after
+        assert impact['requested_targets'] == ['main.o']
+        assert impact['unrequested_targets'] == (['helper.o'] if shared else [])
+        assert impact['new_redundant'] == ([['REDUNDANT', 'helper.o', 'config.h']] if shared else [])
+        for phase, expected in (('before', expected_before), ('after', expected_after)):
+            raw = (folder / (phase + '-make-db.txt')).read_text()
+            for target, dependencies in expected.items():
+                matches = re.findall(r'^' + re.escape(target) + r':([^\n]*)$', raw, re.M)
+                assert len(matches) == 1 and sorted(set(matches[0].split())) == dependencies
+            cmd = json.loads((folder / (phase + '-make-command.json')).read_text())
+            assert cmd['argv'] == ['make', '--no-print-directory', '-rR', '-qp']
+            assert cmd['exit_code'] in (0, 1)
+        receipt = json.loads((folder / 'source-receipt.json').read_text())
+        with tempfile.TemporaryDirectory() as temporary:
+            clone = Path(temporary) / 'sample'
+            command(['git', 'clone', str((folder / 'input.bundle').resolve()), str(clone)], folder)
+            assert command(['git', 'rev-parse', 'HEAD'], clone) == impact['sample_commit']
+            assert receipt['sample_commit'] == impact['sample_commit']
+            for name, digest in receipt['source_sha256'].items():
+                data = (clone / name).read_bytes()
+                assert data == (folder / 'project' / name).read_bytes()
+                assert hashlib.sha256(data).hexdigest() == digest
+            before = (clone / 'Makefile').read_bytes()
+            command(['git', 'apply', str((folder / 'candidate.patch').resolve())], clone)
+            expected = before.replace(b'DEPS = main.c unused.h\n', b'DEPS = main.c unused.h config.h\n')
+            assert (clone / 'Makefile').read_bytes() == expected
+            applied = Path(temporary) / 'applied'
+            command(['git', 'clone', str((folder / 'applied.bundle').resolve()), str(applied)], folder)
+            assert command(['git', 'rev-parse', 'HEAD'], applied) == impact['applied_commit']
+            assert (applied / 'Makefile').read_bytes() == expected == (folder / 'apply-demo/Makefile').read_bytes()
+        original = json.loads((folder / 'input.json').read_text())
+        after = json.loads((folder / 'after-report.json').read_text())
+        assert original['commit'] == impact['sample_commit'] and after['commit'] == impact['applied_commit']
+        assert [f for f in original['findings'] if f['type'] == 'MISSING'] == [
+            {'type': 'MISSING', 'target': 'main.o', 'dependency': 'config.h'}]
+        assert not any(f['type'] == 'MISSING' for f in after['findings'])
+        added = {(f['type'], f['target'], f['dependency']) for f in after['findings']} - {
+            (f['type'], f['target'], f['dependency']) for f in original['findings']}
+        assert added == ({('REDUNDANT', 'helper.o', 'config.h')} if shared else set())
+
+
+def verify(out, legacy=False):
     checksums = json.loads((out / 'sha256.json').read_text())
     actual_files = {p.relative_to(out).as_posix() for p in out.rglob('*')
                     if p.is_file() and '.git' not in p.relative_to(out).parts and p.name != 'sha256.json'}
@@ -65,11 +118,15 @@ def verify(out):
                 rejection = json.loads((folder / 'expected-failure.json').read_text())
                 assert rejection == {'error': 'STALE_REPORT', 'source_unchanged': True}
                 assert json.loads((folder / 'stale-input.json').read_text())['commit'] == '0' * 40
+    if not legacy:
+        verify_shared(out)
+        print('E9_SHARED_VARIABLE_EXERCISE_VERIFIED')
     print('VERIFIED', out, 'files=', len(checksums))
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('run', type=Path)
+    parser.add_argument('--legacy', action='store_true', help='verify the older archive without the E9 shared-variable exercise')
     args = parser.parse_args()
-    verify(args.run.resolve())
+    verify(args.run.resolve(), legacy=args.legacy)

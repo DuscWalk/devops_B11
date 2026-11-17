@@ -35,6 +35,8 @@ for stage in e8 e9; do
   step "baseline-$stage" python3 labs/e8e10/run_b11_evidence.py "$stage" --baseline --out "$OUT/baseline-$stage"
   step "personal-$stage" python3 labs/e8e10/run_b11_evidence.py "$stage" --out "$OUT/personal-$stage"
 done
+step e9-shared python3 labs/e8e10/b11_shared_impact.py --out "$OUT/e9-shared"
+step e9-unshared python3 labs/e8e10/b11_shared_impact.py --unshared --out "$OUT/e9-unshared"
 date -u +%FT%TZ > "$OUT/end.txt"
 python3 - "$OUT" <<'PY'
 import hashlib, json, sys
