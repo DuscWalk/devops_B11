@@ -82,6 +82,17 @@ class HandoffTests(unittest.TestCase):
         report['findings'] = [{'type': 'MISSING', 'target': 'main.o', 'dependency': 'generated.h'}]
         self.assert_rejected_without_writes(report, 'UNTRACKED_DEPENDENCY')
 
+    def test_e8_tracked_link_cannot_bind_ignored_header_to_commit(self):
+        with (self.p / '.gitignore').open('a') as stream:
+            stream.write('generated.h\n')
+        (self.p / 'alias.h').symlink_to('generated.h')
+        commit(self.p, 'case: link to ignored header')
+        (self.p / 'generated.h').write_text('/* local-only content */\n')
+        report = scan(self.p)
+        report['findings'] = [{'type': 'MISSING', 'target': 'main.o', 'dependency': 'alias.h'}]
+        self.assertEqual(run(['git', 'status', '--porcelain'], self.p), '')
+        self.assert_rejected_without_writes(report, 'UNTRACKED_DEPENDENCY')
+
     def test_e9_two_missing_edges_preserve_complete_file_for_all_styles(self):
         replacements = {
             'direct': ('main.o: main.c unused.h', 'main.o: main.c unused.h config.h extra.h'),

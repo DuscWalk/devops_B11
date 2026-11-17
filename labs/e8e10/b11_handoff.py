@@ -63,7 +63,10 @@ def prepare_candidate(project, report):
             raise ValueError('UNSAFE_PATH')
         if not (project / dep).is_file():
             raise ValueError('MISSING_INPUT')
-        if dep not in tracked:
+        # A tracked symlink can still point to an ignored, uncommitted file.
+        # Bind both its link text and its resolved content to this commit.
+        resolved_name = (project / dep).resolve().relative_to(project).as_posix()
+        if dep not in tracked or resolved_name not in tracked:
             raise ValueError('UNTRACKED_DEPENDENCY')
     before = source_hashes(project)
     diff, plan = patch(project, report)
