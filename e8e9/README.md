@@ -2,7 +2,7 @@
 
 按课程 B 轨完成固定 MD 报告、direct/macro/mixed 候选和源文件保护。
 原版 `lab.py` 未改；`b11_handoff.prepare_candidate()` 增加本组输入边界，返回 diff、plan、receipt。
-`test_b11_handoff.py` 提供 8 项自主测试，原 `test_profile.py` 的 7 项保持原样。
+`test_b11_handoff.py` 提供 9 项自主测试，原 `test_profile.py` 的 7 项保持原样。
 
 ```bash
 # 在自己的干净克隆和对应镜像就绪后执行；不要求修改全局 Git 身份
@@ -11,7 +11,7 @@ python3 e8e9/verify.py "$(cat work/last-e8e9-B.path)"
 ```
 
 `run.sh` 每次新建 work 目录，禁网容器以宿主普通 UID 运行，记录镜像、工具链、源码 SHA、
-各命令及退出码。依次运行 15 项测试、原版和个人接口的 E8/E9，不覆盖旧 OUT。
+各命令及退出码。依次运行 16 项测试、原版和个人接口的 E8/E9，不覆盖旧 OUT。
 样例 Git 历史通过 `.bundle` 保存，因此归档排除 `.git` 后仍可核对内部 SHA。
 `verify.py` 在本机重算归档哈希、从 bundle 恢复样例，并把补丁应用到临时副本与整文件预期比较。
 

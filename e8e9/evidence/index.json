@@ -1,0 +1,35 @@
+{
+  "purpose": "E8-E9 B11 personal and group infrastructure handoff; member deliverables still pending",
+  "cloud_downloads": [
+    {
+      "archive_sha256": "cfa7e4df672afd59bf979b7af4f6da825dc8d363bc7b9bd5f21113887268ca3c",
+      "source_sha": "4c08be3d6a4e98156ee488c1098a36f622a3369b",
+      "path": "cloud/e8e9-B.Y98Lxhnu",
+      "tests": 15,
+      "status": "initial implementation, preserved"
+    },
+    {
+      "archive_sha256": "a42e30047185fb328ab8884db4fb9579d565e024d1455bd435b7bba5c48bbbb3",
+      "source_sha": "5920735c0e785b6994f055f09a33ecd65818e933",
+      "path": "cloud/e8e9-B.tLP54Uq5",
+      "tests": 16,
+      "status": "current implementation, verified on download"
+    }
+  ],
+  "ci_runs": [
+    {
+      "e8e10": 44038866461,
+      "e7": 44038866602,
+      "source_sha": "4c08be3d6a4e98156ee488c1098a36f622a3369b",
+      "event": "push"
+    },
+    {
+      "e8e10": 44039585738,
+      "e7": 44039585595,
+      "source_sha": "5920735c0e785b6994f055f09a33ecd65818e933",
+      "event": "pull_request"
+    }
+  ],
+  "provenance": "Raw logs retained unchanged. GitHub ZIP digests verified against API; server archive hashes matched after download. Internal .git omitted from cloud export, sample history preserved as Git bundles.",
+  "final_head_checks": "See PR #11 and the separate local handoff archive for final documentation head checks; archived older runs retain their actual SHA."
+}

@@ -1,0 +1,32 @@
+Linux ecs-19dd 5.15.0-186-generic #196-Ubuntu SMP Sat Jun 20 16:09:34 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+uid=1000(duscwalk) gid=1000(duscwalk) groups=1000(duscwalk),120(docker)
+               total        used        free      shared  buff/cache   available
+Mem:           1.7Gi       493Mi        88Mi       2.0Mi       1.2Gi       1.1Gi
+Swap:             0B          0B          0B
+Client:
+ Version:           29.1.3
+ API version:       1.52
+ Go version:        go1.24.4
+ Git commit:        29.1.3-0ubuntu3~22.04.2
+ Built:             Wed Apr 29 22:18:59 2026
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server:
+ Engine:
+  Version:          29.1.3
+  API version:      1.52 (minimum version 1.44)
+  Go version:       go1.24.4
+  Git commit:       29.1.3-0ubuntu3~22.04.2
+  Built:            Wed Apr 29 22:18:59 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          2.2.1
+  GitCommit:        
+ runc:
+  Version:          1.3.4-0ubuntu1~22.04.1
+  GitCommit:        
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        

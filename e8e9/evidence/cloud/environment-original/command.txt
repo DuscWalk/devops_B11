@@ -1,0 +1,1 @@
+docker build --progress=plain -f labs/e8e10/environment/services/buildchecker/Dockerfile -t course-e8e10:241276007 labs/e8e10/environment

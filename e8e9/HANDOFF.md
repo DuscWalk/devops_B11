@@ -8,8 +8,8 @@
 
 公共导入：`teaching/e8-e10`，PR <https://github.com/DuscWalk/devops_B11/pull/10>。
 接口与证据实现：`student/241276007/e8-e10`。
-公共导入尚未合并，不能认为 `main` 已有 E8 代码。可先阅读导入 PR 和本文件、准备个人环境；
-正式按课程流程运行前，由组长合并公共导入，随后执行：
+公共导入 PR #10 已合并，GitHub main 为 `cee2486e78bfb10f20be5f5ca608252bcff1a080`，
+包含课程 E8–E10 基线。个人实现 PR #11 尚未合并；现在可以执行：
 
 ```bash
 git status --short              # 有修改先自己保存，不覆盖

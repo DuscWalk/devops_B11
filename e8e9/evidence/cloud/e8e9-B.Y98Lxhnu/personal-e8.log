@@ -1,0 +1,15 @@
+COMMIT_MATCH project 397df6725e0250f04ad91f377d3925b78aa2b53d
+APPLY_CHECK_PASS_SOURCE_CLEAN project
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ CFLAGS = -O0
+ app: main.o helper.o
+ 	gcc main.o helper.o -o app
+-main.o: main.c unused.h
++main.o: main.c unused.h config.h
+ 	gcc $(CFLAGS) -c main.c -o main.o
+ helper.o: helper.c
+ 	gcc $(CFLAGS) -c helper.c -o helper.o
+ PLAN [{"target": "main.o", "dependency": "config.h", "style": "direct"}]
+EXPECTED_REJECTION STALE_REPORT SOURCE_BYTES_UNCHANGED
