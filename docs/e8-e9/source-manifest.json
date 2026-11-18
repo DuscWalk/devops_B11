@@ -173,5 +173,14 @@
       "sha256": "e222ae531e46d1ec41d4b0186a3910f545fd1356c3a63a0cc2a95efa4e9e03bf"
     }
   ],
-  "teacher_examples": "In original archive only; never counted as B11 execution"
+  "teacher_examples": "In original archive only; never counted as B11 execution",
+  "local_adaptations": [
+    {
+      "path": ".github/workflows/e8e10.yml",
+      "course_sha256": "639ad1094644f4a64d7b59e8a31029752250fe6625ae426e1c0ce4610f723144",
+      "current_sha256": "11f3ee385ade2dbb4458d84bfe89590ce5259b8552ce75eae9aa643138dc90be",
+      "reason": "B11 adds source/trigger metadata, build log/exit, personal tests, E8/E9 evidence and offline verification; original both-track compatibility smoke retained."
+    }
+  ],
+  "hash_semantics": "course_files records the original package bytes; local_adaptations explains current differences. All other course files remain byte-identical."
 }

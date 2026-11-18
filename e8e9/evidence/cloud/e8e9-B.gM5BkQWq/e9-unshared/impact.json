@@ -1,0 +1,38 @@
+{
+  "shared": false,
+  "sample_commit": "b66f053ed6b5a825328992bab4ac22c8f153bc7f",
+  "applied_commit": "39d58ce9b4a1e645ef6e5a8da25318cd0faac0e0",
+  "requested_targets": [
+    "main.o"
+  ],
+  "make_before": {
+    "main.o": [
+      "main.c",
+      "unused.h"
+    ],
+    "helper.o": [
+      "helper.c"
+    ]
+  },
+  "make_after": {
+    "main.o": [
+      "config.h",
+      "main.c",
+      "unused.h"
+    ],
+    "helper.o": [
+      "helper.c"
+    ]
+  },
+  "added_dependencies": {
+    "main.o": [
+      "config.h"
+    ],
+    "helper.o": []
+  },
+  "unrequested_targets": [],
+  "new_redundant": [],
+  "source_unchanged": true,
+  "analysis_only": true,
+  "e10_acceptance": "not evaluated"
+}

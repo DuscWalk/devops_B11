@@ -1,0 +1,102 @@
+{
+  "schema_version": "e8e10-1",
+  "profile": "GCC_LOCAL_HEADERS_EXPLICIT_MAKE",
+  "commit": "b3b581c02e36b4339c62561b0e6a0f198150e058",
+  "key": {
+    "directives": {
+      "config.h": [
+        "#define VALUE 1"
+      ],
+      "extra.h": [
+        "#define EXTRA 0"
+      ],
+      "helper.c": [],
+      "main.c": [
+        "#include <stdio.h>",
+        "#include \"config.h\""
+      ],
+      "unused.h": []
+    },
+    "recipes": [
+      "\tgcc main.o helper.o -o app",
+      "\tgcc $(CFLAGS) -c main.c -o main.o",
+      "\tgcc $(CFLAGS) -c helper.c -o helper.o",
+      "\trm -f main.o helper.o app"
+    ],
+    "flags": "-O0",
+    "compiler": "gcc (Debian 14.2.0-19) 14.2.0"
+  },
+  "actual": {
+    "main.o": [
+      "config.h",
+      "main.c"
+    ],
+    "helper.o": [
+      "helper.c"
+    ]
+  },
+  "declared": {
+    "main.o": [
+      "config.h",
+      "main.c",
+      "unused.h"
+    ],
+    "helper.o": [
+      "config.h",
+      "helper.c",
+      "main.c",
+      "unused.h"
+    ]
+  },
+  "findings": [
+    {
+      "type": "REDUNDANT",
+      "target": "main.o",
+      "dependency": "unused.h"
+    },
+    {
+      "type": "REDUNDANT",
+      "target": "helper.o",
+      "dependency": "config.h"
+    },
+    {
+      "type": "REDUNDANT",
+      "target": "helper.o",
+      "dependency": "main.c"
+    },
+    {
+      "type": "REDUNDANT",
+      "target": "helper.o",
+      "dependency": "unused.h"
+    }
+  ],
+  "added": [
+    [
+      "REDUNDANT",
+      "helper.o",
+      "config.h"
+    ],
+    [
+      "REDUNDANT",
+      "helper.o",
+      "main.c"
+    ],
+    [
+      "REDUNDANT",
+      "helper.o",
+      "unused.h"
+    ],
+    [
+      "REDUNDANT",
+      "main.o",
+      "unused.h"
+    ]
+  ],
+  "resolved": [],
+  "refreshed": [
+    "main.o",
+    "helper.o"
+  ],
+  "reused": [],
+  "elapsed_s": 0.017446161713451147
+}

@@ -1,0 +1,25 @@
+test_e8_bad_report_contract_rejected (test_b11_handoff.HandoffTests.test_e8_bad_report_contract_rejected) ... ok
+test_e8_dirty_source_with_matching_head_rejected (test_b11_handoff.HandoffTests.test_e8_dirty_source_with_matching_head_rejected) ... ok
+test_e8_ignored_untracked_dependency_rejected (test_b11_handoff.HandoffTests.test_e8_ignored_untracked_dependency_rejected) ... ok
+test_e8_redundant_only_produces_no_deletion (test_b11_handoff.HandoffTests.test_e8_redundant_only_produces_no_deletion) ... ok
+test_e8_stale_commit_rejected (test_b11_handoff.HandoffTests.test_e8_stale_commit_rejected) ... ok
+test_e8_symlink_outside_project_rejected (test_b11_handoff.HandoffTests.test_e8_symlink_outside_project_rejected) ... ok
+test_e8_tracked_link_cannot_bind_ignored_header_to_commit (test_b11_handoff.HandoffTests.test_e8_tracked_link_cannot_bind_ignored_header_to_commit) ... ok
+test_e9_invalid_second_target_does_not_partially_apply (test_b11_handoff.HandoffTests.test_e9_invalid_second_target_does_not_partially_apply) ... ok
+test_e9_two_missing_edges_preserve_complete_file_for_all_styles (test_b11_handoff.HandoffTests.test_e9_two_missing_edges_preserve_complete_file_for_all_styles) ... ok
+test_e9_shared_variable_changes_an_unreported_target (test_b11_shared_impact.SharedImpactTests.test_e9_shared_variable_changes_an_unreported_target) ... SHARED_IMPACT {'shared': True, 'sample_commit': 'cc3b5f09e0dd536ac0a778571ff6f8698178058b', 'applied_commit': '7df10287366ad7ce710fb661de5a8b4e1a7b66c2', 'requested_targets': ['main.o'], 'make_before': {'main.o': ['main.c', 'unused.h'], 'helper.o': ['helper.c', 'main.c', 'unused.h']}, 'make_after': {'main.o': ['config.h', 'main.c', 'unused.h'], 'helper.o': ['config.h', 'helper.c', 'main.c', 'unused.h']}, 'added_dependencies': {'main.o': ['config.h'], 'helper.o': ['config.h']}, 'unrequested_targets': ['helper.o'], 'new_redundant': [['REDUNDANT', 'helper.o', 'config.h']], 'source_unchanged': True, 'analysis_only': True, 'e10_acceptance': 'not evaluated'}
+ok
+test_e9_unshared_control_only_changes_the_reported_target (test_b11_shared_impact.SharedImpactTests.test_e9_unshared_control_only_changes_the_reported_target) ... SHARED_IMPACT {'shared': False, 'sample_commit': '0cff0095c62a61d7b42dec52b9a46c28027434ac', 'applied_commit': 'f231f8d824d347e93d4f7ac824342281a4f8e80e', 'requested_targets': ['main.o'], 'make_before': {'main.o': ['main.c', 'unused.h'], 'helper.o': ['helper.c']}, 'make_after': {'main.o': ['config.h', 'main.c', 'unused.h'], 'helper.o': ['helper.c']}, 'added_dependencies': {'main.o': ['config.h'], 'helper.o': []}, 'unrequested_targets': [], 'new_redundant': [], 'source_unchanged': True, 'analysis_only': True, 'e10_acceptance': 'not evaluated'}
+ok
+test_include_added_invalidates_cache (test_profile.ProfileTests.test_include_added_invalidates_cache) ... ok
+test_independent_known_edges (test_profile.ProfileTests.test_independent_known_edges) ... ok
+test_old_report_rejected (test_profile.ProfileTests.test_old_report_rejected) ... ok
+test_patch_preserves_redundant_dependency (test_profile.ProfileTests.test_patch_preserves_redundant_dependency) ... ok
+test_unchanged_reuses_both_targets (test_profile.ProfileTests.test_unchanged_reuses_both_targets) ... ok
+test_unsafe_dependency_rejected (test_profile.ProfileTests.test_unsafe_dependency_rejected) ... ok
+test_unsupported_configuration_rejected (test_profile.ProfileTests.test_unsupported_configuration_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.010s
+
+OK

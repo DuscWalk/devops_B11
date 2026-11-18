@@ -1,0 +1,21 @@
+test_e8_bad_report_contract_rejected (test_b11_handoff.HandoffTests.test_e8_bad_report_contract_rejected) ... ok
+test_e8_dirty_source_with_matching_head_rejected (test_b11_handoff.HandoffTests.test_e8_dirty_source_with_matching_head_rejected) ... ok
+test_e8_ignored_untracked_dependency_rejected (test_b11_handoff.HandoffTests.test_e8_ignored_untracked_dependency_rejected) ... ok
+test_e8_redundant_only_produces_no_deletion (test_b11_handoff.HandoffTests.test_e8_redundant_only_produces_no_deletion) ... ok
+test_e8_stale_commit_rejected (test_b11_handoff.HandoffTests.test_e8_stale_commit_rejected) ... ok
+test_e8_symlink_outside_project_rejected (test_b11_handoff.HandoffTests.test_e8_symlink_outside_project_rejected) ... ok
+test_e8_tracked_link_cannot_bind_ignored_header_to_commit (test_b11_handoff.HandoffTests.test_e8_tracked_link_cannot_bind_ignored_header_to_commit) ... ok
+test_e9_invalid_second_target_does_not_partially_apply (test_b11_handoff.HandoffTests.test_e9_invalid_second_target_does_not_partially_apply) ... ok
+test_e9_two_missing_edges_preserve_complete_file_for_all_styles (test_b11_handoff.HandoffTests.test_e9_two_missing_edges_preserve_complete_file_for_all_styles) ... ok
+test_include_added_invalidates_cache (test_profile.ProfileTests.test_include_added_invalidates_cache) ... ok
+test_independent_known_edges (test_profile.ProfileTests.test_independent_known_edges) ... ok
+test_old_report_rejected (test_profile.ProfileTests.test_old_report_rejected) ... ok
+test_patch_preserves_redundant_dependency (test_profile.ProfileTests.test_patch_preserves_redundant_dependency) ... ok
+test_unchanged_reuses_both_targets (test_profile.ProfileTests.test_unchanged_reuses_both_targets) ... ok
+test_unsafe_dependency_rejected (test_profile.ProfileTests.test_unsafe_dependency_rejected) ... ok
+test_unsupported_configuration_rejected (test_profile.ProfileTests.test_unsupported_configuration_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.795s
+
+OK

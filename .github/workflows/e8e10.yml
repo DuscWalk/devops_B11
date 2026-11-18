@@ -7,15 +7,44 @@ jobs:
     name: e8e10-quality-gate
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    env:
+      TRIGGER_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
       - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Record source revision and trigger
+        run: |
+          mkdir -p work/ci
+          git rev-parse HEAD > work/ci/checked-out-sha.txt
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('work/ci/trigger.json').write_text(json.dumps({
+              'event': os.environ['GITHUB_EVENT_NAME'],
+              'head_sha': os.environ['TRIGGER_HEAD_SHA'],
+              'github_sha': os.environ['GITHUB_SHA'],
+              'run_id': os.environ['GITHUB_RUN_ID'],
+              'run_attempt': os.environ['GITHUB_RUN_ATTEMPT'],
+          }, indent=2) + '\n')
+          PY
       - name: Build teaching environment
-        run: docker build -f labs/e8e10/environment/services/buildchecker/Dockerfile -t course-e8e10:ci labs/e8e10/environment
+        shell: bash
+        run: |
+          set -uo pipefail
+          docker build --progress=plain -f labs/e8e10/environment/services/buildchecker/Dockerfile -t course-e8e10:ci labs/e8e10/environment 2>&1 | tee work/ci/build.log
+          codes=("${PIPESTATUS[@]}")
+          printf '%s\n' "${codes[0]}" > work/ci/build-exit-code.txt
+          if [[ "${codes[0]}" != 0 ]]; then exit "${codes[0]}"; fi
+          if [[ "${codes[1]}" != 0 ]]; then exit "${codes[1]}"; fi
+      - name: Personal E8 E9 cases and preserved evidence
+        run: |
+          E8_IMAGE=course-e8e10:ci bash e8e9/run.sh
+          python3 e8e9/verify.py "$(cat work/last-e8e9-B.path)"
       - name: Validate both tracks
         shell: bash
         run: |
           set -euo pipefail
-          docker run --rm --network none --user "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD:/course" -w /course course-e8e10:ci python3 -m unittest discover -s labs/e8e10 -p 'test_*.py' -v
           for track in A B; do
             for stage in e8 e9 e10; do
               docker run --rm --network none --cap-add SYS_PTRACE --user "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD:/course" -w /course course-e8e10:ci python3 labs/e8e10/lab.py "$stage" --track "$track" --out "/course/work/$track-$stage"
@@ -26,4 +55,5 @@ jobs:
         with:
           name: e8e10-evidence-${{ github.run_id }}
           path: work/
+          include-hidden-files: true
           retention-days: 14
