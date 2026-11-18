@@ -1,0 +1,44 @@
+[
+  {
+    "style": "direct",
+    "sample_commit": "f42789e8e89a13de6c243ea2587df208342a0a67",
+    "makefile_sha256_before_after": "9206301c23ce4cb93c3fc1434037e475cf69f53e132dc541f6028d05e30258b2",
+    "source_clean": true,
+    "patch_applies": true,
+    "plan": [
+      {
+        "target": "main.o",
+        "dependency": "config.h",
+        "style": "direct"
+      }
+    ]
+  },
+  {
+    "style": "macro",
+    "sample_commit": "1de6fad2d308e480622ee680e98838401dbc54ad",
+    "makefile_sha256_before_after": "0b0b85c9097b87d7d75e6f5893d4882b4f6de6125f4d72db44f7ef0c08e1623d",
+    "source_clean": true,
+    "patch_applies": true,
+    "plan": [
+      {
+        "target": "main.o",
+        "dependency": "config.h",
+        "style": "macro"
+      }
+    ]
+  },
+  {
+    "style": "mixed",
+    "sample_commit": "0b350347e4e9f40a65b0f9ab0ce3928dfef41f50",
+    "makefile_sha256_before_after": "9c32893c3d2a45ecf48aa088da2f5e10976f5ada937a3ce672a1e06d4111e05c",
+    "source_clean": true,
+    "patch_applies": true,
+    "plan": [
+      {
+        "target": "main.o",
+        "dependency": "config.h",
+        "style": "mixed"
+      }
+    ]
+  }
+]
