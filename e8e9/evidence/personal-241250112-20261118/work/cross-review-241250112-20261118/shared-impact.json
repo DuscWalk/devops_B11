@@ -1,0 +1,13 @@
+{
+  "sample_commit": "bb241edc0956c9df8091d4bb892a27fcfe493226",
+  "input_makefile_sha256": "eb3b4d2b0f60b03e82fc007e72eb1c7b33773c041a9b5285b552847243761dac",
+  "source_clean": true,
+  "requested_target": "main.o",
+  "affected_unrequested_target": "helper.o",
+  "new_finding": {
+    "type": "REDUNDANT",
+    "target": "helper.o",
+    "dependency": "config.h"
+  },
+  "analysis_only": true
+}
