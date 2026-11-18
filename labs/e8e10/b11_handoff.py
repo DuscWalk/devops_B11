@@ -48,6 +48,7 @@ def prepare_candidate(project, report):
     if not isinstance(findings, list):
         raise ValueError('INVALID_FINDINGS')
     tracked = set(filter(None, run(['git', 'ls-files', '-z'], project).split('\0')))
+    unique_missing = {}
     for finding in findings:
         if (not isinstance(finding, dict)
                 or finding.get('type') not in ('MISSING', 'REDUNDANT')
@@ -68,8 +69,16 @@ def prepare_candidate(project, report):
         resolved_name = (project / dep).resolve().relative_to(project).as_posix()
         if dep not in tracked or resolved_name not in tracked:
             raise ValueError('UNTRACKED_DEPENDENCY')
+        unique_missing.setdefault((finding['target'], dep), finding)
     before = source_hashes(project)
-    diff, plan = patch(project, report)
+    diff, plan = patch(project, {**report, 'findings': list(unique_missing.values())})
+    # In the course profile a macro-style edit appends to a single NAME = line.
+    # Reject another reference anywhere, including an alias in a variable value.
+    makefile = (project / 'Makefile').read_text()
+    for name in re.findall(r'^\+(\w+) = ', diff, re.M):
+        references = makefile.count('$(' + name + ')') + makefile.count('${' + name + '}')
+        if references > 1:
+            raise ValueError('SHARED_VARIABLE')
     if source_hashes(project) != before:
         raise RuntimeError('SOURCE_CHANGED')
     return diff, plan, {'sample_commit': revision, 'source_sha256': before,

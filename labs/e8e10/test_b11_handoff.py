@@ -126,6 +126,26 @@ class HandoffTests(unittest.TestCase):
                 self.assertEqual(source_hashes(p), before)
                 self.assertEqual(run(['git', 'status', '--porcelain'], p), '')
 
+    def test_duplicate_md_produces_one_edit(self):
+        for style in ('direct', 'macro', 'mixed'):
+            with self.subTest(style=style):
+                project = self.root / style
+                fixture(project, style)
+                report = scan(project)
+                expected = prepare_candidate(project, report)
+                report['findings'] *= 2
+                actual = prepare_candidate(project, report)
+                self.assertEqual(len(actual[1]), 1)
+                self.assertEqual(actual, expected)
+
+    def test_shared_macro_rejected_without_writes(self):
+        project = self.root / 'shared'
+        fixture(project, 'macro')
+        makefile = project / 'Makefile'
+        makefile.write_text(makefile.read_text().replace('helper.o: helper.c', 'helper.o: helper.c $(DEPS)'))
+        commit(project, 'case: second target shares DEPS')
+        self.assert_rejected_without_writes(scan(project), 'SHARED_VARIABLE', project)
+
     def test_e9_invalid_second_target_does_not_partially_apply(self):
         for style in ('direct', 'macro', 'mixed'):
             with self.subTest(style=style):

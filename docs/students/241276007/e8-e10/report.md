@@ -106,3 +106,7 @@ PR 的实际 checkout 为 GitHub 临时合并提交，`trigger.json` 记录的 h
 已用于追加修复、同步及后续报告提交。确认前的公共导入和首次实现按原全局 duscwalk 身份，保留其真实历史，
 没有强制推送重写旧提交。服务器独立克隆的 local user.name 已设为本人学号，全局设置保持原样。
 自编入口显式选择镜像，也可以使用课程 run_lab.py/classroom_helpers.sh 的数字学号入口。
+
+## 合并阶段补充
+
+在个人接口按 `(target, dependency)` 去重，并在候选修改被多处引用的宏定义时返回 `SHARED_VARIABLE`。保留基线补丁用于共享影响对照。集成两名成员的提交后，25 项测试通过。

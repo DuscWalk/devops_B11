@@ -8,7 +8,8 @@ import re
 import subprocess
 from pathlib import Path
 
-from b11_handoff import prepare_candidate, source_hashes
+from b11_handoff import source_hashes
+from run_b11_evidence import candidate
 from lab import commit, fixture, run, save, scan
 
 
@@ -46,7 +47,7 @@ def analyze(out, shared=True):
     save(out / 'input.json', report)
     before = make_dependencies(project, out, 'before')
     run(['git', 'bundle', 'create', str(out / 'input.bundle'), '--all'], project)
-    diff, plan, receipt = prepare_candidate(project, report)
+    diff, plan, receipt = candidate(project, report, extended=False)
     assert plan == [{'target': 'main.o', 'dependency': 'config.h', 'style': 'macro'}]
     patchfile = out / 'candidate.patch'
     patchfile.write_text(diff)
