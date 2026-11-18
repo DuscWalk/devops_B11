@@ -1,0 +1,14 @@
+test_e8_redundant_only_report_does_not_delete_dependencies (test_cross_review.CrossReviewTests.test_e8_redundant_only_report_does_not_delete_dependencies) ... ok
+test_e9_shared_macro_adds_unwanted_dependency_to_other_target (test_cross_review.CrossReviewTests.test_e9_shared_macro_adds_unwanted_dependency_to_other_target) ... ok
+test_include_added_invalidates_cache (test_profile.ProfileTests.test_include_added_invalidates_cache) ... ok
+test_independent_known_edges (test_profile.ProfileTests.test_independent_known_edges) ... ok
+test_old_report_rejected (test_profile.ProfileTests.test_old_report_rejected) ... ok
+test_patch_preserves_redundant_dependency (test_profile.ProfileTests.test_patch_preserves_redundant_dependency) ... ok
+test_unchanged_reuses_both_targets (test_profile.ProfileTests.test_unchanged_reuses_both_targets) ... ok
+test_unsafe_dependency_rejected (test_profile.ProfileTests.test_unsafe_dependency_rejected) ... ok
+test_unsupported_configuration_rejected (test_profile.ProfileTests.test_unsupported_configuration_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.293s
+
+OK
