@@ -41,6 +41,9 @@ jobs:
         run: |
           E8_IMAGE=course-e8e10:ci bash e8e9/run.sh
           python3 e8e9/verify.py "$(cat work/last-e8e9-B.path)"
+      - name: E10 B transaction evidence and independent rejection
+        run: |
+          docker run --rm --network none --cap-add SYS_PTRACE --user "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD:/course" -w /course course-e8e10:ci python3 labs/e8e10/b11_e10.py --out work/b11-e10
       - name: Validate both tracks
         shell: bash
         run: |

@@ -110,3 +110,16 @@ PR 的实际 checkout 为 GitHub 临时合并提交，`trigger.json` 记录的 h
 ## 合并阶段补充
 
 在个人接口按 `(target, dependency)` 去重，并在候选修改被多处引用的宏定义时返回 `SHARED_VARIABLE`。保留基线补丁用于共享影响对照。集成两名成员的提交后，25 项测试通过。
+
+## E10 B：验证、接受与回滚（胡博）
+
+个人 PR：<https://github.com/DuscWalk/devops_B11/pull/14>。学院服务器，外层源码 `193db9ea67bb51bef0855a9ec3a98bb15a40145c`，实际命令 `bash e10/run.sh`。OUT 为 `work/e10-B-241276007.03zrsS9Y`，主样例 C0 为 `019be678feca4b4d20b162611a85c96ef91f6b8e`，个人反例 C0 为 `41c1853ec44b0d6187b0e12677c5ce06e18d4977`。镜像 `course-e8e10:241276007`，ID `sha256:fe4f9564f5856532361da04a9f11073fb093bd6dc2a5fa138725a190a3aa3653`。容器禁网；工具链及逐条命令、退出码见 OUT。
+
+| 场景及独立预期 | 实测证据（相对 `OUT/matrix`） |
+|---|---|
+| 同一候选，错误预期 99 而非 1：只应功能测试失败，源项目保持 | `reject-test/validation.json`：仅 `test=False`，`accepted=False, rollback=True`；原项目所有跟踪文件哈希相同 |
+| 恢复正确预期：五项均通过才写回 Makefile | `accept/validation.json` 五项均真。沙箱将 VALUE 从 1 改到 2 并重新构建；源 `config.h` 仍为 1。两份 Makefile 字节副本的唯一差异是 `main.o` 增加 `config.h` |
+| 对已接受项目应用坏补丁：应在应用检查时拒绝，保留已接受版本 | `reject-patch/validation.json` 记录 git apply 检查失败，`checks={}`、`rollback=True`，与接受后跟踪文件哈希一致 |
+| 自主反例：修复 `main.o`，同时把 `helper.o: helper.c` 改为 `helper.o: unused.h`。预期前四项通过，仅重检失败 | `personal/reject-md/validation.json`：仅 `no_missing=False`、`error=null`，重检定位 `MISSING(helper.o,helper.c)`；`tracked-hashes.json` 保留前后相同的哈希 |
+
+三次规定事务 `results.csv` 各为 True，`gate.json` 通过；真实 BuildChecker 的 trace、Make 数据库及 `findings.json` 在 `recheck-buildchecker/`，最终无 MISSING，仅保留 `REDUNDANT(main.o,unused.h)`。包括自主用例在内的 26 项测试全部通过。原始服务器证据见 `e10/evidence/hu-e10-server.tar.gz`（SHA256 `fb72ef10f4c5e346e88b471ec15b8cd7206a378f92f4dba19b06e45e2c3f4ed2`）。PR 的运行可在 Checks 页核对；个人归档另附绑定最终 head 的 CI 元数据和 artifact。
