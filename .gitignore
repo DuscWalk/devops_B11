@@ -34,3 +34,4 @@ Thumbs.db
 
 # E4 per-run evidence (selected submission evidence lives under e4/evidence)
 /work/
+/data/
